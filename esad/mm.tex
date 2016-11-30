@@ -1,0 +1,127 @@
+\section{Micromegas Vertex Tracker}
+
+The CLAS12 Micromegas Vertex Tracker apparatus is comprised of the Barrel Micromegas 
+Tracker (BMT) and the Forward Micromegas Tracker (FMT), which despite their different 
+shapes (cylinders or disks), are the same type of detector and therefore have the same 
+list of hazards. Both subsystems are gaseous detectors, the only difference with respect 
+to the hazards is the use of different gases for the BMT and the FMT.
+
+The BMT is composed of 3 double-layers of resistive cylindrical Micromegas detectors, each 
+layer is divided into 3 sectors, for a total of 18 detectors. In combination with the 
+Silicon Vertex Tracker, the BMT covers the polar angle region from 35$^\circ$ to 125$^\circ$ 
+around the target. Micromegas detectors are double-stage gaseous detectors. The gas that will 
+be used for the BMT is a mixture of 90\% argon and 10\% isobutane. Even though isobutane 
+is a flammable gas, the amount of gas in use at any given time is well within the range of a 
+class-0 gaseous device.
+
+The BMT is powered by two high voltages up to 2000~V, although the current limit for both 
+HV is extremely low. The detectors are read out through 1.5-m-long flex cables by Front-End 
+Units (FEU). These electronic cards contain the customized DREAM ASICs in order to sample the 
+detector signal and a flash-ADC to digitize it and send it to the network. The FEUs are placed 
+inside customized crates, on the back of the support tube holding the MVT. They are powered 
+through low voltage, and kept within the 40$^\circ$C to 60$^\circ$C temperature range using a 
+simple set of fans and tubing.
+
+The FMT is composed of 6 flat resistive Micromegas detectors. Each detector is divided in two 
+zones (inner and outer). The FMT covers the polar angle region from 6$^\circ$ to 29$^\circ$ 
+from the target. Micromegas detectors are double-stage gaseous detectors. The gas that will be 
+used for the BMT is a mixture of 80\% Argon, 10\% CF$_4$, and 10\% isobutane. Even though 
+isobutane is a flammable gas, the amount of gas in use at any given time is well within the 
+range of a class-0 gaseous device.
+
+The FMT is powered by three high voltages up to 2000~V, although the current limit for all 
+three HV is extremely low ($<$1~mA). The detectors are read out through 2.2-m-long flex cables 
+by Front-End Units (FEU). These electronic cards contain the customized DREAM ASICs in order to 
+sample the detector signal and a flash-ADC to digitize it and send it to the network. The FEUs 
+are placed inside customized crates, located on the back of the support tube holding the MVT. 
+They are powered through low voltage, and kept within the 40$^\circ$C to 60$^\circ$C temperature 
+range using a simple set of fans and tubing.
+
+All hazards and mitigation options for the FMT are the same as for the BMT. Even though the 
+shapes of the detectors vary, they are almost identical in principle. The gas mixture is 
+however different, but the amount of flammable gas (isobutane) is almost the same.
+
+\subsection{Hazards} 
+
+Hazards to personnel include the use of flammable gas, high voltage, and the low voltage that 
+powers the readout electronics. During the installation phase, mechanical hazards include the 
+risks associated with the weight of the MVT, including its support tube, as well as the work at 
+height in order to access the LV and gas control crates.
+
+Hazards to the MVT detectors themselves include mechanical damage, gas leaks, and gas 
+over-pressure. Also, there is a risk of damage to the MVT during installation in the solenoid 
+bore.
+
+Hazards concerning the MVT Front-End Units include: wrong LV settings that could damage the FEUs, 
+and absence of cooling or cooling failure that would overheat the cards.
+
+\subsection{Mitigations}
+
+Fire hazards (equipment and personnel):
+\begin{itemize}
+\item Use of flammable gas: All MVT detectors use 10\% isobutane, which is flammable. Mitigation: 
+the amount of isobutane in our system is very limited. For both the BMT and FMT detectors, the 
+total combustion energy is equivalent to less than 12~g of hydrogen, which makes it a class-0 
+gas system (class-1 starts at 600~g).
+\end{itemize}
+
+Electrical hazards (personnel):
+\begin{itemize}
+\item High Voltage: high voltage up to 2500~V are used routinely for all detectors. Mitigation: 
+very low current limit (10~$\mu$A) is set. All mechanical structures are properly grounded.
+\item Low Voltage: In order to power up the front-end electronics, we use low voltage at 4.5~V 
+with 60~A per crate. Mitigation: voltage is low enough not to be a danger to personnel. All 
+mechanical structures are properly grounded. All cables and connectors are certified for this 
+rating and shielded.
+\end{itemize}
+
+Mechanical hazards (personnel):
+\begin{itemize}
+\item Heavy object (Total: 200~kg), handled with an overhead crane. Mitigation: job done by 
+trained JLab staff according to and compliant with the Jefferson Lab EHS\&Q manual.
+\item Work at height for access to gas control and LV crate (located at 2.5~m height) on the 
+moving cart. Mitigation: use of certified step ladder provided by JLab.
+\end{itemize}
+
+Other hazards to MVT:
+\begin{itemize}
+\item Detectors: gas over-pressure, gas leaks, and mechanical damage. Mitigation: gas control 
+system with over-pressure and leak limits. Protection covers (1~mm carbon shell) in order to 
+avoid as much as possible damage to the detectors before installation and operation. The FMT 
+detectors can be dismounted and repaired in case of accidental damage to the drift electrode. 
+Since they are tightly stacked, only one such electrode is exposed and at risk, the rest of 
+the stack is protected by the first detector.
+\item Installation of Central Tracker: Damage to the MVT during installation in the solenoid 
+bore. The CTOF is the closest detector to MVT. Mitigation: Parts of the MVT that are radially 
+farthest outwards are surveyed prior to insertion into the solenoid to ensure that there is 
+no interference with adjacent CTOF components. There is a large clearance ($\sim$11~mm) between 
+the MVT and the adjacent detector, CTOF. The insertion will be achieved on a precision rail 
+system that is used for the target insertion. There will be a constant visual check as the MVT 
+is inserted into the solenoid bore. A linkage mechanism on the upstream end of the SVT/MVT allows 
+for the adjustments in pitch and yaw if needed. Finally, the operation will be performed by 
+trained personnel with several years of experience and familiar with similar positioning.
+\item Electronics: wrong LV settings and absence of cooling or cooling failure. Mitigation: Slow 
+Controls read-back of LV settings before turning on the front-end electronics. Cooling is also 
+checked by the Slow Controls system, and is interlocked so that the electronics cannot be turned 
+on when the cooling is off. Also, temperature sensors are present on the front-end cards and are 
+directly interlocked so that if temperature goes beyond a predefined threshold, the cards are 
+gracefully shut-down automatically.
+\end{itemize}
+
+\subsection{Responsible Personnel}
+
+Individuals responsible for the MVT system are:
+
+\begin{table}[!htb]
+\centering
+\begin{tabular}{|c|c|c|c|c|} \hline
+Name&Dept.&Phone&email&Comments \\ \hline
+Expert on call& &&& 1st contact \\ \hline
+M. Defurne&Saclay&+33169083237&\href{mailto:maxime.defurne@cea.fr}{\nolinkurl{maxime.defurne@cea.fr}}&2nd contact \\ \hline
+F. Sabatie&Saclay&+33169083206&\href{mailto:franck.sabatie@cea.fr}{\nolinkurl{franck.sabatie@cea.fr}}&3rd contact \\ \hline
+S. Aune&Saclay&+33169086648&\href{mailto:stephan.aune@cea.fr}{\nolinkurl{stephan.aune@cea.fr}}&4th contact \\ \hline
+\end{tabular}
+\caption{Personnel responsible for the CLAS12 MVT system.} 
+\label{tb:mm}
+\end{table}
+

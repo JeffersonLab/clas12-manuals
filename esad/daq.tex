@@ -1,0 +1,55 @@
+\section{DAQ and Trigger}
+
+The DAQ and Trigger systems consists of multiple VXS, VME and other crates housing 
+various readout modules such as FADC250 ADCs, TDC1190 and TDC1290 TDCs, 16-channel 
+discriminators, trigger modules, and various other units. These crates are powered 
+by industrial power supplies, most of them produced by Wiener, Germany.
+
+The computer cluster contains about 30 computers located mostly in the Hall~B Counting 
+House, but some computers are installed in the hall. The network consists of about 20 
+switches and routers located in both the Counting House and in the hall. Backup power 
+is provided by three large UPS devices, one in the Counting House and two in the hall.
+
+Signal and power transmission is handled by a large number of copper cables interconnecting  
+the various electronics modules and detector elements. A smaller number of optical cables 
+are employed to transmit synchronization, time-keeping signals, and various other 
+communication services throughout the experimental hall.
+
+\subsection{Hazards} 
+
+Hazards to personnel include the electric power supplied to the electronic components. There 
+is also a fire hazard associated with cabling throughout the experimental hall.
+
+\subsection{Mitigations}
+
+All of the crates and chassis are commercially available and are powered from 208~V AC. 
+These meet stringent safety requirements set by various qualified agencies such UL and TUV. 
+Internal fans help manage thermal loads and several internal controls are implemented to 
+provide limits on over-current and over-temperature excursions. All structures are grounded. 
+Additionally, aluminum blank panels have been installed to limit access to the backplane on 
+the rear of the chassis and on the front side where slots are unused. All power distribution 
+is power-limited for current and voltage and interlocked via the Slow Controls system. All 
+cables are NEC UL rated CL2 or better and conform to the 2011 edition of the NEC NFPA70 code 
+requirements for fire prevention and thus, limit flame propagation in case of fire. Additionally, 
+all cables are shielded and referenced to ground for added personnel and equipment safety.
+
+There are possible electrical hazards if a malfunctioning electronics component is replaced. 
+The associated task hazard analysis concluded that the consequence level is low, the 
+probability level is low, and the risk code is 1. The mitigation for these electrical jobs is 
+to place the equipment in Mode 0 (de-energized) when replacing or repairing hardware during 
+routine maintenance.
+
+\subsection{Responsible Personnel}
+
+Individuals responsible for the DAQ and Trigger system are:
+
+\begin{table}[!htb]
+\centering
+\begin{tabular}{|c|c|c|c|c|} \hline
+Name&Dept.&Phone&email&Comments \\ \hline
+Sergey Boyarinov&Hall~B&(757)-232-6221&\href{mailto:boiarino@jlab.org}{\nolinkurl{boiarino@jlab.org}}&1st contact \\ \hline
+ \end{tabular}
+\caption{Personnel responsible for the CLAS12 DAQ and Trigger system.} 
+\label{tb:daq}
+\end{table}
+

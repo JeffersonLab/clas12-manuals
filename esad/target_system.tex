@@ -1,0 +1,99 @@
+\section{Target System}
+
+The experiment will use both solid ($^{12}$C) and cryogenic (LH$_2$) targets. The solid 
+target, a 0.5-mm-thick carbon wire, will be mounted on the fork of the 2H01 wire harp. The 
+wire harp will be mounted at the nominal location of the CLAS12 target. The fork with wires 
+(30~mm spacing between arms of the fork) is mounted on a shaft connected to a stepper 
+motor motion system. The system is aligned in a way that the beam is centered between the 
+fork arms, which allows the target to be moved in and out of the beam without interference 
+of the support frames.
+   
+The cryogenic target system is a joint product of Saclay (France) and JLab (the same target 
+system that has worked for 15~years with the CLAS detector). The target cell is a $\sim 20$~mm 
+diameter, 5-cm-long Kapton tube with $30~\mu$m entrance and exit windows. There is a 
+heat-shield made of a 65~$\mu$m-thick-aluminized Mylar around the target cell. The cell is 
+connected to the condensing system with three $\sim$1.5-m-long SS pipes. The whole system is 
+in the vacuum. The target cell is inside a Rohacell scattering chamber, with a wall thickness 
+of 6.5~mm, that is connected to the upstream beampipe. The scattering chamber has a 45~cm long,
+25~mm diameter aluminum extension pipe, with a wall thickness of 1~mm. The thickness of the 
+aluminum exit window on the extension tube is 50~$\mu$m.
+               
+\subsection{Hazards} 
+
+The LH$_2$ target contains a condensed cryogenic fluid and is considered a pressure vessel. 
+Sudden warming of the target due to a vacuum breach could result in rapid expansion of the 
+target fluid. The system is designed to safely vent the excess pressure unless the vent 
+lines are blocked by frozen hydrogen and/or frozen contaminates in the gas. Failure of the 
+foam, aluminum extension, or the thin window of the scattering chamber could produce a loud 
+noise and could result in a failure of the target integrity. The target utilizes flammable 
+gas (hydrogen) during operation. Failure of the system could release flammable gas into the 
+hall. The hydrogen target gas and the helium used in the target refrigerator are potential 
+ODH risks, and failure of either system could reduce the oxygen levels in the hall.
+
+There are no hazards associated with moving the solid target into the beam. The stepping 
+motor linear actuator will be operated using EPICS controls. The GUI for operation of the 
+target will have preset coordinates. 
+
+\subsection{Mitigations}
+
+The cryotarget system has been used for about 15~years with the CLAS detector in Hall~B. The 
+design and construction of the new target cell and the scattering chamber are in accordance 
+to AMSE standards. During operation the foam scattering chamber, the extension, and the thin 
+window are surrounded by the Hall~B CLAS12 Central Detectors and are therefore difficult to 
+access. A protective shield will be placed around the scattering chamber whenever the target 
+is retracted from the Central Detector system and is under vacuum. Personnel working near the 
+target shall wear hearing and eye protection whenever the foam extension and window are 
+exposed and the system is under vacuum. No cold cryogenic components are accessible by personnel. 
+
+Two H$_2$/D$_2$ gas detectors are installed near the target location, one above the right hand 
+side of the electronics rack and another above the cryostat. In case of a detected leak, the 
+control system will immediately warm up the whole target system and empty the target cell.
+
+Relief valves installed in parallel with all of the remote control valves ensure that the 
+safety system is entirely passive. In case of an increased pressure in the vacuum chamber, 
+the cryotarget controller will stop all vacuum pumps on the cryotarget, close the 
+FV\_D2T(FV\_H2T) and all $^4$He valves, and sound an alarm (located on top of the terminal 
+in the Hall~B Counting House).
+
+The quantity of flammable gas (H$_2$) is less than 80~g and is therefore considered a class-O 
+installation ($<$600~g) and the rules and regulations for this installation shall be followed, 
+notably:
+
+\begin{itemize}
+
+\item The area shall be posted ``Danger Flammable Gases.  No Ignition Sources",
+
+\item Combustibles and ignition sources shall be minimized within 10~ft or 3~m of target's gas 
+handling equipment and piping.
+\end{itemize}
+
+The target does not operate in a confined space, and the total quantity of hydrogen/helium in 
+the system is under 1000 standard liters. This presents a negligible oxygen deficiency risk in 
+Hall~B and therefore is a class-0 ODH installation.
+
+Hydrogen shall be loaded into the system by qualified personnel only, and those personnel shall 
+follow approved operational gas handling procedures.   Upon loss of target gas pressure, the 
+control system shall automatically warm up the target to keep the pressure above atmospheric to 
+prevent contamination. 
+
+The target control software includes numerous alarms (temperature, pressure, vacuum, heater 
+power, etc.) to alert users to potential problems. The solid target ladder incorporates limit 
+switches to prevent motion outside of the allowed range if the set limits in EPICS fail. 
+
+\subsection{Responsible Personnel}
+
+The target system will be maintained by the Hall~B Engineering Group.  
+
+\begin{table}[!htb]
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+ Name&Dept.&Phone&email&Comments \\ \hline
+Engineering on call & Hall~B&(757)-748-5048&& 1st contact  \\ \hline
+K. Bruhwel& Hall~B&x7868&\href{mailto:bruhwel@jlab.org}{\nolinkurl{bruhwel@jlab.org}}&2nd contact \\ \hline
+D. Tilles & Hall~B&x7566&\href{mailto:tilles@jlab.org}{\nolinkurl{tilles@jlab.org}}  &3rd contact \\ \hline
+R. Miller &Hall~B&x7867&\href{mailto:rmiller@jlab.org}{\nolinkurl{rmiller@jlab.org}} &4th contact \\ \hline
+\end{tabular}
+\caption{Personnel responsible for the CLAS12 target system.} 
+\label{tb:target}
+\end{table}

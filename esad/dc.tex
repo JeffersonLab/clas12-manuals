@@ -1,0 +1,73 @@
+\section{Drift Chambers}
+
+The CLAS12 Drift Chamber (DC) system is comprised of 18 separate chambers. There are 
+three types: ``region 1", ``region 2", and ``region 3" depending on location upstream, 
+within, or downstream of the CLAS Torus magnet. Each chamber has wires arranged in two 
+superlayers of 6~layers by 112~wires. The gas system supplies mixed, clean, 
+pressure-controlled argon/CO$_2$ gas to each of the 18 drift chambers. The on-chamber 
+amplifier and readout boards are called ``signal translator boards" (STBs). There are 7 such 
+boards per superlayer. They distribute low voltage (LV) power to pre-amplifiers located on the 
+board, one for each sense wire. The pre-amps are placed in groups of 16, with six such groups 
+per board. There is an individual fuse for every group of sixteen. Thirty-four conductor signal 
+cables (16 twisted-pair signals) connect each STB group of 16 pre-amps with one connector on 
+the drift chamber readout board (DCRB). High voltage (HV) is supplied to the wires by on-chamber 
+``high-voltage translator boards'' (HVTBs), located on the opposite endplate from the STBs. The 
+high voltage is supplied to the HVTBs by a chain of cables connecting the HV crates to the 
+``high voltage distribution boards'' (HVDBs) and from there by cables to the HVTBs.
+
+\subsection{Hazards} 
+
+Hazards to personnel include the high voltage supplied to the wires and the low voltage that 
+powers the on-chamber pre-amplifiers. Hazards to the drift chambers themselves include damage 
+to the gas windows should the pressure deviate more than a few psi from atmospheric. 
+
+\subsection{Mitigations}
+
+Electrical hazards:
+\begin{itemize}
+\item High Voltage: high voltages up to 2000~V are used routinely for all detectors. Mitigation: 
+very low current limits (40~$\mu$A) are set. All mechanical structures are properly grounded.  
+There are possible electrical hazards if a malfunctioning HV board is replaced. The associated 
+task hazard analysis concluded that the consequence level is low, the probability level is low, 
+and the risk code is 1. The mitigation for these electrical jobs is to place the equipment in 
+Mode~0 (de-energized) when replacing or repairing hardware during routine maintenance. The 
+same risk codes and mitigation applies to the procedure known as a ``minimal disconnect'' in 
+which an individual HV pin is removed from the HV distribution box.
+
+\item Low Voltage: In order to power up the on-chamber electronics, we use low voltage at 7~V 
+with 50~A per supply (1 supply per chamber). Mitigation: voltage is low enough not to be a 
+danger to personnel. All mechanical structures are properly grounded. All cables and connectors 
+are certified for this rating and shielded. To protect against possible over-heating of the 
+on-chamber pre-amplifier boards, each individual conductor (positive and neutral return) is 
+fused; with the fuses located in a fuse panel with a red LED signaling a blown fuse. If a 
+fuse is removed and/or replaced there is no risk to personnel because of the low voltage.
+
+\end{itemize}
+
+Gas system hazards:
+\begin{itemize}
+\item Personnel: because most of the system operates very close to atmospheric pressure there 
+is no hazard to personnel in the hall due to pressure. The gas is non-toxic and non-flammable.  
+Because of the large volume of the hall and the location of the chambers in the main open area 
+of the hall, there is no ODH hazard to personnel.
+\item Detectors: there is a potential danger to the chamber gas windows if the pressure in the 
+chamber differs from atmospheric by one psi. This is mitigated during standard operation by our 
+pressure-difference control system with fail-safe over-pressure and under-pressure bubblers 
+providing an additional level of safety.
+\end{itemize}
+
+\subsection{Responsible Personnel}
+
+Individuals responsible for the DC system are:
+
+\begin{table}[!htb]
+\centering
+\begin{tabular}{|c|c|c|c|c|} \hline
+Name &Dept.&Phone&email&Comments \\ \hline
+Expert on call &       &       &       & 1st contact \\ \hline
+Mac Mestayer&Hall~B&(757)-229-6575& \href{mailto:mestayer@jlab.org}{\nolinkurl{mestayer@jlab.org}} & \\ \hline
+ \end{tabular}
+\caption{Personnel responsible for the CLAS12 DC system.} 
+\label{tb:dc}
+\end{table}
+

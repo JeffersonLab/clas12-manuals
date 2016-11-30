@@ -1,0 +1,130 @@
+\section{Silicon Tracker}
+
+The CLAS12 SVT is a barrel-shaped tracking detector that has a wide azimuthal angular 
+coverage and $\sim 2\pi$ coverage in polar angle. It has four polygonal regions, R1 - R4, 
+that have 10, 14, 18, and 24 sectors, respectively. Each sector contains modules, whose top 
+and bottom sides have three, 320-$\mu$m-thick, silicon sensors that are wire bonded together, 
+a pitch adapter, and a readout hybrid - part of the readout electronics located on the hybrid 
+flex circuit board (HFCB). The bottom side of the module, closer to the beam, is referred to 
+as the U layer; the top side of the module is referred to as the V layer. Each side of the 
+module has 256 readout strips. 
+
+Module services provide power, cooling, and communication to all the SVT modules. The services 
+connected to the SVT include: power supply cables, data and control cables, cooling pipes, and 
+cables for monitoring humidity and temperature. The power supply system consists of low voltage 
+and high voltage supplies, and MPOD crates. The low voltage supply powers the analog and digital 
+portions of the readout chips. The high voltage supply is for biasing the sensors and monitors 
+the leakage current over a wide range. The normal operating point of reverse bias for the SVT 
+sensor is 85~V. Each side of the module receives low voltage, 2.5~V for both the analog and 
+digital parts of the FSSR2 chip and high voltage for the sensors. The low voltage also powers 
+analog output CMOS IC temperature sensors, one per side.
+
+The front-end chips of the SVT modules have to be cooled to ensure normal operating conditions. 
+The cooling system of the SVT consists of the portable chiller, plastic cooling tubes, flow
+meters, and the cold plates with copper tubes inside circulating liquid coolant. The SVT 
+nitrogen purging system is designed to provide a dry environment inside the detector and to 
+avoid condensation.
+
+\subsection{Hazards} 
+
+Hazards to personnel include the high voltage that biases the sensors and the low voltage 
+current that powers the readout electronics. During the installation phase, mechanical hazards 
+include the risks associated with lifting the SVT during integration, transportation, and 
+installation, and the work at height in order to access the crates and patch panel on the 
+insertion cart. 
+
+Hazards to the SVT itself include mechanical damage, radiation damage, gas over-pressure, 
+cooling system leaks, and overheating. Overheating can occur in the SVT  if the cooling 
+system is performing inadequately or if a cooling system leak develops.
+
+Radiation damage could occur in the SVT if the beam moves into the sensors, the beam interacts 
+upstream to produce excessive radiation, or excessive beam currents create more radiation than 
+can be tolerated. 
+
+Wrong LV settings could damage the hybrids and ambient sensors; wrong HV settings could cause 
+high leakage current that could damage the sensors.
+
+Failure of the crate cooling fans could cause overheating and damage of the crate modules.
+
+Overpressure in the cooling lines could cause damage of the cooling system.
+
+\subsection{Mitigations}
+
+Electrical hazards (personnel):
+\begin{itemize}
+\item Hazards to personnel are mitigated by turning off HV and LV power before disconnecting 
+cables or working on the sensors and electronics. 
+\end{itemize}
+
+Mechanical hazards (personnel):
+\begin{itemize}
+\item Hazards related to work at height during installation and maintenance is mitigated by 
+proper safety training and using certified step ladders or scaffolding. 
+\item Mitigation of hazards to the personnel related to the SVT lifting is done by admitting 
+only trained JLab staff, using personal protection and certified gantry, cranes, and tooling.
+\end{itemize}
+
+Mechanical hazards (detector):
+\begin{itemize}
+\item Possible mechanical damage has been mitigated by following the proper procedures for each 
+job and using the special tooling. 
+\item All operations related to handling the SVT are performed only by trained personnel with 
+hands on experience working with the SVT. 
+\item Lifting the SVT during the installation and maintenance is performed only by properly 
+trained personnel using certified equipment. 
+\item SVT integration with the MVT is done only by the trained personnel following the proper 
+procedures. 
+\end{itemize}
+
+Radiation damage hazards (detector):\\
+
+Radiation damage from the beam is mitigated in several steps. 
+\begin{itemize}
+\item Beam size and halo must conform to beam requirements before beam is passed through the 
+detector. 
+\item An upstream collimator is aligned with the ``centered" beam position to intercept the 
+beam if it moves off nominal position. 
+\item Beam halo monitors sense a rise in backgrounds if the beam moves off its nominal position, 
+activating the beam Fast Shutdown (FSD). 
+\end{itemize}
+
+Other detector hazards:
+\begin{itemize}
+\item Cooling system: Overheating is mitigated by leak checks, requiring good coolant flow and 
+pressure, proper coolant temperature, and sensor temperatures in the working range. The cooling 
+system is constantly monitored by an EPICS IOC, logged to a MYA database, and interlocked to 
+the HV and LV power systems, and the alarm handler. There are interlocks on coolant leaks, 
+hybrid temperature and humidity, ambient temperature, humidity, and dew point. All temperature 
+and humidity sensors are redundant.
+\item Electronics and sensors: Power supplies have hardware and software limits set, and currents 
+and voltages are controlled, monitored, and included in the alarm handler. Crate temperatures 
+are monitored by the control system. The proper HV/LV power supply ramp up and ramp down sequence 
+is ensured by the Slow Controls software to prevent human mistakes. 
+\item Gas system: To prevent condensation and gas over-pressure, the gas flow of the nitrogen 
+purging is controlled, interlocked, and monitored by the Slow Controls system. 
+\item The hardware interlock system provides redundant safety for critical parameters in case of 
+alarm handler failure. 
+\item Control system parameters and settings can be saved and restored.
+\end{itemize}
+
+\vfil
+\eject
+
+\subsection{Responsible Personnel}
+
+Individuals responsible for the SVT system are:
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{|c|c|c|c|c|} \hline
+Name&Dept.&Phone&email&Comments \\ \hline
+Expert on call& &&& 1st contact \\ \hline
+Y. Gotra& JLab&(757)-269-5571&\href{mailto:gotra@jlab.org}{\nolinkurl{gotra@jlab.org}}&2nd contact \\ \hline
+B. Eng&JLab&(757)-269-6018&\href{mailto:beng@jlab.org}{\nolinkurl{beng@jlab.org}}&3rd contact \\ \hline
+L. Elouadrhiri&JLab&(757)-269-7303&\href{mailto:latifa@jlab.org}{\nolinkurl{latifa@jlab.org}}&4th contact \\ \hline
+\end{tabular}
+\caption{Personnel responsible for the CLAS12 SVT system.} 
+\label{tb:svt}
+\end{table}
+
+

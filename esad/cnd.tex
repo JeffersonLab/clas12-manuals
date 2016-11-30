@@ -1,0 +1,79 @@
+\section{Central Neutron Detector}
+
+The Central Neutron Detector (CND) is the outer-most detector of the CLAS12 Central
+Detector. The CND is a barrel of plastic scintillator bars of trapezoidal shape, all 
+with their long sides parallel to the beam direction. 
+
+The light emitted by the scintillators of the CND is read out only at the upstream end of each 
+bar with a Hamamatsu R10533 photomultiplier placed in the low-field region of the solenoid 
+and connected to the bar by a $\sim 1.5$-m-long bent light guide; the downstream end of each 
+bar is connected via a ``U-turn'' light guide to the neighboring paddle. In this way, the 
+light emitted at the downstream end of each scintillator is fed through its neighboring 
+paddle and read out by the PMT connected to its end. Each PMT is encased in a cylindrical 
+magnetic shield made up by a 1-mm-thick layer of mu-metal and a 5-mm-thick layer of mild steel. 
+
+The CND is composed of 48 azimuthal segments and 3 layers in the radial direction, for a total 
+of 144 scintillator bars, 144 PMTs, 72 U-turn light guides, and 144 bent light guides. 
+
+In order to operate the PMTs, high voltages (typically in the range of 1500~V) are provided  
+by a multi-channel CAEN SY527 power supply. The signal of each PMT is sent to an active splitter. 
+The three splitter modules used for the CND were originally developed by IPN Orsay for the G0 
+experiment (Hall~C, Jefferson Lab). Each module is an active 64-channel splitter with unity gain 
+so there is no loss of amplitude. The 64 SMA inputs are placed in the back panel. In the front 
+panel there are 8 8-channel output connectors (DMCH) for the timing signals and 4 16-channel 
+output connectors (FASTBUS) for the charge signals. The charge signal is sent from the splitter 
+to the flash-ADC (250 VXS, 16 channels/board, made and owned by JLab). The timing signal from 
+the splitter is sent to a constant fraction discriminator (CFD) GAN'ELEC FCC8, developed for the 
+TAPS Collaboration. The module is an 8-channel CAMAC unit with LEMO 00 input connectors and 2x 
+8-pin output connectors in differential ELC. The threshold can be set for each channel 
+individually and no time-walk adjustment is required for the module. The discriminated timing 
+signal then goes to the TDC (CAEN VX1290A, 32 channels/board, 25 ps/channel resolution). In total, 
+the read-out of the CND includes 3 splitter modules, 19 CFD modules, 5 TDC boards, and 8 ADC 
+boards. 
+
+\subsection{Hazards} 
+
+\subsubsection{Electrical Hazard}
+
+The electrical hazard to personnel can come from the high voltage that powers the PMTs, which 
+need about 1500~V to function. 
+
+\subsubsection{Magnetic Field Hazard}
+
+The strong magnetic field of the solenoid (5~T) represents a hazard for all detectors of the
+CND.
+
+\subsection{Mitigations}
+
+\subsubsection{Electrical Hazard Mitigations} 
+
+The maximum current provided by the HV distribution boards is quite low (3~mA). All mechanical 
+structures are properly grounded. The HV boards must not be accessed during operation; during 
+maintenance work, performed by trained personnel, the HV is turned off, cables are disconnected 
+from the power supply and the power supply is turned off. 
+
+\subsubsection{Magnetic Field Hazard Mitigations}
+
+Whenever any work has to be done on the CND, the magnetic field of the solenoid must be turned 
+off. After any sort of maintenance work is done on the CND, the area must be inspected and all 
+ferromagnetic tools and equipment must be removed before the field is ramped up again. Also, 
+before the field can be turned on the PMT housings and magnetic shields should be thoroughly 
+inspected to make sure that they are properly secured and that there are no loose parts. 
+
+\subsection{Responsible Personnel}
+
+Individuals responsible for the CND system are:
+
+\begin{table}[!htb]
+\centering
+\begin{tabular}{|c|c|c|c|c|} \hline
+Name&Dept.&Phone&email&Comments \\ \hline
+Expert on call& &&& 1st contact \\ \hline
+S. Niccolai& IPN Orsay&+33 6 24 81 67 78&\href{mailto:silvia@jlab.org}{\nolinkurl{silvia@jlab.org}}& 2nd contact \\ \hline
+D. Sokhan & Glasgow & + 44 7949 175725 &\href{mailto:daria@jlab.org}{\nolinkurl{daria@jlab.org}} & 3rd contact  \\ \hline
+D.S. Carman & JLab & (757)-269-5586 & \href{mailto:carman@jlab.org}{\nolinkurl{carman@jlab.org}} & JLab contact \\ \hline
+\end{tabular}
+\caption{Personnel responsible for the CLAS12 CND system.} 
+\label{tb:cnd}
+\end{table}
+

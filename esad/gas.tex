@@ -1,0 +1,182 @@
+\section{Hall~B Gas System}
+
+The Hall~B gas systems supply gas to the following detectors at the indicated pressures 
+in Hall~B:
+\begin{enumerate}
+\item Forward Drift Chambers 
+\begin{description}
+\item[-] 10\% CO$_2$ in Argon at $0.075$~inch wc
+\item[-] N$_2$ purge for external HV components at atmospheric pressure
+\end{description}
+\item LTCC 
+\begin{description}
+\item[-] C$_4$F$_{10}$ at $1.0 - 4.0$~inch wc
+\item[-] N$_2$ purge for C$_4$F$_{10}$ recovery at $1.0-4.0$~inch wc
+\end{description}
+\item MVT 
+\begin{description}
+\item[-] 10\% C$_4$H$_{10}$ in Argon - 30~psi
+\item[-] 10\% CF$_4$ 10\% C$_4$H$_{10}$ in Argon - 30~psi 
+\end{description}
+\item RICH 
+\begin{description}
+\item[-] N$_2$ purge for aerogel at atmospheric pressure
+\item[-] Air cooling purge supply for enclosed electronics package at 5-55~psi, discharges to atmosphere
+\item[-] Air compressor output at 112~psi 
+\end{description}
+\item HTCC 
+\begin{description}
+\item[-] CO$_2$ purge at $0.150$~inch wc 
+\end{description}
+\item FT 
+\begin{description}
+\item[-] 10\% C$_4$H$_{10}$ in Argon - 30~psi
+\item[-] N$_2$ purge for calorimeter at atmospheric pressure 
+\end{description}
+\item SVT
+\begin{description}
+\item[-] N$_2$ purge at atmospheric pressure 
+\end{description}
+\end{enumerate}
+
+The Hall~B Gas Controls consists of a National Instruments cRIO based controls system 
+that supplies and monitors gas flow to the four baseline gaseous detectors (DC, HTCC, 
+LTCC, SVT). Additionally, it also controls and monitors gas supply to three non-baseline 
+detectors (RICH, MVT, FT). 
+
+The system consists of four stations strategically located in the hall and Gas Shed that 
+are linked via the Slow Controls network. Each station consists of a cRIO controls chassis, 
+a custom interface chassis, and a touch screen monitor. All gas system instrumentation 
+equipment (transducers, mass flow controllers, valve drivers, etc.) receive operational 
+power from supplies that are internal to the custom interface chassis. 
+
+The main controls interface for the system is located in the Gas Shed, where all functions 
+of the system will be controlled. All system chassis are electrically grounded to the racks, 
+and each contains an over-current protection fuse. 
+
+\subsection{Hazards} 
+
+The following cryogens are used at the 96B Gas Shed at the following pressures;
+\begin{itemize}
+\item Liquid Argon - $175 - 200$~psi
+\item Liquid Nitrogen - $45$~psi
+\item Liquid CO$_2$ - $160 - 300$~psi
+\end{itemize}
+
+The following gases are produced from cryogen boil off;
+
+\begin{itemize}
+\item Ar - $160 - 200$~psi
+\item CO$_2$ - $160 - 200$~psi
+\item N$_2$ - $35$~psi
+\end{itemize}
+
+The following gases are used at the 96B Gas Shed at the following pressures;
+
+\begin{itemize}
+\item Ar - $40 - 200$~psi
+\item CO$_2$ - $15-200$~psi
+\item CF$_4$ - $40$~psi
+\item C$_4$F$_{10}$ - $4 - 50$~psi
+\item C$_4$H$_{10}$ - $40$~psi
+\item N$_2$ - $35$~psi
+\end{itemize}
+
+The following gas mixtures are produced at the following pressures;
+
+\begin{itemize}
+\item 10\% CO$_2$ in Argon - $100$~psi
+\item 10\% C$_4$H$_{10}$ in Argon - $30$~psi
+\item 10\% CF$_4$ $10\%$ C$_4$H$_{10}$ in Argon - $30$~psi
+\end{itemize}
+
+The two MVT gas mixtures are flammable;
+
+\begin{itemize}
+\item 10\% C$_4$H$_{10}$ in Argon - $30$~psi
+\item 10\% CF$_4$ 10\% C4H6 in Argon - $30$~psi
+\end{itemize}
+
+The following gases and gas mixtures are sent to Hall~B at the following pressures;
+
+\begin{itemize}
+\item 10\% CO$_2$ in Argon - $<5$~psi
+\item 10\% C$_4$H$_{10}$ in Argon - $30$~psi
+\item 10\% CF$_4$ 10\% C$_4$H$_{10}$ in Argon - $30$~psi
+\item N$_2$ - $35$~psi
+\item CO$_2$ - $15$~psi
+\item C$_4$F$_{10}$ - $4 - 8$~psi
+\end{itemize}
+
+\subsection{Mitigations}
+
+The 1500~gallon liquid-argon dewar and 160~liter liquid CO$_2$ dewar are used for gas supply 
+only. The dewars have relief valves preventing over-pressure.
+
+Liquid nitrogen is used in both gas and liquid states. The 1500~gallon LN$_2$ dewar has a 
+relief valve preventing over-pressure. 
+
+N$_2$ gas is used as a purge gas for detectors and other equipment. The purge flow is 
+controlled by mass flow controllers or flow rotometers and discharges to the atmosphere.
+
+\noindent
+Detectors:
+\begin{enumerate}
+\item The Drift Chambers have both active and passive pressure protection. Pressure relief 
+bubblers attached to the detector exhaust manifolds passively prevent the pressure from 
+exceeding $0.125$~inch wc pressure or vacuum. The active pressure protection system consists 
+of a pressure transducer, process controller, and solenoid valves that isolate the detectors 
+from the gas system if the pressure goes outside the $0.025-0.125$~inch wc band. There are 
+EPICS-based alarms to alert personnel of high or low pressure and flows.
+
+The N$_2$ purge for the endplate electronics is controlled by rotometers in the 96B Gas Shed. 
+This purge discharges at atmospheric pressure.
+
+\item The LTCC has both active and passive pressure protection. Pressure relief bubblers 
+attached to the detector exhaust passively prevent the pressure from exceeding $4.00$~inch wc 
+or vacuum. The active pressure protection system consists of a pressure transducer, process 
+controller, and solenoid valves that isolate the detector from the gas system if pressure goes 
+outside the $1.00 - 3.00$~inch wc pressure band. There are EPICS-based alarms to alert 
+personnel of high or low pressures.
+	
+Liquid N$_2$ is used to cool the C$_4$F$_{10}$ distillation unit in the 96B Gas Shed in order 
+to condense and recover C$_4$F$_{10}$ for reuse. The distillation unit has a relief valve 
+preventing overpressure. The N$_2$ discharge flows through heat exchangers and vents to 
+atmosphere at ambient temperature and pressure.
+
+\item The MVT gas mixing system supplies gas to the MVT and FT gas control chassis. The system 
+has relief valves that prevent the gas supply and mixed gas pressure from exceeding $45$~psi. 
+A flammable gas detector is used at the valve panel in the 96B Gas Shed to warn of gas leakage. 
+There are EPICS-based alarms to alert personnel of high or low pressure.
+
+\item The FT calorimeter has a N$_2$ purge to prevent condensation that discharges to the 
+atmosphere at ambient pressure. There are EPICS-based alarms to alert personnel of high or low 
+flow.
+
+\item The HTCC CO$_2$ purge flow is controlled by a MFC. Pressure relief bubblers attached to 
+the detector volume, passively prevent pressure from exceeding $0.125$~inch wc or vacuum. There 
+are EPICS-based alarms to alert personnel of high or low pressure and flows.
+
+\item The RICH air cooling supply has pressure relief valves at the compressor output, at the 
+air receiver, and at the rotometer input to prevent an overpressure condition. The N$_2$ purge 
+for the aerogel discharges to the atmosphere. There are EPICS-based alarms to alert personnel 
+of high or low pressure.
+
+\item The SVT uses a N$_2$ purge in the local air volume to reduce humidity. There are 
+EPICS-based alarms to alert personnel of high or low flow.
+\end{enumerate}
+
+\subsection{Responsible Personnel}
+
+Individuals responsible for the gas systems are:
+
+\begin{table}[!htb]
+\centering
+\begin{tabular}{|c|c|c|c|c|} \hline
+Name&Dept.&Phone&email&Comments \\ \hline
+Engineering on call&Hall~B&(757)-748-5048&$-$& 1st contact \\ \hline
+\end{tabular}
+\caption{Personnel responsible for the CLAS12 Gas system.} 
+\label{tb:gas}
+\end{table}
+

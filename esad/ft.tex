@@ -1,0 +1,307 @@
+\section{Forward Tagger System}
+
+The Forward Tagger system consists of three subsystems: an electromagnetic calorimeter 
+(FT-Cal), a plastic scintillator hodoscope (FT-Hodo), and a MicroMegas-based tracker 
+(FT-Trk). In the following, details are reported for each of the three subcomponents.
+
+\subsection{Forward Tagger Calorimeter}
+
+The Forward Tagger calorimeter (FT-Cal) consists of $332$ lead-tungstate (PbWO$_4$) crystals 
+with avalanche photodiode (APD) readout and amplifiers enclosed inside a temperature-controlled 
+enclosure. The crystals are arranged in a circular matrix positioned around the beamline. The 
+system is located in proximity of magnets, in an area where the fringe field is of the order of 
+a few hundred gauss. In order to operate the calorimeter, high voltage and low voltage are 
+supplied to each channel. The high voltage is $<420$~V and $<50$~$\mu$A. The required low voltage 
+is $\pm 5$~V for the preamplifier boards and 12~V for the Light Monitoring System. Constant 
+temperature inside the enclosure is kept by running a coolant through the copper pipes that 
+are integrated into the enclosure using a laboratory chiller. The cooling system should provide 
+temperature stability at the level of $1^\circ$C. To avoid moisture build-up in the calorimeter 
+enclosure, a steady flow of nitrogen gas is maintained and the temperature and humidity in the 
+calorimeter enclosure are monitored with sensors interfaced to the CLAS12 Slow Controls system.
+
+\subsubsection{Hazards} 
+
+Hazards to personnel associated with this device are high voltage, which is supplied to 
+the photosensors, and low voltage, which powers the calorimeter preamplifiers and Light 
+Monitoring System. Hazards to the detector include cooling fluid leaks or condensation in 
+the photosensors and preamplifier region, over-voltage to the photosensors, preamplifiers 
+or Light Monitoring System that could damage the related subsystem, and absence of cooling or 
+cooling failure when low voltage is applied to the preamplifiers, which could lead to 
+overheating of the preamplifiers themselves. To account for the presence of fringe magnetic 
+fields from the CLAS12 magnets in the system location, no ferric materials are employed in 
+the detector: a hazard may nevertheless arise during maintenance operations in case metallic 
+tools are used and for people with cardiac pacemakers, other electrical medical devices, or 
+metallic implants.
+
+\subsubsection{Mitigations}
+
+Mitigation of risks associated with FT-Cal operations are achieved in the following ways:
+
+\begin{itemize}
+\item {Electrical shock: there is only a low level hazard for personnel related to the limited 
+voltage/current range in use. Nevertheless, during maintenance periods,  HV and LV  power needs 
+to be off before working on the calorimeter, cables disconnected, and lock and tags supplied;}
+\item  {to avoid any damage to photosensors and preamplifiers, hardware  interlocks prevent 
+any incorrect HV/LV settings; }
+\item  {to avoid any damage to preamplifiers due to a possible coolant leakage, all cooling 
+lines will be tested at high pressure and chiller parameters and temperatures monitored; 
+hardware interlocks switch off the chiller in case of monitored parameters outside 
+allowed range; }
+\item {over-temperature causing damage to the preamplifiers will be avoided by continuously 
+monitoring the status of the cooling and calorimeter temperature; interlocks will trigger HV/LV 
+turn-off if the temperature exceeds the set values.}
+\end{itemize}
+
+\subsubsection{Electrical Hazards Mitigation (Personnel)}
+
+High Voltage: high voltage up to 420~V is supplied to the photosensors (Hamamatsu S8664-1010 
+Large Area Avalanche Photodiode or LAAPD). Mitigation: a very low current limit (50~$\mu$A) is 
+set. All mechanical structures are properly grounded. HV distribution boards on the detector 
+cannot be accessed during operation; during maintenance work, performed by trained personnel, 
+the HV cables are disconnected from the power supply and the power supply locked and tagged.
+
+Low Voltage: In order to power up the LAAPD preamplifier and Light Monitoring System, we use 
+low voltage at $\pm$5~V and 12~V, respectively with a maximum current of 4~A. Mitigation: 
+voltage is low enough not to be a danger to personnel. All mechanical structures are properly 
+grounded. All cables and connectors are certified for this rating. LV distribution boards on 
+the detector cannot be accessed during operation; during maintenance work, performed by trained 
+personnel, the LV cables are disconnected from the power supply and the power supply locked and 
+tagged.
+
+\subsubsection{Electrical Hazards Mitigation (Equipment)}
+
+High Voltage: if high voltage is applied when the low voltage is turned off, the LAAPD 
+preamplifiers may be damaged. Mitigation: the HV operation is interlocked to the LV settings, 
+so that HV cannot be supplied if LV is off.
+
+Over-voltage: applying HV and LV above certain values can damage the photosensors and 
+preamplifiers. Mitigation: both HV and LV are monitored via the EPICS Slow Controls system; 
+reading above predefined limits will automatically trigger the supplied voltage to be turned 
+off.
+
+\subsubsection{Other Hazards Mitigation}
+
+Cooling fluid: leaks of the cooling fluid may cause damage to the calorimeter preamplifiers 
+or nearby electronic components. Mitigations: during the design phase the cooling circuit 
+path was chosen in order to minimize risks and, after the assembly, was tested at high 
+pressure to verify the absence of leaks. During operation the temperature, level, and pressure 
+of the liquid at the chiller output, as well as the temperatures of the calorimeter inlet and 
+outlet lines, are monitored continuously via the EPICS Slow Controls system: any significant 
+temperature variation (more than 1$^{\circ}$C) or sudden pressure variation must be investigated. 
+The chiller operation is interlocked to these parameters so that variation outside appropriate 
+limits will trigger the chiller being turned off.
+
+Moisture: since the calorimeter is operated at 0$^{\circ}$C, moisture may build up in the 
+system enclosure if the nitrogen gas flow is interrupted. Mitigation: the humidity inside the 
+calorimeter enclosure is monitored via sensors; the operation of the LV and HV supplies are 
+interlocked to the humidity readings so that, if the humidity exceeds a predefined threshold, 
+both supplies will be automatically turned off.
+
+Over-temperature: absence of cooling or cooling failure when LV is supplied to the preamplifiers 
+may cause over-heating of the preamplifiers and other calorimeter components. Mitigation: cooling 
+status and temperature inside the calorimeter enclosure are monitored and interlocked to the LV 
+operation so that when the cooling is not in operation or temperatures exceed predefined limits, 
+the LV is turned off.
+
+Magnetic field: a hazard for personnel and equipment may arise if maintenance operations are 
+performed while magnets are energized. Mitigation: the detector area is not accessible during 
+regular CLAS12 operation; accessing the detector area implies the displacement of other CLAS12 
+subsystems that requires the magnet to be turned off. Energized magnets are noted by red flashing 
+beacons.
+
+\vfil
+\eject
+
+\subsubsection{Responsible Personnel}
+
+Individuals responsible for the FT-Cal system are:
+
+\begin{table}[!htb]
+\centering
+\begin{tabular}{|c|c|c|c|c|} \hline
+Name&Dept.&Phone&email&Comments \\ \hline
+Expert on call& &&& 1st contact \\ \hline
+M. Battaglieri& INFN&x7266&\href{mailto:battagli@jlab.org}{\nolinkurl{battagli@jlab.org}}&2nd contact \\ \hline
+R. De Vita & INFN&x7266&\href{mailto:devita@jlab.org}{\nolinkurl{devita@jlab.org}}& 3rd contact  \\ \hline
+\end{tabular}
+\caption{Personnel responsible for the CLAS12 FT-Cal system.} 
+\label{tb:ecal}
+\end{table}
+
+\subsection{Forward Tagger Hodoscope}
+
+The Forward Tagger Hodoscope (FT-Hodo) consists of $232$ plastic scintillator tiles (Eljen 
+EJ 204) coupled to 6-m-long optical fibers with SiPM readout, preamplifier, and mezzanine 
+and control electronic PCBs enclosed in an electronics crate. The system is located in the 
+proximity of magnets, in an area where the fringe field is of the order of a few hundred gauss.
+
+The FT-Hodo Light Monitoring System consists of a 420~nm (violet) peaked LED (Thorlabs M420F2), 
+LED driver (LED D1B T-Cube), ten optical fibers, and eight cylindrical diffusers (Medilight). 
+The LED and driver are located in the electronics rack and the optical diffusers are located 
+in the plastic scintillator enclosure, four in each layer.
+
+\subsubsection{Hazards} 
+
+Hazards are electric shock if the electronics enclosure is opened without switching off the 
+HV and LV, or exposure to non-ionizing UV radiation if the UV LED safety mitigations are not 
+adhered to.
+
+The LED is capable of producing high intensity UV light, which poses an eye and skin hazard. 
+
+The SiPMs can be damaged if they are subjected to over-voltage or over-current and are sensitive 
+to electrostatics.
+
+To account for the presence of fringe magnetic fields from the CLAS12 magnets in the system 
+location, no ferric materials are employed in the detector: a hazard may nevertheless arise 
+during maintenance operations in case metallic tools are used and for people with cardiac 
+pacemakers, other electrical medical devices, or metallic implants.
+
+\subsubsection{Mitigations}
+
+Whenever any work has to be done on the Hodoscope, whether it will be opened or not, HV and 
+LV cables are disconnected from the power supply and the power supply locked and tagged.
+
+Junctions for the LED light are: LED to optical fiber (SMA connector), optical fiber into 
+splitter box, splitter box to 11 output optical fibers, fibers to SiPM, and fibers illuminating 
+the inside of the hodoscope. All of these junctions are completely sealed and light-tight. The 
+fiber must not be disconnected from the LED source while the LED is operating. The splitter box 
+or the hodoscope enclosure must not be opened while the LED is operating. The fibers should 
+never be disconnected from the SiPMs while the LED is operating. 
+
+The Light Monitoring System must not be turned on or left on when the electronics enclosure 
+or plastic scintillator enclosure are opened. The LED should not be looked at directly - eye 
+protection must be worn. Warning labels are applied to the LED enclosure and plastic 
+scintillator enclosure.  During maintenance work, performed by trained personnel, the Light 
+Monitoring System will be disconnected from power and locked and tagged.
+
+A magnetic field hazard for personnel and equipment may arise if maintenance operations are 
+performed while magnets are energized. Mitigation: the detector area is not accessible during 
+regular CLAS12 operation; accessing the detector area implies the displacement of other CLAS12 
+subsystem that require the magnet to be turned off. Energized magnets are noted by red flashing 
+beacons.
+
+\subsubsection{Responsible Personnel}
+
+Individuals responsible for the FT-Hodo system are:
+
+\begin{table}[!htb]
+\centering
+\begin{tabular}{|c|c|c|c|c|} \hline
+Name&University&email&Comments \\ \hline
+G. Smith & Edinburgh &\href{mailto:garys@jlab.org}{\nolinkurl{garys@jlab.org}}& 1st contact  (general) \\ \hline
+D. Watts & Edinburgh &\href{dwatts1@ph.ed.ac.uk}{\nolinkurl{dwatts1@ph.ed.ac.uk}}&2nd contact (general) \\ \hline
+ D. Sokhan & Glasgow &\href{mailto:daria@jlab.org}{\nolinkurl{daria@jlab.org}}& 3rd contact (flasher) \\ \hline
+ \hline
+\end{tabular}
+\caption{Personnel responsible for the CLAS12 FT-Hodo system.} 
+\label{tb:hodo}
+\end{table}
+
+\subsection{Forward Tagger Tracker}
+
+The Forward Tagger Tracker is composed of two double-sided Micromegas  double-stage gaseous 
+detectors. The system is located in the proximity of magnets, in an area where the fringe field 
+is of the order of a few hundred gauss. The detectors are based on the resistive Micromegas 
+technology that is also employed in the CLAS12 Central Micromegas tracker. Each detector 
+consists of two planes with strips oriented along the $X$ and $Y$ axes, respectively, separated 
+by 10~mm. Each plane as 768 strips with 560~$\mu$m pitch. The FT tracker covers the polar angle 
+region from 2.5$^\circ$ to 4.5$^\circ$ from the target. The gas that will be used is a mixture 
+of 80\% argon, 10\% CF$_4$, and 10\% isobutane. Even though isobutane is a flammable gas, the 
+amount of gas in use at any given time is well within the range of a class-0 gaseous device.
+
+The FT-Tracker is powered by high voltages up to 2000~V. The current limit for all three HV is 
+extremely low ($< 1$~mA). The detectors are read out through 1.5-m-long, low-capacitance flex 
+cables by Front-End Units (FEU). These electronic cards contain the customized DREAM ASICs in 
+order to sample the detector signal and a Flash-ADC to digitize it and send it to the network. 
+The FEUs are placed inside customized crates, installed on the outer case of the FT calorimeter. 
+They are powered through low voltage, and kept within the 40$^\circ$C to 60$^\circ$C temperature 
+range using a simple set of fans and tubing.
+
+All hazards and mitigation options for the FT tracker are the same as for the CLAS12 Central 
+Micromegas tracker (FMT and BMT). Even though the shapes of the detectors vary, they are almost 
+identical in principle. 
+
+\subsection{Hazards}
+
+Hazards to personnel include the use of flammable gas, high voltage, and the low voltage that 
+powers the readout electronics. Hazards to the detector include mechanical damage, gas leaks, 
+and gas over-pressure. Hazards concerning the Front-End Units include: wrong LV settings that 
+could damage the FEUs and absence of cooling or cooling failure that could overheat the cards. 
+To account for the presence of fringe magnetic fields from the CLAS12 magnets in the system 
+location, no ferric materials are employed in the detector: a hazard may nevertheless arise 
+during maintenance operations in case metallic tools are used and for people with cardiac 
+pacemakers, other electrical medical devices, or metallic implants.
+
+\subsection{Mitigations}
+
+Mitigation of risks associated with then FT-Trk operations are achieved in the following way:
+
+\begin{itemize}
+\item{ the limited amount of flammable gas (10$\%$ isobutane over the whole gas in the detector)  
+makes this a class-0 gas system. Nevertheless, the supply and exhaust will be located outside 
+Hall~B, all flows monitored, and hardware interlocks are used to avoid leaks and over-pressure;}
+\item{ the low voltage/current range represents  a low level electrical  hazard for personnel. 
+Nevertheless, during maintenance the HV and LV will be powered-off, cables disconnected, and 
+locks and tags supplied; }
+\item{ Interlocks on the gas supply will mitigate possible leaks and over-pressure conditions;}
+\item{ continuous LV monitoring in conjunction with hardware interlocks will reduce possible 
+issues with wrong settings. FT-Trk temperature monitoring will provide a fast LV turn-off in 
+case of cooling failures or over-temperature conditions. }
+\end{itemize}
+
+\subsubsection{Fire Hazards Mitigation (Equipment \\and Personnel)}
+
+Use of flammable gas: the FT tracker detectors use 10\% isobutane, which is flammable. 
+However the amount of isobutane in the system is very limited. The gas supply and exhaust 
+are located outside Hall~B. The total combustion energy is equivalent to less than 4~g of 
+hydrogen, which makes it a class-0 gas system (class-1 starts at 600~g). 
+
+General fire hazards and procedures for dealing with these are covered by JLab emergency 
+management procedures. The JLab Fire Protection Manager (Ed Douberly) can be contacted at 
+Office: 269-6638, Cell: (540)-729-0095.
+
+\subsubsection{Electrical Hazards Mitigation (Personnel)}
+
+High Voltage: high voltages up to 2000~V are used routinely for the detectors. Mitigation: very 
+low current limit (10~$\mu$A) is set. All mechanical structures are properly grounded.
+
+Low Voltage: In order to power up the front-end electronics, we use low voltage at 6~V with 15~A 
+per crate. Mitigation: voltage is low enough not to be a danger to personnel. All mechanical 
+structures are properly grounded. All cables and connectors are certified for this rating.
+
+\subsubsection{Other Hazards Mitigation}
+
+Detectors: gas over-pressure, gas leaks, mechanical damage. Mitigation: gas control system with 
+over-pressure and leak limit detection by flowmeter (limit = 0.4~l/hr). The FT tracker detectors 
+can be dismounted and repaired in case of accidental damage to the drift electrode. Since they are 
+tightly stacked, only one such electrode is exposed and at risk, the rest of the stack is protected 
+by the first detector.
+
+Electronics: wrong LV settings, absence of cooling or cooling failure. Mitigation: Slow Controls 
+read-back of LV setting before turning on the front-end electronics. Cooling is also checked by 
+the Slow Controls system, and is interlocked so that the electronics cannot be turned on when the 
+cooling is off. Also, temperature sensors are present on the front-end cards and are directly 
+interlocked so that if the temperature goes beyond a predefined threshold, the cards are shut-down 
+automatically.
+
+Magnetic field: a hazard for personnel and equipment may arise if maintenance operations are 
+performed while magnets are energized. Mitigation: the detector area is not accessible during 
+regular CLAS12 operation; accessing the detector area implies the displacement of other CLAS12 
+subsystems that require the magnet to be turned off. Energized magnets are noted by red flashing 
+beacons.
+
+\subsubsection{Responsible Personnel}
+
+Individuals responsible for the FT-Trk system are:
+
+\begin{table}[!htb]
+\centering
+\begin{tabular}{|c|c|c|c|c|} \hline
+Name&Dept.&Phone&email&Comments \\ \hline
+Expert on call& &&& 1st contact \\ \hline
+M. Defurne&Saclay&+33169083237&\href{mailto:maxime.defurne@cea.fr}{\nolinkurl{maxime.defurne@cea.fr}}&2nd contact \\ \hline
+F. Sabatie&Saclay&+33169083206&\href{mailto:franck.sabatie@cea.fr}{\nolinkurl{franck.sabatie@cea.fr}}&3rd contact \\ \hline
+\end{tabular}
+\caption{Personnel responsible for the CLAS12 FT-Trk system.} 
+\label{tb:trk}
+\end{table}
