@@ -1,0 +1,36 @@
+\BOOKMARK [1][-]{section.1}{CTOF Overview}{}
+\BOOKMARK [1][-]{section.2}{Information for Shift Workers}{}
+\BOOKMARK [2][-]{subsection.2.1}{Shift Worker Responsibilities}{section.2}
+\BOOKMARK [3][-]{subsubsection.2.1.1}{Updating the Logbook}{subsection.2.1}
+\BOOKMARK [3][-]{subsubsection.2.1.2}{Contacting CTOF System Personnel}{subsection.2.1}
+\BOOKMARK [3][-]{subsubsection.2.1.3}{Hall B Alarm Handler}{subsection.2.1}
+\BOOKMARK [2][-]{subsection.2.2}{High Voltage Controls}{section.2}
+\BOOKMARK [3][-]{subsubsection.2.2.1}{Resetting the IOCs}{subsection.2.2}
+\BOOKMARK [2][-]{subsection.2.3}{Detector Monitoring}{section.2}
+\BOOKMARK [1][-]{section.3}{Information for Subsystem Experts}{}
+\BOOKMARK [2][-]{subsection.3.1}{Subsystem Expert Responsibilities}{section.3}
+\BOOKMARK [3][-]{subsubsection.3.1.1}{Hot Checkout}{subsection.3.1}
+\BOOKMARK [3][-]{subsubsection.3.1.2}{On-call Responsibilities}{subsection.3.1}
+\BOOKMARK [3][-]{subsubsection.3.1.3}{HV Gain Calibrations}{subsection.3.1}
+\BOOKMARK [3][-]{subsubsection.3.1.4}{LMS Scans}{subsection.3.1}
+\BOOKMARK [2][-]{subsection.3.2}{HV System Operations}{section.3}
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Setting HV Channel Parameters}{subsection.3.2}
+\BOOKMARK [3][-]{subsubsection.3.2.2}{HV Save and Restore}{subsection.3.2}
+\BOOKMARK [2][-]{subsection.3.3}{Cabling Details}{section.3}
+\BOOKMARK [3][-]{subsubsection.3.3.1}{Signal Cable Connections}{subsection.3.3}
+\BOOKMARK [3][-]{subsubsection.3.3.2}{PMT Signals}{subsection.3.3}
+\BOOKMARK [3][-]{subsubsection.3.3.3}{HV Cable Layout}{subsection.3.3}
+\BOOKMARK [3][-]{subsubsection.3.3.4}{Altering Cable Maps}{subsection.3.3}
+\BOOKMARK [2][-]{subsection.3.4}{Shield Compensation Coils}{section.3}
+\BOOKMARK [2][-]{subsection.3.5}{System Failure Modes}{section.3}
+\BOOKMARK [3][-]{subsubsection.3.5.1}{HV Board Replacement}{subsection.3.5}
+\BOOKMARK [3][-]{subsubsection.3.5.2}{Sudden Gain Shift}{subsection.3.5}
+\BOOKMARK [3][-]{subsubsection.3.5.3}{High PMT Dark Current}{subsection.3.5}
+\BOOKMARK [3][-]{subsubsection.3.5.4}{Missing or Bad Signal}{subsection.3.5}
+\BOOKMARK [3][-]{subsubsection.3.5.5}{Bad PMT}{subsection.3.5}
+\BOOKMARK [3][-]{subsubsection.3.5.6}{Readout Electronics Issues}{subsection.3.5}
+\BOOKMARK [3][-]{subsubsection.3.5.7}{IOC Issues}{subsection.3.5}
+\BOOKMARK [2][-]{subsection.3.6}{Detector Repairs and Servicing}{section.3}
+\BOOKMARK [1][-]{section.4}{Documentation}{}
+\BOOKMARK [1][-]{section.5}{CTOF Authorized Personnel}{}
+\BOOKMARK [1][-]{section.6}{Appendix: Hall B Instrumentation Database}{}

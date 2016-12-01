@@ -1,0 +1,36 @@
+\contentsline {section}{\numberline {1}CTOF Overview}{3}{section.1}
+\contentsline {section}{\numberline {2}Information for Shift Workers}{8}{section.2}
+\contentsline {subsection}{\numberline {2.1}Shift Worker Responsibilities}{8}{subsection.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}Updating the Logbook}{8}{subsubsection.2.1.1}
+\contentsline {subsubsection}{\numberline {2.1.2}Contacting CTOF System Personnel}{8}{subsubsection.2.1.2}
+\contentsline {subsubsection}{\numberline {2.1.3}Hall\nobreakspace {}B Alarm Handler}{9}{subsubsection.2.1.3}
+\contentsline {subsection}{\numberline {2.2}High Voltage Controls}{9}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}Resetting the IOCs}{14}{subsubsection.2.2.1}
+\contentsline {subsection}{\numberline {2.3}Detector Monitoring}{14}{subsection.2.3}
+\contentsline {section}{\numberline {3}Information for Subsystem Experts}{17}{section.3}
+\contentsline {subsection}{\numberline {3.1}Subsystem Expert Responsibilities}{17}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}Hot Checkout}{17}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.2}On-call Responsibilities}{17}{subsubsection.3.1.2}
+\contentsline {subsubsection}{\numberline {3.1.3}HV Gain Calibrations}{18}{subsubsection.3.1.3}
+\contentsline {subsubsection}{\numberline {3.1.4}LMS Scans}{19}{subsubsection.3.1.4}
+\contentsline {subsection}{\numberline {3.2}HV System Operations}{20}{subsection.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}Setting HV Channel Parameters}{20}{subsubsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2}HV Save and Restore}{21}{subsubsection.3.2.2}
+\contentsline {subsection}{\numberline {3.3}Cabling Details}{22}{subsection.3.3}
+\contentsline {subsubsection}{\numberline {3.3.1}Signal Cable Connections}{22}{subsubsection.3.3.1}
+\contentsline {subsubsection}{\numberline {3.3.2}PMT Signals}{22}{subsubsection.3.3.2}
+\contentsline {subsubsection}{\numberline {3.3.3}HV Cable Layout}{26}{subsubsection.3.3.3}
+\contentsline {subsubsection}{\numberline {3.3.4}Altering Cable Maps}{26}{subsubsection.3.3.4}
+\contentsline {subsection}{\numberline {3.4}Shield Compensation Coils}{27}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.5}System Failure Modes}{30}{subsection.3.5}
+\contentsline {subsubsection}{\numberline {3.5.1}HV Board Replacement}{30}{subsubsection.3.5.1}
+\contentsline {subsubsection}{\numberline {3.5.2}Sudden Gain Shift}{31}{subsubsection.3.5.2}
+\contentsline {subsubsection}{\numberline {3.5.3}High PMT Dark Current}{31}{subsubsection.3.5.3}
+\contentsline {subsubsection}{\numberline {3.5.4}Missing or Bad Signal}{32}{subsubsection.3.5.4}
+\contentsline {subsubsection}{\numberline {3.5.5}Bad PMT}{32}{subsubsection.3.5.5}
+\contentsline {subsubsection}{\numberline {3.5.6}Readout Electronics Issues}{32}{subsubsection.3.5.6}
+\contentsline {subsubsection}{\numberline {3.5.7}IOC Issues}{32}{subsubsection.3.5.7}
+\contentsline {subsection}{\numberline {3.6}Detector Repairs and Servicing}{33}{subsection.3.6}
+\contentsline {section}{\numberline {4}Documentation}{34}{section.4}
+\contentsline {section}{\numberline {5}CTOF Authorized Personnel}{34}{section.5}
+\contentsline {section}{\numberline {6}Appendix: Hall\nobreakspace {}B Instrumentation Database}{35}{section.6}
