@@ -1,10 +1,6 @@
 
 
-<b>LTCC</b> 
-
-
-Below you can find the OSP and THA documents and the LTCC manual.
-
+<b>Low Threshold Cherenkov Counter (LTCC)</b> 
 
 
 <p align="center">
