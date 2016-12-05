@@ -1,4 +1,9 @@
 \documentclass [12pt]{article}
+\usepackage{float}
+\usepackage{chngcntr}
+\usepackage[titletoc,title]{appendix}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
 
 \title{Radiological Safety Analysis Document for the CLAS12 Commissioning Run}
 
@@ -55,17 +60,17 @@ absorber) will be positioned before the Faraday Cup to prevent overheating.
 For the beam tune and M{\"o}ller runs, the beam will be directed into a newly constructed beam dump in 
 the Hall~B Tagger dipole yoke. On top of the Tagger yoke, additional lead shielding will be added 
 to limit radiation leaking through to the CLAS12 detectors and electronics. The additional shielding 
-and the nickel collimator have been thoroughly simulated using a GEANT model of the beamline and the 
-Tagger dipole magnet (see the expected neutron radiation dose on the electronics described in the 
-Appendix).
+and the nickel collimator have been thoroughly simulated using a FLUKA model of the beamline and the 
+Tagger dipole magnet (see the expected radiation damage levels to the electronics described in the 
+Appendix A).
 
 \section{Summary and Conclusions}
 \indent
 
 The experiment is not expected to produce significant levels of radiation at the site boundary. 
-However, it will be periodically monitored by the Radiation Control Department to ensure that the 
+However, it will be continuously monitored by the Radiation Control Department to ensure that the 
 site boundary goal is not exceeded. The main consideration is the manipulation and/or handling of 
-target(s) or beamline hardware. As specified in Sections IV (B) and VII, the manipulation and/or 
+target(s) or beamline hardware. As specified in Sections 4 (4.2) and 7, the manipulation and/or 
 handling of target(s) or beamline hardware (potential radioactive material), the transfer of 
 radioactive material, or modifications to the beamline after the target assembly must be reviewed 
 and approved by the Radiation Control Department. Adherence to this RSAD is vital.
@@ -192,24 +197,46 @@ Radiation Control Department Head               \hspace{3cm}                  Da
 
 
 \clearpage
-\section{Appendix: Radiation Damage to the CLAS12 Electronics from the Beam Dump in the Hall~B 
-Tagger Dipole Magnet Yoke}
+\begin{appendices}
+\section{Radiation Damage} 
+\counterwithin{figure}{section}
+\subsection{Radiation Damage to the CLAS12 Electronics from the Beam Dump in the Hall~B Tagger Dipole Magnet Yoke}
 
 While most of the CLAS12 electronics are located away from the beamline, the front-end electronics 
 boards (FE boards) of the SVT and the MVT are in close proximity to the beamline, about 2~m to 3~m 
-upstream of the target location. 
+upstream of the target location. Expected radiation damage levels in the Hall and in this particular area of interest were evaluated using the FLUKA Monte-Carlo code.
+
+Two cases with 11 GeV electrons were considered: 1) 10 nA CW beam for beam tune or M{\"o}ller runs the beam is dumped in the tagger dipole magnet yoke with additional shielding above the yoke and the nickel cylinder plugging the beam pipe in the collimator box, 2) 100 nA beam incident on a 1 mm carbon target with upstream and downstream 0.1 mm aluminum windows. Both the cumulative damage (1 MeV neutron equivalent in Si) and the single event effects (high energy hadron equivalent fluence) were evaluated.
+
+The comparison of 1 MeV neutron equivalent (Si) fluences presented in Figure A.1 shows that, though dumping beam in the magnet yoke produces several times higher damage rates per hour, it will not be the dominant source of cumulative damage due to the low duty cycle (fraction of time beam on the yoke dump) of the beam tune and M{\"o}ller runs. Furthermore, the cumulative damage rates in both the tagger yoke and the carbon target cases are quite low compared to $10^{13}$ n/cm$^{2}$ level, below which no significant degradation of semiconductor electronics is expected.
+
+The high energy hadron equivalent fluence is a quantity proportional to the single event effects, such as Single Event Upset (SEU - memory bit flip, temporary functional failure) and Single Event Latchup (SEL - abnormally high current state). Despite the poor statistics of the Monte-Carlo calculations, the comparison of the high energy hadron equivalent fluences presented in Figure A.2 shows the two cases producing similar levels of single event effects 2.5 m upstream of the target.
+
+Hence, dumping the electron beam in the shielded tagger dipole magnet yoke with the nickel plug blocking the beam pipe shell be considered as safe from the radiation damage point of view, as typical running conditions in Hall B.
+
+\begin{figure}[H]
+\caption{Cumulative radiation damage 2.5 m upstream of the target}
+\includegraphics[scale=0.4, angle=-90]{1MeVEq.eps}
+\centering
+\end{figure}
+
+\begin{figure}[H]
+\caption{HIgh energy hadron equivalent fluence 2.5 m upstream of the target}
+\includegraphics[scale=0.4, angle=-90]{SEEEq.eps}
+\centering
+\end{figure}
 
 \subsection{Radiation Damage to the Standard Electronics Components in the Hall}
 
-The experiment is not expected to produce significant levels of neutron radiation that may cause 
-damage to the Hall~B electronics located on the Forward Carriage or on the Space Frame. The beam 
-energies and the integrated luminosity of the experiment are in the same range as for the CLAS 
-nuclear target experiments. Furthermore, all sensitive electrons that are mounted close to the 
+The experiment is not expected to produce significant levels of radiation damage to the Hall~B 
+electronics located on the Forward Carriage or on the Space Frame. The beam  energies and the integrated luminosity of the experiment are in the same range as for the CLAS 
+nuclear target experiments. Furthermore, all sensitive electronics that are mounted close to the 
 beamline are upstream of the target where not much radiation is expected. Most of produced 
 electromagnetic radiation (M{\"o}ller electrons) will be guided by 5~T solenoid field into tungsten 
-shield pipe. Part of that radiation will be absorbed by shield part will be guided to the beam 
+shield pipe. Part of that radiation will be absorbed by shield, part will be guided to the beam 
 dump. Some of electronics modules mounted on Forward Tagger will be beyond the tungsten shield 
-and will not see much radiation. 
+and will not see much radiation.
+\end{appendices}
 
 \end{document}
 
