@@ -13,7 +13,7 @@
 \setlist[enumerate]{itemsep=0mm}
 
 \begin{document}
-\title{CLAS12 Slow Controls Operations Manual - v1.2}
+\title{CLAS12 Slow Controls Operations Manual - v1.5}
 \date{\today}
 \begin{abstract}
 \end{abstract}
@@ -92,15 +92,33 @@ The suggested tool for online operations in Hall B is StripTool, which has no ac
 \end{figure}
 
 \newpage
+\section{Logbook Entries and Screenshots}
+We use the JLab logbook system, and the primary Hall B logbook is called HBLOG and accessible in a web browser at
+\begin{center}\url{https://logbooks.jlab.org/book/HBLOG}\end{center}
+In Hall B there are two primary methods for adding content to the logbook:
+\begin{enumerate}
+\item Use the web browser interface after logging in with your personal CUE credentials.  That is the normal method used for filling out the shift checklist, updating a shift summary log entry, following up with comments on previous log entries, or adding more complex log entries (e.g. with multiple images).
+\item Use our Hall B GUI that facilitates quickly sending single screenshots to the HBLOG logbook as \texttt{user=clasrun}.  This is accessed via the ``logbook entry'' item from the desktop menu, or via the following script in a terminal:
+\begin{center}\texttt{logbookEntry.sh}\end{center}
+    {\em This is also the preferred method for taking screenshots} and will always save them in \texttt{\$HOME/screenshots} with timestamped filenames.  See Figure~\ref{fig:logbookEntry} for details.
+\end{enumerate}
+    \begin{figure}[htbp]\centering
+        \includegraphics[width=0.49\textwidth]{pics/logbookEntry1.png}
+        \includegraphics[width=0.49\textwidth]{pics/logbookEntry2.png}
+        \includegraphics[width=0.49\textwidth]{pics/logbookEntry3.png}
+        \includegraphics[width=0.49\textwidth]{pics/logbookEntry4.png}
+        \caption{Upon first opening the logbook/screenshot GUI (top left), only the log title has been automatically initialized (with the current run number).  After clicking the ``Screenshot'' button (top right), it is waiting for you to left-click in the window you desire to capture (clicking the desktop instead of a window will capture the entire desktop).  After taking a screenshot (bottom left), a small version of the screenshot and its filename on disk are automatically displayed.  Note that the ``Screenshot'' button can be used repeatedly to change the screenshot if you do not like the previous result, or just want to take more screenshots.  The ``Submit'' button can be used to generate an entry in the HBLOG logbook, and after success the entry number will be displayed (bottom right).\label{fig:logbookEntry}}
+\end{figure}
 
+\newpage
 \section{Accelerator Screens}
 The accelerator's screens are accessed from the main CLAS12 menu via the {\em JMenu} button.  This uses the \texttt{hbops} account on \texttt{hlbl00}, a machine owned and maintained by the accelerator group.  If a prompt requests a username, password, or terminal type, just press {\em Enter}.  The location of the button on the CLAS12 menu and the JMenu screen that should appear are shown in Figure~\ref{fig:jmenu}.
-
 \begin{figure}[htbp]\centering
   \includegraphics[width=0.16\textwidth]{pics/clas12jmenu}
   \includegraphics[width=0.2\textwidth]{pics/jmenu}
   \caption{The location of the button to access the accelerator screens from the CLAS12 controls menu (left) and the resulting accelerator JMenu main screen (right).\label{fig:jmenu}}
 \end{figure}
+\newpage
 
 \section{Paging System Experts}\label{sec:pagingexperts}
 Paging on-call experts is available from the main CLAS12 controls menu via the {\em Page Experts} button at the very top of the screen.  This will open a dropdown menu to choose the desired subsystem, and then open a new window in which to enter a message to be sent to the corresponding expert, as illustrated in Figure~\ref{fig:pageexpert}.
@@ -110,6 +128,7 @@ Paging on-call experts is available from the main CLAS12 controls menu via the {
   \caption{The dropdown menu for choosing which expert to page (left) and the resulting dialog window in which to enter the message contents (right).\label{fig:pageexpert}}
 \end{figure}
 
+\newpage
 \section{Slow Controls Contacts}
 The individuals to be contacted for Hall B slow controls are shown in Table \ref{tab:experts}.  The first point of contact for shift operations is always the on-call controls expert, accessible from the paging system described in Section~\ref{sec:pagingexperts} of this document and the phone number in the first row of Table \ref{tab:experts}.  Additional contacts are listed in the table as a fallback.
 
