@@ -40,12 +40,11 @@ The main menu is organized in a hierarchy of subsystems and components.  The top
 
 \section{Alarms}
 
-The user frontend of the alarm handling system runs in CS-Studio and includes visual and audible alarms.  The default alarm view when running \texttt{clascss-alarm} is shown in the right panel of Figure~\ref{fig:mainmenu} and contains four sections:
+The user frontend of the alarm handling system runs in CS-Studio and includes visual and audible alarms.  The default alarm view when running \texttt{clascss-alarm} is shown in the right panel of Figure~\ref{fig:mainmenu} and contains the following sections:
 \begin{enumerate}
     \item Top Left:  the {\em Area Panel}, which gives an overview of the global alarm system status.  The color of the areas reflects the most severe alarm in that area.
     \item Bottom Left:  the {\em Alarm Tree}, a hierarchical view of all alarm settings.
-    \item  Center Right:  the {\em Alarm Table} (see also Figure~\ref{fig:alarmtable}), a list of active alarms that need to be addressed.
-    \item Bottom Right:  the {\em Acknowledged Alarms} (see also Figure~\ref{fig:alarmtable}), a separate list of active alarms that have already been acknowledged.
+    \item  Right:  the {\em Alarm Table} (see also Figure~\ref{fig:alarmtable}), containing a list of current alarms that need to be addressed and a separate list of already acknowledged alarms.
 \end{enumerate}
 When an alarm triggers, it will enter the {\em Alarm Table} and its color will change according to its severity.  The annunciator (running on \texttt{clonpc17}) will also audibly announce any new alarms or a count of currently active alarms.
 \begin{figure}[htbp]\centering
@@ -57,7 +56,7 @@ By right-clicking on an alarm in the {\em Alarm Table}, a dropdown menu of actio
 
 \begin{figure}[htbp]\centering
   \includegraphics[width=0.3\textwidth]{pics/alarmguide}
-  \caption{An example dropdown menu accessible by right-clicking on an alarm in the {\em Alarm Table}.  Important visible actions include a {\em Guidance} button, an {\em Open} screen action, and the {\em Acknowledge} action.\label{fig:alarmguide}}
+  \caption{An example dropdown menu accessible by right-clicking on an alarm in the {\em Alarm Table}.  Important visible actions include a {\em Guidance} button, an {\em Open} screen action, and the {\em Acknowledge} action.  {\bf Note, the {\em Create Log Entry} item does not yet work} (see Section \ref{sec:logentry} instead).\label{fig:alarmguide}}
 \end{figure}
 
 \section{IOCs}
@@ -98,7 +97,7 @@ The suggested tool for online operations in Hall B is StripTool, which has no ac
 \end{figure}
 
 \newpage
-\section{Logbook Entries and Screenshots}
+\section{Logbook Entries and Screenshots}\label{sec:logentry}
 We use the JLab logbook system, and the primary Hall B logbook is called HBLOG and accessible in a web browser at
 \begin{center}\url{https://logbooks.jlab.org/book/HBLOG}\end{center}
 In Hall B there are two primary methods for adding content to the logbook:
