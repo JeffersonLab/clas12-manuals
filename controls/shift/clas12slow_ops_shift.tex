@@ -9,11 +9,12 @@
 \usepackage{enumitem}
 \hypersetup{pdftex,colorlinks=true,allcolors=blue}
 \usepackage{hypcap}
+\usepackage{wrapfig}
 \usepackage[small,compact]{titlesec}
 \setlist[enumerate]{itemsep=0mm}
 
 \begin{document}
-\title{CLAS12 Slow Controls Operations Manual - v1.6}
+\title{CLAS12 Slow Controls Operations Manual - v1.7}
 \date{\today}
 \begin{abstract}
 \end{abstract}
@@ -23,44 +24,54 @@
 %\newpage
 
 \section{Overview}
-The operator interface for the Hall B controls systems is based on Control System Studio (also called CS-Studio or CSS) and allows access to all the necessary EPICS tools from a single application.  This system is accessible locally by user \texttt{clasrun} from all \texttt{clonpc\#\#} desktop computers in the Hall B Counting Room for shift workers.  For remote access, see Section \ref{sec:remote}.
 
-To start the control system with only the main menu as shown in the left panel of Figure~\ref{fig:mainmenu}, in a terminal run: \begin{center}\texttt{clascss}\end{center}
-To start the control system with the full alarm handler as shown in the right panel of Figure~\ref{fig:mainmenu}, in a terminal run:
-\begin{center}\texttt{clascss-alarm}\end{center}
-{\em Before opening CS-Studio on a \texttt{clonpc} desktop in the counting house, check whether an instance is already running on that machine.  If one is, use that instance instead of opening another}.  
+\begin{wrapfigure}{l}{0.15\textwidth}\centering\vspace{1cm}
+  \includegraphics[width=0.15\textwidth]{pics/mainmenu}
+  \caption{The main menu.\label{fig:mainmenu}}
+\end{wrapfigure}
 
-\begin{figure}[htpb]\centering
-    \includegraphics[width=0.08\textwidth]{pics/mainmenu}\hspace{0.5cm}
-  \includegraphics[width=0.88\textwidth]{pics/clas12alarm}
-  \caption{On the left is the main CLAS12 controls menu showing locations of buttons used for the accelerator's JMenu screens (blue), paging Hall-B experts (pink), and restarting IOCs (yellow).  On the right is the alarm controls screen.\label{fig:mainmenu}}
-\end{figure}
+The operator interface for the Hall B controls systems is based on Control System Studio (also called CS-Studio or CSS) and allows access to all the necessary EPICS tools from a single application.  This system is accessible by user \texttt{clasrun} directly from all \texttt{clonpc\#\#} desktop computers in the Hall B Counting Room for shift workers (for remote access, see Section \ref{sec:remote}).
 
-The main menu is organized in a hierarchy of subsystems and components.  The top portion of the menu is for specific detectors, while the bottom portion is for more general subsystems.  The alarm screen is organized into different regions described in the following sections.
+
+To start the control system with only the main menu as shown in Figure~\ref{fig:mainmenu}, in a terminal run: \begin{center}\texttt{clascss}\end{center}  This menu should normally already be open on all the neccessary desktops in the counting house.  The top portion of the menu is for specific detectors, while the bottom portion is for more general subsystems, and the most important parts for shift workers are described in the following sections.
 
 \section{Alarms}
 
-The user frontend of the alarm handling system runs in CS-Studio and includes visual and audible alarms.  The default alarm view when running \texttt{clascss-alarm} is shown in the right panel of Figure~\ref{fig:mainmenu} and contains the following sections:
+The user interface for the alarm handling system also runs in CS-Studio and includes visual and audible alarms.  Generally, \texttt{clonpc17} (with the two high monitors near the windowed doors) should always be running a full screen alarm handler.  To start the control system with the full alarm handler, in a terminal run:
+\begin{center}\texttt{clascss-alarm}\end{center}
+%{\em Before opening CS-Studio on a \texttt{clonpc} desktop in the counting house, check whether an instance is already running on that machine.  If one is, use that instance instead of opening another}.  
+\begin{figure}[htpb]\centering
+  \includegraphics[width=0.99\textwidth]{pics/clas12alarm3}
+  \caption{The alarm handling screen.\label{fig:alarmhandler}}
+\end{figure}
+The resulting window is shown in Figure~\ref{fig:alarmhandler} and contains the following sections:
 \begin{enumerate}
-    \item Top Left:  the {\em Area Panel}, which gives an overview of the global alarm system status.  The color of the areas reflects the most severe alarm in that area.
+    \item Top Left:  the {\em Area Panel}, an overview of the global alarm system status.  The color of the areas reflects the most severe alarm in that area.
     \item Bottom Left:  the {\em Alarm Tree}, a hierarchical view of all alarm settings.
-    \item  Right:  the {\em Alarm Table} (see also Figure~\ref{fig:alarmtable}), containing a list of current alarms that need to be addressed and a separate list of already acknowledged alarms.
+    \item  Bottom Right:  the {\em Alarm Table} (see also Figure~\ref{fig:alarmtable}), containing a list of current alarms that need to be addressed and a separate list of already acknowledged alarms.
 \end{enumerate}
+
 When an alarm triggers, it will enter the {\em Alarm Table} and its color will change according to its severity.  The annunciator (running on \texttt{clonpc17}) will also audibly announce any new alarms or a count of currently active alarms.
+
+By right-clicking on an alarm in the {\em Alarm Table}, a dropdown menu of actions is accessible (see Figure~\ref{fig:alarmguide}).  This dropdown list contains access to a {\em Guidance} screen with instructions that should be read and followed on how to deal with the specific alarm.  
+
+The next step is to acknowledge the alarm using the {\em Acknowledge} option in the dropdown menu, which will silence the alarm and move it to the {\em Acknowledged Alarms} section until it is no longer in an alarm state.  
+
+For many alarms there is also an option in the dropdown menu starting with {\em Open} that will open a screen necessary to address the specific alarm using the information from the {\em Guidance} screen.
+
 \begin{figure}[htbp]\centering
   \includegraphics[width=0.99\textwidth]{pics/alarmtree}
-  \caption{The {\em Alarm Tree} portion of the alarm screen, showing an example of three outstanding alarms that need to be addressed.  The first is no longer in an alarm state (denoted by the {\em OK} in the {\em Current Severity} column), and none of the three have been acknowledged (or else they would have appeared instead in the lower {\em Acknowledged Alarms} section).\label{fig:alarmtable}}
+  \caption{The {\em Alarm Tree} portion of the alarm screen, showing an example of three outstanding alarms to be addressed.  The first is no longer in an alarm state (denoted by the {\em OK} in the {\em Current Severity} column), and none of the three have been acknowledged (else they would have appeared instead in the lower {\em Acknowledged Alarms} section).\label{fig:alarmtable}}
 \end{figure}
-
-By right-clicking on an alarm in the {\em Alarm Table}, a dropdown menu of actions is accessible (see Figure~\ref{fig:alarmguide}).  This dropdown list contains access to a {\em Guidance} screen with instructions that should be read and followed on how to deal with the specific alarm.  The next step is to acknowledge the alarm using the {\em Acknowledge} option in the dropdown menu, which will silence the alarm and move it to the {\em Acknowledged Alarms} section until it is no longer in an alarm state.  For many alarms there is also an option in the dropdown menu starting with {\em Open} that will open a screen necessary to address the specific alarm using the information from the {\em Guidance} screen.
-
 \begin{figure}[htbp]\centering
   \includegraphics[width=0.3\textwidth]{pics/alarmguide}
   \caption{An example dropdown menu accessible by right-clicking on an alarm in the {\em Alarm Table}.  Important visible actions include a {\em Guidance} button, an {\em Open} screen action, and the {\em Acknowledge} action.  {\bf Note, the {\em Create Log Entry} item does not yet work} (see Section \ref{sec:logentry} instead).\label{fig:alarmguide}}
 \end{figure}
 
+\clearpage
+
 \section{IOCs}
-EPICS input-output controllers (IOCs) are the backend responsible for the actual communication with the hardware devices in the hall.  Figure~\ref{fig:iocmenu} illustrates access to the IOC controls screens from the main CLAS12 menu, as well as the overview IOC heartbeat screen.  The heartbeats should be flashing at 1 Hz for all IOCs, or else the IOC may be in need of reboot.  By clicking on the IOC in the heartbeat screen (or the IOC health group in the main menu), controls to monitor and reboot the IOCs can be accessed, and an example is shown in Figure~\ref{fig:iochealth}.  Systems are in place to automatically start all necessary IOCs if for any reason they are not running (e.g. recovery from a power outage), however occaisonally a manual reboot is required.
+EPICS input-output controllers (IOCs) are the backend responsible for the actual communication with the hardware devices in the hall.  Figure~\ref{fig:iocmenu} illustrates access to the IOC controls screens from the main CLAS12 menu, as well as the overview IOC heartbeat screen.  The heartbeats should be flashing at 1 Hz for all IOCs, or else the IOC may be in need of reboot.  
 
 \begin{figure}[htbp]\centering
   \includegraphics[width=0.25\textwidth]{pics/iocmenu}
@@ -68,15 +79,15 @@ EPICS input-output controllers (IOCs) are the backend responsible for the actual
   \caption{Dropdown menu (left) from the {\em IOCs} button in the main CLAS12 controls menu showing links to health screens for subsets of IOC groups, and the IOC heartbeat overview screen (right).\label{fig:iocmenu}}
 \end{figure}
 
+By clicking on the IOC in the heartbeat screen (or the IOC health group in the main menu), controls to monitor and reboot the IOCs can be accessed, and an example is shown in Figure~\ref{fig:iochealth}.  Systems are in place to automatically start all necessary IOCs if for any reason they are not running (e.g. recovery from a power outage), however occaisonally a manual reboot is required.
+
 \begin{figure}[htbp]\centering
   \includegraphics[width=\textwidth]{pics/iochealth}
   \caption{The primary IOC health screen showing uptime, heartbeats, and autosave status for each IOC, and buttons to restart them.  Pink rows designate IOCs that are not currently running in this screenshot, but under normal operations all rows should have normal readings.  \label{fig:iochealth}}
 \end{figure}
 
-\clearpage
-
 \section{High Voltage}
-The largest controls system in Hall B in terms of number of channels is high voltage (HV), with 23 CAEN crates including SY527, SY1527, and SY4527 mainframes.  An overview screen of the status of all HV in Hall B is accessible from the HV button in the main CLAS12 menu as shown in Figure~\ref{fig:hv}.  Clicking on a detector in this overview screen will bring up the HV controls for that detector (also accessible under each detector's button in the main menu).
+The largest controls system in Hall B in terms of number of channels is high voltage (HV), with over 20 CAEN mainframes including SY527, SY1527, and SY4527 models.  An overview screen of the status of all HV in Hall B is accessible from the HV button in the main CLAS12 menu as shown in Figure~\ref{fig:hv}.  Clicking on a detector in this overview screen will bring up the HV controls for that detector (also accessible under each detector's button in the main menu).
 
 \begin{figure}[htbp]\centering
   \includegraphics[width=0.3\textwidth]{pics/hvmenu}
@@ -96,7 +107,6 @@ The suggested tool for online operations in Hall B is StripTool, which has no ac
     \caption{Utilities for plotting time histories of slow controls variables are accessible from the {\em Tools} section of the CLAS12 main menu (left).  An example of running MyaViewer and opening a preset configuration file via the {\em File $\rightarrow$ Load Config} menu is shown on right.\label{fig:strips}}
 \end{figure}
 
-\newpage
 \section{Logbook Entries and Screenshots}\label{sec:logentry}
 We use the JLab logbook system, and the primary Hall B logbook is called HBLOG and accessible in a web browser at
 \begin{center}\url{https://logbooks.jlab.org/book/HBLOG}\end{center}
@@ -115,9 +125,8 @@ In Hall B there are two primary methods for adding content to the logbook:
         \caption{Upon first opening the logbook/screenshot GUI (top left), only the log title has been automatically initialized (with the current run number).  After clicking the ``Screenshot'' button (top right), it is waiting for you to left-click in the window you desire to capture (clicking the desktop instead of a window will capture the entire desktop).  After taking a screenshot (bottom left), a snapshot of the image and its filename on disk are automatically displayed.  Note that the ``Screenshot'' button can be used repeatedly to change the screenshot if you do not like the previous result, or just want to take more screenshots.  The ``Submit'' button can be used to generate an entry in the HBLOG logbook, and after success the entry number will be displayed (bottom right).\label{fig:logbookEntry}}
 \end{figure}
 
-\newpage
 \section{Accelerator Screens}
-The accelerator's screens are accessed from the main CLAS12 menu via the {\em JMenu} button.  This uses the \texttt{hbops} account on \texttt{hlbl00}, a machine owned and maintained by the accelerator group.  If a prompt requests a username, password, or terminal type, just press {\em Enter}.  The location of the button on the CLAS12 menu and the JMenu screen that should appear are shown in Figure~\ref{fig:jmenu}.
+The accelerator's screens are accessed from the main CLAS12 menu via the {\em JMenu} button (see Figure~\ref{fig:mainmenu}).  This uses the \texttt{hbops} account on \texttt{hlbl00}, a machine owned and maintained by the accelerator group.  If a prompt requests a username, password, or terminal type, just press {\em Enter}.  The location of the button on the CLAS12 menu and the JMenu screen that should appear are shown in Figure~\ref{fig:jmenu}.
 \begin{figure}[htbp]\centering
   \includegraphics[width=0.16\textwidth]{pics/clas12jmenu}
   \includegraphics[width=0.2\textwidth]{pics/jmenu}
@@ -126,7 +135,7 @@ The accelerator's screens are accessed from the main CLAS12 menu via the {\em JM
 \newpage
 
 \section{Paging System Experts}\label{sec:pagingexperts}
-Paging on-call experts is available from the main CLAS12 controls menu via the {\em Page Experts} button at the very top of the screen.  This will open a dropdown menu to choose the desired subsystem, and then open a new window in which to enter a message to be sent to the corresponding expert, as illustrated in Figure~\ref{fig:pageexpert}.
+Paging on-call experts is available from the main CLAS12 controls menu via the {\em Page Experts} button at the very top of the screen (see Figure~\ref{fig:mainmenu}).  This will open a dropdown menu to choose the desired subsystem, and then open a new window in which to enter a message to be sent to the corresponding expert, as illustrated in Figure~\ref{fig:pageexpert}.
 \begin{figure}[htbp]\centering
   \includegraphics[width=0.2\textwidth]{pics/pageexpert}
   \includegraphics[width=0.6\textwidth]{pics/pageexpertmsg}
