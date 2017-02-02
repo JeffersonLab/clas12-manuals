@@ -14,14 +14,14 @@
 \setlist[enumerate]{itemsep=0mm}
 
 \begin{document}
-\title{CLAS12 Slow Controls Operations Manual - v1.8}
+\title{CLAS12 Slow Controls Operations Manual - v1.9}
 \date{\today}
 \begin{abstract}
 \end{abstract}
 
 \maketitle
-%\tableofcontents
-%\newpage
+\tableofcontents
+\newpage
 
 \section{Overview}
 
@@ -125,14 +125,6 @@ In Hall B there are two primary methods for adding content to the logbook:
         \caption{Upon first opening the logbook/screenshot GUI (top left), only the log title has been automatically initialized (with the current run number).  After clicking the ``Screenshot'' button (top right), it is waiting for you to left-click in the window you desire to capture (clicking the desktop instead of a window will capture the entire desktop).  After taking a screenshot (bottom left), a snapshot of the image and its filename on disk are automatically displayed.  Note that the ``Screenshot'' button can be used repeatedly to change the screenshot if you do not like the previous result, or just want to take more screenshots.  The ``Submit'' button can be used to generate an entry in the HBLOG logbook, and after success the entry number will be displayed (bottom right).\label{fig:logbookEntry}}
 \end{figure}
 
-\section{Accelerator Screens}
-The accelerator's screens are accessed from the main CLAS12 menu via the {\em JMenu} button (see Figure~\ref{fig:mainmenu}).  This uses the \texttt{hbops} account on \texttt{hlbl00}, a machine owned and maintained by the accelerator group.  If a prompt requests a username, password, or terminal type, just press {\em Enter}.  The location of the button on the CLAS12 menu and the JMenu screen that should appear are shown in Figure~\ref{fig:jmenu}.
-\begin{figure}[htbp]\centering
-  \includegraphics[width=0.16\textwidth]{pics/clas12jmenu}
-  \includegraphics[width=0.2\textwidth]{pics/jmenu}
-  \caption{The location of the button to access the accelerator screens from the CLAS12 controls menu (left) and the resulting accelerator JMenu main screen (right).\label{fig:jmenu}}
-\end{figure}
-\newpage
 
 \section{Paging System Experts}\label{sec:pagingexperts}
 Paging on-call experts is available from the main CLAS12 controls menu via the {\em Page Experts} button at the very top of the screen (see Figure~\ref{fig:mainmenu}).  This will open a dropdown menu to choose the desired subsystem, and then open a new window in which to enter a message to be sent to the corresponding expert, as illustrated in Figure~\ref{fig:pageexpert}.
@@ -160,6 +152,36 @@ The individuals to be contacted for Hall B slow controls are shown in Table \ref
 
 \section{Remote Usage}\label{sec:remote}
 There are separate server-grade machines for remote controls access, all with access to the same software and running the same operating system as the desktops in the counting house.  For access outside the counting house, login to the server \texttt{clonsl2}.  {\bf\em In order to avoid heavly load on the machines used by counting house shift workers, it is important to not run on \texttt{clonpc} desktops remotely}.  All controls computers are behind JLab's \texttt{hallgw} gateway and require 2-factor authentication for remote access.  
+
+\newpage
+\section{Accelerator Screens}
+The accelerator's screens are accessed from the main CLAS12 menu via the {\em JMenu} button (see Figure~\ref{fig:jmenu}).  This uses the \texttt{hbops} account on \texttt{hlbl00}, a machine owned and maintained by the accelerator group.  If a prompt requests a username, password, or terminal type, just press {\em Enter}.  The location of the button on the CLAS12 menu and the JMenu screen that should appear are shown in Figure~\ref{fig:jmenu}.
+
+{\bf\em Note it is best to only have one instance of JMenu running.  Multiple instances have been known to result in frozen JMenus.}
+\begin{figure}[htbp]\centering
+  \includegraphics[width=0.16\textwidth]{pics/clas12jmenu}
+  \includegraphics[width=0.2\textwidth]{pics/jmenu}
+  \caption{The location of the button to access the accelerator screens from the CLAS12 controls menu (left) and the resulting accelerator JMenu main screen (right).\label{fig:jmenu}}
+\end{figure}
+    \subsection{Tagger}
+To open the accelerator's controls for the Tagger magnet, from the main JMenu screen (Figure~\ref{fig:jmenu}) navigate:
+\begin{center}{\em Operations $\to$ Magnets $\to$ Hall B Tagger}\end{center}
+The tagger screen is shown in Figure~\ref{fig:tagger}.
+    \subsection{FSD}
+To open the accelerator's main screen for the fast shutdown system:
+\begin{center}{\em Operations $\to$ FSD $\to$ FSD Overview (Multi-Tree)}\end{center}
+From, there you can access the Hall B 2H001 FSD via:  
+\begin{center}{\em 2H001 $\to$ Hall B HPS Halo Counters (new) (Collimator) $\to$ User Screen}\end{center}
+The 2H001 FSD screens are shown in Figure~\ref{fig:fsd}
+\begin{figure}[htbp]\centering
+  \includegraphics[width=0.88\textwidth]{pics/tagger}
+  \caption{The accelerator's Hall B Tagger magnet controls.\label{fig:tagger}}
+\end{figure}
+\begin{figure}[htbp]\centering
+    \includegraphics[width=0.88\textwidth]{pics/fsduser}\vspace{2mm}
+  \includegraphics[width=0.88\textwidth]{pics/fsdexpert}
+  \caption{The user (top) and expert (bottom) Hall B 2H001 FSD screens.\label{fig:fsd}}
+\end{figure}
 
 
 %\bibliography{clas12slow_ops_shift}
