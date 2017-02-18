@@ -24,23 +24,68 @@
 
 \section{Hardware}
 \subsection{DAQ Crates}
-\subsection{HV/LV Supplies}
-\subsection{Flasher Controllers}
-\subsection{Chillers}
-\subsection{Serial-Ethernet Converters}
+We use EPICS snmp support to poll DAQ crates for status, fan speed, temperature, voltages.  Can also power cycle and set fan speeds from EPICS, although reboots are usually done via DAQ \texttt{roc\_reboot} scripts.  A signle IOC (iocvmeCrates) serves all 66 crates. 
+
+\subsection{Power Supplies}
+\subsubsection{High Voltage}
+We have many CAEN mainframes in Hall B: fifteen SY4527, five SY1527, and five SY527.  The SY527s are controlled with two CAENET V277 cards and supply DC and CND detectors.  The SY4527s and SY1527s are each controlled by their own soft IOC using CAEN's proprietary wrapper library and supply all the forward detectors and CTOF.  
+
+The SVT uses Wiener iseg HV supplies, interfaced with EPICS via snmp.
+
+\subsubsection{Low Voltage}
+The drift chamber has 18 (one per region) Hewlett-Packart low voltage suppies.  These are controlled via Prologix GPIB-ETH converters and EPICS streamDevice.  Two control the suppies locally, either kill the IOC, disconnect the converter box, or use the ``Local'' button to quickly transmit front panel button presses before the IOC scan returns the supply to remote mode.
+
+We also have N Wiener MPOD low voltage modules used by FTC (for preamplifiers), SVT (for stuff), CTOF (compensating coils).  These run with EPICS snmp driver.  The micromega systems use two Wiener PL506s, one for the forward tagger and one for the central tracker.
+
+The HTCC uses a CAEN A919283746 low voltage supply for its compensating coils.  Each of two units has 4 independent supplies, each with their own network card.  Controlled by EPICS with streamDevice.
+
+\subsubsection{Magnets}
+Torus, Solenoid, M\o ller Quadrupoles, M\o ller Helmoltz coil.  Also HPS pair spectrometer and Frascati dipoles.
+
+\subsection{Flashers}
+Two types of flashers drivers for LEDs currently exist in Hall B:  the JLab flasher VME board used by HTCC and CTOF, and a INFN 1-U unit used by the FTC.
+
+\subsection{Temperature Devices}
+\subsubsection{Chillers}
+The SVT has a 81273645 chiller.
+
+The FTC has a Lauda chiller.
+\subsubsection{Sensors}
+SVT
+
+FTC
+
+Hall Weather
+
+\subsection{Converters}
+\subsubsection{Serial-Ethernet}
 MOXAs scattered about the hall (\texttt{hallb-moxa1/2/3/4}).
-\subsection{Terminal Servers}
+\subsubsection{GPIB-Ethernet}
+We use Prologix's GPIB-ETH converters, primarily for DC LV supplies.
+
+\subsection{VME Controllers}
+\subsubsection{Terminal Servers}
+\subsubsection{Reset Boxes}
 These run from the tftp-server on \texttt{clon10}.
-\subsection{Harp Motors}
-\subsection{Magnet Power Supplies}
+
+\subsection{Harps}
+\subsubsection{Motors}
+\subsubsection{Drivers}
+The are controlled by OMS VME boards in \texttt{classc1} and \texttt{classc4}.
+\subsubsection{Controller Boards}
+
+\subsection{Cryotarget}
+
+\subsection{Cameras}
+Various models of Axis cameras.  Accessible in webbrowser or EPICS areaDetector module.
 
 \section{IOCs}
 
-\subsection{Hard IOCs}
+\subsection{VME IOCs}
 Standard CLAS12 slow controls operations require only two VME IOCs, \texttt{classc1} (beam-right on the first level of the space-frame) and \texttt{classc4} (beam-right on the first level of the pie tower).  Their vxWorks operating systems are booting from \texttt{clon10} with EPICS R3.14.12.5, the same software version as the rest of clas12 controls systems.
 \subsubsection{Motors}
 The motor controls for all three CLAS12 harps (\texttt{2c21,2c24,2h01}) and the collimator (located a couple meters downstream of \texttt{2c24} harp above the tagger magnet) are in \texttt{classc1}, all from the top driver box, beam-right on the first level of the space frame.  The M{\o}ller target motor is controlled by the same IOC but the lower driver box on the space frame.  The motor controls for the downstream beam viewer and beam blocker are in \texttt{classc4} and the driver box on the pie tower. 
-\subsubsection{Magnet Power Supplies}
+\subsubsection{Old Magnets' Power Supplies}
 Currently CLAS12 requires no magnet power supplies controlled from VME crates.  HPS uses both \texttt{classc3} and \texttt{classc12} to control the Frascati and Pair Spectrometer magnets.
 \subsubsection{Scaler Boards}
 CLAS12 runs two (for redundancy) Jorger scaler boards in \texttt{classc1} (space frame) and \texttt{classc4} (pie tower).  Each are 16 channels.
@@ -48,6 +93,8 @@ CLAS12 runs two (for redundancy) Jorger scaler boards in \texttt{classc1} (space
 The Struck scalers for FSD studies are controlled by \texttt{classc8}, located in the same crate as \texttt{classc4} but not required for general operations.
 
 \subsection{Soft IOCs}
+Soft IOCs are currently all on \texttt{clonioc1} and \texttt{clonioc2}.
+\subsubsection{procServ}
 \subsubsection{Torus/Solenoid}
 All superconducting magnet IOCs are run on \texttt{clonioc1}.
 \subsubsection{High Voltage}
@@ -57,22 +104,59 @@ All low voltage IOCs are run on \texttt{clonioc2}, one per hardware device.
 \subsubsection{Scalers}
 JLab scaler IOCs are all run from \texttt{clonioc2}.  Currently we run one IOC per sector for the forward carriage (ECAL/PCAL/FTOF), and another for the ``central'' detectors (CTOF/HTCC).
 
+\section{Channel Access Gateways}
+\subsection{Hall B}
+A read-only gateway runs on \texttt{clondb3}.  This is used by the Alarm Server and \texttt{hallbopi} for webopi.
 
+A gateway runs on \texttt{clonioc1} for the purpose of collecting Hall B channels running on IOCs outside the 160 subnet.  This currently includes a cRio for the torus fast-daq and CAENET HV for the drift chambers, and also anything in test setups on the 86 subnet.
+\subsection{Accelerator}
+We access ops PVs via \texttt{cagwhlb}.
 
-\section{Alarm System}
-\subsection{Software Dependencies}
-\subsection{Alarm Server}
-\subsection{Notifier}
-\subsection{Messenger}
+\section{CS-Studio}
+\subsection{Alarm System}
+\subsubsection{Alarm System}
+Startup scripts are in \texttt{\$EPICS/tools/beast} and run as RHEL7 system services (e.g. \texttt{systemctl status AlarmServer}).  Server \& Notifier run on \texttt{clondb3}.
+\subsubsection{Dependencies}
+java, jms, 
+\subsubsection{Alarm Server}
+\subsubsection{Notifier}
+\subsubsection{Annunciator}
+Runs headless on \texttt{clonpc17}.
 
-\section{CSS-Workspaces}
+\subsection{CSS-Workspaces}
+\texttt{/tmp/CSS-Workspaces}
+
+\section{CNI Tools}
+\subsection{Puppet}
+\subsection{Nagios}
+
+\section{Cron Jobs}
+\subsection{torus/solenoid fast-daq tape silo}
+\subsection{procServ}
+\subsection{webopi}
 
 \section{Burt Backups}
-\input{tex/burt}
+Backup files are stored outside the software tree in
+/usr/clas12/DATA/burt
 
-%\section{Mya}
-%\section{Log Entries}
-%\section{Local Temporary Archiver}
+Requisition files are stored inside the software tree in
+scripts/burt
+
+Standard burt utilities:
+burtrb
+burtwb
+
+Wrappers for CLAS12 detectors:
+hvbackup.py
+
+Burt file format:
+header
+pv restore value
+
+\section{Mya}
+
+\section{Log Entries and Screenshots}
+
 
 %\bibliography{clas12slow_ops_expert}
 \end{document}
