@@ -28,22 +28,35 @@
 \subsection{Flasher Controllers}
 \subsection{Chillers}
 \subsection{Serial-Ethernet Converters}
+MOXAs scattered about the hall (\texttt{hallb-moxa1/2/3/4}).
 \subsection{Terminal Servers}
+These run from the tftp-server on \texttt{clon10}.
 \subsection{Harp Motors}
 \subsection{Magnet Power Supplies}
 
 \section{IOCs}
 
 \subsection{Hard IOCs}
-\subsubsection{Harp Motors}
+Standard CLAS12 slow controls operations require only two VME IOCs, \texttt{classc1} (beam-right on the first level of the space-frame) and \texttt{classc4} (beam-right on the first level of the pie tower).  Their vxWorks operating systems are booting from \texttt{clon10} with EPICS R3.14.12.5, the same software version as the rest of clas12 controls systems.
+\subsubsection{Motors}
+The motor controls for all three CLAS12 harps (\texttt{2c21,2c24,2h01}) and the collimator (located a couple meters downstream of \texttt{2c24} harp above the tagger magnet) are in \texttt{classc1}, all from the top driver box, beam-right on the first level of the space frame.  The M{\o}ller target motor is controlled by the same IOC but the lower driver box on the space frame.  The motor controls for the downstream beam viewer and beam blocker are in \texttt{classc4} and the driver box on the pie tower. 
 \subsubsection{Magnet Power Supplies}
+Currently CLAS12 requires no magnet power supplies controlled from VME crates.  HPS uses both \texttt{classc3} and \texttt{classc12} to control the Frascati and Pair Spectrometer magnets.
 \subsubsection{Scaler Boards}
+CLAS12 runs two (for redundancy) Jorger scaler boards in \texttt{classc1} (space frame) and \texttt{classc4} (pie tower).  Each are 16 channels.
+\subsubsection{Struck Scalers}
+The Struck scalers for FSD studies are controlled by \texttt{classc8}, located in the same crate as \texttt{classc4} but not required for general operations.
 
 \subsection{Soft IOCs}
 \subsubsection{Torus/Solenoid}
-\subsubsection{CAEN High Voltage}
-\subsubsection{CAEN Low Voltage}
-\subsubsection{Agilent Low Voltage}
+All superconducting magnet IOCs are run on \texttt{clonioc1}.
+\subsubsection{High Voltage}
+We run one IOC per CAEN SY1527/4527 mainframe, all on \texttt{clonioc2}.  The DC/CND systems run merged IOCs, one per CAENET card, currently on \texttt{dc13} and \texttt{dc33}.
+\subsubsection{Low Voltage}
+All low voltage IOCs are run on \texttt{clonioc2}, one per hardware device.
+\subsubsection{Scalers}
+JLab scaler IOCs are all run from \texttt{clonioc2}.  Currently we run one IOC per sector for the forward carriage (ECAL/PCAL/FTOF), and another for the ``central'' detectors (CTOF/HTCC).
+
 
 
 \section{Alarm System}
