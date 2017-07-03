@@ -14,7 +14,7 @@
 \setlist[enumerate]{itemsep=0mm}
 
 \begin{document}
-\title{CLAS12 Slow Controls Operations Manual - v2.0}
+\title{CLAS12 Slow Controls Operations Manual - v2.1}
 \date{\today}
 \begin{abstract}
 \end{abstract}
@@ -85,6 +85,21 @@ By clicking on the IOC in the heartbeat screen (or the IOC health group in the m
   \includegraphics[width=\textwidth]{pics/iochealth-KPP}
   \caption{The primary IOC health screen for the KPP Run, showing uptime, heartbeats, and buttons to restart them.  \label{fig:iochealth}}
 \end{figure}
+
+\subsection{Motors}
+The beamline devices in Hall B include encoderless stepping motors.  When their IOC is restarted, the actual motor stage position is unchanged (the motor does not move), but the software motor position is reset to zero.  If the motor was at a non-zero position during IOC reboot, then a recalibration is required in order for the motor position in EPICS to reflect the actual motor position.  The is generally the case for collimators and the beam stopper and viewer motors, because their normal position during running is non-zero.  The harps are generally left at zero when not in use and thus do not require recalibration unless in active use during the IOC reboot.  See Table~\ref{tab:stepmot} for a list of motors and their corresponding IOC.
+
+\begin{table}[htpb]\centering
+  \begin{tabular}{|c|c|} \hline
+    \texttt{classc1} & \texttt{classc4} \\ \hline
+    Collimator       & Beam Stopper \\
+    Harp 2C21        & Beam Viewer \\
+    Harp 2C24        & \\
+    Harp 2H01        & \\
+    M$\o$ller Target & \\ \hline
+  \end{tabular}
+  \caption{Stepping motors on two VME IOCs in Hall B.\label{tab:stepmot}}  
+\end{table}
 
 \section{High Voltage}
 The largest controls system in Hall B in terms of number of channels is high voltage (HV), with over 20 CAEN mainframes including SY527, SY1527, and SY4527 models.  An overview screen of the status of all HV in Hall B is accessible from the HV button in the main CLAS12 menu as shown in Figure~\ref{fig:hv}.  Clicking on a detector in this overview screen will bring up the HV controls for that detector (also accessible under each detector's button in the main menu).
