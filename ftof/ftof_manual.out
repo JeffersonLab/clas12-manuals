@@ -1,36 +1,37 @@
-\BOOKMARK [1][-]{section.1}{FTOF Overview}{}
-\BOOKMARK [1][-]{section.2}{Information for Shift Workers}{}
-\BOOKMARK [2][-]{subsection.2.1}{Shift Worker Responsibilities}{section.2}
-\BOOKMARK [3][-]{subsubsection.2.1.1}{Updating the Logbook}{subsection.2.1}
-\BOOKMARK [3][-]{subsubsection.2.1.2}{Contacting FTOF System Personnel}{subsection.2.1}
-\BOOKMARK [3][-]{subsubsection.2.1.3}{Hall B Alarm Handler}{subsection.2.1}
-\BOOKMARK [2][-]{subsection.2.2}{High Voltage Controls}{section.2}
-\BOOKMARK [3][-]{subsubsection.2.2.1}{Resetting the IOCs}{subsection.2.2}
-\BOOKMARK [2][-]{subsection.2.3}{Detector Monitoring}{section.2}
-\BOOKMARK [1][-]{section.3}{Information for Subsystem Experts}{}
-\BOOKMARK [2][-]{subsection.3.1}{Subsystem Expert Responsibilities}{section.3}
-\BOOKMARK [3][-]{subsubsection.3.1.1}{Hot Checkout}{subsection.3.1}
-\BOOKMARK [3][-]{subsubsection.3.1.2}{On-call Responsibilities}{subsection.3.1}
-\BOOKMARK [3][-]{subsubsection.3.1.3}{HV Gain Calibrations}{subsection.3.1}
-\BOOKMARK [2][-]{subsection.3.2}{Anode and Dynode Signals}{section.3}
-\BOOKMARK [2][-]{subsection.3.3}{HV System Operations}{section.3}
-\BOOKMARK [3][-]{subsubsection.3.3.1}{Setting HV Channel Parameters}{subsection.3.3}
-\BOOKMARK [3][-]{subsubsection.3.3.2}{HV Save and Restore}{subsection.3.3}
-\BOOKMARK [2][-]{subsection.3.4}{Cabling Details}{section.3}
-\BOOKMARK [3][-]{subsubsection.3.4.1}{Signal Cable Maps}{subsection.3.4}
-\BOOKMARK [3][-]{subsubsection.3.4.2}{Signal Cable Layout}{subsection.3.4}
-\BOOKMARK [3][-]{subsubsection.3.4.3}{HV Cable Layout}{subsection.3.4}
-\BOOKMARK [3][-]{subsubsection.3.4.4}{Altering Cable Maps}{subsection.3.4}
-\BOOKMARK [3][-]{subsubsection.3.4.5}{Cable Connections}{subsection.3.4}
-\BOOKMARK [2][-]{subsection.3.5}{System Failure Modes}{section.3}
-\BOOKMARK [3][-]{subsubsection.3.5.1}{Bad HV Board}{subsection.3.5}
-\BOOKMARK [3][-]{subsubsection.3.5.2}{Sudden Gain Shift}{subsection.3.5}
-\BOOKMARK [3][-]{subsubsection.3.5.3}{High PMT Dark Current}{subsection.3.5}
-\BOOKMARK [3][-]{subsubsection.3.5.4}{Missing Anode or Dynode Signal}{subsection.3.5}
-\BOOKMARK [3][-]{subsubsection.3.5.5}{Bad PMT}{subsection.3.5}
-\BOOKMARK [3][-]{subsubsection.3.5.6}{Readout Electronics Issues}{subsection.3.5}
-\BOOKMARK [3][-]{subsubsection.3.5.7}{IOC Issues}{subsection.3.5}
-\BOOKMARK [2][-]{subsection.3.6}{Detector Repairs and Servicing}{section.3}
-\BOOKMARK [1][-]{section.4}{Documentation}{}
-\BOOKMARK [1][-]{section.5}{FTOF Authorized Personnel}{}
-\BOOKMARK [1][-]{section.6}{Appendix: Hall B Instrumentation Database}{}
+\BOOKMARK [1][-]{section.1}{FTOF Overview}{}% 1
+\BOOKMARK [1][-]{section.2}{Information for Shift Workers}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Shift Worker Responsibilities}{section.2}% 3
+\BOOKMARK [3][-]{subsubsection.2.1.1}{Updating the Logbook}{subsection.2.1}% 4
+\BOOKMARK [3][-]{subsubsection.2.1.2}{Contacting FTOF System Personnel}{subsection.2.1}% 5
+\BOOKMARK [3][-]{subsubsection.2.1.3}{Hall B Alarm Handler}{subsection.2.1}% 6
+\BOOKMARK [2][-]{subsection.2.2}{High Voltage Controls}{section.2}% 7
+\BOOKMARK [3][-]{subsubsection.2.2.1}{Resetting the IOCs}{subsection.2.2}% 8
+\BOOKMARK [2][-]{subsection.2.3}{Detector Monitoring}{section.2}% 9
+\BOOKMARK [1][-]{section.3}{Information for Subsystem Experts}{}% 10
+\BOOKMARK [2][-]{subsection.3.1}{Subsystem Expert Responsibilities}{section.3}% 11
+\BOOKMARK [3][-]{subsubsection.3.1.1}{Hot Checkout}{subsection.3.1}% 12
+\BOOKMARK [3][-]{subsubsection.3.1.2}{On-Call Responsibilities}{subsection.3.1}% 13
+\BOOKMARK [3][-]{subsubsection.3.1.3}{HV Gain Calibrations}{subsection.3.1}% 14
+\BOOKMARK [3][-]{subsubsection.3.1.4}{Expert Monitoring Suite}{subsection.3.1}% 15
+\BOOKMARK [2][-]{subsection.3.2}{System Failure Modes}{section.3}% 16
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Bad HV Board}{subsection.3.2}% 17
+\BOOKMARK [3][-]{subsubsection.3.2.2}{Bad Mainframe}{subsection.3.2}% 18
+\BOOKMARK [3][-]{subsubsection.3.2.3}{Sudden Gain Shift}{subsection.3.2}% 19
+\BOOKMARK [3][-]{subsubsection.3.2.4}{High PMT Dark Current}{subsection.3.2}% 20
+\BOOKMARK [3][-]{subsubsection.3.2.5}{Missing Anode or Dynode Signal}{subsection.3.2}% 21
+\BOOKMARK [3][-]{subsubsection.3.2.6}{Bad PMT}{subsection.3.2}% 22
+\BOOKMARK [3][-]{subsubsection.3.2.7}{Readout Electronics Issues}{subsection.3.2}% 23
+\BOOKMARK [3][-]{subsubsection.3.2.8}{IOC Issues}{subsection.3.2}% 24
+\BOOKMARK [2][-]{subsection.3.3}{HV System Operations}{section.3}% 25
+\BOOKMARK [3][-]{subsubsection.3.3.1}{Setting HV Channel Parameters}{subsection.3.3}% 26
+\BOOKMARK [3][-]{subsubsection.3.3.2}{HV Save and Restore}{subsection.3.3}% 27
+\BOOKMARK [2][-]{subsection.3.4}{Cabling Details}{section.3}% 28
+\BOOKMARK [3][-]{subsubsection.3.4.1}{Signal Cable Maps}{subsection.3.4}% 29
+\BOOKMARK [3][-]{subsubsection.3.4.2}{Signal Cable Layout}{subsection.3.4}% 30
+\BOOKMARK [3][-]{subsubsection.3.4.3}{HV Cable Layout}{subsection.3.4}% 31
+\BOOKMARK [3][-]{subsubsection.3.4.4}{Altering Cable Maps}{subsection.3.4}% 32
+\BOOKMARK [3][-]{subsubsection.3.4.5}{Cable Connections}{subsection.3.4}% 33
+\BOOKMARK [2][-]{subsection.3.5}{Detector Repairs and Servicing}{section.3}% 34
+\BOOKMARK [1][-]{section.4}{Documentation}{}% 35
+\BOOKMARK [1][-]{section.5}{FTOF Authorized Personnel}{}% 36
+\BOOKMARK [1][-]{section.6}{Appendix: Hall B Instrumentation Database}{}% 37
