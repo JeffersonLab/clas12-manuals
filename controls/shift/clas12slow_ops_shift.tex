@@ -14,7 +14,7 @@
 \setlist[enumerate]{itemsep=0mm}
 
 \begin{document}
-\title{CLAS12 Slow Controls Operations Manual - v2.1}
+\title{CLAS12 Slow Controls Operations Manual - v2.2}
 \date{\today}
 \begin{abstract}
 \end{abstract}
@@ -74,7 +74,7 @@ For many alarms there is also an option in the dropdown menu starting with {\em 
 EPICS input-output controllers (IOCs) are the backend responsible for the actual communication with the hardware devices in the hall.  Figure~\ref{fig:iocmenu} illustrates access to the IOC controls screens from the main CLAS12 menu, as well as the overview IOC heartbeat screen.  The heartbeats should be flashing at 1 Hz for all IOCs, or else the IOC may be in need of reboot.  
 
 \begin{figure}[htbp]\centering
-  \includegraphics[width=0.25\textwidth]{pics/iocmenu-KPP}
+  \includegraphics[width=0.25\textwidth]{pics/iocmenu}
   \includegraphics[width=0.65\textwidth]{pics/iocbeats-KPP}
   \caption{Dropdown menu (left) from the {\em IOCs} button in the main CLAS12 controls menu showing links to health screens for subsets of IOC groups, and the IOC heartbeat overview screen for the KPP Run (right).\label{fig:iocmenu}}
 \end{figure}
@@ -82,7 +82,7 @@ EPICS input-output controllers (IOCs) are the backend responsible for the actual
 By clicking on the IOC in the heartbeat screen (or the IOC health group in the main menu), controls to monitor and reboot the IOCs can be accessed, and an example is shown in Figure~\ref{fig:iochealth}.  Systems are in place to automatically start all necessary IOCs if for any reason they are not running (e.g. recovery from a power outage), however occaisonally a manual reboot is required.
 
 \begin{figure}[htbp]\centering
-  \includegraphics[width=\textwidth]{pics/iochealth-KPP}
+  \includegraphics[width=\textwidth]{pics/iochealth}
   \caption{The primary IOC health screen for the KPP Run, showing uptime, heartbeats, and buttons to restart them.  \label{fig:iochealth}}
 \end{figure}
 
