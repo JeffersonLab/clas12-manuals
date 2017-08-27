@@ -14,7 +14,7 @@
 \setlist[enumerate]{itemsep=0mm}
 
 \begin{document}
-\title{CLAS12 Slow Controls Operations Manual - v2.2}
+\title{CLAS12 Slow Controls Operations Manual - v2.3}
 \date{\today}
 \begin{abstract}
 \end{abstract}
@@ -75,15 +75,15 @@ EPICS input-output controllers (IOCs) are the backend responsible for the actual
 
 \begin{figure}[htbp]\centering
   \includegraphics[width=0.25\textwidth]{pics/iocmenu}
-  \includegraphics[width=0.65\textwidth]{pics/iocbeats-KPP}
-  \caption{Dropdown menu (left) from the {\em IOCs} button in the main CLAS12 controls menu showing links to health screens for subsets of IOC groups, and the IOC heartbeat overview screen for the KPP Run (right).\label{fig:iocmenu}}
+  \includegraphics[width=0.65\textwidth]{pics/iocbeats}
+  \caption{Dropdown menu (left) from the {\em IOCs} button in the main CLAS12 controls menu showing links to the IOC health and heartbeat screens (right).  The static pink ``Disconnected'' heartbeats here are IOCs that are intentionally offline at the time of this screenshot.\label{fig:iocmenu}}
 \end{figure}
 
-By clicking on the IOC in the heartbeat screen (or the IOC health group in the main menu), controls to monitor and reboot the IOCs can be accessed, and an example is shown in Figure~\ref{fig:iochealth}.  Systems are in place to automatically start all necessary IOCs if for any reason they are not running (e.g. recovery from a power outage), however occaisonally a manual reboot is required.
+By clicking on the IOC in the heartbeat screen (or the IOC health screen in the main menu), controls to monitor and reboot the IOCs can be accessed, and an example is shown in Figure~\ref{fig:iochealth}.  Systems are in place to automatically start all necessary IOCs if for any reason they are not running (e.g. recovery from a power outage), however occaisonally a manual reboot is required.
 
 \begin{figure}[htbp]\centering
   \includegraphics[width=\textwidth]{pics/iochealth}
-  \caption{The primary IOC health screen for the KPP Run, showing uptime, heartbeats, and buttons to restart them.  \label{fig:iochealth}}
+  \caption{The primary IOC health screen, showing hostnames, uptimes, heartbeats, and buttons to restart each IOC.  Note the tabs at the top to show different subsets of IOCs (corresponding to the same subsets in the heartbeats screen in Figure~\ref{fig:iocmenu}).\label{fig:iochealth}}
 \end{figure}
 
 \subsection{Motors}
@@ -127,8 +127,8 @@ We use the JLab logbook system, and the primary Hall B logbook is called HBLOG a
 \begin{center}\url{https://logbooks.jlab.org/book/HBLOG}\end{center}
 In Hall B there are two primary methods for adding content to the logbook:
 \begin{enumerate}
-\item Use the web browser interface after logging in with your personal CUE credentials.  That is the normal method used for filling out the shift checklist, updating a shift summary log entry, following up with comments on previous log entries, or adding more complex log entries (e.g. with multiple images).
-\item Use our Hall B GUI that facilitates taking screenshots and quickly sending one to the HBLOG logbook as \texttt{user=clasrun}.  This is accessed via the ``logbook entry'' item from the desktop menu, or via the following script in a terminal:
+\item Use the web browser interface after logging in with your personal CUE credentials.  That is the normal method used for filling out the shift checklist, updating a shift summary log entry, following up with comments on previous log entries, or adding more complex log entries.
+\item Use our Hall B GUI that facilitates taking screenshots and quickly sending them to the HBLOG logbook as \texttt{user=clasrun}.  This is accessed via the ``logbook entry'' item from the desktop menu, or via the following script in a terminal:
 \begin{center}\texttt{logbookEntry.sh}\end{center}
     {\em This is also the preferred method for taking screenshots} and will always save them in \texttt{\$HOME/screenshots} with timestamped filenames.  See Figure~\ref{fig:logbookEntry} for details.
 \end{enumerate}
