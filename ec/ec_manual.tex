@@ -207,7 +207,7 @@ outfitted with negative polarity 24-channel A1535N cards which fit into slots at
 mainframe. The HV mainframes that power the PCAL 
 system are actually shared between the FTOF and the PCAL. The FTOF boards occupy slots 0 to 7 of each 
 mainframe and the PCAL boards occupy slots 8 to 15 of each mainframe. These supplies are named HVFTOFn, 
-n=1$\to$6 (i.e. HVFTOF1 $\to$ HVFTOF 6). The HV mainframes for the EC modules are named HVECALn (n=1$\to$6).
+n=1$\to$6 (i.e. HVFTOF1 $\to$ HVFTOF6). The HV mainframes for the EC modules are named HVECALn (n=1$\to$6).
 Figure~\ref{fc-layout-1} shows the locations of the HV mainframes for each of the EC sectors on the Forward Carriage.
 
 
@@ -282,15 +282,15 @@ shift checklist.
 
 As a general rule, shift workers should spend no more than 10 to 15 minutes attempting to solve
 any problem that arises with the EC system. At that point they should contact the assigned 
-EC on-call worker to either provide advice on how to proceed or to address the problem.
+EC on-call worker to either provide advice on how to proceed or to address the problem. \textcolor{red}{The EC on-call phone number is (757)-810-1489.}
 
 This document is divided into a section for shift workers and EC system experts. However, only 
 EC system experts (as listed in Section~\ref{personnel}) are authorized to make changes to the EC
 parameter settings, to work on the hardware or electronics, or to modify the DAQ system 
 software. This division between shift worker responsibilities and expert responsibilities is
-essential to maintain in order to protect and safeguard the equipment, to ensure data collection
+essential in order to protect and safeguard the equipment, to ensure data collection
 is as efficient as possible, and to minimize down time. If the shift worker has any question 
-regarding how to proceed when an issue arises, the shift leader should be consulted.
+regarding how to proceed when an issue arises, the shift leader should be consulted. 
 
 \subsubsection{Hall~B Alarm Handler}
 \label{alarms}
@@ -375,7 +375,7 @@ to bring up just the panel for that PMT.
   \vspace{2mm}
   \caption{ECAL HV displays for single PMT HV controls.  Hover the mouse over the PMT icons to
     view popup of EPICS Property Value (PV) identifier. Select the desired PMT to bring up Novice
-    mode controls (middle) which allow only OFF/ON control via the Pw button.  Click Expert button to
+    mode controls (middle) which allow only OFF/ON control via the Pw (power) button.  Click Expert button to
     bring up controls for voltage (Vset), maximum HV divider current (Iset), maximum HV (Vmax), HV ramp
   rates (Up,Down). Note these settings apply only to the PMT selected, not all PMTs.}
   \label{ecal-screen3}
@@ -383,7 +383,7 @@ to bring up just the panel for that PMT.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 If a single PMT is selected, a window similar to Fig.~\ref{ecal-screen3} (middle) is displayed. This
-window shows the monitored channel voltage and currennt $V_{mon}$ (V) and $I_{set}$ ($\mu$A), the channel status (OFF, ON),
+window shows the monitored channel voltage and current $V_{mon}$ (V) and $I_{set}$ ($\mu$A), the channel status (OFF, ON),
 and the demand or set channel voltage $V_{set}$ (V).  Also shown is the maximum permissible HV divider
 current $I_{set}$ ($\mu$A).  This interface would be used by shift workers to enable or disable a
 PMT via the Pw button.
