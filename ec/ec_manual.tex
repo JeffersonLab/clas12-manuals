@@ -268,7 +268,9 @@ Section~\ref{hv-control}).
 \subsubsection{Updating the Logbook}
 \label{logbook}
 
-The electronic logbook (or e-log)~\cite{e-log} is set up to run on a specified terminal in the 
+The electronic logbook HBLOG:
+\begin{center}\url{https://logbooks.jlab.org/book/HBLOG}\end{center}
+is set up to run on a specified terminal in the 
 Hall~B Counting House. Shift workers are responsible for keeping an up-to-date and accurate record
 of any problems or issues concerning the EC system. For any questions regarding the logbook, its
 usage, or on what is considered to be a ``logbook worthy'' entry, consult the assigned shift leader.
@@ -284,7 +286,7 @@ As a general rule, shift workers should spend no more than 10 to 15 minutes atte
 any problem that arises with the EC system. At that point they should contact the assigned 
 EC on-call worker to either provide advice on how to proceed or to address the problem. \textcolor{red}{The EC on-call phone number is (757)-810-1489.}
 
-This document is divided into a section for shift workers and EC system experts. However, only 
+This document is divided into a section for shift workers and EC system experts. Only 
 EC system experts (as listed in Section~\ref{personnel}) are authorized to make changes to the EC
 parameter settings, to work on the hardware or electronics, or to modify the DAQ system 
 software. This division between shift worker responsibilities and expert responsibilities is
@@ -436,13 +438,20 @@ in Figure~\ref{ecal-screen}.
 \subsection{Detector Monitoring}
 \label{monitoring}
 
-A number of monitoring tools to study the performance of the Forward Carriage detector systems
-have been prepared. A hierarchy of tools is desirable to allow quick access to detector status
-without the necessity of bringing up the Data Acquistion (DAQ).  One of the earliest tools developed
-was a ROOT-based GUI called FCMON~\cite{fcmon} to monitor and display scalers for the
-Forward Carriage detectors.  To launch this program from any Counting House computer, type {\it fcmon}.
+A hierarchy of monitoring tools exist to study the performance of the Forward Carriage detector systems:
+
+\begin{itemize}
+\item ROOT based (FCMON)
+\item EPICS/JAVA based (CSSCLAS, COATJAVA)
+\item Full DAQ based (CODA, CSSCLAS, COATJAVA)
+\end{itemize}
+
+\subsubsection{FCMON}
+One of the earliest tools developed
+is a ROOT-based GUI called FCMON~\cite{fcmon} to monitor and display scalers for the
+Forward Carriage detectors.   To launch FCMON from any Counting House computer, type {\it fcmon}.
 This brings up the window as shown in Figure~\ref{fcmon1} (left). This tool enables display of
-the scalers from all forward carriage discriminators and FADCs for each of the six CLAS12 sectors. To
+scaler data from all forward carriage front-end electronics (TDC disciminators and FADCs) for each of the six CLAS12 sectors. To
 use the interface for EC, click on the sector of interest in the left column, click on ECAL or PCAL in
 the center column, and then click on the source of the scalers in the third column. To bring
 up the scaler display screens, select ``Scalers'' under the ``Monitor'' drop down menu as
@@ -478,17 +487,56 @@ at the top of the scaler display screen (see Fig.~\ref{fcmon2}). These three mod
 \label{fcmon2}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Note that neither the DAQ nor EPICS is required to be running to use this tool, although the FADCs must have been initialized by a DAQ PRESTART for FADC scaler readout to work. Therefore, FCMON is the most direct tool for determining if the front-end
+electronics are receiving the intended signals from the PMTs. If holes develop in higher level occupancy plots derived from DAQ or online analysis, the first diagnostic step is to determine whether the hole is in the FADC or TDC channel or both and if the HV for the affected PMT is on and if the HV divider current is non-zero.  Both FCMON and the
+HV Control GUIs previously discussed can provide this information.  More consolidated screens are available with JAVA/EPICS tools discussed in the next section.
 
-As of the time of writing of this document, FCMON is the most direct tool for determining if the front-end
-electronics are receiving the intended signals from the PMTs. If holes show up in these plots, the first step is
-to determine if the HV for the affected PMT is on and if the HV divider current is non-zero.  For this purpose, the
-HV Control GUIs already discussed can provide this information.  Further steps may be taken to determine the cause
-of occupancy problems.  A Java based CLAS12 system monitoring suite that is under development will
-represent another tool that the shift worker can use to quickly assess the detector status. Both FCMON and 
-other monitoring tools will be running on dedicated terminals in the Hall~B Counting House.
+\subsubsection{JAVA/EPICS Screens}
+
+Various CSS/JAVA based screens exist which collate information from EPICS and can be used to cross-check the direct scaler readout available from FCMON. Most of these screens are available from the {\it clascss} main menu and are described in Figures \ref{css0}-\ref{css3}.
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width= 7in, keepaspectratio = true]{css0}
+  \vspace{2mm}
+  \caption{CSS/JAVA screen (right) obtained by clicking the ``Forward Carriage'' submenu item from the Subsystems/Scalers button of the main CSS menu (left).  Scaler rates in Hz are shown for ECAL, PCAL and FTOF detectors, including all layers identified by shaded segments and labels.  Buttons for sector number and scaler type are also provided.}
+\label{css0}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width= 7in, keepaspectratio = true]{css1}
+  \vspace{2mm}
+  \caption{CSS/JAVA screen (right) obtained by clicking the ``ECAL Scalers'' submenu item from the ECAL button of the main CSS menu (left).  Rows designate PMT locations.  Columns show scaler rates (Hz) for flash ADCs (FADC) and TDC discriminators (TRG and TDC).  Corresponding thresholds are in columns labeled FADC TET, TRG TET and TDC TET.  Units are pedestal+threshold for FADC and millivolts for TRG and TDC.}
+\label{css1}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width= 7in, keepaspectratio = true]{css2}
+  \vspace{2mm}
+  \caption{CSS/JAVA screen obtained by clicking the ``Hardware View'' button on the screen shown in Figure~\ref{css1}.  Columns show the detector based (sector, layer, PMT) and hardware based (crate, slot, channel) designations of each scaler along with the rate in Hz. This screeen can by used to identify the electronics location of occupancy holes involving bad LEMO cables between the patch panels and front-end electronics or possible dead electronic channels.}
+\label{css2}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width= 7in, keepaspectratio = true]{css3}
+  \vspace{2mm}
+  \caption{CSS/JAVA screen obtained by clicking the ``HV'' button on the screen shown in Figure~\ref{css1}.   Columns labeled VMon and IMon show the monitored PMT HV and HV divider string current, respectively.  Units are volts and microamps, respectively.  This screen enables the user to diagnose occupancy holes seen in the scaler data, as shown by the examples denoted by the blue arrows. }
+\label{css3}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{COATJAVA Utilities}
 
 \clearpage
-
 \vfil
 \eject
 
