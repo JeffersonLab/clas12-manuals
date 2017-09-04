@@ -384,6 +384,21 @@ to bring up just the panel for that PMT.
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width= 6in, keepaspectratio = true]{HV_IOC_2}
+  \vspace{2mm}
+  \caption{EPICS IOC status and controls are available from the CSS Main Menu by clicking on ``IOC'' under ``Subsystems'',
+    then clicking on ``IOC Health''.  Choose the ``High Voltage'' tab for HV Mainframe IOCs.  Reboots will be necessary whenever HV Mainframes are power-cycled or otherwise
+  interrupted.  Also if this screen shows a purple ``Disconnected'' in the Status column, or if the Heartbeat column is not incrementing a reboot will be necessary.}
+  \label{ecal-screen4}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vfil
+\eject
+
 If a single PMT is selected, a window similar to Fig.~\ref{ecal-screen3} (middle) is displayed. This
 window shows the monitored channel voltage and current $V_{mon}$ (V) and $I_{set}$ ($\mu$A), the channel status (OFF, ON),
 and the demand or set channel voltage $V_{set}$ (V).  Also shown is the maximum permissible HV divider
@@ -414,26 +429,11 @@ When HV controls are unresponsive or HV monitoring stripcharts appear to become 
 to be an EPICS communication error due to an IOC process that cannot communicate with the hardware or a
 server.  Sometimes the hardware is at fault and has to be rebooted or power-cycled.  Usually this
 requires an IOC reboot.  Controls for monitoring IOC status and rebooting frozen IOCs are available from
-several menus.  For the EC HV system the IOC screen can be reached from the CSS menu via the ``HV''
+several menus.  For the EC HV system the IOC screen can be reached from the CSS menu via the ``IOCs/IOC Health''
 button under Subsystems (see Figure~\ref{ecal-screen4}.)  To reboot the
-IOC for a specific mainframe, click on the ``Restart iocHV*'' button corresponding to the desired mainframe.
-PMT channels for which an IOC reboot is necessary will illuminate yellow as illustrated for the EC Sector 6 PMTs
-in Figure~\ref{ecal-screen}.
+IOC for a specific mainframe, click on the ``Reboot'' button corresponding to the desired mainframe.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width= 6in, keepaspectratio = true]{HV_IOC_2}
-  \vspace{2mm}
-  \caption{EPICS IOC status and controls are available from the CSS Main Menu by clicking on ``HV'' under ``Subsystems'',
-    then clicking on ``IOC Status''.  This will be necessary whenever HV Mainframes are power-cycled or otherwise
-  interrupted, or if the HW Comms Status lights are anything but green, or the IOC ``HeartBeat'' is not blinking green.}
-  \label{ecal-screen4}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\vfil
-\eject
 
 \subsection{Detector Monitoring}
 \label{monitoring}
