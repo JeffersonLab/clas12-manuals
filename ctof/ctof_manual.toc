@@ -30,7 +30,7 @@
 \contentsline {subsection}{\numberline {3.4}Cabling Details}{30}{subsection.3.4}
 \contentsline {subsubsection}{\numberline {3.4.1}Signal Cable Connections}{30}{subsubsection.3.4.1}
 \contentsline {subsubsection}{\numberline {3.4.2}HV Cable Layout}{36}{subsubsection.3.4.2}
-\contentsline {subsubsection}{\numberline {3.4.3}Altering Cable Maps}{36}{subsubsection.3.4.3}
+\contentsline {subsubsection}{\numberline {3.4.3}Altering Cable Maps}{37}{subsubsection.3.4.3}
 \contentsline {subsection}{\numberline {3.5}Detector Repairs and Servicing}{37}{subsection.3.5}
 \contentsline {section}{\numberline {4}Documentation}{38}{section.4}
 \contentsline {section}{\numberline {5}CTOF Authorized Personnel}{38}{section.5}
