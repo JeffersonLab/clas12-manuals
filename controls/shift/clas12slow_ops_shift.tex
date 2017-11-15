@@ -1,5 +1,6 @@
 \documentclass[amsmath,amssymb,notitlepage,11pt]{revtex4}
 %\documentclass[12pt]{article}
+\usepackage[toc,page]{appendix}
 \usepackage{graphicx}
 \usepackage{bm}% bold math
 \usepackage{multirow}
@@ -14,7 +15,7 @@
 \setlist[enumerate]{itemsep=0mm}
 
 \begin{document}
-\title{CLAS12 Slow Controls Operations Manual - v2.4}
+\title{CLAS12 Slow Controls Operations Manual - v2.5}
 \date{\today}
 \begin{abstract}
 \end{abstract}
@@ -112,34 +113,8 @@ The largest controls system in Hall B in terms of number of channels is high vol
 \end{figure}
 
 \subsection{Save and Restore}
-High voltage settings are saved and restored using \texttt{burt}, and the snapshots are store in the directories at
-\begin{center}\texttt{/usr/clas12/DATA/burt/}\end{center}
-    A graphical interface to save/restore is accessible from detector's own screens in CS-Studio, where an example for is shown in Figure~\ref{fig:burt}.  When saving a new file, this interface chooses filenames based on the current timestamp but allows for the user to modify the name before saving.  Detector experts can also generate files in the proper format (see Figure~\ref{fig:burt3}) and place them in their detector's subdirectory, and then use the same interface to restore from them.
-\begin{figure}[htbp]\centering
-    \includegraphics[width=0.3\textwidth]{pics/burt1}
-    \includegraphics[width=0.6\textwidth]{pics/burt2}
-    \caption{Access to graphical interface for burt save/restore (left); this example is from the CND screen.  Example of save/restore file list as presented for FTC (right).\label{fig:burt}}
-\end{figure}
+High voltage settings are saved and restored using \texttt{burt}, see Appendix~\ref{sec:burt}.
 
-\begin{figure}[htbp]\centering
-\begin{verbatim}
---- Start BURT header
-Time:     Sun Nov  5 08:33:40 2017
-Login ID: baltzell (Nathan Baltzell)
-Eff  UID: 4865
-Group ID: 146
-Keywords: 
-Comments: CND at 60 Volts. 
-Type:     Absolute
-Directory /home/baltzell
-Req File: /usr/clas12/release/1.3.0/epics/tools/burtreq/CND_HV.req
---- End BURT header
-B_DET_CND_HV_Inner_Seg01_E1:vset 1 6.00000e+01
-B_DET_CND_HV_Inner_Seg01_E2:vset 1 6.00000e+01
-B_DET_CND_HV_Inner_Seg02_E1:vset 1 6.00000e+01
-\end{verbatim}
-    \caption{Example of a burt snapshot header format.\label{fig:burt3}}
-\end{figure}
 
 \clearpage
 
@@ -239,6 +214,40 @@ which opens the screen in Figure~\ref{fig:viewer}.  From there, the Hall B viewe
   \caption{Access to the accelerator's live beam viewers.  The button for the Hall B viewer is circled in red.\label{fig:viewer}}
 \end{figure}
 
+\clearpage
+\begin{appendices}
+
+\section{Burt Save/Restore}\label{sec:burt}
+High voltage settings are saved and restored using \texttt{burt}.
+\begin{center}\texttt{/usr/clas12/DATA/burt/}\end{center}
+    A graphical interface to save/restore is accessible from detector's own screens in CS-Studio, where an example for is shown in Figure~\ref{fig:burt}.  When saving a new file, this interface chooses filenames based on the current timestamp but allows for the user to modify the name before saving.  Detector experts can also generate files in the proper format (see Figure~\ref{fig:burt3}) and place them in their detector's subdirectory, and then use the same interface to restore from them.
+\begin{figure}[htbp]\centering
+    \includegraphics[width=0.3\textwidth]{pics/burt1}
+    \includegraphics[width=0.6\textwidth]{pics/burt2}
+    \caption{Access to graphical interface for burt save/restore (left); this example is from the CND screen.  Example of save/restore file list as presented for FTC (right).\label{fig:burt}}
+\end{figure}
+
+\begin{figure}[htbp]\centering
+\begin{verbatim}
+--- Start BURT header
+Time:     Sun Nov  5 08:33:40 2017
+Login ID: baltzell (Nathan Baltzell)
+Eff  UID: 4865
+Group ID: 146
+Keywords: 
+Comments: CND at 60 Volts. 
+Type:     Absolute
+Directory /home/baltzell
+Req File: /usr/clas12/release/1.3.0/epics/tools/burtreq/CND_HV.req
+--- End BURT header
+B_DET_CND_HV_Inner_Seg01_E1:vset 1 6.00000e+01
+B_DET_CND_HV_Inner_Seg01_E2:vset 1 6.00000e+01
+B_DET_CND_HV_Inner_Seg02_E1:vset 1 6.00000e+01
+\end{verbatim}
+    \caption{Example of a burt snapshot header format.\label{fig:burt3}}
+\end{figure}
+
+\end{appendices}
 
 %\bibliography{clas12slow_ops_shift}
 \end{document}
