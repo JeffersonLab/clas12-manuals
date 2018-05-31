@@ -15,7 +15,7 @@
 \setlist[enumerate]{itemsep=0mm}
 
 \begin{document}
-\title{CLAS12 Slow Controls Operations Manual - v2.5}
+\title{CLAS12 Slow Controls Operations Manual - v2.6}
 \date{\today}
 \begin{abstract}
 \end{abstract}
@@ -83,20 +83,21 @@ EPICS input-output controllers (IOCs) are the backend responsible for the actual
 By clicking on the IOC in the heartbeat screen (or the IOC health screen in the main menu), controls to monitor and reboot the IOCs can be accessed, and an example is shown in Figure~\ref{fig:iochealth}.  Systems are in place to automatically start all necessary IOCs if for any reason they are not running (e.g. recovery from a power outage), however occaisonally a manual reboot is required.
 
 \begin{figure}[htbp]\centering
-  \includegraphics[width=\textwidth]{pics/iochealth}
+    \includegraphics[width=\textwidth,trim={0 5.2cm 0 0},clip]{pics/iochealth}
   \caption{The primary IOC health screen, showing hostnames, uptimes, heartbeats, and buttons to restart each IOC.  Note the tabs at the top to show different subsets of IOCs (corresponding to the same subsets in the heartbeats screen in Figure~\ref{fig:iocmenu}).\label{fig:iochealth}}
 \end{figure}
 
 \subsection{Motors}
 The beamline devices in Hall B include encoderless stepping motors.  When their IOC is restarted, the actual motor stage position is unchanged (the motor does not move), but the software motor position is reset to zero.  If the motor was at a non-zero position during IOC reboot, then a recalibration is required in order for the motor position in EPICS to reflect the actual motor position.  The is generally the case for collimators and the beam stopper and viewer motors, because their normal position during running is non-zero.  The harps are generally left at zero when not in use and thus do not require recalibration unless in active use during the IOC reboot.  See Table~\ref{tab:stepmot} for a list of motors and their corresponding IOC.
-\vspace*{-1cm}\begin{table}[htpb]\centering
-  \begin{tabular}{|c|c|} \hline
-    \texttt{classc1} & \texttt{classc4} \\ \hline
+\begin{table}[htpb]\centering
+  \begin{tabular}{ll}\toprule[1.5pt]
+    \texttt{classc1} & \texttt{classc4} \\ \cmidrule[0.5pt]{1-2}
     Collimator       & Beam Stopper \\
     Harp 2C21        & Beam Viewer \\
     Harp 2C24        & \\
     Harp 2H01        & \\
-    M$\o$ller Target & \\ \hline
+    M$\o$ller Target & \\
+    \bottomrule[1.5pt]
   \end{tabular}
   \caption{Stepping motors on two VME IOCs in Hall B.\label{tab:stepmot}}  
 \end{table}
@@ -106,15 +107,49 @@ The beamline devices in Hall B include encoderless stepping motors.  When their 
 \section{High Voltage}
 The largest controls system in Hall B in terms of number of channels is high voltage (HV), with over 20 CAEN mainframes including SY527, SY1527, and SY4527 models.  An overview screen of the status of all HV in Hall B is accessible from the HV button in the main CLAS12 menu as shown in Figure~\ref{fig:hv}.  Clicking on a detector in this overview screen will bring up the HV controls for that detector (also accessible under each detector's button in the main menu).
 
+Alarm conditions for HV, as displayed in the alarm handler, are explained in Table~\ref{tab:hvalarm}.  Possible hardware errors and their labels in tabular HV screens are explained in Table~\ref{tab:hvstat}.  For the more expert operations of saving and restoring settings, see Appendix~\ref{sec:burt}.
+
 \begin{figure}[htbp]\centering
   \includegraphics[width=0.3\textwidth]{pics/hvmenu}
   \includegraphics[width=0.2\textwidth]{pics/hvstat}
   \caption{Access to the HV overview screen from the main menu (left).  Clicking on a detector's name in the overview screen (right) will open its HV controls screen.\label{fig:hv}}
 \end{figure}
 
-\subsection{Save and Restore}
-High voltage settings are saved and restored using \texttt{burt}, see Appendix~\ref{sec:burt}.
+\begin{table}[htpb]\centering
+  \begin{tabular}{lll} \toprule[1.5pt]
+    Status        & Severity & Cause \\ \cmidrule[0.5pt]{1-3}
+    \texttt{HIHI} & \texttt{MAJOR} & Hardware error (e.g. tripped, see Table~\ref{tab:hvstat})\\
+    \texttt{HIGH} & \texttt{MINOR} & Measured voltage above setpoint\\
+    \texttt{LOW}  & \texttt{MINOR} & Measured voltage below setpoint\\
+    \texttt{LOLO} & \texttt{MAJOR} & Hardware communications error\\
+  \bottomrule[1.5pt]
+  \end{tabular}
+  \caption{High Voltage alarm conditions in Hall B, where status and severity are displayed in the alarm handler.\label{tab:hvalarm}}  
+\end{table}
 
+\begin{table}[htpb]\centering
+  \begin{tabular}{lll}  \toprule[1.5pt]
+    Label    & Bit & Explanation \\ \cmidrule[0.5pt]{1-3}
+    OFF      & N/A & OFF\\
+    ON       & 0 & ON\\
+    RUP      & 1 & Ramping Up\\
+    RDN      & 2 & Ramping Down\\
+    OVC      & 3 & Over Current\\
+    OVV      & 4 & Over Voltage\\
+    UVV      & 5 & Under Voltage\\
+    ExTrip   & 6 & External Trip\\
+    MAXV     & 7 & Max Voltage\\
+    ExDis    & 8 & External Disable\\
+    InTrip   & 9 & Internal Trip\\
+    Calib    & 10 & Calibration Error\\
+    ChUnplug & 11 & Unplugged\\
+    OVP      & 13 & Over Power\\
+    PwFail   & 14 & Power Failure\\
+    TempErr  & 15 & Temperature Error\\
+    \bottomrule[1.5pt]
+  \end{tabular}
+  \caption{CAEN High Voltage hardware statuses, with their ``Label'' as displayed in detailed tabular control screens.  All but the first 4 rows are considered hardware errors for alarm purposes.\label{tab:hvstat}}  
+\end{table}
 
 \clearpage
 
@@ -139,6 +174,7 @@ In Hall B there are two primary methods for adding content to the logbook:
 \begin{center}\texttt{logbookEntry.sh}\end{center}
     {\em This is also the preferred method for taking screenshots} and will always save them in \texttt{\$HOME/screenshots} with timestamped filenames.  See Figure~\ref{fig:logbookEntry} for details.
 \end{enumerate}
+\bf{\em Note, the integrated logbook entry feature in CS-Studio (accessible by right-clicking in any CS-Studio screen) is currently NOT supported.} 
     \begin{figure}[htbp]\centering
         \includegraphics[width=0.49\textwidth]{pics/logbookEntry1.png}
         \includegraphics[width=0.49\textwidth]{pics/logbookEntry2.png}
