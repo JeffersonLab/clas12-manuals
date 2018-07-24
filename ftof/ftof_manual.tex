@@ -33,7 +33,7 @@
 \vskip 0.5cm
 
 \author{D.S. Carman, Jefferson Laboratory\\[0.2ex]
-{\it ftof\_manual.tex -- v1.6}}
+{\it ftof\_manual.tex -- v1.7}}
 
 \date \today
 %
@@ -67,19 +67,18 @@ of personnel authorized to perform FTOF system repairs and to modify system sett
 \label{intro}
 
 The Forward Time-of-Flight (FTOF) system is a major component of the CLAS12 Forward 
-Detector used to measure the flight time of charged particles emerging from 
+Detector that is used to measure the flight time of charged particles emerging from 
 beam-related interactions in the target. The average path length from the target to 
-the FTOF counters is roughly 7~m. The system requirements include excellent timing 
+the FTOF counters is roughly 6 - 7~m. The system requirements include excellent timing 
 resolution for particle identification and good segmentation to provide for flexible 
 triggering options. The system specifications call for an average time resolution of 
 $\sigma_{TOF}$=80~ps at the more forward angles of CLAS12 ($\theta < 35^\circ$) and 
 150~ps at larger angles ($\theta > 35^\circ$). The system must also be capable of 
-operating in a high-rate environment. The maximum counting rate occurs in the most 
-forward direction where, at the nominal CLAS12 operating luminosity of 
-$1 \times 10^{35}$~cm$^{-2}$s$^{-1}$, the average rate per scintillation counter is 
-approximately 250~kHz.
+operating in a high-rate environment. At the nominal CLAS12 operating luminosity of 
+$1 \times 10^{35}$~cm$^{-2}$s$^{-1}$, the average rate per scintillation counter approaches
+1~MHz.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{5.2cm}
 \begin{picture}(50,50) 
@@ -93,14 +92,14 @@ The panel-1a counter arrays are mounted immediately downstream of the panel-1b a
 and are not visible in this picture. The Forward Carriage is roughly 10~m in diameter.} 
 \label{fwd_car}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The CLAS12 spectrometer is built around a six-coil superconducting toroidal magnet 
-that divides the active detection area into six 60$^\circ$-wide azimuthal regions 
-called sectors. In each of the six sectors of CLAS12, the FTOF system is comprised of 
-three arrays of counters, referred to as panels, named panel-1a, panel-1b, and panel-2. 
-Each panel consists of a set of rectangular scintillators with a PMT on each end. 
-Panel-1 includes the sets of counters located at forward angles (roughly 5$^\circ$ to 
+The CLAS12 spectrometer in the forward direction is built around a six-coil superconducting
+toroidal magnet that divides the active detection area into six 60$^\circ$-wide azimuthal
+regions called sectors. In each of the six sectors of the CLAS12 Forward Detector, the FTOF
+system is comprised of three arrays of counters, referred to as panels, named panel-1a,
+panel-1b, and panel-2.  Each panel consists of a set of rectangular scintillators with a PMT on
+each end.  Panel-1 includes the sets of counters located at forward angles (roughly 5$^\circ$ to 
 35$^\circ$) (where two panels are necessary to meet the 80~ps average time resolution 
 requirement) and panel-2 includes the sets of counters at larger angles (roughly 
 $35^\circ$ to 45$^\circ$). The positioning and attachment of the FTOF detector arrays on 
@@ -112,7 +111,7 @@ Fig.~\ref{ftof-naming} shows the sector naming and identifier conventions for th
 system, as well as the definitions of the left and right sides of each sector. A summary 
 of the FTOF technical parameters is given in Table~\ref{details}. 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{8.0cm}
 \begin{picture}(30,50) 
@@ -125,9 +124,9 @@ and right (R) sides of each sector, and the clock position identifier. The elect
 beam goes into the page such that S1 is on beam left and S4 is on beam right.}
 \label{ftof-naming}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{table}[htbp]
 \begin{center}
 \begin{tabular} {|c|l|} \hline
@@ -162,9 +161,9 @@ FTOF panel-1a, panel-1b, and panel-2 arrays.}
 \label{details}
 \end{center}
 \end{table}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{5.8cm}
 \begin{picture}(30,50) 
@@ -176,7 +175,7 @@ FTOF panel-1a, panel-1b, and panel-2 arrays.}
 and HV connections for a single representative counter.}
 \label{ftof-elec}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 A block diagram of the readout electronics for one counter of the FTOF system is shown 
 in Fig.~\ref{ftof-elec}. The PMT anode outputs are connected to JLab VME leading edge 
@@ -220,7 +219,7 @@ PCAL boards occupy slots \#8 to \#15 of each mainframe. The supplies are named H
 n=1$\to$6 (i.e. HVFTOF1 $\to$ HVFTOF6). Fig.~\ref{fc-layout} shows the locations of the 
 HV mainframes for each of the FTOF sectors on the Forward Carriage.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{12.0cm}
 \begin{picture}(30,50) 
@@ -242,7 +241,7 @@ upstream. Note: The racks on Level~1 are 180~cm tall and those for Levels~2 and 
 on Level~1.}
 \label{fc-layout}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \clearpage
 
@@ -282,15 +281,15 @@ questions regarding the logbook, its usage, or on what is considered to be a ``l
 worthy'' entry, consult the assigned shift leader.
 
 Note the shift worker should follow all posted or communicated instructions about 
-entering FTOF scaler screens into the e-log. This is typically done once per 8-hour 
-shift as directed on the shift checklist.
+entering FTOF monitoring histograms or scaler information into the e-log. This is
+typically done (at least) once per 8-hour shift as directed on the shift checklist.
 
 \subsubsection{Contacting FTOF System Personnel}
 \label{contact}
 
 As a general rule, shift workers should spend no more than 10 to 15 minutes attempting to 
 solve any problem that arises with the FTOF system. At that point they should contact the 
-assigned FTOF on-call worker to provide either advice on how to proceed or to address the 
+assigned FTOF on-call expert either to provide advice on how to proceed or to address the 
 problem. \textcolor{red}{The FTOF on-call phone number is (757)-344-7204.}
 
 This document is divided into sections for shift workers and for FTOF system experts. 
@@ -329,7 +328,7 @@ collection of tools used as an interface to the EPICS Slow Controls system. To s
 user interface on any terminal in the Hall~B Counting House, enter the command 
 {\it clascss}. Fig.~\ref{ftof-screen1-2}(left) shows the control panel that is launched.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{8.5cm}
 \begin{picture}(30,50) 
@@ -344,7 +343,7 @@ user interface on any terminal in the Hall~B Counting House, enter the command
 subsystems. (Left) General CLAS12 interface. (Right) Options for the FTOF system.}
 \label{ftof-screen1-2}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 To bring up the FTOF HV controls, click on the ``FTOF'' button on the subsystem list. 
 This pops up a sub-menu of all Slow Controls subprograms for the FTOF system (see 
@@ -359,7 +358,7 @@ This interface allows for HV operations at a number of functionality levels:
 \item A single PMT in the FTOF system
 \end{itemize}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{6.5cm}
 \begin{picture}(30,50) 
@@ -370,7 +369,7 @@ This interface allows for HV operations at a number of functionality levels:
 \caption{FTOF HV display and control interface.}
 \label{ftof-screen3}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 The HV Control Interface screen (see Fig.~\ref{ftof-screen3}) also provides a color key 
 to indicate the channel status:
@@ -389,21 +388,22 @@ For the shift worker the most common operations are:
 \begin{enumerate}
 \item To turn the HV for all system PMTs on or off. This is accomplished by clicking 
 the button in the upper right corner ``ALL ON/OFF''. This pops up a sub-menu with the 
-relevant options.
+relevant options ``Turn All Off'' and ``Turn All On''.
 \item To turn individual PMTs on or off. This is accomplished by clicking on the circle 
 representing the channel of interest. This brings up a control screen for the channel of 
-interest as shown in Fig.~\ref{ftof-screen4}. Clicking on the button in the ``Pw''
+interest as shown in Fig.~\ref{ftof-screen4}. Clicking on the button in the ``Pw'' (Power)
 column toggles the channel HV on and off.
 \item To turn the HV for all PMTs in a single sector on or off. This is accomplished 
 by clicking on the sector button in the upper right corner (S1 $\to$ S6) (see 
-Fig.~\ref{ftof-screen3}). This pops up a sub-menu with the relevant options.
+Fig.~\ref{ftof-screen3}). This pops up a sub-menu with the relevant options ``Turn Sector XX
+Off'' and ``Turn Sector XX On''.
 \item To turn the HV for all PMTs in a given panel and sector on or off. This is 
 accomplished by clicking on the Sector button (Sector~1 $\to$ Sector~6) next to the 
 panel of interest. This pops up a sub-menu with the relevant options as shown in 
 Fig.~\ref{ftof-screen5}.
 \end{enumerate}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{0.5cm}
 \begin{picture}(30,50) 
@@ -414,9 +414,9 @@ Fig.~\ref{ftof-screen5}.
 \caption{FTOF HV display for single channel parameters.}
 \label{ftof-screen4}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{5.8cm}
 \begin{picture}(30,50) 
@@ -428,12 +428,12 @@ Fig.~\ref{ftof-screen5}.
 and sector.}
 \label{ftof-screen5}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Note that hovering the mouse pointer on  a circle representing a PMT brings up EPICS
 information on that channel as shown in Fig.~\ref{ftof-screen3a}.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{6.5cm}
 \begin{picture}(30,50) 
@@ -445,7 +445,7 @@ information on that channel as shown in Fig.~\ref{ftof-screen3a}.
 PMT circle.}
 \label{ftof-screen3a}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 If the ``Open Channel Controls'' option shown in Fig.~\ref{ftof-screen5} is selected, a 
 ``novice'' window is opened as shown in Fig.~\ref{ftof-screen6}. This window shows the 
@@ -454,7 +454,7 @@ status (OFF, ON), and the set channel voltage and current ($V_{set}$ (V) and $I_
 ($\mu$A)). If desired, shift workers can toggle the HV settings for single channels on 
 or off through this interface.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{9.0cm}
 \begin{picture}(30,50) 
@@ -465,7 +465,7 @@ or off through this interface.
 \caption{FTOF ``novice'' channel controls screen.}
 \label{ftof-screen6}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 In the upper left corner of this ``Channel Controls'' window is a button marked 
 ``expert'' that brings up the window shown in Fig.~\ref{ftof-screen7}. This allows 
@@ -475,7 +475,7 @@ voltage setting, and the channel HV ramp up and ramp down rates. Clicking on the
 screens. \textcolor{red}{The expert screen should only be used by the list of 
 authorized FTOF personnel given in Section~\ref{personnel}.} 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{7.5cm}
 \begin{picture}(30,50) 
@@ -486,39 +486,41 @@ authorized FTOF personnel given in Section~\ref{personnel}.}
 \caption{FTOF ``expert'' channel controls screen.}
 \label{ftof-screen7}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Resetting the IOCs}
 \label{reset-iocs}
 
-If there is a controls problem indicated by the appearance of yellow or magenta 
-channels in Fig.~\ref{ftof-screen3}, which typically appears for all PMTs in a given 
-sector, the usual cause is an issue of communication between the IOC computer and 
-the HV mainframe. To reboot the IOC for a given sector, click on the ``IOCs'' button 
-on the Slow Controls panel within the ``Subsystems'' portion of the interface (see 
-Fig.~\ref{ftof-screen1-2}). Fig.~\ref{ioc-reset2} shows the options that appear on the 
-sub-menu that pops up. On this menu, select ``HV IOC Health'' to open the control window 
-shown in Fig.~\ref{ioc-reset3}. Click on the ``Reboot'' button for the HV supply that has 
-the IOC communication problem. The reboot will take less than two minutes to complete and 
-the yellow or magenta communication problem channel indicators should all disappear. Note 
-that the IOCs can be also rebooted through the FTOF channel control screen shown in 
-Fig.~\ref{ftof-screen3}. Click on the ``IOCs'' button in the upper left corner and then 
-click on the ``Reboot'' button for the sector of interest. If rebooting the IOC does not 
-solve the problems, contact the Slow Controls system expert.
+If there is a controls problem indicated by the appearance of yellow or magenta channels
+in Fig.~\ref{ftof-screen3}, which typically appears for all PMTs in a given sector, the
+usual cause is an issue of communication between the IOC computer and the HV mainframe.
+To reboot the IOC for a given sector, click on the ``IOCs'' button on the Slow Controls
+panel within the ``Subsystems'' portion of the interface. Fig.~\ref{ioc-reset2} shows the
+options that appear on the sub-menu that pops up. On this menu, select ``IOC Health'' to
+open the control window shown in Fig.~\ref{ioc-reset3}. Clicking on the ``High Voltage''
+tab along the top of the screen brings up the screen for the IOCs that control the HV
+mainframes as shown in Fig.~\ref{ioc-reset4}. Click on the ``Reboot'' button (under the
+``Soft Reboot'' column) for the HV supply that has the IOC communication problem. The
+reboot will take less than two minutes to complete and the yellow or magenta communication
+problem channel indicators should all disappear. Note that the IOCs can be also rebooted
+through the FTOF channel control screen shown in Fig.~\ref{ftof-screen3}. Click on the
+``IOCs'' button in the upper left corner and then click on the ``Reboot'' button for the
+sector of interest. If rebooting the IOC does not solve the problems, contact the Slow
+Controls system expert.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{9.0cm}
 \begin{picture}(30,50) 
-\put(115,0)
+\put(125,0)
 {\hbox{\includegraphics[width=0.50\textwidth,natwidth=610,natheight=642]{ioc-reset2.pdf}}}
 \end{picture} 
 \caption{Sub-menu on the primary Slow Controls interface to reboot the IOCs.}
 \label{ioc-reset2}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{5.3cm}
 \begin{picture}(30,50) 
@@ -526,10 +528,23 @@ solve the problems, contact the Slow Controls system expert.
 {\hbox{\includegraphics[width=0.75\textwidth,natwidth=610,natheight=642,angle=-90]
 {ioc-reset3.pdf}}}
 \end{picture} 
-\caption{HV IOC health screen where individual IOCs can be rebooted.}
+\caption{IOC health screen for access to all Hall B IOCs.}
 \label{ioc-reset3}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\vspace{5.3cm}
+\begin{picture}(30,50) 
+\put(10,280)
+{\hbox{\includegraphics[width=0.75\textwidth,natwidth=610,natheight=642,angle=-90]
+{ioc-reset4.pdf}}}
+\end{picture} 
+\caption{IOC health screen where individual IOCs that control the HV mainframes can be rebooted.}
+\label{ioc-reset4}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Detector Monitoring}
 \label{monitoring}
@@ -542,7 +557,7 @@ The primary system for viewing the FTOF scalers in the Hall~B Counting House is 
 {\it mon12} utility. Typing ``mon12'' on any terminal in the Counting House will bring 
 up the screen shown in Fig.~\ref{mon12}(left).
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{3.6cm}
 \begin{picture}(30,50) 
@@ -554,7 +569,7 @@ up the screen shown in Fig.~\ref{mon12}(left).
 CLAS12 subsystems and sectors. (Right) The FTOF scaler screen within {\it mon12}.}
 \label{mon12}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 The {\it mon12} utility requires the data acquisition system to be operating to display 
 the scaler counts. If a run is in progress, scaler accumulation will begin by selecting 
@@ -565,7 +580,7 @@ each sector can be viewed for either the FADCs or the discriminators on the FTOF
 selecting the appropriate source. This brings up the FTOF {\it mon12} display shown in 
 Fig.~\ref{mon12}(right).
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{4.7cm}
 \begin{picture}(30,50) 
@@ -576,20 +591,20 @@ Fig.~\ref{mon12}(right).
 \caption{Scaler display for the FTOF counters from the Slow Controls system.}
 \label{sc-scalers}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 The second manner in which to view the FTOF system scalers is through the CLAS12 Slow 
 Controls system. Shown in the options for the FTOF system in 
 Fig.~\ref{ftof-screen1-2}(right) is an option to view the FTOF scalers from the TDCs or 
-FADCs. Selecting the option ``FTOF Scalers'' brings up a screen such as that shown in 
-Fig.~\ref{sc-scalers}. This screen shows the different scaler sources separately for each 
+FADCs. Selecting the option ``FTOF Scalers - Expert'' brings up a screen such as that shown
+in Fig.~\ref{sc-scalers}. This screen shows the different scaler sources separately for each 
 sector. The sector to display is selected by clicking on the ``Sectors'' button in the 
 upper left corner. A different display of the same information can be selected by clicking 
 on the ``Hardware View'' button. The scalers shown in this display count independently of 
 the data acquisition system.
 
 The final manner in which to monitor the performance of the FTOF hardware is through 
-the expert monitoring suite {\it FTOFMON}. Details on this suite are provided in 
+the expert monitoring suite {\it ftofmon}. Details on this suite are provided in 
 Section~\ref{ftofmon}, however this suite is mainly intended for FTOF system experts.
 
 \clearpage
@@ -610,13 +625,13 @@ Section~\ref{checkout})
 during data taking (see Section~\ref{oncall})
 \item Take periodic HV gain calibration runs and adjust the system HV settings (see 
 Section~\ref{gain-calib})
-\item Monitor the system performance with the {\it FTOFMON} expert monitoring suite
+\item Monitor the system performance with the {\it ftofmon} expert monitoring suite
 (see Section~\ref{ftofmon})
 \item Make repairs to the hardware during maintenance periods (see Section~\ref{repairs})
 \end{enumerate}
 
 All issues found, work completed, or questions related to the FTOF system should be 
-entered into the e-log and communicated to the FTOF Group Leader.
+entered into the e-log (HBLOG and HBTOF) and communicated to the FTOF Group Leader.
 
 \subsubsection{Hot Checkout}
 \label{checkout}
@@ -624,11 +639,11 @@ entered into the e-log and communicated to the FTOF Group Leader.
 Prior to the start of each beam running period, each subsystem Group Leader is 
 responsible to review the components of their systems to be sure that they are fully 
 operational. This review is referred to as ``hot checkout''. The hot checkout is an 
-online checklist for each subsystem that includes a sign-off for all hardware elements 
-of the system (e.g. HV, LV, detectors, gas, pulser). For the FTOF system, the hot 
-checkout includes verification that all detectors are operational, that the Slow 
-Controls system for the HV is functioning, and that the DAQ system can fully communicate 
-with the readout electronics. 
+online checklist~\cite{hco-page} for each subsystem that includes a sign-off for all
+hardware elements of the system (e.g. HV, LV, detectors, gas, pulser). For the FTOF
+system, the hot checkout includes verification that all detectors are operational, that the
+Slow Controls system for the HV is functioning, and that the DAQ system can fully
+communicate with the readout electronics. 
 
 Fig.~\ref{hot-co} shows a screenshot of the hot checkout interface. Under the heading 
 ``Hall~B CLAS12 Detector'', all entries for FTOF (located within the ``CLAS12 TOF'' 
@@ -638,14 +653,12 @@ Section~\ref{gain-calib}). Reminders to complete the system hot checkout will be
 out shortly before the start of a given run period with the required deadline for 
 completing the work.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[ht]
 \vspace{9.1cm}
 \begin{picture}(30,50) 
-\put(25,-5)
-{\hbox{\includegraphics[width=0.55\textwidth,natwidth=610,natheight=642]{checklist1.pdf}}}
-\put(260,50)
-{\hbox{\includegraphics[width=0.35\textwidth,natwidth=610,natheight=642]{checklist2.pdf}}}
+\put(100,-5)
+{\hbox{\includegraphics[width=0.55\textwidth,natwidth=610,natheight=642]{hco-screen.pdf}}}
 \end{picture} 
 \caption{Screenshot of the Hall~B hot checkout screen. The FTOF system appears under the 
 ``Hall~B CLAS12 Detector'' and ``CLAS TOF'' headings. All entries for FTOF have to be
@@ -653,7 +666,7 @@ verified as functional and all items listed as ``Not Ready'' must be changed ove
 ``Ready''.}
 \label{hot-co}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{On-Call Responsibilities}
 \label{oncall}
@@ -667,7 +680,7 @@ minutes, should result in a call to the relevant expert cell phone. \textcolor{r
 FTOF on-call phone number is (757)-344-7204.} 
 
 The on-call experts can often diagnose problems over the telephone, but there are times 
-where they will have to go to the Counting House to more fully address an issue. One of 
+when they will have to go to the Counting House to more fully address an issue. One of 
 the important responsibilities of the on-call experts is to make practical decisions 
 regarding which problems require access to Hall~B for immediate attention and which can 
 be delayed to periods when the accelerator is down or other work is scheduled in the 
@@ -698,7 +711,7 @@ the parameters to optimize the timing resolution of the system. Full documentati
 using the FTOF calibration suite, including a tutorial for using the code, is included 
 on the FTOF web page~\cite{ftof-web}.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{14.8cm}
 \begin{picture}(30,50) 
@@ -709,18 +722,17 @@ natheight=642]{ftofmon1.pdf}}}
 {\hbox{\includegraphics[width=0.85\textwidth,natwidth=610,height=0.75\textheight,
 natheight=642]{ftofmon2.pdf}}}
 \end{picture} 
-\caption{Various screens from the {\it FTOFMON} expert monitoring suite.}
+\caption{Various screens from the {\it ftofmon} expert monitoring suite.}
 \label{ftofmon-screens}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Expert Monitoring Suite}
 \label{ftofmon}
 
-The expert monitoring suite for the FTOF system is called {\it FTOFMON}. This code 
-suite is brought up on any Counting House computer by typing ``ftofmon 1 7'' (the 
-arguments ``1 7'' here tell the suite to display all 6 FTOF sectors). The suite allows 
-monitoring of the following system quantities:
+The expert monitoring suite for the FTOF system is called {\it ftofmon}. This code 
+suite is brought up on any Counting House computer by typing ``ftofmon''. The suite
+allows monitoring of the following system quantities:
 
 \begin{itemize}
 \item FADC Mode 1 time slices
@@ -768,8 +780,8 @@ deemed bad and needs to be replaced, the following steps are necessary:
 \item Using the HV control interface, ensure that all HV channels controlled by the
 mainframe are turned off. Remember that for each sector the HV mainframe for the FTOF
 also includes the PCAL.
-\item Take a spare A1535N board from the storage area on the second level of the Pie 
-Tower in Hall~B.
+\item Take a spare A1535N board from the storage area in the back room of the Counting
+House.
 \item Turn the front panel key on the HV supply to the ``off'' position and toggle 
 the main power switch to ``off'' on the back of the HV supply.
 \item On the back of the supply, remove the Radiall connector on the bad board.
@@ -780,12 +792,19 @@ boards.
 and plug into the same connector on the new board.
 \item Toggle the main power switch to ``on'' and turn the HV power supply on using the 
 key on the front panel, putting the key in the ``local'' position.
-\item Run all parameter scripts for the HV power supply to load all channel parameters. 
-See instructions in Section~\ref{hv-parms}. Note that only the parameters associated 
-with the newly installed board should need to be set.
+\item Restore the most recent backup parameter settings for the HV mainframe described
+in Section~\ref{save-restore}. Note that only the parameters associated with the swapped
+board should need to be restored. It is important to note as well that the ``BURT'' backup
+file does not include the parameters for the maximum high voltage settings for the channel.
+These must be reset for the swapped out board to the nominal values (-2.5~kV for panel-1a
+and panel-2 channels, -2.0~kV for panel-1b channels). See instructions in Section~\ref{hv-parms}.
+These values can also be set channel-by-channel using the FTOF expert channel controls
+screen discussed in Section~\ref{hv-control}.
 \item Enter information on the new board and the old bad board into the Hall~B equipment 
 database (see the Appendix).
-\item Leave the bad board on the RadCon Survey table in Hall~B.
+\item Leave the bad board on the RadCon survey table in Hall~B attaching a RadCon tag with a
+contact listing for the Fast Electronics Group. Send an email to the Fast Electronics Group
+to pick up the module for testing/repairs.
 \item If beam conditions are acceptable, turn on the HV for the FTOF and PCAL channels. 
 Be sure to check with the shift leader before energizing the supply.
 \end{enumerate}
@@ -810,9 +829,10 @@ also includes the PCAL.
 main power switch to ``off'' on the back of the HV supply.
 \item The modules are typically pulled out of the back of the mainframe leaving the 
 Radiall connectors attached. Before pulling the modules from the mainframe, be sure 
-that they are clearly labeled so that they can be put back into their assigned channels.
+that they are clearly labeled so that they can be put back into their assigned slots.
 \item Unplug the power cord from the mainframe.
-\item Remove the mainframe from the rack and place it on the radiation survey table. 
+\item Remove the mainframe from the rack and place it on the RadCon survey table
+attaching a RadCon tag with contact information listing the Fast Electronics Group. 
 Send email to the Fast Electronics Group to pick up the mainframe for testing/repairs.
 \item Install a spare mainframe in the rack, install the boards into their assigned 
 slots, and connect the power cord to the mainframe.
@@ -821,7 +841,11 @@ key on the front panel, putting the key in the ``local'' position.
 \item Contact the Slow Controls expert to set up communication to the mainframe.
 \item When communication is restored, check the channel settings for all boards to be 
 sure that they are correct before turning on the HV. If there are questions regarding 
-the PCAL settings, contact the EC expert.
+the PCAL settings, contact the ECAL expert. As the channel settings are stored on the
+individual boards, the parameters should restored without user intervention. However,
+if necessary, restore the parameter settings as described in Section~\ref{save-restore},
+making sure that the maximum high voltage limits for each channel are correct (-2.5~kV
+for panel-1a and panel-2, -2.0~kV for panel-1b).
 \item If beam conditions are acceptable, turn on the HV for the FTOF and PCAL channels. 
 Be sure to check with the shift leader before energizing the supply.
 \end{enumerate}
@@ -833,16 +857,16 @@ Sometimes a sudden gain shift can appear in the ADC spectrum for a given counter
 are a number of possible causes for such a condition.
 
 \begin{itemize}
-\item Problematic PMT - sometimes gain shifts can be attributed to a problem with a PMT 
-that requires adjustment of the HV settings. Of course, PMT gain issues typically lead 
-to a reduced gain that requires an increase of the HV. Such issues are typically seen 
-as slow drifts of the response with time.
-\item DAQ Problems - the most common cause for an apparent gain shift in the ADC spectra 
-for a counter is due to problems with the FADC settings. Such problems can typically be 
-diagnosed from pedestal shifts or widened pedestals. The pedestals can be checked by 
-taking FADC data in ``raw mode'' using the {\it FTOFMON} system monitoring suite (see 
-Section~\ref{ftofmon}). Note that as the panel-1a and panel-2 dynode signal used for the 
-FADC inputs are bipolar pulses (see Section~\ref{missing}), issues with shifts in the 
+\item Problematic PMT/Voltage Divider - sometimes gain shifts can be attributed to a
+problem with a PMT or voltage divider that requires adjustment of the HV settings. Of
+course, PMT aging effects also typically lead to a reduced gain that requires an increase
+of the HV. Such issues are typically seen as slow drifts of the response with time.
+\item DAQ Problems - the most common cause for an apparent sudden gain shift in the
+ADC spectra for a counter is due to problems with the FADC settings. Such problems
+can typically be diagnosed from pedestal shifts or widened pedestals. The pedestals can
+be checked by taking FADC data in ``raw mode'' using the {\it ftofmon} system monitoring
+suite (see Section~\ref{ftofmon}). Note that as the panel-1a and panel-2 dynode signal used
+for the FADC inputs are bipolar pulses (see Section~\ref{missing}), issues with shifts in the 
 signal summing region can have a dramatic impact on the FADC spectra. 
 \item Bad Inverters - the panel-1b dynode signals, which are used for the input to the 
 FADCs, are nominally positive polarity pulses that are sent through an in-line inverter 
@@ -858,9 +882,9 @@ either be explored by looking at signals or measuring dark currents at the volta
 dividers, the local disconnect patch panels, or the electronics patch panels. The 
 panel-2 detectors themselves can be explored using access with manlifts as necessary, 
 coordinating work through the Run Coordinator and the Hall~B Work Coordinator.
-\item PMT Saturation - In conditions of excessive high rate, the PMT becomes current 
-limited and the ADC signals can become distorted and shifted to lower gains. Be sure 
-that bad beam or high rate conditions are not responsible for the issues seen.
+\item PMT Saturation - In conditions of excessively high rates, the PMT can become
+current limited and the ADC signals can become distorted and shifted to lower gains. Be
+sure that bad beam or high rate conditions are not responsible for the issues seen.
 \end{itemize}
 
 \subsubsection{High PMT Dark Current}
@@ -911,7 +935,7 @@ at the Forward Carriage patch panels invert the panel-1b dynode pulse polarity t
 negative. Scope images of representative FTOF PMT anode and dynode pulses are shown 
 in Fig.~\ref{pmt-pulses}.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{4.3cm}
 \begin{picture}(30,50) 
@@ -926,7 +950,7 @@ natheight=642,angle=-90]{p1b-scope.pdf}}}
 for panel-1a (left) and panel-1b (right).}
 \label{pmt-pulses}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Occasionally a signal will disappear from the FTOF monitoring plots. In such a situation, 
 further investigation will be necessary. 
@@ -988,10 +1012,11 @@ not solve the problems, contact the Slow Controls system expert.
 \label{hv-parms}
 
 The CS-Studio program is used to monitor the HV settings of the FTOF system and to 
-toggle the HV off and on for individual or multiple channels in the system. To set 
-the channel values and all system parameters, the operations are carried out using 
-control scripts. From the computers in the Hall~B Counting House, the scripts are 
-in the sector subdirectories located in the path: {\it /home/clasrun/ftof/hv/sn}, 
+toggle the HV off and on for individual or multiple channels in the system. To set the
+channel values, restore the most recent saved ``BURT'' backup file (see
+Section~\ref{save-restore} for details). Note as well that the channel parameters can
+also be set using control scripts. From the computers in the Hall~B Counting House, the
+scripts are in the sector subdirectories located in the path: {\it /home/clasrun/ftof/hv/sn}, 
 with $n = 1 \to 6$ for FTOF S1 $\to$ S6. There are seven scripts available for 
 each FTOF sector:
 
@@ -1038,13 +1063,14 @@ be used only for viewing the channel parameter set values.
 \subsubsection{HV Save and Restore}
 \label{save-restore}
 
-The FTOF HV interface allows all system channel settings to be saved into a file or 
-loaded from an archived file by clicking on the ``Save/Restore'' button in the upper 
-left corner of the main HV screen (see Fig.~\ref{ftof-screen3}). The files created are 
-referred to as ``BURT'' backup files, where BURT is an acronym for ``Backup and Restore 
-Tool''. BURT is a utility for saving the HV system settings into an ASCII file readable 
-by the EPICS Slow Controls system. The save files are stored on the DAQ machines in the 
-Hall~B Counting House at: {\it /usr/clas12/DATA/burt/FTOF\_HV}.
+The FTOF HV interface allows all system channel settings (except for the maximum channel
+HV settings) to be saved into a file or loaded from an archived file by clicking on the
+``Save/Restore'' button in the upper left corner of the main HV screen (see
+Fig.~\ref{ftof-screen3}). The files created are referred to as ``BURT'' backup files, where
+BURT is an acronym for ``Backup and Restore Tool''. BURT is a utility for saving the HV system
+settings into an ASCII file readable by the EPICS Slow Controls system. The save files are
+stored on the DAQ machines in the Hall~B Counting House at:
+{\it /usr/clas12/DATA/burt/FTOF\_HV}.
 
 After clicking on the ``Save/Restore'' button, a sub-menu appears as shown in 
 Fig.~\ref{backup-restore1} to select ``Save Settings'' or ``Restore Settings''. Clicking 
@@ -1058,7 +1084,7 @@ full HV system. Note that a new backup file should be created whenever any HV se
 have changed, including HV values, channel parameter settings, and channel on/off 
 settings.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{1.5cm}
 \begin{picture}(30,50) 
@@ -1069,13 +1095,13 @@ settings.
 \caption{Sub-menu of the FTOF HV control screen for ``Save/Restore''.}
 \label{backup-restore1}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{3.0cm}
 \begin{picture}(30,50) 
-\put(95,-120)
+\put(90,-120)
 {\hbox{\includegraphics[width=0.60\textwidth,natwidth=610,natheight=642]
 {backup-restore2.pdf}}}
 \end{picture} 
@@ -1083,9 +1109,9 @@ settings.
 operation (see in Fig.~\ref{ftof-screen1-2}(right)).}
 \label{backup-restore2}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{6.0cm}
 \begin{picture}(30,50) 
@@ -1097,7 +1123,7 @@ operation (see in Fig.~\ref{ftof-screen1-2}(right)).}
 ``Save/Restore'' operation (see in Fig.~\ref{ftof-screen1-2}(right)).}
 \label{backup-restore3}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Cabling Details}
 
@@ -1110,7 +1136,7 @@ electronics channel mapping is shown in Fig.~\ref{ftof-fadc-map} for the FADCs, 
 Fig.~\ref{ftof-disc-map} for the discriminators, and in Fig.~\ref{ftof-tdc-map} for the 
 TDCs. 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{20.0cm}
 \begin{picture}(30,50) 
@@ -1118,12 +1144,12 @@ TDCs.
 {\hbox{\includegraphics[width=1.50\textwidth,natwidth=610,height=1.70\textheight,
 natheight=642,angle=90]{ftof-fadc-map.pdf}}}
 \end{picture} 
-\caption{Electronics map for the input connections to the FTOF VME FADCs.}
+\caption{Electronics map for each sector for the input connections to the FTOF VME FADCs.}
 \label{ftof-fadc-map}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{20.0cm}
 \begin{picture}(30,50) 
@@ -1131,12 +1157,12 @@ natheight=642,angle=90]{ftof-fadc-map.pdf}}}
 {\hbox{\includegraphics[width=1.20\textwidth,natwidth=610,height=1.20\textheight,
 natheight=642,angle=90]{ftof-disc-map.pdf}}}
 \end{picture} 
-\caption{Electronics map for the input connections to the FTOF VME discriminators.}
+\caption{Electronics map for each sector for the input connections to the FTOF VME discriminators.}
 \label{ftof-disc-map}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{20.0cm}
 \begin{picture}(30,50) 
@@ -1144,10 +1170,10 @@ natheight=642,angle=90]{ftof-disc-map.pdf}}}
 {\hbox{\includegraphics[width=1.50\textwidth,natwidth=610,height=1.70\textheight,
 natheight=642,angle=90]{ftof-tdc-map.pdf}}}
 \end{picture} 
-\caption{Electronics map for the input connections to the FTOF VME TDCs.}
+\caption{Electronics map for each sector for the input connections to the FTOF VME TDCs.}
 \label{ftof-tdc-map}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Signal Cable Layout}
 \label{signal-conn}
@@ -1159,7 +1185,7 @@ length from 12~ft to 23.25~ft. Note that there are two local disconnect patch pa
 each FTOF sector, one for the left anode and dynode cables and one for the right anode 
 and dynode cables. The signal cables for each sector are then strung to the Forward 
 Carriage electronics to a second set of patch panels via 35~ft-long cables. A schematic 
-diagram of the so-called electronics patch panels is shown in Fig.~\ref{patch-panel1}. 
+diagram of these so-called electronics patch panels is shown in Fig.~\ref{patch-panel1}. 
 The signals are then run from these patch panels to the discriminators (for the anode 
 signals) and to the FADCs (for the dynode signals) via 5~ft-long cables. Note, as stated 
 in Section~\ref{missing}, the dynode signals for panel-1b emerge with positive 
@@ -1171,7 +1197,7 @@ schematics for the cable and connector types for each segment of the connections
 the voltage divider to the readout electronics for the counters in FTOF panel-1a, 
 panel-1b, and panel-2.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{4.5cm}
 \begin{picture}(30,50) 
@@ -1182,13 +1208,13 @@ panel-1b, and panel-2.
 \caption{Schematic of the signal cable local disconnect patch panels positioned just 
 behind the panel-2 FTOF counters for each Forward Carriage sector. For each sector 
 there are two such patch panels associated with the left and the right sides of the 
-counter (as defined in Fig.~\ref{ftof-naming}. The white filled circles are unused 
+counter (as defined in Fig.~\ref{ftof-naming}). The white filled circles are unused 
 connectors.}
 \label{patch-panel2}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{5.5cm}
 \begin{picture}(30,50) 
@@ -1197,11 +1223,11 @@ connectors.}
 {patch-panel1.pdf}}}
 \end{picture} 
 \caption{Schematic of the signal cable electronics patch panel located on the Forward 
-Carriage. There are four such panels for each sector for anode left/right and dynode 
+Carriage. There are four such panels for each sector for the anode left/right and dynode 
 left/right connections. The white filled circles are unused connections.}
 \label{patch-panel1}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{HV Cable Layout}
 \label{hv-layout}
@@ -1220,7 +1246,7 @@ segment of the HV connections from the voltage divider to the HV power supplies 
 counters in FTOF panel-1a, panel-1b, and panel-2. The HV power supply channel assignments 
 for each sector are nominally given as shown in Fig.~\ref{ftof-hvmap}.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{6.6cm}
 \begin{picture}(30,50) 
@@ -1233,9 +1259,9 @@ PMTs and two for the right side PMTs. Note: The box beam that supports the panel
 arrays and the patch panels themselves is located under the second box.}
 \label{ftof-hv-map}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{8.4cm}
 \begin{picture}(30,50) 
@@ -1246,7 +1272,7 @@ arrays and the patch panels themselves is located under the second box.}
 \caption{HV mainframe FTOF channel assignments for each sector.}
 \label{ftof-hvmap}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Altering Cable Maps}
 
@@ -1259,7 +1285,7 @@ that is normally done and should not be attempted by shift workers or FTOF exper
 it could lead to problems decoding the data.
 
 Problems with channels within the HV system are more common issues as channels on the 
-HV distribution box or on a A1535N cards are reasonably common. The standard procedure 
+HV distribution box or on a A1535N card are reasonably common. The standard procedure 
 when there is a problem with a CAEN HV board is to swap out the problematic board with 
 a spare (see Section~\ref{board-swap}). If there is a problem on the HV distribution 
 box on either the left or right side of a sector, there are six spare HV channels that 
@@ -1278,7 +1304,7 @@ system, Figs.~\ref{cable-types1} and \ref{cable-types2} show for panel-1a, panel
 and panel-2 the cable and connection types from the counter PMTs to the Forward Carriage 
 electronics and power supplies.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{8.0cm}
 \begin{picture}(30,50) 
@@ -1289,9 +1315,9 @@ electronics and power supplies.
 \caption{FTOF panel-1a and panel-2 HV and signal cable connections.}
 \label{cable-types1}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{8.0cm}
 \begin{picture}(30,50) 
@@ -1302,7 +1328,7 @@ electronics and power supplies.
 \caption{FTOF panel-1b HV and signal cable connections.}
 \label{cable-types2}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Detector Repairs and Servicing}
 
@@ -1343,7 +1369,7 @@ All current documentation for the FTOF system is located on the official FTOF we
 \item FTOF System Operations Manual (this document)
  \begin{itemize}
    \item The source files for the FTOF System Operations Manual are located on the
-         github repository at: {\it JeffersonLab/clas12-manuals}
+         github repository at: {\it JeffersonLab/clas12-manuals/ftof}
  \end{itemize}
 \item FTOF Geometry Document
 \item FTOF Calibration Constants
@@ -1365,14 +1391,14 @@ operations and repairs are only to be carried out by the list of authorized pers
 shown in Table~\ref{expert-list}. The list of authorized personnel for FTOF can only 
 be modified by the FTOF Group Leader.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{table}[htbp]
 \begin{center}
 \begin{tabular} {|c|c|c|c|} \hline
 Name             & Telephone      & email              & Area             \\ \hline \hline
 Daniel S. Carman & (757)-269-5586 & carman@jlab.org    & FTOF Group Leader\\
                  &                &                    & Hardware, Software \\ \hline
-Cole Smith       & (757)-269-5307 & lcsmith@jlab.org   & Hardware, {\it FTOFMON} \\ \hline
+Cole Smith       & (757)-269-5307 & lcsmith@jlab.org   & Hardware, {\it ftofmon} \\ \hline
 Sergey Boyarinov & (757)-269-5795 & boyarinov@jlab.org & DAQ              \\ \hline
 Nathan Baltzell  & (757)-269-5902 & baltzell@jlab.org  & Slow Controls    \\ \hline
 \end{tabular}
@@ -1380,7 +1406,7 @@ Nathan Baltzell  & (757)-269-5902 & baltzell@jlab.org  & Slow Controls    \\ \hl
 \label{expert-list}
 \end{center}
 \end{table}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \clearpage
 
@@ -1403,7 +1429,7 @@ entering this information, email will be sent to the property custodian to pick 
 item for servicing. For the new component, be sure to also change the location as 
 appropriate using the same approach.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{7.0cm}
 \begin{picture}(30,50) 
@@ -1414,7 +1440,7 @@ appropriate using the same approach.
 \caption{Hall~B equipment database web page.}
 \label{inventory}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \clearpage
 
@@ -1429,6 +1455,10 @@ Hall~B Electronic Logbook: https://logbooks.jlab.org/book/hblog
 \bibitem{beast}
 Hall~B BEAST alarm handler: \\
 https://clasweb.jlab.org/wiki/index.php/Slow\_Control\_Alarms
+
+\bibitem{hco-page}
+Hot Checkout page: http://accweb.acc.jlab/hco/readiness (also accessible from the
+``Shift Documentation'' tab on the Run Page wiki~\cite{run-page})
 
 \bibitem{run-page}
 Hall~B current run information page:\\
