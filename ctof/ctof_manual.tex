@@ -33,7 +33,7 @@
 \vskip 0.5cm
 
 \author{D.S. Carman, Jefferson Laboratory\\[0.2ex]
-{\it ctof\_manual.tex -- v1.7}}
+{\it ctof\_manual.tex -- v1.8}}
 
 \date \today
 %
@@ -91,7 +91,7 @@ system must also be capable of operating in a high-rate environment at the nomin
 CLAS12 luminosity of $1 \times 10^{35}$~cm$^{-2}$s$^{-1}$. A summary of the CTOF 
 technical parameters is given in Table~\ref{details}. 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{5.2cm}
 \begin{picture}(50,50) 
@@ -103,9 +103,9 @@ straight light guides, the scintillation bars, and the downstream bent light gui
 The PMTs reside within the shield cylinders located at the ends of the light guides.} 
 \label{ctof-layout}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{table}[htbp]
 \begin{center}
 \begin{tabular} {|l|l|} \hline
@@ -131,7 +131,7 @@ $\pi$/$p$ separation      & 3.3$\sigma$ up to 1.25~GeV \\ \hline
 \caption{CTOF technical design parameters.}
 \label{details}
 \end{table}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 The CTOF scintillation barrel is composed of 48 wedge-shaped counters of two 
 slightly different designs that alternate in azimuth. A pair of neighboring CTOF 
@@ -143,10 +143,10 @@ beamline lies along the symmetry axis of the CTOF barrel pointing downstream (le
 to right in Fig.~\ref{cut-view}). The nominal position of the center of the CTOF
 scintillation barrel is roughly 7.6~in upstream of the CLAS12 origin. 
 Fig.~\ref{ctof-labeling} shows the CTOF naming convention with counter \#1 located 
-at the 9 o'clock position and increasing in number going clockwise around the 
+just above the 9 o'clock position and increasing in number going clockwise around the 
 detector.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{5.2cm}
 \begin{picture}(50,50) 
@@ -158,9 +158,9 @@ detector.
 for the upstream light guide and the upstream end of the scintillation bars.} 
 \label{counter-pair}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{5.6cm}
 \begin{picture}(50,50) 
@@ -172,9 +172,9 @@ for the upstream light guide and the upstream end of the scintillation bars.}
 runs along the CTOF barrel symmetry axis with the beam entering from the left.}
 \label{cut-view}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{5.6cm}
 \begin{picture}(50,50) 
@@ -186,7 +186,7 @@ runs along the CTOF barrel symmetry axis with the beam entering from the left.}
 the detector.
 \label{ctof-labeling}}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \vfil
 \eject
@@ -194,16 +194,16 @@ the detector.
 A block diagram of the readout electronics and power connections for one 
 representative counter of the CTOF system is shown in Fig.~\ref{ctof-elec}. The 
 PMT anode outputs are connected to one of two UVa 80-20 splitter boxes. The 80\% 
-output goes to an Ortec 934 NIM CFD and then to a CAEN 1290A 25~ps LSB VME TDC. The 
+output goes to an Ortec 935 NIM CFD and then to a CAEN 1290A 25~ps LSB VME TDC. The 
 20\% output goes to a JLab 250~MHz VME flash ADC. The high voltage (HV) power supply 
 for the CTOF counters is a CAEN SY1527 mainframe outfitted with four negative polarity 
-24-channel A1535N modules that is shared with the HTCC system. The CTOF HV modules
-occupy slots \#0 to \#3 in the mainframe. The LV power supplies for the CTOF magnetic 
-shield compensation coils are Wiener MPV8016I modules in an MPOD-mini crate. 
-Fig.~\ref{elec-layout} shows the locations of the CTOF electronics and power 
-supplies in the electronics racks on the beam left side of Space Frame Level~1.
+24-channel A1535N modules that is shared with the HTCC system and several beamline
+devices. The CTOF HV modules occupy slots \#0 to \#3 in the mainframe. The LV power
+supplies for the CTOF magnetic shield compensation coils are Wiener MPV8016I modules in
+an MPOD-mini crate. Fig.~\ref{elec-layout} shows the locations of the CTOF electronics and
+power supplies in the electronics racks on the beam left side of Space Frame Level~1.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{5.8cm}
 \begin{picture}(30,50) 
@@ -215,9 +215,9 @@ supplies in the electronics racks on the beam left side of Space Frame Level~1.
 electronics and power connections for a single counter.}
 \label{ctof-elec}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{12.0cm}
 \begin{picture}(30,50) 
@@ -230,7 +230,7 @@ electronics on the beam left side of Level~1 of the Space Frame in Hall~B. The
 positions of the HV and LV mainframes are also shown.}
 \label{elec-layout}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \clearpage
 
@@ -270,15 +270,15 @@ system. For any questions regarding the logbook, its usage, or on what is
 considered to be a ``logbook worthy'' entry, consult the assigned shift leader.
 
 Note the shift worker should follow all posted or communicated instructions about 
-entering CTOF scaler screens into the e-log. This is typically done once per 
-8-hour shift as directed on the shift checklist.
+entering CTOF monitoring histograms or scaler information into the e-log. This is
+typically done (at least) once per 8-hour shift as directed on the shift checklist.
 
 \subsubsection{Contacting CTOF System Personnel}
 \label{contact}
 
 As a general rule, shift workers should spend no more than 10 to 15 minutes 
 attempting to solve any problem that arises with the CTOF system. At that point 
-they should contact the assigned CTOF on-call expert to provide either advice on 
+they should contact the assigned CTOF on-call expert either to provide advice on 
 how to proceed or to address the problem. \textcolor{red}{The CTOF on-call phone 
 number if (757)-344-7204.}
 
@@ -326,7 +326,7 @@ system. To start the user interface on any terminal in the Hall~B Counting House
 enter the command {\it clascss}. Fig.~\ref{ctof-screen1-2}(left) shows the control 
 panel that is launched.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{8.5cm}
 \begin{picture}(30,50) 
@@ -341,7 +341,7 @@ panel that is launched.
 and subsystems. (Left) General CLAS12 interface. (Right) Options for the CTOF system.}
 \label{ctof-screen1-2}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 To bring up the CTOF HV controls, click on the ``CTOF'' button on the subsystem 
 list. This pops up a sub-menu of all Slow Controls subprograms for the CTOF system 
@@ -355,7 +355,7 @@ functionality levels:
 \item A single PMT in the CTOF system
 \end{itemize}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{6.5cm}
 \begin{picture}(30,50) 
@@ -370,7 +370,7 @@ functionality levels:
 options available.}
 \label{ctof-screen3-5}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 The HV Control Interface screen (see Fig.~\ref{ctof-screen3-5}) also provides a 
 color key to indicate the channel status:
@@ -394,10 +394,10 @@ Fig.~\ref{ctof-screen3-5}(right)).
 \item To turn individual PMTs on or off. This is accomplished by clicking on the 
 circle representing the channel of interest. This brings up a control screen for 
 the channel of interest as shown in Fig.~\ref{ctof-screen4}. Clicking on the 
-button in the ``Pw'' column toggles the channel HV on and off.
+button in the ``Pw'' (power) column toggles the channel HV on and off.
 \end{enumerate}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{0.2cm}
 \begin{picture}(30,50) 
@@ -408,9 +408,9 @@ button in the ``Pw'' column toggles the channel HV on and off.
 \caption{CTOF HV display for single channel parameters.}
 \label{ctof-screen4}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{5.8cm}
 \begin{picture}(30,50) 
@@ -422,7 +422,7 @@ button in the ``Pw'' column toggles the channel HV on and off.
 over a PMT circle.}
 \label{channel-id}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Note that hovering the mouse pointer on a circle representing a PMT brings up 
 information on that channel as shown in Fig.~\ref{channel-id}.
@@ -434,7 +434,7 @@ the channel status (OFF, ON), and the set channel voltage and current ($V_{set}$
 and $I_{set}$ ($\mu$A)). If desired, shift workers can toggle the HV settings for 
 single channels on or off through this interface.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{7.5cm}
 \begin{picture}(30,50) 
@@ -445,9 +445,9 @@ single channels on or off through this interface.
 \caption{CTOF ``novice'' channel controls screen.}
 \label{ctof-screen6}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{7.0cm}
 \begin{picture}(30,50) 
@@ -458,7 +458,7 @@ single channels on or off through this interface.
 \caption{CTOF ``expert'' channel controls screen.}
 \label{ctof-screen7}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 In the upper left corner of this HV Controls window is a button marked ``expert'' 
 that brings up the window shown in Fig.~\ref{ctof-screen7}. This window allows 
@@ -480,16 +480,19 @@ the usual cause is an issue of communication between the IOC computer and the HV
 mainframe. To reboot the IOC, click on the ``IOCs'' button on the Slow Controls 
 panel within the ``Subsystems'' portion of the interface (see 
 Fig.~\ref{ctof-screen1-2}). Fig.~\ref{ioc-reset2} shows the options that appear 
-on the sub-menu that pops up. On this menu, select ``HV IOC Health'' to open the 
-control window shown in Fig.~\ref{ioc-reset3}. Click on the ``Reboot'' button for 
-the HV supply HVCTOF0. The reboot will take less than two minutes to complete and 
-the yellow or magenta communication problem channel indicators should all disappear. 
-Note that the IOCs can be also rebooted through the CTOF channel control screen 
-shown in Fig.~\ref{ctof-screen3-5}(right). Click on the ``Reboot HV IOC'' button 
-and answer ``Yes'' on the dialog box that comes up. If rebooting the IOC does not 
-solve the communication problems, contact the Slow Controls system expert.
+on the sub-menu that pops up. On this menu, select ``IOC Health'' to open the 
+control window shown in Fig.~\ref{ioc-reset3}. Clicking on the ``High Voltage'' tab
+along the top of screen brings up the screen for the IOCs that control the HV
+mainframes as shown in Fig.~\ref{ioc-reset4}. Click on the ``Reboot'' button for 
+the HV supply HVCTOF0 (under the ``Soft Reboot'' column). The reboot will take
+less than two minutes to complete and the yellow or magenta communication problem
+channel indicators should all disappear. Note that the IOCs can be also rebooted
+through the CTOF channel control screen shown in Fig.~\ref{ctof-screen3-5}(right).
+Click on the ``Reboot HV IOC'' button and answer ``Yes'' on the dialog box that
+comes up. If rebooting the IOC does not solve the communication problems, contact
+the Slow Controls system expert.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[ht]
 \vspace{8.2cm}
 \begin{picture}(30,50) 
@@ -500,20 +503,33 @@ solve the communication problems, contact the Slow Controls system expert.
 \caption{Sub-menu on the primary Slow Controls interface to reboot the IOCs.}
 \label{ioc-reset2}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
-\vspace{3.0cm}
+\vspace{5.3cm}
 \begin{picture}(30,50) 
-\put(60,210)
-{\hbox{\includegraphics[width=0.57\textwidth,natwidth=610,natheight=642,angle=-90]
+\put(10,280)
+{\hbox{\includegraphics[width=0.75\textwidth,natwidth=610,natheight=642,angle=-90]
 {ioc-reset3.pdf}}}
 \end{picture} 
-\caption{HV IOC health screen where individual IOCs can be rebooted.}
+\caption{IOC health screen for access to all Hall B IOCs.}
 \label{ioc-reset3}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\vspace{5.3cm}
+\begin{picture}(30,50) 
+\put(5,280)
+{\hbox{\includegraphics[width=0.75\textwidth,natwidth=610,natheight=642,angle=-90]
+{ioc-reset4.pdf}}}
+\end{picture} 
+\caption{IOC health screen where individual IOCs that control the HV mainframes can be rebooted.}
+\label{ioc-reset4}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \clearpage
 
@@ -526,11 +542,11 @@ solve the communication problems, contact the Slow Controls system expert.
 The PMT active magnetic shield layer consists of two independent coils, the 
 first $z_1$ of 90 turns placed about the middle of the PMT accelerating structure 
 and the second $z_2$ of 60 turns placed about the PMT photocathode (see 
-Fig.~\ref{coil-layout}). Coil currents on the order of 0.5 - 1~A are sufficient 
-to reduce the inner remnant magnetic field within the PMT shield system of 0.5 - 
-1~G down to the level of 0.2 - 0.3~G.
+Fig.~\ref{coil-layout}). Note that the coils are not typically energized during CTOF
+operations even with the solenoid at full field. If it is necessary to energize them,
+this will noted on the run web page~\cite{run-page}.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{1.5cm}
 \begin{picture}(50,50) 
@@ -544,7 +560,7 @@ back part of the PMT dynode structure and $z_2$ spans the region about the PMT
 photocathode.}
 \label{coil-layout}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 For the CTOF shields the compensation coils $z_1$ and $z_2$ are independently 
 controllable. The LV power supply for the coils is a Wiener MPOD mini-crate 
@@ -556,26 +572,25 @@ currents in $z_1$ and $z_2$ corresponding to the upstream low-pitch angle shield
 the upstream high-pitch angle shields, and the downstream shields. Fig.~\ref{coils} 
 shows the power circuit layout.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{9.5cm}
 \begin{picture}(50,50) 
-\put(30,325)
-{\hbox{\includegraphics[width=0.70\textwidth,natwidth=610,natheight=642,angle=-90]
+\put(10,-15)
+{\hbox{\includegraphics[width=0.75\textwidth,natwidth=610,natheight=642]
 {compensation-coils.pdf}}}
 \end{picture} 
-\caption{Layout of the power circuit for the CTOF magnetic shield compensation 
-coils.}
+\caption{Layout of the power circuit for the CTOF magnetic shield compensation coils.}
 \label{coils}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Although the Wiener MPOD system can provide up to 5~A per channel, the typical 
-coil currents are at the level of 0.5 - 1~A. In this current regime the coil 
-system remains at room temperature. During operation of the coil power supply in 
-Hall~B, a temperature interlock circuit protects the coils from overheating. An 
-over-temperature condition shuts down the Wiener LV supply whose status is monitored 
-by the Hall~B alarm handler.
+Although the Wiener MPOD system can provide up to 5~A per channel, the coil currents
+have never had to go above the level of 0.5 - 1~A. In this current regime the coil system
+remains at room temperature. During operation of the coil power supply in Hall~B, a
+temperature interlock circuit protects the coils from overheating. An over-temperature
+condition shuts down the Wiener LV supply whose status is monitored by the Hall~B alarm
+handler.
 
 The Wiener MPOD power supply control interface is brought up through the CTOF control 
 panel shown in Fig.~\ref{ctof-screen1-2} by clicking on the option ``CTOF LV''. The 
@@ -585,7 +600,7 @@ on the associated channels. To reboot the IOC, follow the instructions in
 Section~\ref{reset-iocs}. If problems with communications remain after rebooting
 the IOC, contact the Slow Controls expert.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{2.5cm}
 \begin{picture}(30,50) 
@@ -596,7 +611,7 @@ the IOC, contact the Slow Controls expert.
 \caption{Low voltage system control interface model for the CTOF compensation coils.}
 \label{ctof-lv-control}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \vfil
 \eject
@@ -610,7 +625,7 @@ display of the system scalers. The primary system for viewing the CTOF scalers i
 the Hall~B Counting House is the {\it mon12} utility. Typing ``mon12'' on any 
 terminal in the Counting House will bring up the screen shown in Fig.~\ref{mon12}(left).
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{6.5cm}
 \begin{picture}(30,50) 
@@ -622,7 +637,7 @@ different CLAS12 subsystems and sectors. (Right) The CTOF ADC and TDC scaler scr
 within {\it mon12}.}
 \label{mon12}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 The {\it mon12} utility requires the data acquisition system to be operating to 
 display the scaler counts. If a run is in progress, scaler accumulation will begin 
@@ -636,34 +651,34 @@ Fig.~\ref{mon12}(right).
 \vfil
 \eject
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[ht]
 \vspace{7.0cm}
 \begin{picture}(30,50) 
-\put(10,-35)
-{\hbox{\includegraphics[width=0.50\textwidth,natwidth=610,natheight=642]
-{scaler-screen-ctof.pdf}}}
-\put(245,-35)
+\put(-5,-35)
 {\hbox{\includegraphics[width=0.50\textwidth,natwidth=610,natheight=642]
 {scaler-screen2-ctof.pdf}}}
+\put(225,-35)
+{\hbox{\includegraphics[width=0.50\textwidth,natwidth=610,natheight=642]
+{scaler-screen-ctof.pdf}}}
 \end{picture} 
 \caption{Scaler displays for the CTOF counters from the Slow Controls system
-showing the two different options, ``CTOF Scalers'' (left) and ``CTOF Scalers -
-Geographic'' (right). Both displays show the total rate for the upstream and 
-downstream PMTs.}
+showing the two different options, ``CTOF Scalers - Geographic'' (left) and
+``CTOF Scalers - Expert'' (right). Both displays show the total rate for the
+upstream and downstream PMTs.}
 \label{sc-scalers}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 The second manner in which to view the CTOF system scalers is through the CLAS12 
 Slow Controls system. Shown in the options for the CTOF system in 
 Fig.~\ref{ctof-screen1-2}(right) is an option to view the CTOF scalers from the
 FADCs. Note that there are presently two different options for displaying the
-same information, ``CTOF Scalers'' and ``CTOF Scalers - Geographic''. Selecting 
-these options brings up the screens as shown in Fig.~\ref{sc-scalers}.
+same information, ``CTOF Scalers - Geographic'' and ``CTOF Scalers - Expert''.
+Selecting these options brings up the screens as shown in Fig.~\ref{sc-scalers}.
 
 The final manner in which to monitor the performance of the CTOF hardware is
-through the expert monitoring suite {\it CTOFMON}. Details on this suite are
+through the expert monitoring suite {\it ctofmon}. Details on this suite are
 provided in Section~\ref{ctofmon}, however this suite is mainly intended for
 CTOF system experts.
 
@@ -686,7 +701,7 @@ during data taking (see Section~\ref{oncall}).
 \item Take periodic HV gain calibration runs and adjust the system HV settings (see 
 Section~\ref{gain-calib}).
 \item Take periodic LMS performance runs (see Section~\ref{lms-scans}).
-\item Monitor the system performance with the {\it CTOFMON} expert monitoring suite
+\item Monitor the system performance with the {\it ctofmon} expert monitoring suite
 (see Section~\ref{ctofmon}).
 \item Make repairs to the hardware during maintenance periods (see 
 Section~\ref{repairs}).
@@ -698,12 +713,12 @@ Section~\ref{repairs}).
 Prior to the start of each beam running period, each subsystem Group Leader is 
 responsible to review the components of their systems to be sure that they are 
 fully operational. This review is referred to as ``hot checkout''. The hot checkout 
-is an online checklist for each subsystem that includes a sign-off for all hardware 
-elements of the system (e.g. HV, LV, detectors, gas, pulser). For the CTOF system, 
-the hot checkout includes verification that all detectors are operational, that the 
-Slow Controls system for the HV and LMS is functioning, and that the DAQ system can 
-fully communicate with the readout electronics. It also includes checkout that the 
-LV power supply system and the shield temperature readout are operational. 
+is an online checklist~\cite{hco-page} for each subsystem that includes a sign-off
+for all hardware elements of the system (e.g. HV, LV, detectors, gas, pulser). For the
+CTOF system, the hot checkout includes verification that all detectors are operational,
+that the Slow Controls system for the HV and LMS is functioning, and that the DAQ
+system can fully communicate with the readout electronics. It also includes checkout
+that the LV power supply system and the shield temperature readout are operational. 
 
 Fig.~\ref{hot-co} shows a screenshot of the hot checkout interface. Under the heading 
 ``Hall~B CLAS12 Detector'', all entries for CTOF (located within the ``CLAS12 TOF''
@@ -714,24 +729,20 @@ Section~\ref{lms-scans}). Reminders to complete the system hot checkout will be 
 out shortly before the start of a given run period with the required deadline for 
 completing the work.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[ht]
-\vspace{9.5cm}
+\vspace{9.1cm}
 \begin{picture}(30,50) 
-\put(35,-5)
-{\hbox{\includegraphics[width=0.55\textwidth,natwidth=610,natheight=642]
-{checklist1.pdf}}}
-\put(270,40)
-{\hbox{\includegraphics[width=0.35\textwidth,natwidth=610,natheight=642]
-{checklist2.pdf}}}
+\put(100,-5)
+{\hbox{\includegraphics[width=0.55\textwidth,natwidth=610,natheight=642]{hco-screen.pdf}}}
 \end{picture} 
 \caption{Screenshot of the Hall~B hot checkout screen. The CTOF system appears under 
 the ``Hall~B CLAS12 Detector'' and ``CLAS TOF'' headings. All entries for CTOF have 
-to be verified as functional and all items listed as ``Not Ready'' must be changed 
-over to ``Ready''.}
+to be verified as functional and all items listed as ``Not Ready'' must be changed over to
+``Ready''.}
 \label{hot-co}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{On-Call Responsibilities}
 \label{oncall}
@@ -745,7 +756,7 @@ amounts to 10 to 15~minutes, should result in a call to the relevant expert cell
 phone. \textcolor{red}{The CTOF on-call phone number is (757)-344-7204.} 
 
 The on-call experts can often diagnose problems over the telephone, but there are 
-times where they will have to go to the Counting House to more fully address an 
+times when they will have to go to the Counting House to more fully address an 
 issue. One of the important responsibilities of the on-call experts is to make 
 practical decisions regarding which problems require access to Hall~B for immediate 
 attention and which can be delayed to periods when the accelerator is down or other 
@@ -764,7 +775,7 @@ they cannot resolve with the CTOF subsystem Group Leader as soon as is reasonabl
 
 The HV gain calibrations for the CTOF system are typically completed before the 
 start of each run period, as well as several times during the run period when there 
-is opportunity. The HV gain calibration procedure employs a cosmic ray trigger 
+is opportunity. The HV gain calibration procedure employs a special cosmic ray trigger 
 defined by the CTOF system. The ADC spectra for each counter are fit to determine
 the minimum ionizing particle peak position. The end result of the gain calibration 
 amounts to adjusting the system HV settings to position the ADC peaks at their 
@@ -783,9 +794,11 @@ the code, is included on the CTOF web page~\cite{ctof-web}.
 The CTOF Light Monitoring System (LMS) consists of an optical fiber coupled to 
 the light guide near each PMT. The light source is an LED board that is driven by 
 a JLab-designed VME pulser board~\cite{pulser-board}. The LED source is coupled to 
-the fiber array through a small focusing Acrylic light guide.
+the fiber array through a small focusing Acrylic light guide. Note: At the present time
+the LMS fibers are not connected to the CTOF counters. [Therefore no LMS scans can
+be acquired. The remainder of this section is included only for completeness.]
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{9.0cm}
 \begin{picture}(30,50) 
@@ -796,26 +809,25 @@ the fiber array through a small focusing Acrylic light guide.
 \caption{Pulser control interface screen for the CTOF LMS.}
 \label{ctof-lms}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 The LMS scan sequence amounts to taking six separate data runs adjusting the LED 
 light amplitude in discrete increments to vary the intensity over the full dynamic 
-range of the FADC. This interface is brought up by clicking on the ``CTOF LMS'' 
-option from the CTOF sub-menu shown in Fig.~\ref{ctof-screen1-2}. Note that the 
-pulser board has two outputs, one for the CTOF system and one for the HTCC system. 
-Fig.~\ref{ctof-lms} shows a preliminary version of the control interface that is 
-still being worked on. The intensity scan is controlled by adjusted VLED from 
-3.5~V to 6.0~V in 0.5~V steps. The nominal pulser frequency for the scan is 1~kHz. 
-Problems with communication between the LMS controls and the pulser board are 
-indicated by a magenta color on the interface. If these are present, that is an 
-indication that the associated pulser IOC needs to be rebooted (see 
-Section~\ref{reset-iocs}). Contact the Slow Controls expert if there are any
-communication problems that are not remedied after an IOC reboot.
+range of the FADC. This interface is brought up by clicking on the ``CTOF Flasher''
+option from the CTOF sub-menu shown in Fig.~\ref{ctof-screen1-2}. Note that the pulser
+board has two outputs, one for the CTOF system and one for the HTCC system.
+Fig.~\ref{ctof-lms} shows the control interface. The intensity scan is controlled by
+adjusting VLED from 3.5~V to 6.0~V in 0.5~V steps. The nominal pulser frequency for the
+scan is 1~kHz. Problems with communication between the LMS controls and the pulser board
+are indicated by a magenta color on the interface. If these are present, that is an indication
+that the associated pulser IOC needs to be rebooted (see Section~\ref{reset-iocs}). Contact
+the Slow Controls expert if there are any communication problems that are not remedied after
+an IOC reboot.
 
 \subsubsection{Expert Monitoring Suite}
 \label{ctofmon}
 
-The expert monitoring suite for the CTOF system is called {\it CTOFMON}. This code 
+The expert monitoring suite for the CTOF system is called {\it ctofmon}. This code 
 suite is brought up on any Counting House computer by typing ``ctofmon''. The suite 
 allows monitoring of the following system quantities:
 
@@ -832,7 +844,7 @@ The suite runs from EVIO or HIPO input files or by attaching directly to the DAQ
 ET ring. The suite can also read and display input histogram files. Screen captures 
 of the suite are shown in Fig.~\ref{ctofmon-screens}. 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{15.0cm}
 \begin{picture}(30,50) 
@@ -843,10 +855,10 @@ natheight=642,angle=-90]{ctofmon-1.pdf}}}
 {\hbox{\includegraphics[width=0.70\textwidth,natwidth=610,height=0.50\textheight,
 natheight=642,angle=-90]{ctofmon-2.pdf}}}
 \end{picture} 
-\caption{Screens from the {\it CTOFMON} expert monitoring suite.}
+\caption{Screens from the {\it ctofmon} expert monitoring suite.}
 \label{ctofmon-screens}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{System Failure Modes}
 \label{repairs}
@@ -881,8 +893,8 @@ deemed bad and needs to be replaced, the following steps are necessary:
 \item Using the HV control interface, ensure that all HV channels controlled by the
 mainframe are turned off. Remember that the HV mainframe for the CTOF also includes 
 the HTCC and some beamline devices.
-\item Take a spare A1535N board from the storage area on the second level of the Pie 
-Tower in Hall~B.
+\item Take a spare A1535N board from the storage area in the back room of the
+Counting House.
 \item Turn the front panel key on the HV supply to the ``off'' position and toggle 
 the main power switch to ``off'' on the back of the HV supply.
 \item On the back of the supply, remove the Radiall connector on the bad board.
@@ -893,12 +905,18 @@ neighboring boards.
 board and plug into the same connector on the new board.
 \item Toggle the main power switch to ``on'' and turn the HV power supply on using 
 the key on the front panel, putting the key in the ``local'' position.
-\item Run all parameter scripts for the HV power supply to load all channel 
-parameters. See instructions in Section~\ref{hv-parms}. Note that only the parameters
-associated with the newly installed board should need to be set.
+\item Restore the most recent backup parameter settings for the HV mainframe described
+in Section~\ref{save-restore}. Note that only the parameters associated with the swapped
+board should need to be restored. It is important to note as well that the ``BURT'' backup
+file does not include the parameters for the maximum high voltage settings for the channel.
+These must be reset for the swapped out board to the nominal values (-2.5~kV). See
+instructions in Section~\ref{hv-parms}. These values can also be set channel-by-channel using
+the CTOF expert channel controls screen discussed in Section~\ref{hv-control}.
 \item Enter information on the new board and the old bad board into the Hall~B 
 equipment database (see the Appendix).
-\item Leave the bad board on the RadCon Survey table in Hall~B.
+\item Leave the bad board on the RadCon survey table in Hall~B attaching a RadCon tag with a
+contact listing for the Fast Electronics Group. Send an email to the Fast Electronics Group
+to pick up the module for testing/repairs.
 \item If beam conditions are acceptable, turn on the HV for the CTOF, HTCC, and
 beamline device channels. Be sure to check with the shift leader before energizing 
 the supply.
@@ -924,9 +942,10 @@ the HTCC and some beamline devices.
 the main power switch to ``off'' on the back of the HV supply.
 \item The modules are typically pulled out of the back of the mainframe leaving the 
 Radiall connectors attached. Before pulling the modules from the mainframe, be sure 
-that they are clearly labeled so that they can be put back into their assigned channels.
+that they are clearly labeled so that they can be put back into their assigned slots.
 \item Unplug the power cord from the mainframe.
-\item Remove the mainframe from the rack and place it on the radiation survey table. 
+\item Remove the mainframe from the rack and place it on the RadCon survey table
+attaching a RadCon tag with contact information listing the Fast Electronics Group. 
 Send email to the Fast Electronics Group to pick up the mainframe for testing/repairs.
 \item Install a spare mainframe in the rack, install the boards into their assigned 
 slots, and connect the power cord to the mainframe.
@@ -936,7 +955,10 @@ key on the front panel, putting the key in the ``local'' position.
 \item When communication is restored, check the channel settings for all boards to be 
 sure that they are correct before turning on the HV. If there are questions regarding 
 the HTCC settings, contact the HTCC expert. If there are questions regarding the
-beamline device settings, contact the beamline expert.
+beamline device settings, contact the beamline expert. As the channel settings are stored
+on the individual boards, the parameters should restored without user intervention. However,
+if necessary, restore the parameter settings as described in Section~\ref{save-restore},
+making sure that the maximum high voltage limits for each channel are correct (-2.5~kV).
 \item If beam conditions are acceptable, turn on the HV for the CTOF, HTCC, and
 beamline device channels. Be sure to check with the shift leader before energizing 
 the supply.
@@ -949,21 +971,21 @@ Sometimes a sudden gain shift can appear in the ADC spectra for a given counter.
 There are a number of possible causes for such a condition.
 
 \begin{itemize}
-\item Problematic PMT - sometimes gain shifts can be attributed to a problem with a 
-PMT that requires adjustment of the HV settings. Of course, PMT gain issues typically 
-lead to a reduced gain that requires an increase of the HV.  Such issues are typically 
-seen as slow drifts of the response with time.
-\item DAQ Problems - the most common cause for an apparent gain shift in the ADC 
+\item Problematic PMT/Voltage Divider - sometimes gain shifts can be attributed to a problem
+with a PMT or voltage divider that requires adjustment of the HV settings. Of course, PMT
+aging effects typically lead to a reduced gain that requires an increase of the HV.  Such issues
+are typically seen as slow drifts of the response with time.
+\item DAQ Problems - the most common cause for an apparent sudden gain shift in the ADC 
 spectra for a counter is due to problems with the FADC settings. Such problems can 
 typically be diagnosed from pedestal shifts or widened pedestals. The pedestals can be 
-checked by taking FADC data in ``raw mode'' using the {\it CTOFMON} system monitoring 
+checked by taking FADC data in ``raw mode'' using the {\it ctofmon} system monitoring 
 suite (see Section~\ref{ctofmon}).
 \item Light Leak - it is possible that a gain shift can be due to a light leak on the 
 counter. The detectors themselves can be checked as necessary, coordinating work 
 through the Run Coordinator and the Hall~B Work Coordinator.
-\item PMT Saturation - In conditions of excessive high rate, the PMT becomes current 
-limited and the ADC signals can become distorted and shifted to lower gains. Be sure 
-that bad beam or high rate conditions are not responsible for the issues seen.
+\item PMT Saturation - In conditions of excessively high rates, the PMTs can become
+current limited and the ADC signals can become distorted and shifted to lower gains. Be
+sure that bad beam or high rate conditions are not responsible for the issues seen.
 \end{itemize}
 
 \subsubsection{High PMT Dark Current}
@@ -972,7 +994,8 @@ that bad beam or high rate conditions are not responsible for the issues seen.
 High PMT dark currents can be seen through increased counting rates in the channel 
 scaler displays or in distorted ADC spectra. The dark currents can be measured at 
 either the splitter boxes (nominal measurement location) or at the PMT output (if 
-the solenoid is off). There are two likely causes for high PMT dark currents:
+the solenoid is off and access is possible). There are two likely causes for high PMT
+dark currents:
 
 \begin{enumerate}
 \item Bad PMT - At times when a PMT goes bad, its dark current can increase. Typical 
@@ -995,9 +1018,10 @@ leaks can be investigated and repaired during a scheduled Hall~B access.
 
 Each CTOF PMT has a single anode signal output. This signal is a negative polarity 
 pulse as shown in Fig.~\ref{pmt-pulses} for a representative pulse from one of the 
-counters.
+counters. Occasionally a signal channel will disappear from the CTOF monitoring plots.
+In such a situation, further investigation will be necessary. 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{5.2cm}
 \begin{picture}(30,50) 
@@ -1009,10 +1033,7 @@ counters.
 downstream PMTs of a CTOF counter.}
 \label{pmt-pulses}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-Occasionally a signal channel will disappear from the CTOF monitoring plots. In such a 
-situation, further investigation will be necessary. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{itemize}
 \item If a signal channel is missing, this could be due either to a problem with 
@@ -1031,8 +1052,6 @@ the RG-174 or RG-316 cables. In such a case ensure that the connector barrel is
 screwed on tightly to the connector threads.
 \item If the PMT HV is on but the supply current reads 0, this is likely due to a bad 
 HV cable or connection, or an issue with the HV distribution box.
-\item Groups of missing signals for consecutive electronics channels are likely due to 
-an unplugged or partially unplugged ribbon cable at the input to the TDCs.
 \end{itemize}
 
 \subsubsection{Bad PMT}
@@ -1069,9 +1088,12 @@ contact the Slow Controls system expert.
 \label{hv-parms}
 
 The CS-Studio program is used to monitor the HV settings of the CTOF system and 
-to toggle the HV off and on for individual or multiple channels in the system. 
-To set the channel values and all system parameters, the operations are carried 
-out using control scripts. From the computers in the Hall~B Counting House, the 
+to toggle the HV off and on for individual or multiple channels in the system. To set
+the channel values, restore the most recent saved ``BURT'' backup file (see
+Section~\ref{save-restore} for details). Note as well that the channel parameters
+can also be set using control scripts. 
+
+From the computers in the Hall~B Counting House, the 
 scripts are located in the path: {\it /home/clasrun/ctof/hv}. There are seven 
 scripts available for setting the CTOF HV parameters:
 
@@ -1090,6 +1112,9 @@ scripts available for setting the CTOF HV parameters:
 before the 
 channel trips (units = s)
 \end{itemize}
+
+The scripts are run from any of the DAQ machines in the Counting House (using e.g the
+commands {\it sh loadhvmax} or {\it ./loadhvmax}).
 
 The nominal settings for the HV channel parameters are as follows:
 
@@ -1113,7 +1138,7 @@ However, it is imperative that the script settings detailed above be kept fully 
 to date as they represent the system archive values. This ``expert'' screen should 
 most properly be used only for viewing the channel parameter set values.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{2.0cm}
 \begin{picture}(30,50) 
@@ -1121,22 +1146,22 @@ most properly be used only for viewing the channel parameter set values.
 {\hbox{\includegraphics[width=0.80\textwidth,natwidth=610,natheight=642]
 {ctof-backup.pdf}}}
 \end{picture} 
-\caption{Window that comes up after selecting ``Save Settings'' in 
-Fig.~\ref{ctof-screen3-5}(right).}
+\caption{Window that comes up after selecting ``Save HV Settings'' in
+  Fig.~\ref{ctof-screen3-5}(right).}
 \label{backup}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{HV Save and Restore}
 \label{save-restore}
 
-The CTOF HV interface allows all system channel settings to be saved into a file 
-or loaded from an archived file by clicking either on ``Save Settings'' or 
-``Restore Settings'' on the CTOF Menu screen (see Fig.~\ref{ctof-screen3-5}(right)). 
-The files created are referred to as ``BURT'' backup files, where BURT is an acronym 
-for ``Backup and Restore Tool''. BURT is a utility for saving EPICS variables into 
-an ASCII file readable by the EPICS Slow Controls system. The save files are stored 
-on the DAQ machines in the Hall~B Counting House at: 
+The CTOF HV interface allows all system channel settings (except for the maximum channel
+HV settings) to be saved into a file or loaded from an archived file by clicking either on
+``Save HV Settings'' or ``Restore HV Settings'' on the CTOF Menu screen (see
+Fig.~\ref{ctof-screen3-5}(right)). The files created are referred to as ``BURT'' backup
+files, where BURT is an acronym for ``Backup and Restore Tool''. BURT is a utility for saving
+EPICS variables into an ASCII file readable by the EPICS Slow Controls system. The save files
+are stored on the DAQ machines in the Hall~B Counting House at: 
 {\it /usr/clas12/DATA/burt/CTOF\_HV}.
 
 Clicking on ``Save Settings'' brings up a window ``CREATE HV BACKUP'' as shown 
@@ -1149,7 +1174,7 @@ parameters for the full HV system. Note that a new backup file should be created
 whenever any HV settings have changed, including HV values, channel parameter 
 settings, or channel on/off settings.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{3.7cm}
 \begin{picture}(30,50) 
@@ -1157,11 +1182,11 @@ settings, or channel on/off settings.
 {\hbox{\includegraphics[width=0.60\textwidth,natwidth=610,natheight=642,angle=-90]
 {ctof-restore.pdf}}}
 \end{picture} 
-\caption{Window that comes up after selecting ``Restore Settings'' in 
+\caption{Window that comes up after selecting ``Restore HV Settings'' in 
 Fig.~\ref{ctof-screen3-5}(right).}
 \label{restore}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Cabling Details}
 
@@ -1174,7 +1199,7 @@ in Fig.~\ref{ctof-splitter}. The 80\% signals run from the splitters to the
 discriminators. Fig.~\ref{ctof-disc-map} shows the signal mapping to the 
 discriminators. The discriminator outputs are then connected to the TDCs. The 
 20\% signals run from the splitters to the FADC inputs. The splitter outputs to 
-the FADCs are through 34-pin connectors for each of the four groups (see 
+the FADCs are through 34-pin connectors for each of the six groups (see 
 Fig.~\ref{ctof-splitter}). The splitter outputs to the discriminators are through 
 the lemo connectors.
 
@@ -1187,7 +1212,7 @@ gives schematics for the cable and connector types for each segment of the
 connections from the voltage divider to the readout electronics for the CTOF 
 counters.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{17.0cm}
 \begin{picture}(30,50) 
@@ -1198,9 +1223,9 @@ counters.
 \caption{Layout of the connections to the two CTOF signal splitters.}
 \label{ctof-splitter}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{17.0cm}
 \begin{picture}(30,50) 
@@ -1211,9 +1236,9 @@ counters.
 \caption{Mapping of the CTOF counters to the CFDs.}
 \label{ctof-disc-map}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{17.0cm}
 \begin{picture}(30,50) 
@@ -1223,9 +1248,9 @@ counters.
 \caption{CTOF VME map for the TDCs.}
 \label{ctof-vme1-map}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{17.0cm}
 \begin{picture}(30,50) 
@@ -1235,9 +1260,9 @@ counters.
 \caption{CTOF VME map for the FADCs.}
 \label{ctof-vme2-map}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{7.5cm}
 \begin{picture}(30,50) 
@@ -1248,7 +1273,7 @@ counters.
 \caption{CTOF HV and signal cable connections.}
 \label{cable-types}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \clearpage
 
@@ -1266,7 +1291,7 @@ from the voltage divider to the HV power supplies for the counters in CTOF. The
 HV power supply channel assignments for each sector are nominally given as shown 
 in Fig.~\ref{ctof-hvmap}.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{5.7cm}
 \begin{picture}(30,50) 
@@ -1278,9 +1303,9 @@ in Fig.~\ref{ctof-hvmap}.
 the upstream and downstream PMTs.}
 \label{ctof-hv-map}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{3.0cm}
 \begin{picture}(30,50) 
@@ -1290,7 +1315,7 @@ the upstream and downstream PMTs.}
 \caption{HV mainframe CTOF channel assignments.}
 \label{ctof-hvmap}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Altering Cable Maps}
 
@@ -1336,8 +1361,8 @@ including:
 \begin{itemize}
 \item CTOF System Operations Manual (this document)
  \begin{itemize}
-   \item The source files for the CTOF System Operations Manual are located on the
-         github repository at: {\it JeffersonLab/clas12-manuals}
+  \item The source files for the CTOF System Operations Manual are located on the
+         github repository at: {\it JeffersonLab/clas12-manuals/ctof}
  \end{itemize}
 \item CTOF Geometry Document
 \item CTOF Calibration Constants
@@ -1361,14 +1386,14 @@ operations and repairs are only to be carried out by the list of authorized pers
 shown in Table~\ref{expert-list}. The list of authorized personnel for CTOF can only 
 be modified by the CTOF Group Leader.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{table}[htbp]
 \begin{center}
 \begin{tabular} {|c|c|c|c|} \hline
 Name             & Telephone      & email              & Area             \\ \hline \hline
 Daniel S. Carman & (757)-269-5586 & carman@jlab.org    & CTOF Group Leader\\
                  &                &                    & Hardware, Software \\ \hline
-Cole Smith       & (757)-269-5307 & lcsmith@jlab.org   & Hardware, {\it CTOFMON} \\ \hline
+Cole Smith       & (757)-269-5307 & lcsmith@jlab.org   & Hardware, {\it ctofmon} \\ \hline
 Sergey Boyarinov & (757)-269-5795 & boyarinov@jlab.org & DAQ              \\ \hline
 Nathan Baltzell  & (757)-269-5902 & baltzell@jlab.org  & Slow Controls    \\ \hline
 \end{tabular}
@@ -1376,7 +1401,7 @@ Nathan Baltzell  & (757)-269-5902 & baltzell@jlab.org  & Slow Controls    \\ \hl
 \label{expert-list}
 \end{center}
 \end{table}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \clearpage
 
@@ -1399,18 +1424,17 @@ email will be sent to the property custodian to pick up the item for servicing. 
 the new component, be sure to also change the location as appropriate using the same 
 approach.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{7.2cm}
 \begin{picture}(30,50) 
 \put(5,305)
-{\hbox{\includegraphics[width=0.75\textwidth,natwidth=610,natheight=642,angle=-90]
-{inventory.pdf}}}
+{\hbox{\includegraphics[width=0.75\textwidth,natwidth=610,natheight=642,angle=-90]{inventory.pdf}}}
 \end{picture} 
 \caption{Hall~B equipment database web page.}
 \label{inventory}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \clearpage
 
@@ -1429,6 +1453,10 @@ https://clasweb.jlab.org/wiki/index.php/Slow\_Control\_Alarms
 \bibitem{run-page}
 Hall~B current run information page:\\
 https://www.jlab.org/Hall-B/run-web/
+
+\bibitem{hco-page}
+Hot Checkout page: http://accweb.acc.jlab/hco/readiness (also accessible from the
+``Shift Documentation'' tab on the Run Page wiki~\cite{run-page})
 
 \bibitem{ctof-web}
 CTOF web page: http://www.jlab.org/Hall-B/ctof
