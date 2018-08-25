@@ -12,14 +12,14 @@
 \usepackage{hypcap}
 \usepackage[small,compact]{titlesec}
 \setlist[enumerate]{itemsep=0mm}
-\addtolength{\textwidth}{1cm}
-\addtolength{\hoffset}{-0.5cm}
+%\addtolength{\textwidth}{1cm}
+%\addtolength{\hoffset}{-0.5cm}
 \addtolength{\textheight}{1.2cm}
 \addtolength{\voffset}{-0.0cm}
 \begin{document}
 \title{CLAS12 M{\o}ller Operations Manual - v0.1}
 \date{\today}
-\author{N. Baltzell, S. Stepayan}
+\author{N. Baltzell, S. Stepanyan}
 \begin{abstract}
 \end{abstract}
 
@@ -56,7 +56,7 @@ The standard hardware settings for a M{\o}ller run are shown in Table~\ref{tab:p
     \caption{Standard hardware parameter values for the M{\o}ller setup.  Live values are shown in the Monitoring section in Figure~\ref{fig:unconfig}.\label{tab:pars}.}
 \end{table}
 
-\subsection{Quality Requirements}
+\subsection{Quality Requirements}\label{sec:quality}
 The requirements to be maintained during a M{\o}ller run, and the resulting desired error on the polarization measurement are shown in Table~\ref{tab:reqs}.
 \begin{table}[htbp]\centering
     \begin{tabular}{ll}\toprule[1.5pt]
@@ -83,17 +83,18 @@ The procedure for the operator with the interface in Figure~\ref{fig:unconfig} c
 \begin{enumerate}
 \item {\bf Configure}:  ensure the Configuration section is set as desired
         \subitem
-        The operator should confirm the desired values in the Configuration section.  This includes quadrupole current, Helmholtz current and polarity, target choice, SLM voltage, and acquisition time.  The normal standard values for these paramaters are shown in Table~\ref{tab:pars}. If the {\em Auto} option is selected for the quadrupoles, their current will be chosen based on standard settings for the current beam energy.  {\em Note, it is critical that some of these settings are held fixed while a run is ongoing, and those cannot be changed during a run from this interface.  See below regarding reconfiguring.}
+        The operator should confirm the desired values in Table~\ref{tab:pars} with the Configuration section of Figure~\ref{fig:unconfig}.  If the {\em Auto} option is selected for the quadrupoles, their current will be chosen based on standard settings for the current beam energy.  {\em Note, it is critical that some of these settings are held fixed while a run is ongoing, and those cannot be changed during a run from this interface.  See below regarding reconfiguring.}
 \item {\bf Enter}: click {\em Enter} in the Configuration section and wait for success status
     \subitem Clicking the {\em Enter} button will configure the system for a M{\o}ller run by initiating a sequence of actions and provide corresponding feedback in the status portion of the screen.  This includes turning off some detectors' high voltage, inserting the blank collimator, energizing the quadrupoles and Helmholtz magnets, and inserting the M{\o}ller target.  Success will result in ``Moller Configuration Ready'' in the status message.
 \item {\bf Start}: click {\em Start Run} in the DAQ section
     \subitem This will initiate a new M{\o}ller run, including zeroing any accumulated data, opening a new data file, incrementing the run number, and starting recording data.
 \item {\bf Monitor}: monitor the critical parameters
-    \subitem This is left to the operator and described in Table~\ref{tab:reqs}.
+    \subitem This is left to the operator and described in Section~\ref{sec:quality}.
 \item {\bf End}: click {\em End Run} in the DAQ section
-\item {\bf Log}: click {\em Submit} in the Logbook Entry section 
+    \subitem At this point you should have achieved the desired polarization error of $2\%$, or just need to stop the current run and start a new one.
+\item {\bf Log}: click {\em Submit} in the Logbook Entry section if the run was successful. 
     \subitem This will submit a log entry to HBLOG with a table summarizing the results and an attached data file. {\em Note, at this point you may navigate to the log entry in a web browser and add any relevant screenshots as comments to the entry}.
-\item {\bf Rerun (Optional)}  At this point you may reconfigure the system (e.g. change the Helmholtz polarity and click {\em Reconfigure}) and then start a second run, or just start another run with the same configuration.
+\item {\bf Rerun}  At this point you may reconfigure the system (e.g. change the Helmholtz polarity and click {\em Reconfigure}) and then start a second run, or just start another run with the same configuration.
 \item {\bf Exit}: click {\em Exit} in the Configuration section and wait for success status
     \subitem  This will restore the non-M{\o}ller configuration by turning of the quadrupoles and Helmholtz and retracting the M{\o}ller target.  {\em Note, this will not restore any detector high voltage (except the SLM) nor move the collimator}. 
 \end{enumerate}
