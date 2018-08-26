@@ -63,7 +63,7 @@ The requirements to be maintained during a M{\o}ller run, and the resulting desi
         2C21 BPM Current & $\sim$4 nA\\
         Beam Charge Asymmetry & $<0.1\%$\\
         Accidental/Coincidence Ratio & $<0.05$ \\
-        Final Beam Polarization Error & $<2\%$ (absolute)\\
+        Final Beam Polarization Error & $<1.5\%$ (absolute)\\
         \bottomrule[1.5pt]
     \end{tabular}
     \caption{Standard quality conditions required for a M{\o}ller run.  Live values are shown in the Monitoring and DAQ sections in Figure~\ref{fig:unconfig}.\label{tab:reqs}}
@@ -91,9 +91,9 @@ The procedure for the operator with the interface in Figure~\ref{fig:unconfig} c
 \item {\bf Monitor}: monitor the critical parameters
     \subitem This is left to the operator and described in Section~\ref{sec:quality}.
 \item {\bf End}: click {\em End Run} in the DAQ section
-    \subitem At this point you should have achieved the desired polarization error of $2\%$, or just need to stop the current run and start a new one.
+    \subitem At this point you should have achieved the desired polarization error of $1.5\%$, or just need to stop the current run and start a new one.
 \item {\bf Log}: click {\em Submit} in the Logbook Entry section if the run was successful. 
-    \subitem This will submit a log entry to HBLOG with a table summarizing the results and an attached data file. {\em Note, at this point you may navigate to the log entry in a web browser and add any relevant screenshots as comments to the entry}.
+    \subitem This will submit a log entry to HBLOG with a table summarizing the results and an attached data file, and requires filling the Entry Makers and Comments fields.  {\em Note, at this point you may navigate to the log entry in a web browser and add any relevant screenshots as comments to the entry}.
 \item {\bf Rerun}  At this point you may reconfigure the system (e.g. change the Helmholtz polarity and click {\em Reconfigure}) and then start a second run, or just start another run with the same configuration.
 \item {\bf Exit}: click {\em Exit} in the Configuration section and wait for success status
     \subitem  This will restore the non-M{\o}ller configuration by turning of the quadrupoles and Helmholtz and retracting the M{\o}ller target.  {\em Note, this will not restore any detector high voltage (except the SLM) nor move the collimator}. 
