@@ -15,7 +15,7 @@
 \setlist[enumerate]{itemsep=0mm}
 
 \begin{document}
-\title{CLAS12 Slow Controls Operations Manual - v2.6}
+\title{CLAS12 Slow Controls Operations Manual - v2.7}
 \author{N. Baltzell}
 \date{\today}
 \begin{abstract}
@@ -106,14 +106,14 @@ The beamline devices in Hall B include encoderless stepping motors.  When their 
 \clearpage
 
 \section{High Voltage}
-The largest controls system in Hall B in terms of number of channels is high voltage (HV), with over 20 CAEN mainframes including SY527, SY1527, and SY4527 models.  An overview screen of the status of all HV in Hall B is accessible from the HV button in the main CLAS12 menu as shown in Figure~\ref{fig:hv}.  Clicking on a detector in this overview screen will bring up the HV controls for that detector (also accessible under each detector's button in the main menu).
+The largest controls system in Hall B in terms of number of channels is high voltage (HV), with over 20 CAEN mainframes including SY527, SY1527, and SY4527 models.  An overview screen of the status of all HV in Hall B is accessible from the HV button in the main CLAS12 menu as shown in Figure~\ref{fig:hv}.  Clicking on a detector's name in this overview screen will open a dropdown menu with options to turn its HV on and off or open its full controls screen (also accessible under each detector's button in the main menu).
 
 Alarm conditions for HV, as displayed in the alarm handler, are explained in Table~\ref{tab:hvalarm}.  Possible hardware errors and their labels in tabular HV screens are explained in Table~\ref{tab:hvstat}.  For the more expert operations of saving and restoring settings, see Appendix~\ref{sec:burt}.
 
 \begin{figure}[htbp]\centering
   \includegraphics[width=0.3\textwidth]{pics/hvmenu}
   \includegraphics[width=0.2\textwidth]{pics/hvstat}
-  \caption{Access to the HV overview screen from the main menu (left).  Clicking on a detector's name in the overview screen (right) will open its HV controls screen.\label{fig:hv}}
+  \caption{Access to the HV overview screen from the main menu (left).  Clicking on a detector's name in the overview screen (right) will open a dropdown menu including options to turn HV on and off for each detector.\label{fig:hv}}
 \end{figure}
 
 \begin{table}[htpb]\centering
