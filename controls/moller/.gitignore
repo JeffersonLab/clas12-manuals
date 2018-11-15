@@ -2,4 +2,5 @@
 *.log
 *.out
 *.toc
+*.end
 .*.swp

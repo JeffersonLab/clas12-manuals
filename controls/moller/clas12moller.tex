@@ -12,12 +12,12 @@
 \usepackage{hypcap}
 \usepackage[small,compact]{titlesec}
 \setlist[enumerate]{itemsep=0mm}
-\addtolength{\textwidth}{1cm}
-\addtolength{\hoffset}{-0.5cm}
-\addtolength{\textheight}{2.0cm}
-\addtolength{\voffset}{-0.0cm}
+\addtolength{\textwidth}{1.3cm}
+\addtolength{\hoffset}{-0.7cm}
+\addtolength{\textheight}{2.8cm}
+\addtolength{\voffset}{-0.4cm}
 \begin{document}
-\title{CLAS12 M{\o}ller Operations Manual - v1.0}
+\title{CLAS12 M{\o}ller Operations Manual - v1.1}
 \date{\today}
 \author{N. Baltzell, S. Stepanyan}
 \begin{abstract}
@@ -28,7 +28,9 @@
 %\newpage
 
 \section{Introduction}
-The CLAS12 M{\o}ller system measures the polarization of the electron beam delivered to Hall B, and this document details its operating procedures.  The user interface for shift workers is shown in Fig.~\ref{fig:unconfig} and provides direct access to all controls and feedback that the normal operator should need, and its operating procedures are described in Section~\ref{sec:user}.  Expert operations are described in Section~\ref{sec:expert}.
+The CLAS12 M{\o}ller system measures the polarization of the electron beam delivered to Hall B, and this document details its operating procedures.  The user interface for shift workers is shown in Fig.~\ref{fig:unconfig} and provides direct access to all controls and feedback that the normal operator should need, and its operating procedures are described in Section~\ref{sec:user}.  Expert operations are described in Appendix~\ref{sec:expert}.
+
+{\em Note, this manual assumes acceptable beam has already been established to the tagger dump;  consult the beamline manual for general procedures on establishing beam if necessary.}
 
 \begin{figure}[htbp]\centering
     \includegraphics[width=11cm]{pics/unconfig}
@@ -57,8 +59,8 @@ The requirements to be maintained during a M{\o}ller run, and the resulting desi
 \begin{table}[htbp]\centering
     \begin{tabular}{ll}\toprule[1.5pt]
         2C21 BPM Current & $\sim$4 nA\\
-        Beam Charge Asymmetry & $<0.1\%$\\
-        Accidental/Coincidence Ratio & $<0.05$ \\
+        Beam Charge Asymmetry & $<0.2\%$ (typical $\sim 0.1\%$)\\
+        Accidental/Coincidence Ratio & $<0.1$ (typical $\sim 0.05$)\\
         Final Beam Polarization Error & $<1.5\%$ (absolute)\\
         \bottomrule[1.5pt]
     \end{tabular}
@@ -67,7 +69,7 @@ The requirements to be maintained during a M{\o}ller run, and the resulting desi
 
 \section{Standard Procedures}\label{sec:user}
 
-\subsection{Summary}
+\subsection{Procedure Summary}
 The procedure for the operator with the interface in Figure~\ref{fig:unconfig} can be summarized in the following steps, and more details are shown on the next section.
 \begin{enumerate}
 \vspace{-4mm}\item {\bf Configure:}  ensure the Configuration section is set as desired
@@ -80,7 +82,7 @@ The procedure for the operator with the interface in Figure~\ref{fig:unconfig} c
 \vspace{-4mm}\item {\bf Exit:} click {\em Exit} in the Configuration section and wait for success status
 \end{enumerate}
 
-\subsection{Details}
+\subsection{Procedure Details}
 \begin{enumerate}
     \item {\bf Configure:}  ensure the Configuration section of Fig.~\ref{fig:unconfig} is set as desired
         \subitem
@@ -92,49 +94,66 @@ The procedure for the operator with the interface in Figure~\ref{fig:unconfig} c
 \item {\bf Start:} click {\em Start Run} in the DAQ section
     \subitem This will initiate a new M{\o}ller run, including zeroing any accumulated data, opening a new data file, incrementing the run number, and starting data acquisition.
 \item {\bf Monitor:} monitor the critical quality parameters
-    \subitem This is left to the operator and described in Table~\ref{tab:reqs}.  Of particular importance are beam charge asymmetry below 0.1\% and accidental ratio of less than 0.05.  {\em If you cannot achieve the quality requirements, contact the Run Coordinator.}
+    \subitem This is left to the operator, described in Table~\ref{tab:reqs}, with possible actions in Section~\ref{sec:knobs}.  Of particular importance are beam charge asymmetry below 0.2\% and accidental ratio of less than 0.1, although ideally about half that.  {\em If you cannot achieve the quality requirements, contact the Run Coordinator.}
 \item {\bf End:} click {\em End Run} in the DAQ section
     \subitem At this point you should have achieved the desired polarization error of $1.5\%$ (see Table~\ref{tab:reqs}), or just need to stop the current run and start a new one.
 \item {\bf Log Entry}: click {\em Submit} in the Logbook Entry section if the run was successful. 
-    \subitem This will submit a log entry to HBLOG with a table summarizing the results and an attached data file, and requires filling the Entry Makers and Comments fields.  {\em Note, if you want to log any screenshots associated with this M{\o}ller run, then you should navigate to this log entry and upload them as comments}.
+    \subitem This will submit a standardized, searchable log entry to HBLOG with a table summarizing the results and an attached data file, and requires filling the Entry Makers and Comments fields.  {\em Note, if you want to log any screenshots associated with this M{\o}ller run, then you should navigate to this log entry and upload them as comments}.
 \item {\bf Reconfigure:}  (Optional)  At this point you may reconfigure the system (e.g. change the Helmholtz polarity or switch to a different target, and then click {\em Reconfigure}) and then start a second run (go to Step \#3), or just start another run with the same configuration (go to Step \#3).
 \item {\bf Exit}: click {\em Exit} in the Configuration section and wait for success status
     \subitem  This will restore the non-M{\o}ller configuration by turning off the quadrupoles and Helmholtz and retracting the M{\o}ller target.  {\em Note, this will not restore any detector high voltage (except the SLM) nor move the collimator}. 
 \end{enumerate}
 
-\newpage
 
-\section{TODO}
-\subsection{Status Values}
+\section{Tuning Parameters}\label{sec:knobs}
+If quality requirements are not satisfied, first check whether our hardware settings are as expected.  For example, compare to the parameters earlier in this document, and also to recent satisfactory M{\o}ller runs in the logbook in case of any recent changes.  {\em Be wary of earlier versions of this manual or the beamine manual (or very old logbook entries) you may find on the web!}
+
+The following subsections contain information on the quality parameters and the main parameters that can affect them.  Consult with the Run Coordinator and/or beamline expert if you have any uncertainty.
+
+\subsection{Beam Charge Asymmetry}
+Beam charge asymmetry is measured by the Synchrotron Light Monitor fed to a Struck scaler latching on the heliticy signals.  It is located a few meters upstream of, and {\em completely independent of}, the M{\o}ller quadrupoles, Helmholtz, target, and Left/Right counters.  Beam Charge asymmetry is affected primarily by beam characteristics from the injector and accelerator.  There can be some effect from quality of the SLM performance, e.g. if voltage is far too high and the SLM is saturated, but this should generally never be the case for the normal operator.
+
+Note that beam charge asymmetry updates with the same period as our Moller acquisition time, since it shares the same Struck scaler latched on the helicity signals for polarization measurement.  So if the acquisition time is set at 60 seconds, beam charge asymmetry will only update once per minute.  It can be important not to gauge the quality based on only one or two readings, but to assess based on multiple readings with stable beam.  To facilitate this, one can open a strip chart to monitor beam charge asymmetry over time, or increase the acquisition time for a higher statistics reading during stable beam.
+
+If the beam charge asymmetry is too high, the parameters that can be considered in consultation with the beamline expert:
+\begin{itemize}
+\vspace{-4mm}\item Beam position (BPM and harp scans)
+\vspace{-4mm}\item Beam profile (harp scans)
+\vspace{-4mm}\item Injector slit setting
+\vspace{-4mm}\item Injector attenuator settings
+\end{itemize}
+
+\subsection{Accidentals}
+The accidental-coincidence ratio is measured by M{\o}ller Left/Right PMTs, downstream of the target and quadrupoles.  This quantity is independent of the helicity signals and Struck scaler.  Excessive accidentals can be caused by beam quality issues, e.g. bleedthrough from other halls, or non-optimal settings of our M{\o}ller system.  Parameters that can be considered are the same as for beam charge asymmetry, with the addition of our M{\o}ller configuration, e.g. Left/Right PMT voltages, malfunctioning quadrupoles, or very miscalibrated target position.
+
+\newpage
+\section{Run Duration}
+At 10 GeV, with our 2018 hardware configuration, the normal run duration to achieve 1.5\% absolute error on the polarization is about 20 minutes of beam.  Interruptions to beam delivery, e.g. trips, will of course increase the necessary run time.
+
+\section{Status Values}
 Describe the possible values of the status variable in the top left of the screen.
-\subsection{Run Duration}
-Add something about expected run duration?
-\subsection{Tuning Parameters}
-What knobs to adjust if requirements are not being met?
-\subsubsection{Injector}
-\subsubsection{Quadrupoles}
-\subsubsection{Beam Current}
-\subsubsection{SLM Voltage}
-\subsection{Expert Procedures}\label{sec:expert}
-The instructions for the old, manual procedure.
 
 \newpage
-
 \begin{appendices}
+\section{Expert Procedures}\label{sec:expert}
+\input{clas12moller-expert}
+
+\newpage
+\section{Hardawre and Software}
 Description of the hardware and software involved in the CLAS12 M{\o}ller system.
-\subsection{Quadrupoles}
+\subsubsection{Quadrupoles}
 The quadrupoles use a Dyapower power supply with communications via classc3 hosting a vxWorks EPICS IOC and DVME628 and .
-\subsection{Helmholtz}
+\subsubsection{Helmholtz}
 The Helmholtz coils use a SCE410 power supply, located on the first level of the space frame in the electronics racks beam-right.  EPICS controls are running on a clonioc linux server in the counting house, communicating with SCE410 via a MOXA serial-ethernet converter in the same rack. 
-\subsection{Synchrotron Light Monitor}
+\subsubsection{Synchrotron Light Monitor}
 The SLM is located in the upstream beam tunnel near 2c21.  Controls are located on space frame, level 1.  Its high voltage power supply is beam-left in CND's  CAEN SY527 mainframe, while its signal is routed to a Jorger scaler in classc1, beam-right.
-\subsection{Target}
+\subsubsection{Target}
 The target controls are running on classc1, with an OMS motor controller, both beam-right on space frame level 1.
-\subsection{Helicity Signal}
+\subsubsection{Helicity Signal}
 The helicity signals are routed through NIM crates and into the Struck scaler in classc6, all on space frame beam-right. 
-\subsection{Struck Multi-Channel Scaler}
-The Struck scaler is located in classc6, beam-right.
-\subsection{Sequencing}
+\subsubsection{Struck Multi-Channel Scaler}
+The Struck scaler is located in classc6, beam-right.  It counts SLM and Moller PMT, latched on the helicity signals.
+\subsubsection{Sequencing}
 Automated sequencing of controls is via a softioc in the counting house.
 \end{appendices}
 
