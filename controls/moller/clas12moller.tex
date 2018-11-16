@@ -17,7 +17,7 @@
 \addtolength{\textheight}{2.8cm}
 \addtolength{\voffset}{-0.4cm}
 \begin{document}
-\title{CLAS12 M{\o}ller Operations Manual - v1.1}
+\title{CLAS12 M{\o}ller Operations Manual - v1.2}
 \date{\today}
 \author{N. Baltzell, S. Stepanyan}
 \begin{abstract}
@@ -28,9 +28,9 @@
 %\newpage
 
 \section{Introduction}
-The CLAS12 M{\o}ller system measures the polarization of the electron beam delivered to Hall B, and this document details its operating procedures.  The user interface for shift workers is shown in Fig.~\ref{fig:unconfig} and provides direct access to all controls and feedback that the normal operator should need, and its operating procedures are described in Section~\ref{sec:user}.  Expert operations are described in Appendix~\ref{sec:expert}.
+The CLAS12 M{\o}ller system measures the polarization of the electron beam delivered to Hall B, and this document details its operating procedures.  The user interface for shift workers is shown in Fig.~\ref{fig:unconfig} and provides direct access to all controls and feedback that the normal operator should need, and its operating procedures are described in Section~\ref{sec:user}.%  Expert operations are described in Appendix~\ref{sec:expert}.
 
-{\em Note, this manual assumes acceptable beam has already been established to the tagger dump;  consult the beamline manual for general procedures on establishing beam if necessary.}
+{\em Note, this manual assumes acceptable beam has already been established to the tagger dump/yoke;  consult the beamline manual for general procedures on establishing beam if necessary.}
 
 \begin{figure}[htbp]\centering
     \includegraphics[width=11cm]{pics/unconfig}
@@ -68,7 +68,7 @@ The requirements to be maintained during a M{\o}ller run, and the resulting desi
 \end{table}
 
 \section{Standard Procedures}\label{sec:user}
-
+Before starting the M{\o}ller procedure, confirm that Hall B orbit locks are off and our Halo and BOM FSD are masked.
 \subsection{Procedure Summary}
 The procedure for the operator with the interface in Figure~\ref{fig:unconfig} can be summarized in the following steps, and more details are shown on the next section.
 \begin{enumerate}
@@ -105,17 +105,19 @@ The procedure for the operator with the interface in Figure~\ref{fig:unconfig} c
 \end{enumerate}
 
 
-\section{Tuning Parameters}\label{sec:knobs}
-If quality requirements are not satisfied, first check whether our hardware settings are as expected.  For example, compare to the parameters earlier in this document, and also to recent satisfactory M{\o}ller runs in the logbook in case of any recent changes.  {\em Be wary of earlier versions of this manual or the beamine manual (or very old logbook entries) you may find on the web!}
+\section{Quality Requirements}\label{sec:knobs}
 
-The following subsections contain information on the quality parameters and the main parameters that can affect them.  Consult with the Run Coordinator and/or beamline expert if you have any uncertainty.
+If quality requirements are not satisfied (accidental rate and beam charge asymmetry), first check whether our hardware settings are as expected by comparing to the parameters earlier in this document and also to recent satisfactory M{\o}ller runs in the logbook.  The following subsections contain information on the quality measurements and the main parameters that can affect them.  Consult with the Run Coordinator and/or beamline expert for advice on tuning these parameters, and compare their values with previous M{\o}ller runs.
+
+\subsection{Run Duration}
+At 10 GeV, with our 2018 hardware configuration, the normal run duration to achieve 1.5\% absolute error on the polarization is about 30 minutes of continuous beam.  Interruptions to beam delivery, e.g. trips, will of course increase the necessary run time.  Much longer than normal run duration to achieve 1.5\% can be indicative of excessive accidentals or beam charge asymmetry.
 
 \subsection{Beam Charge Asymmetry}
-Beam charge asymmetry is measured by the Synchrotron Light Monitor fed to a Struck scaler latching on the heliticy signals.  It is located a few meters upstream of, and {\em completely independent of}, the M{\o}ller quadrupoles, Helmholtz, target, and Left/Right counters.  Beam Charge asymmetry is affected primarily by beam characteristics from the injector and accelerator.  There can be some effect from quality of the SLM performance, e.g. if voltage is far too high and the SLM is saturated, but this should generally never be the case for the normal operator.
+Beam charge asymmetry is measured by a Synchrotron Light Monitor fed to a Struck scaler latching on the heliticy signals.  The SLM is located a few meters upstream of, and {\em completely independent of}, the rest or our M{\o}ller system.  Beam Charge asymmetry is affected primarily by beam characteristics from the injector and accelerator.  There can be some effect from quality of the SLM performance, e.g. if voltage is far too high and the SLM is saturated, but this should generally never be the case for the normal operator.
 
-Note that beam charge asymmetry updates with the same period as our Moller acquisition time, since it shares the same Struck scaler latched on the helicity signals for polarization measurement.  So if the acquisition time is set at 60 seconds, beam charge asymmetry will only update once per minute.  It can be important not to gauge the quality based on only one or two readings, but to assess based on multiple readings with stable beam.  To facilitate this, one can open a strip chart to monitor beam charge asymmetry over time, or increase the acquisition time for a higher statistics reading during stable beam.
+Note that beam charge asymmetry updates with the same period as our Moller acquisition time, i.e. if the acquisition time is set at 60 seconds, beam charge asymmetry will only update once per minute.%  It can be important not to gauge the quality based on only one or two readings, but to assess based on multiple readings with stable beam.%  To facilitate this, one can open a strip chart to monitor beam charge asymmetry over time, or increase the acquisition time for a higher statistics reading during stable beam.
 
-If the beam charge asymmetry is too high, the parameters that can be considered in consultation with the beamline expert:
+If the beam charge asymmetry is too high, the parameters that can be considered are:
 \begin{itemize}
 \vspace{-4mm}\item Beam position (BPM and harp scans)
 \vspace{-4mm}\item Beam profile (harp scans)
@@ -124,19 +126,16 @@ If the beam charge asymmetry is too high, the parameters that can be considered 
 \end{itemize}
 
 \subsection{Accidentals}
-The accidental-coincidence ratio is measured by M{\o}ller Left/Right PMTs, downstream of the target and quadrupoles.  This quantity is independent of the helicity signals and Struck scaler.  Excessive accidentals can be caused by beam quality issues, e.g. bleedthrough from other halls, or non-optimal settings of our M{\o}ller system.  Parameters that can be considered are the same as for beam charge asymmetry, with the addition of our M{\o}ller configuration, e.g. Left/Right PMT voltages, malfunctioning quadrupoles, or very miscalibrated target position.
+The accidental-coincidence ratio is measured by M{\o}ller Left/Right PMTs, downstream of the target and quadrupoles, and is independent of the helicity signals.  Excessive accidentals can be caused by beam quality issues, e.g. bleedthrough from other halls, or non-optimal settings of our M{\o}ller system.  Parameters that can be considered for adjustment include the same beam quality parameters in the previous section, and with the addition of our M{\o}ller configuration, e.g. Left/Right PMT voltages, malfunctioning quadrupoles, or very miscalibrated target position.
 
 \newpage
-\section{Run Duration}
-At 10 GeV, with our 2018 hardware configuration, the normal run duration to achieve 1.5\% absolute error on the polarization is about 20 minutes of beam.  Interruptions to beam delivery, e.g. trips, will of course increase the necessary run time.
-
-\section{Status Values}
-Describe the possible values of the status variable in the top left of the screen.
+%\section{Status Values}
+%Describe the possible values of the status variable in the top left of the screen.
 
 \newpage
 \begin{appendices}
-\section{Expert Procedures}\label{sec:expert}
-\input{clas12moller-expert}
+%\section{Expert Procedures}\label{sec:expert}
+%\input{clas12moller-expert}
 
 \newpage
 \section{Hardawre and Software}
