@@ -12,12 +12,12 @@
 \usepackage{hypcap}
 \usepackage[small,compact]{titlesec}
 \setlist[enumerate]{itemsep=0mm}
-\addtolength{\textwidth}{1.3cm}
-\addtolength{\hoffset}{-0.7cm}
-\addtolength{\textheight}{2.8cm}
-\addtolength{\voffset}{-0.4cm}
+%\addtolength{\textwidth}{1.3cm}
+%\addtolength{\hoffset}{-0.7cm}
+%\addtolength{\textheight}{2.8cm}
+%\addtolength{\voffset}{-0.4cm}
 \begin{document}
-\title{CLAS12 M{\o}ller Operations Manual - v1.3}
+\title{CLAS12 M{\o}ller Operations Manual - v1.4}
 \date{\today}
 \author{N. Baltzell, S. Stepanyan}
 \begin{abstract}
@@ -76,7 +76,7 @@ Before starting the M{\o}ller procedure, confirm that Hall B orbit locks are off
 \subsection{Procedure Summary}
 The procedure for the operator with the interface in Figure~\ref{fig:unconfig} can be summarized in the following steps, and more details are shown on the next section.
 \begin{enumerate}
-\vspace{-4mm}\item {\bf Request No Beam:}  ask MCC to take beam away while you configure the M{\o}ller system
+\vspace{-4mm}\item {\bf Request No Beam:}  ask MCC to take beam away for a configuration change
 \vspace{-4mm}\item {\bf Configure:}  ensure the Configuration section is set as desired
 \vspace{-4mm}\item {\bf Enter:} click {\em Enter} in the Configuration section and wait for success status
 \vspace{-4mm}\item {\bf Request 4 nA:} ask MCC to resume beam delivery at 4 nA for M{\o}ller runs
@@ -84,7 +84,7 @@ The procedure for the operator with the interface in Figure~\ref{fig:unconfig} c
 \vspace{-4mm}\item {\bf Monitor:} monitor the critical parameters
 \vspace{-4mm}\item {\bf End Run:} click {\em End Run} in the DAQ section
 \vspace{-4mm}\item {\bf Log Entry:} click {\em Submit} in the Logbook Entry section 
-\vspace{-4mm}\item {\bf Request No Beam:} ask MCC to take beam away before changing the M{\o}ller configuration
+\vspace{-4mm}\item {\bf Request No Beam:} ask MCC to take beam away for a configuration change
 \vspace{-4mm}\item {\bf Reconfigure:} (Optional)
 \vspace{-4mm}\item {\bf Exit:} click {\em Exit} in the Configuration section and wait for success status
 \end{enumerate}
@@ -99,23 +99,23 @@ The procedure for the operator with the interface in Figure~\ref{fig:unconfig} c
         %{\em Note, it is critical that some of these settings are held fixed while a run is ongoing, and those cannot be changed during a run from this interface.  See below regarding reconfiguring.}
 \item {\bf Enter:} click {\em Enter} in the Configuration section and wait for success status
     \subitem This will configure the system for a M{\o}ller run by initiating a sequence of actions and provide corresponding feedback in the status portion of the screen.  This includes turning off all appropriate detectors' high voltage, inserting the blank collimator, energizing the quadrupoles and Helmholtz magnets, and inserting the M{\o}ller target.  Success will result in ``Moller Configuration Ready'' in the status message.
-\item {\bf Request 4 nA:} ask MCC to resume beam delivery at 4 nA for M{\o}ller runs
-\item {\bf Start:} click {\em Start Run} in the DAQ section
+\item {\bf Request 4 nA:} \label{step:beam} ask MCC to resume beam delivery at 4 nA for M{\o}ller runs
+\item {\bf Start:} \label{step:start} once beam is stable, click {\em Start Run} in the DAQ section
     \subitem This will initiate a new M{\o}ller run, including zeroing any accumulated data, opening a new data file, incrementing the run number, and starting data acquisition.
 \item {\bf Monitor:} monitor the critical quality parameters
     \subitem This is left to the operator, described in Table~\ref{tab:reqs}, with possible actions in Section~\ref{sec:knobs}.  Of particular importance are beam charge asymmetry below 0.2\% and accidental ratio of less than 0.1, although ideally about half that.  {\em If you cannot achieve the quality requirements, contact the Run Coordinator.}
 \item {\bf End:} click {\em End Run} in the DAQ section
-    \subitem At this point you should have achieved the desired polarization error of $1.5\%$ (see Table~\ref{tab:reqs}), or just need to stop the current run and start a new one.
+    \subitem At this point you should have achieved the desired polarization error of $1.5\%$ (see Table~\ref{tab:reqs}), or just need to stop the current run and start a new one (in which case, go to Step \#\ref{step:start}).
 \item {\bf Log Entry}: click {\em Submit} in the Logbook Entry section if the run was successful. 
     \subitem This will submit a standardized, searchable log entry to HBLOG with a table summarizing the results and an attached data file, and requires filling the Entry Makers and Comments fields.  {\em Note, if you want to log any screenshots associated with this M{\o}ller run, then you should navigate to this log entry and upload them as comments}.
+    \subitem Note, at this point you can start another run with the same configuration by going to Step \#\ref{step:start}.
 \item {\bf Request No Beam:} ask MCC to take beam away before changing the M{\o}ller configuration
-\item {\bf Reconfigure:}  (Optional)  At this point you may reconfigure the system (e.g. change the Helmholtz polarity or switch to a different target, and then click {\em Reconfigure}) and then start a second run (go to Step \#3), or just start another run with the same configuration (go to Step \#3).
+\item {\bf Reconfigure:}  (Optional)  At this point you may reconfigure the system (e.g. change the Helmholtz polarity or switch to a different target, and then click {\em Reconfigure}, or just ask for a change in the Half-Wave Plate) and then start another run (go to Step \#\ref{step:beam}).
 \item {\bf Exit}: click {\em Exit} in the Configuration section and wait for success status
     \subitem  This will restore the non-M{\o}ller configuration by turning off the quadrupoles and Helmholtz and retracting the M{\o}ller target.  {\em Note, this will not restore any detector high voltage (except the SLM) nor move the collimator}. 
 \end{enumerate}
 
 \newpage
-
 \section{Quality Requirements}\label{sec:knobs}
 
 If quality requirements are not satisfied (accidental rate and beam charge asymmetry), first check whether our hardware settings are as expected by comparing to the parameters earlier in this document and also to recent satisfactory M{\o}ller runs in the logbook.  The following subsections contain information on the quality measurements and the main parameters that can affect them.  Consult with the Run Coordinator and/or beamline expert for advice on tuning these parameters, and compare their values with previous M{\o}ller runs.
@@ -139,31 +139,31 @@ If the beam charge asymmetry is too high, the parameters that can be considered 
 \subsection{Accidentals}
 The accidental-coincidence ratio is measured by M{\o}ller Left/Right PMTs, downstream of the target and quadrupoles, and is independent of the helicity signals.  Excessive accidentals can be caused by beam quality issues, e.g. bleedthrough from other halls, or non-optimal settings of our M{\o}ller system.  Parameters that can be considered for adjustment include the same beam quality parameters in the previous section, and with the addition of our M{\o}ller configuration, e.g. Left/Right PMT voltages, malfunctioning quadrupoles, or very miscalibrated target position.
 
-\newpage
+%\newpage
 %\section{Status Values}
 %Describe the possible values of the status variable in the top left of the screen.
 
-\begin{appendices}
-%\section{Expert Procedures}\label{sec:expert}
-%\input{clas12moller-expert}
-
-\section{Hardawre and Software}
-Description of the hardware and software involved in the CLAS12 M{\o}ller system.
-\subsubsection{Quadrupoles}
-The quadrupoles use a Dyapower power supply with communications via classc3 hosting a vxWorks EPICS IOC and DVME628 and .
-\subsubsection{Helmholtz}
-The Helmholtz coils use a SCE410 power supply, located on the first level of the space frame in the electronics racks beam-right.  EPICS controls are running on a clonioc linux server in the counting house, communicating with SCE410 via a MOXA serial-ethernet converter in the same rack. 
-\subsubsection{Synchrotron Light Monitor}
-The SLM is located in the upstream beam tunnel near 2c21.  Controls are located on space frame, level 1.  Its high voltage power supply is beam-left in CND's  CAEN SY527 mainframe, while its signal is routed to a Jorger scaler in classc1, beam-right.
-\subsubsection{Target}
-The target controls are running on classc1, with an OMS motor controller, both beam-right on space frame level 1.
-\subsubsection{Helicity Signal}
-The helicity signals are routed through NIM crates and into the Struck scaler in classc6, all on space frame beam-right. 
-\subsubsection{Struck Multi-Channel Scaler}
-The Struck scaler is located in classc6, beam-right.  It counts SLM and Moller PMT, latched on the helicity signals.
-\subsubsection{Sequencing}
-Automated sequencing of controls is via a softioc in the counting house.
-\end{appendices}
+%\begin{appendices}
+%%\section{Expert Procedures}\label{sec:expert}
+%%\input{clas12moller-expert}
+%
+%\section{Hardawre and Software}
+%Description of the hardware and software involved in the CLAS12 M{\o}ller system.
+%\subsubsection{Quadrupoles}
+%The quadrupoles use a Dyapower power supply with communications via classc3 hosting a vxWorks EPICS IOC and DVME628 and .
+%\subsubsection{Helmholtz}
+%The Helmholtz coils use a SCE410 power supply, located on the first level of the space frame in the electronics racks beam-right.  EPICS controls are running on a clonioc linux server in the counting house, communicating with SCE410 via a MOXA serial-ethernet converter in the same rack. 
+%\subsubsection{Synchrotron Light Monitor}
+%The SLM is located in the upstream beam tunnel near 2c21.  Controls are located on space frame, level 1.  Its high voltage power supply is beam-left in CND's  CAEN SY527 mainframe, while its signal is routed to a Jorger scaler in classc1, beam-right.
+%\subsubsection{Target}
+%The target controls are running on classc1, with an OMS motor controller, both beam-right on space frame level 1.
+%\subsubsection{Helicity Signal}
+%The helicity signals are routed through NIM crates and into the Struck scaler in classc6, all on space frame beam-right. 
+%\subsubsection{Struck Multi-Channel Scaler}
+%The Struck scaler is located in classc6, beam-right.  It counts SLM and Moller PMT, latched on the helicity signals.
+%\subsubsection{Sequencing}
+%Automated sequencing of controls is via a softioc in the counting house.
+%\end{appendices}
 
 \end{document}
 
