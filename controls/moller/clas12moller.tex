@@ -17,7 +17,7 @@
 %\addtolength{\textheight}{2.8cm}
 %\addtolength{\voffset}{-0.4cm}
 \begin{document}
-\title{CLAS12 M{\o}ller Operations Manual - v1.4}
+\title{CLAS12 M{\o}ller Operations Manual - v1.5}
 \date{\today}
 \author{N. Baltzell, S. Stepanyan}
 \begin{abstract}
@@ -45,15 +45,15 @@ The standard hardware settings for a M{\o}ller run are shown in Table~\ref{tab:p
     \begin{tabular}{ll}\toprule[1.5pt]
         SLM Voltage & 1400 V \\
         Collimator Position & Blank \\
-        Target Position & Left \\
+        Target Position & Left or Right \\
         Helmholtz Current & $\pm$3.5 A \\
         \cmidrule[0.5pt]{1-2}
         \multicolumn{2}{c}{Quadrupole Current} \\
-        5-pass / 10.7 GeV & 3145 A\\
-        3-pass / 6.4 GeV & 1350 A\\
+        10.7 GeV & $\sim$3145 A (*)\\
+        6.4 GeV & $\sim$1350 A (*)\\
         \bottomrule[1.5pt]
     \end{tabular}
-    \caption{Standard hardware parameter values for the M{\o}ller setup.  Live values are shown in the {\em Monitoring} section in Figure~\ref{fig:unconfig}.\label{tab:pars}}
+    \caption{Standard hardware parameter values for the M{\o}ller setup.  Live, measured values are shown in the {\em Monitoring} section in Figure~\ref{fig:unconfig}. {\em (*) Note, if ``Auto'' is selected for the quadrupoles in the ``Configuration'' section of Figure \ref{fig:unconfig}, the quadrupole currents will be set automatically based on the beam energy dependence in Figure \ref{fig:quadenergy}}.\label{tab:pars}}
 \end{table}
 
 \section{Quality Requirements}\label{sec:quality}
@@ -138,6 +138,11 @@ If the beam charge asymmetry is too high, the parameters that can be considered 
 
 \subsection{Accidentals}
 The accidental-coincidence ratio is measured by M{\o}ller Left/Right PMTs, downstream of the target and quadrupoles, and is independent of the helicity signals.  Excessive accidentals can be caused by beam quality issues, e.g. bleedthrough from other halls, or non-optimal settings of our M{\o}ller system.  Parameters that can be considered for adjustment include the same beam quality parameters in the previous section, and with the addition of our M{\o}ller configuration, e.g. Left/Right PMT voltages, malfunctioning quadrupoles, or very miscalibrated target position.
+
+\begin{figure}[htbp]\centering
+    \includegraphics[width=14cm]{pics/moller_quad_current}
+    \caption{The calculated optimal quadrupole current as a function of beam energy.  This is the function used if the {\em Auto} checkbox is selected in the {\em Configuration} section of Figure \ref{fig:unconfig} when entering or reconfiguring the Moller setup.\label{fig:quadenergy}}
+\end{figure}
 
 %\newpage
 %\section{Status Values}
