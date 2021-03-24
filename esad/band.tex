@@ -1,0 +1,55 @@
+\section{Backward Angle Neutron Detector}
+The Backward Angle Neutron Detector (BAND) is placed at the top of the SVT cart upstream of the CLAS12 target. It consists of 116 scintillator bars, arranged in 18 rows and 5 layers. Four bars are missing in the bottom of the detector due to obstruction. The bars have a cross section of $7.2 \times 7.2\,\mathrm{cm}^{2}$ and they are 164 and $202\,\mathrm{cm}$ long in the upper region of BAND. In the bottom region the bars are divided into two shorter bars $51\,\mathrm{cm}$ to have a hole for the beam line and target installation. All bars are read-out on both sides by PMTs (Hamamatsu R7724 and ET9214) giving a total of 232 active channels. 
+
+In front of the first active layer of BAND, a veto layer is installed with 24 bars read-out only on one side. Therefore, the total number of channels for BAND is 256.
+The PMTs are placed in the fridge field region of the solenoid, and due to this they are encased in a cylindrical shielding made up by a 2-mm-thick layer of mu-metal.
+
+In order to operate the PMTs, high voltages (typically in the range of 1500 V) are provided by a multi-channel CAEN SYS4527 mainframe with 11 A15350 cards (24 channel each).
+The signal of each PMT is sent to an 50/50 splitter.
+From the splitter one signal is sent to flash-ADCs (250 VXS, 16 channels/board) while the other signal is sent to discriminators used by HPS (16 channels/board).
+The discriminated time signal then goes to a TDC (CAEN VX1190A, 128 channels/board, 100 ps/channel resolution). The read-out system is installed left of BAND in beam direction. 
+In total, the system consists of 16 flash-ADCs in one VXS crate, 16 discriminators and a TDC in a VME crate and 16 splitters.  Furthermore, a signal distribution card for the flash-ADCs and trigger interface boards are installed in the crates.
+
+The laser calibration system consists of a Photonics STV-01E-140 picosecond pulse laser with a wavelength of $355\,\mathrm{nm}$, several splitters, reference photodiode and a fiber distribution system. All of these components are in a sealed, light-tight box. The output of the laser is about $51\,\mu\mathrm{J}$ per pulse at $0.3\,$ns width (FWHM) which will be attenuated and distributed to all fiber outputs which have an output of about $100\,\mathrm{fJ}$. The fibers are connected via a patch panel to each scintillator bar.
+
+\subsection{Hazards} 
+\indent
+\subsubsection{Electrical hazard}
+The electrical hazard to personnel can come from the high voltage which powers the PMTs, which need about 1500 V to function. 
+
+\subsubsection{Magnetic field hazard}
+BAND is placed in the fringe field of the solenoid (50 - 100 gauss). A hazard may arise during maintenance operations in case metallic tools are used and for people with cardiac pacemakers, other electrical medical devices, or metallic implants.
+
+\subsubsection{Laser hazard}
+The laser hazard comes from the laser calibration system and its connection with fibers to the scintillator bars when work is done on BAND. The system itself is closed, light-tight and the output on each fiber is $\approx100\,\mathrm{fJ}$. This intensity is comparable to that of a LED, however, the $355\,\mathrm{nm}$ wavelength could be damaging to the human eye since it is invisible to the eye and the natural eye reflex will not be triggered. 
+
+\subsection{Mitigations}
+\indent
+\subsubsection{Electrical hazard mitigations} 
+The maximum current provided by the HV distribution boards is quite low ($<1\,\mathrm{mA}$). All mechanical structures are properly grounded. The HV boards must not be accessed during operation; during maintenance work, performed by trained personnel, the HV is turned off, and the power supply is locked and tagged.
+\subsubsection{Magnetic field hazard mitigations}
+After all sort of maintenance work is done on BAND, the area must be inspected and all ferromagnetic tools must be removed, before the field of the solenoid is ramped up again. Also, before the field can be turned on the PMT housings and magnetic shields should be throughly inspected, to make sure that they are no loose parts. 
+\subsubsection{Laser hazard mitigations}
+The laser calibration system is a closed system with fibers connected to the scintillator bars via a patch panel. All of this connections are light-tight. Furthermore, no fiber must be disconnected from the system while it is operating. While the laser intensity in each fiber is very small ($\approx 100\,\mathrm{fJ}$), and comparable to that of a LED, the $355\,\mathrm{nm}$ wavelength could be damaging to the human eye. Therefore, one should not look directly at the fiber output - eye protection must be worn. 
+
+Warning labels are applied on the enclosure of the laser system, the patch panel and detector frame. The box containing the laser system is interlocked such that if the box is open the power will be off. If the system is not in use by trained personnel, it will be powered off. During maintenance work on the laser system and detector, performed by trained personnel, the Laser system is turned off, disconnected from the power supply and locked and tagged. The procedures for maintenance work on the laser system can be found in the LOSP.
+
+
+\subsection{Responsible personnel}
+\indent
+
+Individuals responsible for the system are:
+
+\begin{table}[!htb]
+ \centering
+ \begin{tabular}{|c|c|c|c|c|}
+\hline
+ Name                 & Dept.     & Phone                             & email                                                                                                    & Comments \\ \hline
+ Band on call      &               &     (757)7463395           &                                                                                                              & 1st contact \\ \hline
+ O. Hen               & MIT        &                                        & \href{mailto:hen@mit.edu}{\nolinkurl{hen@mit.edu}}                     & 2nd Contact \\ \hline
+ L. Weinstein      & ODU      &                                        & \href{mailto:weinstein@jlab.org}{\nolinkurl{weinstein@jlab.org}}  & 3rd contact  \\ \hline
+
+ \end{tabular}
+\caption{Personnel responsible for the Backward Angle Neutron Detector.} 
+\label{tb:band}
+\end{table}
