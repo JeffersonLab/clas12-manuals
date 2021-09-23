@@ -33,7 +33,7 @@
 \vskip 0.5cm
 
 \author{D.S. Carman, Jefferson Laboratory\\[0.2ex]
-{\it ctof\_manual.tex -- v1.9}}
+{\it ctof\_manual.tex -- v2.0}}
 
 \date \today
 %
@@ -128,9 +128,9 @@ difference between the two designs is in the pitch angle of the upstream straigh
 upstream end of the scintillation bars where they attach to this light guide. The CTOF detector is mounted
 within the CLAS12 solenoid as shown in Fig.~\ref{cut-view}. The beamline lies along the symmetry axis of
 the CTOF barrel pointing downstream (left to right in Fig.~\ref{cut-view}). The nominal position of the
-center of the CTOF scintillation barrel is roughly 19.3~cm upstream of the CLAS12 origin. Fig.~\ref{ctof-labeling}
-shows the CTOF naming convention with counter \#1 located just above the 9 o'clock position and increasing in
-number going clockwise around the detector looking downstream.
+center of the CTOF scintillation barrel is roughly 19.3~cm upstream of the CLAS12 origin.
+Figure~\ref{ctof-labeling} shows the CTOF naming convention with counter \#1 located just above the 9
+o'clock position and increasing in number going clockwise around the detector looking downstream.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
@@ -175,21 +175,22 @@ barrel symmetry axis with the beam entering from the left.}
 
 A block diagram of the readout electronics and power connections for one representative counter of the
 CTOF system is shown in Fig.~\ref{ctof-elec}. The PMT anode outputs are connected to one of two UVa
-80-20 splitter boxes. The 80\% output goes to an Ortec 935 NIM CFD and then to a CAEN 1290A
-25~ps LSB VME TDC. The 20\% output goes to a JLab 250~MHz VME flash ADC. The high voltage (HV)
-power supply for the CTOF counters is a CAEN SY1527 mainframe outfitted with four negative polarity 
+60-40 splitter boxes. The 60\% output goes to an Ortec 935 NIM CFD and then to a CAEN 1290A
+25~ps LSB VME TDC. The 40\% output goes to a JLab 250~MHz VME flash ADC. The high voltage (HV)
+power supply for the CTOF counters is a CAEN SY4527 mainframe outfitted with four negative polarity 
 24-channel A1535N modules that is shared with the HTCC system and several beamline devices. The CTOF
-HV modules occupy slots \#0 to \#3 in the mainframe. Fig.~\ref{elec-layout} shows the locations of the
-CTOF electronics and power supplies in the electronics racks on the beam left side of Space Frame Level~1.
-Note that the CTOF magnetic shields include compensation coils powered through a dedicated low voltage
-system (LVPS). However, the coils are not used in nominal beam operations for CLAS12.
+HV modules occupy slots \#0 to \#3 in the mainframe. Figure~\ref{elec-layout} shows the locations of
+the CTOF electronics and power supplies in the electronics racks on the beam left side of Space Frame
+Level~1 (the target level). Note that the CTOF magnetic shields include compensation coils powered
+through a dedicated low voltage power supply (LVPS). However, the coils are not used in nominal beam
+operations for CLAS12.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
-\vspace{5.8cm}
+\vspace{6.0cm}
 \begin{picture}(30,50) 
-\put(90,10)
-{\hbox{\includegraphics[width=0.85\textwidth,natwidth=610,natheight=642]{electronics-block.pdf}}}
+\put(60,-25)
+{\hbox{\includegraphics[width=0.65\textwidth,natwidth=610,natheight=642]{electronics-block.pdf}}}
 \end{picture} 
 \caption{Block diagram for the CTOF system showing the layout of the readout electronics and power
 connections for a single counter.}
@@ -205,7 +206,7 @@ connections for a single counter.}
 {\hbox{\includegraphics[width=0.80\textwidth,natwidth=610,natheight=642]{CTOFCNDHTCC.pdf}}}
 \end{picture} 
 \caption{Layout of the electronics for the CTOF, CND, and HTCC NIM and VME electronics on the beam
-left side of Level~1 of the Space Frame in Hall~B. The positions of the HV (SYS1527) and LV (MPOD)
+left side of Level~1 of the Space Frame in Hall~B. The positions of the HV (SYS4527) and LV (MPOD)
 mainframes are also shown.}
 \label{elec-layout}
 \end{figure}
@@ -224,14 +225,15 @@ The shift worker in the Hall~B Counting House has five responsibilities with reg
 
 \begin{enumerate}
 \item Updating the Hall~B electronic logbook with records of problems or system conditions (see
-Section~\ref{logbook}).
+Section~\ref{logbook});
 
-\item Contacting CTOF system on-call personnel for any problems that are discovered (see Section~\ref{contact}).
+\item Contacting CTOF system on-call personnel for any problems that are discovered (see
+Section~\ref{contact});
 
-\item Responding to CTOF system alarms from the Hall~B alarm handler (see Section~\ref{alarms}).
+\item Responding to CTOF system alarms from the Hall~B alarm handler (see Section~\ref{alarms});
 
 \item Turning on or off the high voltage (HV) for the CTOF system using the HV control interface (see
-Section~\ref{hv-control}).
+Section~\ref{hv-control});
 
 \item Monitoring the hit occupancy scalers for the system (see Section~\ref{monitoring}).
 \end{enumerate}
@@ -258,35 +260,36 @@ number is (757)-344-7204.}
 
 This document is divided into sections for shift workers and for CTOF system experts. However, only CTOF
 system experts (as listed in Section~\ref{personnel}) are authorized to make changes to the CTOF parameter
-settings, to work on the hardware or electronics, or to modify the DAQ system software. This division between
-shift worker responsibilities and expert responsibilities is essential to maintain in order to protect and
-safeguard the equipment, to ensure data collection is as efficient as possible, and to minimize down time. If
-the shift worker has any questions regarding how to proceed when an issue arises, the shift leader should be
-consulted.
+settings, to work on the hardware or electronics, or to modify the data acquisition (DAQ) system parameters.
+This division between shift worker responsibilities and expert responsibilities is essential to maintain in
+order to protect and safeguard the equipment, to ensure data collection is as efficient as possible, and to
+minimize down time. If the shift worker has any questions regarding how to proceed when an issue arises, the
+shift leader should be consulted.
 
 \subsubsection{Hall~B Alarm Handler}
 \label{alarms}
 
 The BEAST alarm handler system running in the Counting House monitors the entire Hall~B Slow Controls
 system. This includes the HV and low voltage (LV) systems, gas systems, torus and solenoid controls,
-subsystem environment controls (e.g. temperature, humidity), and pulser calibration systems (among several
-others). The system runs on a dedicated terminal in the Counting House. One of the main responsibilities of
-the shift worker is to respond to alarms from this system, either by taking corrective action or by contacting
-the appropriate on-call personnel. Instructions and details on the alarm handler for Hall~B are given in
-Ref.~\cite{beast}.
+subsystem environment controls ({\it e.g.} temperature, humidity), and pulser calibration systems (among
+several others). The system runs on a dedicated terminal in the Counting House. One of the main
+responsibilities of the shift worker is to respond to alarms from this system, either by taking corrective
+action or by contacting the appropriate on-call personnel. Instructions and details on the alarm handler
+for Hall~B are given in Ref.~\cite{beast}.
 
-For the CTOF the HV system is monitored by the alarm handler. Any time a channel trips off an alarm will sound.
-The alarm handler will identify the specific channel (or channels) that have tripped. These channels can be reset
-either through the alarm handler or through the CTOF HV control screens. These channels should be reset only
-after ensuring that whatever condition caused the trip (e.g. bad beam conditions) has been addressed. 
+For the CTOF the HV system is monitored by the alarm handler. Any time a channel trips off an alarm will
+sound. The alarm handler will identify the specific channel (or channels) that have tripped. These channels 
+can be reset either through the alarm handler or through the CTOF HV control screens. These channels should
+be reset only after ensuring that whatever condition caused the trip ({\it e.g.} bad beam conditions) has
+been addressed. 
 
 \subsection{High Voltage Controls}
 \label{hv-control}
 
-The CTOF HV is controlled through the Hall~B CS-Studio suite, which is an Eclipse-based collection of tools used
-as an interface to the EPICS Slow Controls system. To start the user interface on any terminal in the Hall~B
-Counting House, enter the command {\it clascss}. Fig.~\ref{ctof-screen1-2}(left) shows the control panel that is
-launched.
+The CTOF HV is controlled through the Hall~B CS-Studio suite, which is an Eclipse-based collection of tools
+used as an interface to the EPICS Slow Controls system. To start the user interface on any terminal in the
+Hall~B Counting House, enter the command ``clascss''. Figure~\ref{ctof-screen1-2}(left) shows the control
+panel that is launched.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
@@ -374,14 +377,14 @@ Clicking on the button in the ``Pw'' (power) column toggles the channel HV on an
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Note that hovering the mouse pointer on a circle representing a PMT brings up information on that channel as
-shown in Fig.~\ref{channel-id}.
+Note that hovering the mouse pointer on a circle representing a PMT brings up information on that channel
+as shown in Fig.~\ref{channel-id}.
 
-If the ``Controls'' option shown in Fig.~\ref{ctof-screen3-5}(right) is selected, a ``novice'' window is opened
-as shown in Fig.~\ref{ctof-screen6}. This window shows the monitored channel voltage and current ($V_{mon}$
-(V) and $I_{mon}$ ($\mu$A)), the channel status (OFF, ON), and the set channel voltage and current ($V_{set}$
-(V) and $I_{set}$ ($\mu$A)). If desired, shift workers can toggle the HV settings for single channels on or off
-through this interface.
+If the ``Controls'' option shown in Fig.~\ref{ctof-screen3-5}(right) is selected, a ``novice'' window is
+opened as shown in Fig.~\ref{ctof-screen6}. This window shows the monitored channel voltages and currents
+($V_{mon}$ (V) and $I_{mon}$ ($\mu$A)), the channel statuses (OFF, ON), and the set channel voltages and
+currents ($V_{set}$ (V) and $I_{set}$ ($\mu$A)). If desired, shift workers can toggle the HV settings for
+single channels on or off through this interface.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
@@ -420,15 +423,15 @@ If there is a controls problem indicated by the appearance of yellow or magenta 
 Fig.~\ref{ctof-screen3-5}, which typically appears for all CTOF PMTs, the usual cause is an issue of
 communication between the IOC computer and the HV mainframe. To reboot the IOC, click on the ``IOCs''
 button on the Slow Controls panel within the ``Subsystems'' portion of the interface (see
-Fig.~\ref{ctof-screen1-2}). Fig.~\ref{ioc-reset2} shows the options that appear on the sub-menu that pops
-up. On this menu, select ``IOC Health'' to open the control window shown in Fig.~\ref{ioc-reset3}. Clicking on
-the ``High Voltage'' tab along the top of the screen brings up the screen for the IOCs that control the HV
-mainframes as shown in Fig.~\ref{ioc-reset4}. Click on the ``Reboot'' button for the HV supply HVCTOF0
-(under the ``Soft Reboot'' column). The reboot will take less than two minutes to complete and the yellow or
-magenta communication problem channel indicators should all disappear. Note that the IOCs can be also
-rebooted through the CTOF channel control screen shown in Fig.~\ref{ctof-screen3-5}(right). Click on the
-``Reboot HV IOC'' button and answer ``Yes'' on the dialog box that comes up. If rebooting the IOC does not
-solve the communication problems, contact the Slow Controls system expert.
+Fig.~\ref{ctof-screen1-2}). Figure~\ref{ioc-reset2} shows the options that appear on the sub-menu that
+pops up. On this menu, select ``IOC Health'' to open the control window shown in Fig.~\ref{ioc-reset3}.
+Clicking on the ``High Voltage'' tab along the top of the screen brings up the screen for the IOCs that
+control the HV mainframes as shown in Fig.~\ref{ioc-reset4}. Click on the ``Reboot'' button for the HV
+supply HVCTOF0 (under the ``Soft Reboot'' column). The reboot will take less than two minutes to complete
+and the yellow or magenta communication problem channel indicators should all disappear. Note that the
+IOCs can be also rebooted through the CTOF channel control screen shown in Fig.~\ref{ctof-screen3-5}(right).
+Click on the ``Reboot HV IOC'' button and answer ``Yes'' on the dialog box that comes up. If rebooting
+the IOC does not solve the communication problems, contact the Slow Controls system expert.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[ht]
@@ -494,14 +497,14 @@ on any terminal in the Counting House will bring up the screen shown in Fig.~\re
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The {\it mon12} utility for online data monitoring requires the data acquisition system to be operating to display
-the scaler counts. If a run is in progress, scaler accumulation will begin by selecting the event source from the
-Event Transfer (ET) ring. This is done by clicking on ``ET'' in the lower right corner of the mon12 screen. This
-will pop-up the window shown in Fig.~\ref{mon12}(lower left). To proceed select the appropriate computer
-(clondaq6) from the drop-down menu and then click ``Connect''. Finally, click on the ``play'' button (the
-rightward triangle in the lower left of the mon12 screen). The CTOF scalers are available for both the FADC and
-TDC channels by clicking on the CTOF tab and selecting either sub-tab ``ADC Occupancies'' or
-``TDC Occupancies'' as shown in Fig.~\ref{mon12}(right).
+The {\it mon12} utility for online data monitoring requires the data acquisition system to be operating to
+display the scaler counts. If a run is in progress, scaler accumulation will begin by selecting the event
+source from the Event Transfer (ET) ring. This is done by clicking on ``ET'' in the lower right corner of
+the mon12 screen. This will pop-up the window shown in Fig.~\ref{mon12}(lower left). To proceed select the
+appropriate computer (clondaq6) from the drop-down menu and then click ``Connect''. Finally, click on the
+``play'' button (the rightward triangle in the lower left of the mon12 screen). The CTOF scalers are
+available for both the FADC and TDC channels by clicking on the CTOF tab and selecting either sub-tab
+``ADC Occupancies'' or ``TDC Occupancies'' as shown in Fig.~\ref{mon12}(right).
 
 \vfil
 \eject
@@ -529,8 +532,8 @@ information, ``CTOF Scalers - Geographic'' and ``CTOF Scalers - Expert''. Select
 up the screens as shown in Fig.~\ref{sc-scalers}.
 
 The final manner in which to monitor the performance of the CTOF hardware is through the expert monitoring
-suite {\it ctofmon}. Details on this suite are provided in Section~\ref{ctofmon}, however this suite is mainly
-intended for CTOF system experts.
+suite {\it ctofmon}. Details on this suite are provided in Section~\ref{ctofmon}, however, this suite is
+mainly intended for CTOF system experts.
 
 \clearpage
 
@@ -563,11 +566,11 @@ e-log (HBLOG and HBTOF) and communicated to the CTOF Group Leader.
 Prior to the start of each beam running period, each system Group Leader is responsible to review the
 components of their systems to be sure that they are fully operational. This review is referred to as
 ``hot checkout''. The hot checkout is an online checklist~\cite{hco-page} for each system that includes a
-sign-off for all hardware elements of the system (e.g. HV, LV, detectors, gas, pulser). For the CTOF system,
-the hot checkout includes verification that all detectors are operational, that the Slow Controls system for
-the HV is functioning, and that the DAQ system can fully communicate with the readout electronics.
+sign-off for all hardware elements of the system ({\it e.g.} HV, LV, detectors, gas, pulser). For the CTOF
+system, the hot checkout includes verification that all detectors are operational, that the Slow Controls
+system for the HV is functioning, and that the DAQ system can fully communicate with the readout electronics.
 
-Fig.~\ref{hot-co} shows a screenshot of the hot checkout interface. Under the heading ``Hall~B CLAS12
+Figure~\ref{hot-co} shows a screenshot of the hot checkout interface. Under the heading ``Hall~B CLAS12
 Detector'', all entries for CTOF (located within the ``CLAS12 TOF'' subheading) must be verified as ready.
 Note that often as part of the system checkout before the start of a run period, an initial cosmic data run
 is completed. Reminders to complete the system hot checkout will be sent out shortly before the start of a
@@ -593,26 +596,28 @@ and all items listed as ``Not Ready'' must be changed over to ``Ready''.}
 Each system Group Leader will organize a list of on-call experts who will take responsibility for carrying a
 cell phone to allow 24-hour access to experts who can address any problems that arise during a beam running
 period. The phone numbers of all subsystem experts are posted on the run page~\cite{run-page}. Any problems
-that cannot be quickly solved by the shift workers, where quickly amounts to 10 to 15~minutes, should result in
-a call to the relevant expert cell phone. \textcolor{red}{The CTOF on-call phone number is (757)-344-7204.} 
+that cannot be quickly solved by the shift workers, where quickly amounts to 10 to 15~minutes, should result
+in a call to the relevant expert cell phone. \textcolor{red}{The CTOF on-call phone number is (757)-344-7204.} 
 
 The on-call experts can often diagnose problems over the telephone, but there are times when they will have
-to go to the Counting House to more fully address an issue. One of the important responsibilities of the on-call
-experts is to make practical decisions regarding which problems require access to Hall~B for immediate 
+to go to the Counting House to more fully address an issue. One of the important responsibilities of the
+on-call experts is to make practical decisions regarding which problems require access to Hall~B for immediate 
 attention and which can be delayed to periods when the accelerator is down or other work is scheduled in the
 hall. For the CTOF system, usually problems with a single channel are not important enough to stop the data
-acquisition. The normal mode of operation after initial investigation of a bad channel is to turn off the HV for 
-that channel until access can be made for a more detailed investigation. This work should be coordinated with
-the Run Coordinator. Access to PMTs for service must be done only when the solenoid is off.
+acquisition. The normal mode of operation after initial investigation of a bad channel is to turn off the HV
+for that channel until access can be made for a more detailed investigation. This work should be coordinated
+with the Run Coordinator. Access to PMTs for service must be done only when the solenoid is off.
 
-Note: It is the responsibility of the CTOF on-call expert to review all issues that they cannot resolve with the
-CTOF Group Leader as soon as is reasonable.
+Note: It is the responsibility of the CTOF on-call expert to review all issues that they cannot resolve with
+the CTOF Group Leader as soon as is reasonable. Each call to the FTOF on-call phone should be logged to the
+TOF on-call wikipage \cite{tof-oncall} with a description of the issue and a note on its resolution. This
+archive can be used as a resource for when problems arise.
 
 \subsubsection{Expert Monitoring Suite}
 \label{ctofmon}
 
-The expert monitoring suite for the CTOF system is called {\it ctofmon}. This code suite is brought up on any
-Counting House computer by typing ``ctofmon''. The suite allows monitoring of the following system quantities:
+The expert monitoring suite for the CTOF system is called {\it ctofmon}. This code suite is brought up on
+any Counting House computer by typing ``ctofmon''. The suite allows monitoring of the:
 
 \begin{itemize}
 \item FADC Mode 1 time slices
@@ -688,9 +693,9 @@ be restored. It is important to note as well that the ``BURT'' backup file does 
 the maximum high voltage settings for the channel. These must be reset for the swapped out board to the
 nominal values (-2.5~kV). See instructions in Section~\ref{hv-parms}. These values can also be set
 channel-by-channel using the CTOF expert channel controls screen discussed in Section~\ref{hv-control}.
-\item Leave the bad board on the RadCon survey table in Hall~B attaching a RadCon tag with a contact listing
-for the Fast Electronics Group. Send an email to the Fast Electronics Group to pick up the module for
-testing/repairs.
+\item Leave the bad board on the RadCon survey table in Hall~B (floor level on south side of
+Forward Carriage) attaching a RadCon tag with a contact listing for the Fast Electronics Group. Send an
+email to the Fast Electronics Group to pick up the module for testing/repairs.
 \item If beam conditions are acceptable, turn on the HV for the CTOF, HTCC, and beamline device channels. Be
 sure to check with the shift leader before energizing the supply.
 \end{enumerate}
@@ -698,11 +703,11 @@ sure to check with the shift leader before energizing the supply.
 \subsubsection{Bad Mainframe}
 \label{mainframe}
 
-From time to time the CAEN mainframes will go bad and need to be serviced in situ or replaced entirely with a
-spare. If the entire mainframe must be replaced, this can be a fairly significant undertaking and should not be
-considered without certainty that the problem is actually the mainframe. The final determination regarding the
-status of the hardware should be made in consultation with the Slow Controls expert after a number of different
-checks are made.
+From time to time the CAEN mainframes will go bad and need to be serviced in situ or replaced entirely
+with a spare. If the entire mainframe must be replaced, this can be a fairly significant undertaking and
+should not be considered without certainty that the problem is actually the mainframe. The final
+determination regarding the status of the hardware should be made in consultation with the Slow Controls
+expert after a number of different checks are made.
 
 The basic procedure to swap out a mainframe is as follows:
 
@@ -711,13 +716,13 @@ The basic procedure to swap out a mainframe is as follows:
 Remember that the HV mainframe for the CTOF also includes the HTCC and some beamline devices.
 \item Turn the front panel key on the HV supply to the ``off'' position and toggle the main power switch to
 ``off'' on the back of the HV supply.
-\item The modules are typically pulled out of the back of the mainframe leaving the Radiall connectors attached.
-Before pulling the modules from the mainframe, be sure that they are clearly labeled so that they can be put
-back into their assigned slots.
+\item The modules are typically pulled out of the back of the mainframe leaving the Radiall connectors
+attached. Before pulling the modules from the mainframe, be sure that they are clearly labeled so that they
+can be put back into their assigned slots.
 \item Unplug the power cord from the mainframe.
-\item Remove the mainframe from the rack and place it on the RadCon survey table attaching a RadCon tag with
-contact information listing the Fast Electronics Group. Send email to the Fast Electronics Group to pick up the
-mainframe for testing/repairs.
+\item Remove the mainframe from the rack and place it on the RadCon survey table (floor level on south side
+of Forward Carriage) attaching a RadCon tag with contact information listing the Fast Electronics Group.
+Send email to the Fast Electronics Group to pick up the mainframe for testing/repairs.
 \item Install a spare mainframe in the rack, install the boards into their assigned slots, and connect the power
 cord to the mainframe.
 \item Toggle the main power switch to ``on'' and turn the HV power supply on using the key on the front panel,
@@ -846,10 +851,9 @@ Slow Controls system expert.
 The CS-Studio program is used to monitor the HV settings of the CTOF system and to toggle the HV off and on
 for individual or multiple channels in the system. To set the channel values, restore the most recent saved
 ``BURT'' backup file (see Section~\ref{save-restore} for details). Note as well that the channel parameters
-can also be set using control scripts. 
-
-From the computers in the Hall~B Counting House, the scripts are located in the path: {\it /home/clasrun/ctof/hv}.
-There are seven scripts available for setting the CTOF HV parameters:
+can also be set using control scripts. From the computers in the Hall~B Counting House, the scripts are
+located in the path: {\it /home/clasrun/ctof/hv}. There are seven scripts available for setting the CTOF HV
+parameters:
 
 \begin{itemize}
 \item {\it loadhvmax}: Contains the maximum HV limits for each supply channel (units = V)
@@ -862,7 +866,7 @@ There are seven scripts available for setting the CTOF HV parameters:
 (units = s)
 \end{itemize}
 
-The scripts are run from any of the DAQ machines in the Counting House (using e.g the commands
+The scripts are run from any of the DAQ machines in the Counting House (using {\it e.g} the commands
 {\it sh loadhvmax} or {\it ./loadhvmax}).
 
 The nominal settings for the HV channel parameters are as follows:
@@ -933,20 +937,20 @@ settings.
 \subsubsection{Signal Cable Connections}
 \label{signal-conn}
 
-The signal cables for each PMT run from the voltage divider to one of two UVa 80-20 signal splitters. A
-schematic diagram of the splitter connections is shown in Fig.~\ref{ctof-splitter}. The 80\% signals run from
-the splitters to the discriminators. Fig.~\ref{ctof-disc-map} shows the signal mapping to the discriminators.
-The discriminator outputs are then connected to the TDCs. The 20\% signals run from the splitters to the
-FADC inputs. The splitter outputs to the FADCs are through 34-pin connectors for each of the six groups (see 
-Fig.~\ref{ctof-splitter}). The splitter outputs to the discriminators are through the lemo connectors. Note
-that the locations of the CTOF electronics crates are shown in Fig.~\ref{elec-layout}
+The signal cables for each PMT run from the voltage divider to one of two UVa 60-40 signal splitters. A
+schematic diagram of the splitter connections is shown in Fig.~\ref{ctof-splitter}. The 60\% signals run
+from the splitters to the discriminators. Figure~\ref{ctof-disc-map} shows the signal mapping to the
+discriminators. The discriminator outputs are then connected to the TDCs. The 40\% signals run from the
+splitters to the FADC inputs. The splitter outputs to the FADCs are through 34-pin connectors for each of
+the six groups (see Fig.~\ref{ctof-splitter}). The splitter outputs to the discriminators are through
+lemo connectors. Note that the locations of the CTOF electronics crates are shown in Fig.~\ref{elec-layout}.
 
 The CTOF channel connections to the VME readout electronics are mapped in such a way that neighboring PMTs
 are not connected to neighboring electronics inputs. This scheme was devised to reduce any electronics noise
-coupling (i.e. cross-talk). The VME electronics channel mapping is shown in Figs.~\ref{ctof-vme1-map} and 
-\ref{ctof-vme2-map} for the TDCs and FADCs, respectively. Fig.~\ref{cable-types} gives schematics for the
-cable and connector types for each segment of the connections from the voltage divider to the readout electronics
-for the CTOF counters.
+coupling ({\it i.e.} cross-talk). The VME electronics channel mapping is shown in Figs.~\ref{ctof-vme1-map}
+and \ref{ctof-vme2-map} for the TDCs and FADCs, respectively. Figure~\ref{cable-types} gives schematics for
+the cable and connector types for each segment of the connections from the voltage divider to the readout
+electronics for the CTOF counters.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
@@ -1013,13 +1017,14 @@ for the CTOF counters.
 \subsubsection{HV Cable Layout}
 \label{hv-layout}
 
-The high voltage cables for each PMT run from the voltage divider to one of two HV distribution boxes located
-on the solenoid cart. Fig.~\ref{ctof-hv-map} shows the layout of the two HV distribution boxes for the upstream
-and downstream PMT HV connections. The output of each HV distribution box is a pair of 55-ft-long 
-multi-conductor cables, each containing 24-channels, with a Radiall connector to mate with the HV A1535N board
-input connector. See Fig.~\ref{cable-types} for schematics of the cable and connector types for each segment
-of the HV connections from the voltage divider to the HV power supplies for the counters in CTOF. The HV power
-supply channel assignments for each sector are nominally given as shown in Fig.~\ref{ctof-hvmap}.
+The high voltage cables for each PMT run from the voltage divider to one of two HV distribution boxes
+located on the solenoid cart. Figure~\ref{ctof-hv-map} shows the layout of the two HV distribution boxes
+for the upstream and downstream PMT HV connections. The output of each HV distribution box is a pair of
+55-ft-long multi-conductor cables, each containing 24-channels, with a Radiall connector to mate with the
+HV A1535N board input connector. See Fig.~\ref{cable-types} for schematics of the cable and connector
+types for each segment of the HV connections from the voltage divider to the HV power supplies for the
+counters in CTOF. The HV power supply channel assignments for each sector are nominally given as shown in
+Fig.~\ref{ctof-hvmap}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
@@ -1137,13 +1142,16 @@ Hall~B Electronic Logbook: https://logbooks.jlab.org/book/hblog
 Hall~B BEAST alarm handler: \\
 https://clasweb.jlab.org/wiki/index.php/Slow\_Control\_Alarms
 
+\bibitem{hco-page}
+Hot Checkout page: http://accweb.acc.jlab/hco/readiness (also accessible from the
+``Shift Documentation'' tab on the Run Page wiki~\cite{run-page})
+
 \bibitem{run-page}
 Hall~B current run information page:\\
 https://www.jlab.org/Hall-B/run-web/
 
-\bibitem{hco-page}
-Hot Checkout page: http://accweb.acc.jlab/hco/readiness (also accessible from the
-``Shift Documentation'' tab on the Run Page wiki~\cite{run-page})
+\bibitem{tof-oncall}
+https://clasweb.jlab.org/wiki/index.php/TOF\_on-call
 
 \bibitem{ctof-web}
 CTOF web page: http://www.jlab.org/Hall-B/ctof
