@@ -4,9 +4,10 @@
 \geometry{verbose,tmargin=0.5in,bmargin=0.75in,lmargin=0.75in,rmargin=0.5in}
 \pagestyle{headings}
 \usepackage{color}
+\usepackage{ragged2e}
 \usepackage{graphics}
 \usepackage{graphicx}
-\newcommand{\versionnumber}{2.2}
+\newcommand{\versionnumber}{3.2}
 \makeatletter
 
 
@@ -37,7 +38,7 @@ MCC&Beam tune, vacuum&&x7048 \& x7043\\
 \hline 
 Expert on call&Beamline devices and applications&(757) 303-3996&\\
 \hline 
-Stepan Stepanyan&Beamline devices and applications&(757) 303-0499&x7196\\
+Eugene Pasyuk&Beamline devices and applications&(757) 515-9811&x6020\\
 \hline 
 Engineering on call&General beamline&(757) 748-5048&\\
 \hline 
@@ -62,18 +63,17 @@ example, changes in the beam halo can dramatically increase background rates
 making the data worthless, or a change in the electron beam direction can cause
 unwanted beam losses leading detector damage or beam trip. There are
 automatic controls and alarms for the beam conditions that will prevent beam damage to equipment 
-and will terminate beam delivery in an event of a beam excursion. Nevertheless,  the shift taker must
+and will terminate beam delivery in an event of beam excursions. Nevertheless,  the shift taker must
 continuously monitor the beam parameters and act accordingly.
 
-After the initial beam tune, reference numbers for the beam parameters (position of the beam on position monitors, i.e. BPMs) and the rates of halo counters will be posted in the log book and on the run wiki page, and are to be used as reference. 
+After the initial beam tune, reference numbers for the beam parameters (position of the beam on position monitors, i.e. BPMs) and the rates of halo counters will be posted in the log book and on the run wiki page, and must be used as reference. 
 
 \subsubsection{Beam Current}
 \indent
 
-A consistent reading between the Faraday Cup (see Section \ref{sec:fcup}) current
-and the "nA" BPMs is one way
-to check that the electron beam is cleanly transported to the beam dump (Faraday Cup). {\bf Note:} for most of CLAS12 experiments, requested beam current (at nominal luminosity) exceeds allowed power limit for the Faraday cup, $\sim 175$ W (Power in W = Current in nA x Energy in GeV). A beam blocker, see Section \ref{subsec:blocker}, will be inserted in front of the Faraday cup. Even with blocker in-beam, Faraday cup reading is meaningful, it will be a scaled value of the beam current. The coefficient of the proportionality is beam energy dependent \cite{blocker} and will be calibrated at each given energy setting \ref{2018-003}. With blocker in-beam, the ratio of the currents read by Faraday cup and other current monitors (e.g. BPMs, Section \ref{sec:bpm}, and SLM, Section \ref{sec:slm}) must be constant. In all cases one should observe the same current on all three nA BPMs (2C21, 2C24, and 2H01). In addition to the inconsistencies in the beam current readings, the halo counters (see Section \ref{sec:scaler_a}) should
-show an increased activity if beam scraps the beam pipes. Also higher then normal rates in the detectors would be indicative
+A consistency in the beam current readings between the Faraday Cup (see Section \ref{sec:fcup}) and the "nA" BPMs is one way
+to check that the electron beam is cleanly transported to the beam dump (Faraday Cup). {\bf Note:} for most of CLAS12 experiments, requested beam current (at nominal luminosity) exceeds allowed power limit for the Faraday cup, $\sim 175$ W (Power in W = Current in nA x Energy in GeV). A beam blocker, see Section \ref{subsec:blocker}, will be inserted in front of the Faraday cup. Even with blocker in-beam, Faraday cup reading is meaningful, it will be a scaled value of the beam current. The coefficient of the proportionality is beam energy dependent \cite{blocker} and will be calibrated at each given energy setting \cite{2018-003}. With blocker in-beam, the ratio of the currents read by Faraday cup and other current monitors (e.g. BPMs, Section \ref{sec:bpm}, and SLM, Section \ref{sec:slm}) must be constant. In all cases one should observe the same current on all three nA BPMs (2C21, 2C24, and 2H01). In addition to the inconsistencies in the beam current readings, the halo counters (see Section \ref{sec:scaler_a}) should
+show an increased activity if beam scraps beam pipes. Also higher then normal rates in the detectors would be indicative
 of scraping immediately downstream of the target.
 
 In the event that there appears to be unacceptable beam losses the following course of action is recommended:
@@ -93,7 +93,7 @@ the tune is unacceptable.
 
 The presence of a beam halo is usually observed by an increase count rate in
 the beam halo counters (see Section \ref{sec:scaler_a}). Typically
-the upstream counters are very quiet and any count rate above $\sim$tens of Hz (after initial gain adjustments for a well tuned beam) is indicative
+the upstream and midstream counters are very quiet. Any count rate above $\sim$tens of Hz (after initial gain adjustments for a well tuned beam) is indicative
 of a problem. Note that an increase count rate in the upstream beam halo counters
 can also indicate an obstacle on the beam path or just a bad beam tune. To 
 further investigate the source of a large count rate in the upstream beam halo
@@ -113,7 +113,7 @@ is unacceptable.
 \indent
 
 The beam position before CLAS12 is available from three "nA" cavities, 2C21, 2C24, and 2H01, and one stripline BPM, 2H00 (when beam current is above $25$ nA). The position monitors close to the target, 2H00 and 2H01, are the most important ones to keep the beam position steady on the target. A feedback system (the orbit locks) uses (x,y) positions on these BPMs, and the Horizontal and Vertical correctors on 2C22/2C23/2H00 girders to keep the beam position stable. Drifts more the \( \pm 0.2 \)mm
-should be brought to the attention of MCC. The nA BPMs measure the beam position as well as the current. Before data taking, shift worker must confirm that the feedback system is active (verify with MCC). Note, that at beam currents below $25$ nA only "nA" cavities are reliable. 
+should be brought to the attention of MCC. The nA BPMs measure beam position as well as the current. Before data taking, shift worker must confirm that the feedback system is active (verify with MCC). Note, that at beam currents below $25$ nA only "nA" cavities are reliable. 
 
 \subsection{Beamline Vacuum}
 \indent
@@ -125,7 +125,7 @@ The beamline vacuum on Hall-B line (from upstream tunnel to the Faraday cup) can
 \indent
 
 There are two thin windows that are components of the CLAS beamline, the target scattering chamber exit window
-and the entrance window to the downstream beamline (after the target). If the window on the scattering chamber will fail, there are fast valves interlocked to the pressure gauges that will close automatically. These valves will limit the loss of the vacuum to a small region of the Hall B beamline. Valves are interlocked to the beam Fast Shutdown System (FSD) and beam will be terminated in an event of a vacuum loss.
+and the entrance window to the downstream beamline (after the target). If the window on the scattering chamber fails, fast valves interlocked to the pressure gauges will close automatically. These valves will limit the loss of the vacuum to a small region of the Hall B beamline. Valves are interlocked to the beam Fast Shutdown System (FSD) and beam will be terminated in an event of a vacuum loss.
 
 If any of the valves close due to poor vacuum: 
 
@@ -248,7 +248,7 @@ Active\\
 If the tagger or any of CLAS12 superconducting magnets do trip off or is set incorrectly take the following action:
 
 \begin{enumerate}
-\item Call MCC immediately, tell them to shut off the beam. Call Hall-B engineering on-call if torus or solenoid triped.
+\item Call MCC immediately, tell them to shut off the beam (if it is not off already). Call Hall-B engineering on-call if torus or solenoid triped.
 \item Make a log entry.
 \item Restore magnets 
 \begin{itemize}
@@ -340,7 +340,7 @@ The main function of the BOM is to alert on beam motion at the target. If beam m
 \label{sec:bpm}
 \indent
 
-There are 3 nA Beam Position Monitors (BPMs), 2C21, 2C24 and 2H01, on the B-line and one stripline BPM 2H00. The nA BPMs measure beam transfer (x,y) position relative to their center as well as the beam current. The stripline BPM measures beam position and is reliable only for beam currents above $25$ nA. There is a BPM alarm GUI, Fig. 3,
+There are 3 nA Beam Position Monitors (BPMs), 2C21, 2C24 and 2H01, and one stripline BPM 2H00 on the B-line. The nA BPMs measure beam transfer (x,y) position relative to their center as well as the beam current. The stripline BPM measures beam position and is reliable only for beam currents above $25$ nA. There is a BPM alarm GUI, Fig. 3,
 that allows to set limits for beam position and current drifts from the requested values. The GUI can be open from the \emph{"Beamline"} pull down menu.
 \begin{figure}[tbhp]
 {\centering \includegraphics[scale=0.5, angle=90]{bpms.pdf} \par}
@@ -351,8 +351,8 @@ reading is updated at the same rate as the beam halo scalers. \label{fig:bpm}}
 \subsection{Hall-B Harps (classc3/classc4)\label{sec:harp}}
 \indent
 
-There are three wire harps on the Hall B beamline, 2C21, 2C24 ("tagger"), and 2H01A. The 2C21 harp has two $25~\mu$m tungsten wires that cross the beam in horizontal (X) and vertical (Y)directions. The "tagger" and 2H01A harps have two sets of wires, thin and thick. There are three thin $25~\mu$m tungsten wires, which cross the beam in X, Y, and $45^\circ$ axis. This are the main set of wires on these two harps that are used to perform beam profile measurements. A two thick ($1$ mm iron on 2C24 and 0.5 mm carbon on 2H01A) wires that are mounted farther from the beam, move into beam in X and Y directions and are used only for special measurements of the beam tails. The harp launch GUI, {\it Harp Scans} shown in Figure \ref{harpmain}, enables operator to open controls for the desired harp. A stepper motor in conjunction
-with the beam halo scalers is used to perform a beam profile measurements. The harp operation is controlled from the {\it Harp Scans} GUI (controls for 2C21 harp are shown on the figure). During a scan the beam halo scaler GUI is controlled by the scan application,  (see Section \ref{sec:scaler_a}).
+There are three wire harps on the Hall B beamline, 2C21, 2C24 ("tagger"), and 2H01A. The 2C21 harp has two $25~\mu$m tungsten wires that cross the beam in horizontal (X) and vertical (Y)directions. The "tagger" and 2H01A harps have two sets of wires, thin and thick. There are three thin $25~\mu$m tungsten wires, which cross the beam in X, Y, and $45^\circ$ axis. This are the main set of wires on these two harps that are used to perform beam profile measurements. Two thick wires ($1$ mm iron on 2C24 and 0.5 mm carbon on 2H01A) that are mounted farther from the beam, move into beam in X and Y directions and are used only for special measurements of the beam tails. The harp launch GUI, {\it Harp Scans} shown in Figure \ref{harpmain}, enables operator to open controls for the desired harp. Position of the stepper motor that moves the wires in conjunction
+with the beam halo scalers is used to perform the beam profile measurements. The harp operation is controlled from the {\it Harp Scans} GUI (controls for 2C21 harp are shown on the figure). During the scan the scaler readout is controlled by the scan application,  (see Section \ref{sec:scaler_a}).
 
 \begin{figure}[tbhp]
 {\centering \resizebox*{0.75\textwidth}{!}{\includegraphics{harps.pdf}} \par}
@@ -360,7 +360,7 @@ with the beam halo scalers is used to perform a beam profile measurements. The h
 \label{harpmain}
 \end{figure}
 
-In order to perform a harp scan one should push {\it SCAN} button. After the scan is finished (motor position has been restored at $0.0$) use {\it Analyze} button to see the beam profile and fit the halo counter rate as a function of the wire (motor) position. Make sure beam is stable during the scan. If beam has been lost during the scan (e.g. due to beam trips), information (halo counter rates) from wire crossing the beam will be lost. In this case beam scan must be repeated.  
+In order to perform a harp scan one should push {\it SCAN} button. After the scan is finished (motor position has been restored at $0.0$) use {\it Analyze} button to see the beam profile and fit the halo counter rate as a function of the wire position. Make sure beam is stable during the scan. If beam has been lost during the scan (e.g. due to beam trips), information (halo counter rates) from wire crossing the beam will be lost. In this case beam scan must be repeated.  
 
 
 \subsection{Collimator \label{sec:colim}}
@@ -378,7 +378,7 @@ The main use of this current monitor is to measure helicity related beam intensi
 \subsection{Beam Viewer \label{sec:view}}
 \indent
 
-There is a beam viewer installed in the downstream tunnel, right before the shielding wall that separates Faraday cup dump. The viewer is a wheel with three screens mounted: a Chromox disk, a Yag crystal, and a $4~\mu$m thick polished aluminum foil as OTR viewer. The motor that control the position of the screens can be controlled from the same {\it Motors} GUI as collimator, see Figure \ref{fig:beamblocker}. In order to position required screen just push the button carrying the name of the screen.  
+There is a beam viewer installed in the downstream tunnel, right before the shielding wall that separates Faraday cup dump. The viewer is a wheel with a Chromox screen mounted on the axis. The motor that control the position of the screens can be controlled from the same {\it Motors} GUI as collimator, see Figure \ref{fig:beamblocker}. In order to position the screen just push the button carrying the name of the screen.  
 
 \subsection{Faraday Cup (classc4) \label{sec:fcup}}
 \indent
@@ -394,7 +394,7 @@ you will observe large statistical fluctuations.
 \label{subsec:blocker}
 \indent
 
-The Hall-B Faraday cup is not cooled and cannot operate at high currents (deposited hit should not exceed $175$ W for more than 1/2 hour running). If run requires use of beam currents above the limit (for 11 GeV it is 15 nA), a $1$ kW beam blocker, cooled-copper absorber, must be position in front of the Faraday cup. The beam blocker can be controlled from {\it Motors} GUI shown in Figure \ref{fig:beamblocker}.  From {\it Motors} GUI select {\it Blocker} then push {\it Go beam} button  in order to put the blocker on the beam and {\it Go Home} to retract if from the beamline. 
+The Hall-B Faraday cup is not cooled and cannot operate at high currents (deposited hit should not exceed $175$ W for more than 1/2 hour running). If run requires use of beam currents above the limit (for 11 GeV it is 15 nA), a $5$ kW beam blocker, cooled-copper absorber, must be position in front of the Faraday cup. The beam blocker can be controlled from {\it Motors} GUI shown in Figure \ref{fig:beamblocker}.  From {\it Motors} GUI select {\it Blocker} then push {\it Go beam} button  in order to put the blocker on the beam and {\it Go Home} to retract if from the beamline. 
 
 \begin{figure}[tbhp]
 {\centering \includegraphics[scale=0.65]{collimator.pdf} \par}
@@ -407,23 +407,25 @@ The Hall-B Faraday cup is not cooled and cannot operate at high currents (deposi
 \subsection{\bf Target}
 \indent
 
-The Hall-B sryo target used in the past, in $6$ GeV era, will be used for the CLAS12. The main differences are larger diameter target cell and the longer supply pipes from condenser to the target. In anticipation of larger beam sizes at high energies ($> 3$ pass), target cell diameter is designed to be $20$ mm and the thin portion of the cell windows ($30~\mu$m thick aluminum) $10$ mm in diameter. Figure \ref{target} shows design rendering of the CLAS cryo target inside the foam scattering chamber. Control of the target, filling and emptying, will be done using {\it Target PC}. Operator should follow special instructions for the target operations. For monitoring, the target temperature, pressure, and the buffer dewar liquid level are displayed on the Main Control and Monitoring GUI, Figure \ref{fig:scaler}. 
+The Hall-B cryo target from $6$ GeV era is used for the CLAS12. The main differences are larger diameter target cell and the longer supply pipes from condenser to the target. In anticipation of larger beam sizes at high energies ($> 3$ pass), target cell diameter is designed to be $20$ mm and the thin portion of the cell windows ($30~\mu$m thick aluminum) $10$ mm in diameter. Figure \ref{target} shows design rendering of the CLAS cryo target inside the foam scattering chamber. Control of the target, filling and emptying, will be done using {\it Target PC}. Operator should follow special instructions for the target operations. For monitoring, the target temperature, pressure, and the buffer dewar liquid level are displayed on the Main Control and Monitoring GUI, Figure \ref{fig:scaler}. 
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=1.\textwidth]{target.pdf}
-\caption{Hall B cryo target and scattering chamber. The $20~\mu$m thick aluminum target cell windows are shown in red.}
+\caption{Hall B cryo target and scattering chamber. }%The $20~\mu$m thick aluminum target cell windows are shown in red.}
 \label{target}
 \end{figure}
 
 \clearpage
 
-{{\bf {\Large Appendix}}
+\begin{flushleft}
+{\bf {\Large Appendix}}
+\end{flushleft}
 
 \section {Establishing beam for physics}
 \input{establishing_beam}
 
-\section{Procedure for beam polarization measurement using the M{\"o}ller polarimeter}
+\section{EXPERT procedure for beam polarization measurement using the M{\"o}ller polarimeter}
 \input{moller_procedures}
 
 \begin{figure}[htb]
