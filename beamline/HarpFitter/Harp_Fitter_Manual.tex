@@ -1,0 +1,183 @@
+\documentclass[letterpaper,12pt]{article}
+%documentclass[superscriptaddress,preprintnumbers,amsmath,amssymb,aps,11pt]{revtex4}
+%\usepackage[]{authblk}
+%\usepackage{graphics}
+\usepackage[dvipdf]{graphicx}
+%\usepackage{subfig}  % For subfloats
+\usepackage{color}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{epsfig}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage{caption}
+%\usepackage{subcaption}
+\usepackage{subfig}
+\usepackage{authblk}
+%\usepackage{url}
+\usepackage{hyperref}
+\usepackage{nameref}
+%\usepackage{eqnarray,amsmath}7
+
+\renewcommand{\thesubsection}{\thesection.\alph{subsection}}
+
+\oddsidemargin = -14mm
+\topmargin = -2.9cm
+\textwidth = 19cm
+\textheight = 24cm
+
+\def \rarr {\rightarrow}
+\def \grinp {\includegraphics}
+\def \tw {\textwidth}
+\def \dfrac#1#2{\displaystyle{{#1}\over{#2}}}
+\def \dstl {\displaystyle}
+\def \Apr {A^{\prime}}
+
+\title{Harp Fitter manual}
+\author{Rafayel Paremuzyan}
+
+\begin{document}
+\maketitle
+
+For performing the harp scan, follow instructions in chapter 3.5 of the beamline manual.
+The analyzer can be open from the harp scan GUI using ``Analyze" button.
+The general view of the fitter application is shown in Fig. \ref{fig:Gen_harp_gen_View}. On the main screen there are 
+7 buttons, names of each button gives hint to it's function:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% F I G U R E %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \begin{figure}[!htb]
+  \centering
+  \subfloat[]{\label{fig:Gen_harp}\grinp[width=0.45\tw]{img/Harp_SCan_CSS.png}} \hskip 1cm
+  \subfloat[]{\label{fig:Gen_View}\grinp[width=0.45\tw]{img/General_View.png}}
+  %\grinp[width=0.45\tw]{img/General_View.png}
+  \caption{Left: The harp scan GUI. Right: General view of the fitter application.}
+  \label{fig:Gen_harp_gen_View}
+ \end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% F I G U R E %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+ \item "Choose a File" - Allows selection of harp scan file, if file is not selected, analyzer will fit the
+ latest scan.
+ \item "View data from All counters" - pops up a window where user can see responces from all counters. This is useful if you want
+ to check, if harp scan went correctly.
+ \item "Choose a counter to Fit" - Allows the user to select a counter, for fitting.
+ \item "Fit Data" - Performs the fitting of the selected counter.
+ \item "Submit to Logbook" - Allows the user to send fit results to logbook, and updata MYA database with fit results.
+ \item "Set Fit Ranges" - Allows the user to manually adjust fit ranges for each wire. This is helpfull, when the standart
+ ``Fit Data" function fails to fit data.
+ \item "Exit" - Exits the program.
+\end{itemize}
+\section{Fitting the data}
+If you have the screen on Fig.\ref{fig:Gen_View} open, then to analyze recent harp scan data, 
+you first need to select the halo counter from the drop-down menu ``Choose a counter to Fit".
+If you are not sure which halo counter is better for that particular harp, look into Section 
+\ref{sec:suggested_counters} \textbf{"\nameref{sec:suggested_counters}"}.
+As soon you select the halo counter push the "Fit Data" button, and if everything is alright, it should fit.
+ If harp is 2c21, you should see 2 peaks, as shown in Fig.\ref{fig:2wire_FitExample}. If you fit tagger harp, or harp 2H01,
+ then you should see 3 peaks as shown in Fig.\ref{fig:3wire_FitExample}.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% F I G U R E %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \begin{figure}[!htb]
+  \centering
+  \subfloat[]{\label{fig:2wire_FitExample}\grinp[width=0.45\tw]{img/2c21_FitExample.png}} \hskip 1cm
+  \subfloat[]{\label{fig:3wire_FitExample}\grinp[width=0.45\tw]{img/3wire_fit_Example.png}}
+  \caption{Examples of fits. Left 2 wire harp shows only 2 peaks. Right an example of 3-wire harp data fit, tagger harp or 2H01 harp.
+  Shold be 3 peaks.}
+ \end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% F I G U R E %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ All harp scans (unless it is not usable) should be submitted to Logbook.
+ 
+ \section{Submit the fit results to Logbook}
+ To submit the analyzed results to logbook, push the "Submit to Logbook" button in the main window.
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% F I G U R E %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \begin{figure}[!htb]
+  \centering
+  \grinp[width=0.35\tw]{img/MakeComments.png}
+  \caption{Submit to logbook window, where you can make comments, chose which logbook to send, and also you can choose whether
+  send fit paramaters into MYA database.}
+  \label{fig:Submit_To_Logbook}
+ \end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% F I G U R E %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+A window similar to Fig.\ref{fig:Submit_To_Logbook} will pop-up. Make any relevant comments if needed,
+then from check-boxes choose logbooks to send. By default "HBLog" is selected, which is the primary
+logbook for Hall B experiments. Choosing ELog, the log entry will appear in the accelerator logbook as well.
+"TLog" is logbook, which is used only for testing purposes. {\color{Blue} \bf ATTENTION: please check the "Send to MYA" box,
+if you are analyzing the most recent harp scan data, otherwise don't check that button.}
+ 
+ \section{Suggested counters} \label{sec:suggested_counters}
+ These are suggested counters for each harp.
+ \begin{itemize}
+  \item for 2c21 harp, use Upstream-L or Upstream-R, Choose the one which shows less background/signal ratio.
+  \item for harp tagger, when Tagger magnet is ``On", use Tagger-Left, Tagger-Raight or Tagger-Top, otherwise use
+  Midstream-bot, Midstream-Left, Midstream-Right, Midstream-top. Choose the one which hass less background/signal ratio
+  \item fot 2H01 harp, use Downstream-Left, Downstream-Right, Downstream-Bottop, or Downstream-Top, choose the one which hass less background/signal ratio.
+ \end{itemize}
+ 
+ \section{Problems with fit}
+%  \begin{itemize}
+%   \item If fit didn't work, i.e. you don't get 2 peaks (for 2c21) or 3 peaks (for tagger harp of 2H01 harp)
+%  \end{itemize}
+%  Please make sure you have selected the appropriate counter from the "Choose a counter to fit" drop down menu.
+%  If that doesn't help:
+ 
+%  \begin{itemize}
+%   \item If that doesn't help:
+%  \end{itemize}
+%  push the "View Data from All counters". A new window will pop-up, where you will
+%  see counts as a function of motor position for all counters. Please make sure that you have correct number of
+%  peaks for corresponding harp. It is 2 peaks for 2c21 harp, and see 3 peaks for tagger and 2H02A harps,
+%  if that is not the case, it means harp scan wasn't went correctly, might be for example the beam has tripped,
+%  during the scan or another reason. You should do harp scan one more time, and make sure you have correct number of peaks.
+ 
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% F I G U R E %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!htb]
+ \centering
+ \grinp[width=0.45\tw]{img/ViewAllCounters.png}
+ \caption{An example showing a window of Data from all counters.}
+\end{figure}
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% F I G U R E %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \begin{itemize}
+  \item If it shows only one graph, and there is no fit in it,
+ \end{itemize}
+  This means in the data, the fitter didn't find correct number of peaks. First check
+  with "View Data from All counters" button, if there are correct number of peaks (2 for 2c21, and 3 for tagger and 2H02A harps).
+  If number of peaks is incorrect, this mean harp scan didn't go correctly, you should do scan again, and make sure you have correct number of peaks.
+  {\color{Blue} \bf ATTENTION: if you don't exit from the application, then you have to load the new file using the
+ "Choose a File" button. (see section \ref{sec:Choose_File}}\textbf{\nameref{sec:Choose_File}}, after then do a fit).
+ However, If number of peaks is correct, but the fitter is not able to fit,
+ try to set fit ranges manually. See section \ref{sec:Fit_Ranges} \textbf{\nameref{sec:Fit_Ranges}}
+%  \begin{itemize}
+%   \item However, If number of peaks is correct, but the fitter is not able to fit.
+%  \end{itemize}
+ 
+ \section{Loading a File to analyze} \label{sec:Choose_File}
+ If you would like to analyze some particular file, push the button "Choose a file"
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% F I G U R E %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+ \begin{figure}[!htb]
+  \centering
+  \subfloat[]{\label{fig:choseFile1}\grinp[width=0.4\tw]{img/Chose_File1.png}} $\;\rarr$
+  \subfloat[]{\label{fig:choseFile2}\grinp[width=0.45\tw]{img/Chose_File2.png}}
+  \caption{Chose a harp scan data file to fit. Left: choose the directory of the harp. Right: chose your
+  desired file and press "Open"}
+  \label{fig:choseFile}
+ \end{figure}
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% F I G U R E %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+ then as shown in the Fig.\ref{fig:choseFile}, 1st select the directory of the harp, that you want to analyze, then
+ from that directory select the file, and open it. Now you can fit it with "Fit Data" button.
+
+ \section{Setting Fit ranges Manually} \label{sec:Fit_Ranges}
+ Sometimes it happens that the fitter is not able to find correct peaks. In this case 
+ the user can give left and right limits of each peak, to aid the fit. In order to do that, you should push the
+ button "Set Fit Ranges" in the main window. and a new window will pop-up which will look like the one in Fig.\ref{fig:SetFitRanges}.
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% F I G U R E %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+ \begin{figure}[!htb]
+  \centering
+  \grinp[width=0.65\tw]{img/SetFitRange.png}
+  \caption{With this window user can set left and right limits for each peak.}
+  \label{fig:SetFitRanges}
+ \end{figure}
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% F I G U R E %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ Default values for left and right limits set such it will include the peak, however, the actual beam position may
+ change, and the user should make sure that the peaks are inside the selected ranges, and then Fit with a "Fit"
+ button, which is under ranges in that window. 
+ \begin{itemize}
+  \item If still it doesn't fit.
+ \end{itemize}  
+Try narrowing widening fit ranges, after few trials, if it doesn't work, then contact the slow-controls expert.
+\end{document}
