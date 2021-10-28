@@ -1,0 +1,57 @@
+\documentclass[12pt]{article}
+%\documentclass[12pt]{proc}
+\usepackage{graphicx}    % includes epsf
+
+\begin{document}
+%\onecolumn
+\title{Beam parameters for the Hall-B RG-B run during November 2019 and February 2020}
+\author{}
+\date{\today}
+\maketitle
+
+Hall-B Run Group B is scheduled to run from November 25, 2019, to February 2 ,2020. The run will use 10.6 GeV (5-pass) longitudinally polarized ($>80$\%) electron beam with currents up to 200 nA impinging on a liquid deuterium target (LD$_2$)\footnote{A short run with low energy beam, 2 pass, is expected for backward neutron detector calibration.}. The Hall~B CLAS12 detector will be used in its standard configuration. The CLAS12 detector system is based on two superconducting magnets, a toroid for the forward detector and a solenoid for the central detector. The system includes Cherenkov Counters, Drift Chambers, Scintillator Counters, Silicon-strip detectors, Micro-mega gas detectors, and Calorimeters. 
+
+As a target, the CLAS12/Saclay cryotarget located inside the central detector in the center of the 5~T solenoid magnet will be used with and without LD$_2$ in it. 
+The target cell is a 20~mm diameter, 5~cm long Kapton tube installed inside the beam vacuum, in a foam scattering chamber. The target cell has $30~\mu$m thick Aluminum windows along the beam. The Aluminum windows are $10$ mm in diameter. Outside of the $10$ mm diameter range, material around the beam is much thicker, especially in the upstream end where the target cell supports and the cryogenic supply pipes are located. The beam vacuum has discontinuity between the upstream and downstream beamlines with $\sim40$~cm of air between the exit window of the target scattering chamber and the entrance window of the downstream beam pipe. 
+Both windows are 50~$\mu$m thick aluminum. 
+
+The production running with LD$_2$ target will be done with $\sim 50$ nA beam current (this corresponds to luminosity of $\sim 0.75\cdot 10^{35}$~cm$^{-2}$s$^{-1}$). Data also will be taken with empty target cell with up to $\sim 200$ nA beam. During running with beam currents above $15$ nA  ($\sim$160~W), the Hall~B beam stopper (a 30~cm long, water cooled-copper absorber) will be positioned before the Faraday cup to prevent overheating. 
+For the beam tune and M{\"o}ller runs, the beam will be directed into the beam dump in the Hall~B Tagger dipole yoke. Quality of the beam will be assessed using the Hall-B halo counters and wire harps. The nA cavities (2C21, 2C24, and 2H01) will be used as beam position and current monitors, and as well as in the orbit locks. The delivery procedures from the last CLAS12 run must be revised and will be used for RG-B run.
+
+Below are requirements for beam parameters RG-B run.  
+
+ \begin{table}[htb]
+ \centering
+ \begin{tabular}{|c|c|l|}
+\hline
+Parameter & Requirement &Comments \\ \hline 
+Energy (GeV) & $10.5$ ($\sim 4.4$) & A short run with $4.4$ GeV, 2-pass beam  \\ 
+&&is needed for BAND calibration \\ \hline
+$\delta$p/p & $\sim 2\times 10^{-4}$ & \\ \hline 
+Current (nA) & $\le 200$ & The production running will be \\ && at $\sim 50$ nA \\ \hline
+$\sigma_{xy}$ ($\mu$m) &$ < 300$& As measured by 2H01A harp \\ \hline 
+Position stability ($\mu$m) & $< 100$ & On 2H01 and 2H00 ($>30$nA) \\ 
+&&BPMs with feedback \\ \hline
+Divergence ($\mu rad$) & $< 100$&  \\ \hline 
+Beam Halo ($> \pm 5\sigma$) &$< 10^{-5}$&As measured by 2H01A harp \\ \hline
+Beam Polarization &$> 80$\%&As measured by Hall-B \\&&Moller polarimeter \\ \hline
+Charge asymmetry &$<0.1$\%& Measured with SLM and halo  \\&& rates, and controlled by hall \\ \hline
+Long term current stability & $< 5$ \% & For $>30$ nA, integrated \\
+&&over minutes \\ \hline 
+Short term bean intensity & $<10$\%& of the total power, measured \\stability (60 Hz harmonics) && with SLM and halo rates \\ \hline
+Bunch charge fluctuations &$< 10$ \% & Measured with DAQ \\ \hline
+ \end{tabular}
+\caption{ Required beam parameters.} 
+\label{tab:beam_par}
+\end{table}
+
+\begin{figure}[hbt]
+\begin{center}
+\includegraphics[angle=90,width=6in]{rgb_beamline.pdf}
+\end{center}
+\caption{ \label{fig:beamline} \baselineskip 13pt 
+The layout of the RG-B beamline. }
+\end{figure}
+
+
+\end{document}
