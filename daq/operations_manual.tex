@@ -1,0 +1,105 @@
+\section{Operations Manual}
+
+\subsection{General Information}
+
+The {\tt CLAS12} Data Acquisition (DAQ) System is controlled by the application 
+{\tt RunControl}, which can be started on any clon cluster computer running
+Linux OS. Two environment variables (\$EXPID and \$SESSION) define the DAQ behavior 
+and must be set before doing anything else. For all data taking operations the
+`clasrun' account must be used, which will make sure that the environment is 
+set correctly. For production running, \$EXPID=clasrun and \$SESSION=clasprod.
+
+\subsection{Startup Procedures}
+
+DAQ GUI always runs in VNC. To connect to VNC server run script {\tt'daqvnc.py connect'},
+open xterminal and start runcontrol in it. Sometimes VNC server have
+to be restarted. To do that, do 'ssh clasrun@clondaq6' and run scripts
+{\tt'daqvnc.py stop'} and {\tt'daqvnc.py start'}. Those scripts will kill the existing
+daq vncserver, if it exists, and start a new one. After VNC server is restarted, connect
+to it using {\tt'daqvnc.py connect'} script.
+
+The command {\tt runcontrol -rocs -log} will bring up the main DAQ GUI. The flag
+`-rocs' will force the readout controller (ROC) screens to be included into 
+the main GUI. This should always be used, unless you want to start the ROC 
+screens in a separate GUI using the command `rocs'. The flag `-log'
+will force the ROC screens to be logged into directory `/data/log' if
+it exist. The GUI after startup is shown in Fig.~\ref{fig:runcontrol1}.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.9\textwidth]{runcontrol1.png}
+\caption{\small{Runcontrol GUI after startup.}}
+\label{fig:runcontrol1} 
+\end{figure}
+
+To proceed, click the `Connect' button. This will start the run control server
+rcServer in the background or connect to the existing one (see 
+Fig.~\ref{fig:runcontrol2}).
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.9\textwidth]{runcontrol2.png}
+\caption{\small{Runcontrol GUI after clicking on `Connect'.}}
+\label{fig:runcontrol2} 
+\end{figure}
+
+Next, click on `Configure' and choose the DAQ configuration that you want to 
+use. The DAQ configuration defines which ROCs have to be included into the
+readout process. The DAQ configurations are stored in the database on the 
+host defined by the environment variable \$MYSQL\_HOST. After the configuration 
+is selected, the corresponding xterms will emerge on the `rocs' tab on the right 
+side of the runcontrol GUI (see Fig.~\ref{fig:runcontrol3}). When all
+processes are ready, 'Download' button will shows up.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.9\textwidth]{runcontrol3.png}
+\caption{\small{Runcontrol GUI after clicking on `Configure'.}}
+\label{fig:runcontrol3} 
+\end{figure}
+
+Next, click on `Download' and choose the trigger configuration that you want to
+use. The trigger configuration defines the settings to be loaded into the various
+electronic modules, both trigger- and DAQ-related. The trigger configuration files 
+are located in the \$CLON\_PARMS/trigger directory and its subdirectories (see 
+Fig.~\ref{fig:runcontrol4}).
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.9\textwidth]{runcontrol4.png}
+\caption{\small{Runcontrol GUI after clicking on `Download'.}}
+\label{fig:runcontrol4} 
+\end{figure}
+
+Finally, click on `Prestart' and `Go' to start a run and click `End'
+to end it, and then click `Abort'. Proceed with the cycle
+`Download'-`Prestart'-`Go'-`End'-`Abort' to take more runs.
+
+%%If you want to change the trigger configuration, click on `Abort' and start
+%%from `Download'.
+
+If the DAQ has crashed, click `Abort' and `Reset' and start from `Download'.
+
+If you want to change the DAQ configuration, click `Abort' and `Reset' and
+start from `Configure'.
+
+To exit DAQ completely, click on the `File' menu on the runcontrol GUI and
+choose `Exit'.
+
+\subsection{DAQ and Trigger Configuration Files}
+
+The DAQ and Trigger systems are controlled by configuration files stored in
+subdirectories of the \$CLON\_PARMS directory. Every DAQ module has a
+designated subdirectory, for example, the configuration files for the JLab 
+FADC250 modules are stored in the subdirectory `fadc250', the files for the 
+CAEN TDC1190/1290 modules are stored in the subdirectory `tdc1190', and so on. 
+During the `Download' transition, the DAQ will load the configuration files 
+according to the following rule: if the file `XXX'.cnf exist (where XXX is the 
+ROC IP name), it will be loaded, otherwise the file `\$EXPID'.cnf will be loaded. 
+After that, the configuration file from the `trigger' subdirectory (chosen in the
+`Download' transition using the popup GUI) will be loaded, overwriting previously 
+loaded settings if necessary.
+
+
+
+\clearpage
