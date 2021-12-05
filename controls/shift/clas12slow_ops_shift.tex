@@ -15,7 +15,7 @@
 \setlist[enumerate]{itemsep=0mm}
 
 \begin{document}
-\title{CLAS12 Slow Controls Operations Manual - v2.7}
+\title{CLAS12 Slow Controls Operations Manual - v2.9}
 \author{N. Baltzell}
 \date{\today}
 \begin{abstract}
@@ -120,8 +120,8 @@ Alarm conditions for HV, as displayed in the alarm handler, are explained in Tab
   \begin{tabular}{lll} \toprule[1.5pt]
     Status        & Severity & Cause \\ \cmidrule[0.5pt]{1-3}
     \texttt{HIHI} & \texttt{MAJOR} & Hardware error (e.g. tripped, see Table~\ref{tab:hvstat})\\
-    \texttt{HIGH} & \texttt{MINOR} & Measured voltage above setpoint\\
-    \texttt{LOW}  & \texttt{MINOR} & Measured voltage below setpoint\\
+    \texttt{HIGH} & \texttt{MINOR} & Software measured voltage above setpoint\\
+    \texttt{LOW}  & \texttt{MINOR} & Software measured voltage below setpoint\\
     \texttt{LOLO} & \texttt{MAJOR} & Hardware communications error\\
   \bottomrule[1.5pt]
   \end{tabular}
@@ -151,18 +151,31 @@ Alarm conditions for HV, as displayed in the alarm handler, are explained in Tab
   \end{tabular}
   \caption{CAEN High Voltage hardware statuses, with their ``Label'' as displayed in detailed tabular control screens.  All but the first 4 rows are considered hardware errors for alarm purposes.\label{tab:hvstat}}  
 \end{table}
+\newpage
+\subsection{Remote Reboots}
+Occaisonally CAEN HV mainframes can become unresponsive, triggering the \texttt{LOLO} communications alarm in Table~\ref{tab:hvalarm}.  All CAEN HV mainframes in Hall B are configured for remote reset, accessible using the script below, however the slow controls expert on-call should be contacted first.  If necessary to reboot a mainframe, the hard option should only be attempted if the soft version is unsucessfull.
+
+\begin{verbatim}
+usage: caenhvReset.py [-h] [--soft] [--hard] mainframe
+positional arguments:
+  mainframe   hostname of mainframe
+optional arguments:
+  -h, --help  show this help message and exit
+  --soft      CPU reboot only, should not affect voltages
+  --hard      full power cycle, brings down all voltages
+\end{verbatim}
 
 \clearpage
 
 \section{Strip Charts}
-There are two applications available for plotting time histories of slow controls variables:  StripTool and MyaViewer.  Both are available from the {\em Strip Charts} button at the bottom of the main CLAS12 controls menu as shown in Figure~\ref{fig:strips}.
+There are two applications available for plotting time histories of slow controls variables:  LivePlot and MyaPlot.  Both are provided by the accelerator division and are accessible from the {\em Strip Charts} button at the bottom of the main CLAS12 controls menu as shown in Figure~\ref{fig:strips}.
 
-The suggested tool for online operations in Hall B is StripTool, which has no access to archived data but is very robust and stable.  MyaViewer is necessary for expert studies and can access the Mya archive used to store previous years of Hall B controls data.  In either case, configuration files are loadable from their user interfaces to view a predetermined set of variables, or else you can choose any process variable to plot.
+LivePlot connects to IOCs directly, acts as a live, automatically updating strip chart, and is appropriate for continuous monitoring.  MyaPlot retrieves data exclusively from the Mya archive of previous years of slow controls data.  Configuration files are loadable from their user interfaces to view a predetermined set of variables, or else you can choose any process variable (PV) to plot.
 
 \begin{figure}[htbp]\centering
     \includegraphics[width=0.2\textwidth]{pics/strips}
-    \includegraphics[width=0.7\textwidth]{pics/myaviewer}
-    \caption{Utilities for plotting time histories of slow controls variables are accessible from the {\em Tools} section of the CLAS12 main menu (left).  An example of running MyaViewer and opening a preset configuration file via the {\em File $\rightarrow$ Load Config} menu is shown on right.\label{fig:strips}}
+    \includegraphics[width=0.7\textwidth]{pics/myaplot}
+    \caption{Utilities for plotting time histories of slow controls variables are accessible from the {\em Tools} section of the CLAS12 main menu (left).  An example of running MyPlot and loading a preset configuration file via the drop-down menu accessible via right clicking is shown on right.\label{fig:strips}}
 \end{figure}
 
 \section{Logbook Entries and Screenshots}\label{sec:logentry}
@@ -175,7 +188,7 @@ In Hall B there are two primary methods for adding content to the logbook:
 \begin{center}\texttt{logbookEntry.sh}\end{center}
     {\em This is also the preferred method for taking screenshots} and will always save them in \texttt{\$HOME/screenshots} with timestamped filenames.  See Figure~\ref{fig:logbookEntry} for details.
 \end{enumerate}
-\bf{\em Note, the integrated logbook entry feature in CS-Studio (accessible by right-clicking in any CS-Studio screen) is currently NOT supported.} 
+{\bf\em Note, the integrated logbook entry feature in CS-Studio (accessible by right-clicking in any CS-Studio screen) is currently NOT supported.} 
     \begin{figure}[htbp]\centering
         \includegraphics[width=0.49\textwidth]{pics/logbookEntry1.png}
         \includegraphics[width=0.49\textwidth]{pics/logbookEntry2.png}
@@ -184,6 +197,10 @@ In Hall B there are two primary methods for adding content to the logbook:
         \caption{Upon first opening the logbook/screenshot GUI (top left), only the log title has been automatically initialized (with the current run number).  After clicking the ``Screenshot'' button (top right), it is waiting for you to left-click in the window you desire to capture (clicking the desktop instead of a window will capture the entire desktop).  After taking a screenshot (bottom left), a snapshot of the image and its filename on disk are automatically displayed.  Note that the ``Screenshot'' button can be used repeatedly to change the screenshot if you do not like the previous result, or just want to take more screenshots.  The ``Submit'' button can be used to generate an entry in the HBLOG logbook, and after success the entry number will be displayed (bottom right).\label{fig:logbookEntry}}
 \end{figure}
 
+\section{Cameras}\label{sec:cameras}
+We utilize a variety of web-accessible cameras in Hall B, listed on the "Monitoring" tab of the run wiki for a given experiment.  The two primary ones are the beam viewers at the tagger dump and the Faraday cup.  Due to radiation dose, the camera for the Faraday cup viewer is the most problematic;  e.g. its usable CCD lifetime is about 6 months, and it suffers from occaisonal SEU-induced crashes.  It is rebootable remotely from a \texttt{clonpc} via:
+
+\begin{center}\texttt{beam-viewer-reboot}\end{center}
 
 \section{Paging System Experts}\label{sec:pagingexperts}
 Paging on-call experts is available from the main CLAS12 controls menu via the {\em Page Experts} button at the very top of the screen (see Figure~\ref{fig:mainmenu}).  This will open a dropdown menu to choose the desired subsystem, and then open a new window in which to enter a message to be sent to the corresponding expert, as illustrated in Figure~\ref{fig:pageexpert}.
@@ -193,7 +210,6 @@ Paging on-call experts is available from the main CLAS12 controls menu via the {
   \caption{The dropdown menu for choosing which expert to page (left) and the resulting dialog window in which to enter the message contents (right).\label{fig:pageexpert}}
 \end{figure}
 
-\newpage
 \section{Slow Controls Contacts}
 The individuals to be contacted for Hall B slow controls are shown in Table \ref{tab:experts}.  The first point of contact for shift operations is always the on-call controls expert, accessible from the paging system described in Section~\ref{sec:pagingexperts} of this document and the phone number in the first row of Table \ref{tab:experts}.  Additional contacts are listed in the table as a fallback.
 
@@ -201,7 +217,6 @@ The individuals to be contacted for Hall B slow controls are shown in Table \ref
     \begin{tabular}{llcr}\toprule[1.5pt]
         On-Call & & \ \ \ \ \ 757-748-6922 & \\ \cmidrule[0.5pt]{1-4}
          & Nathan Baltzell & 757-259-5902 & \ \ \ \ \ \texttt{baltzell@jlab.org} \\
-         General \ \ \ \ \       & Ken Livingston  &           & \texttt{kliv@jlab.org} \\
                 & Wesley Moore & 757-259-6033 &  \texttt{wmoore@jlab.org} \\
                 & Bryan McKinnon & & \texttt{mckinnon@jlab.org} \\
         \bottomrule[1.5pt]
@@ -212,11 +227,16 @@ The individuals to be contacted for Hall B slow controls are shown in Table \ref
 \section{Remote Usage}\label{sec:remote}
 There are separate server-grade machines for remote controls access, all with access to the same software and running the same operating system as the desktops in the counting house.  For access outside the counting house, login to the server \texttt{clonsl2}.  {\bf\em In order to avoid heavly load on the machines used by counting house shift workers, it is important to not run on \texttt{clonpc} desktops remotely}.  All controls computers are behind JLab's \texttt{hallgw} gateway and require 2-factor authentication for remote access.  
 
-\newpage
 \section{Accelerator Screens}
+Starting in 2019, the accelerator's screen are accessible in a web-browser, and that is the preferred method in Hall B.  It requires CUE login:
+
+\begin{center}\url{https://epicsweb.jlab.org}\end{center}
+
+{\em\bf The following instructions are kept as a refernce on navigating the menu system, but JMenu should only be used if there are issues with the web server above.}
+
 The accelerator's screens are accessed from the main CLAS12 menu via the {\em JMenu} button (see Figure~\ref{fig:jmenu}).  This uses the \texttt{hbops} account on \texttt{hlbl00}, a machine owned and maintained by the accelerator group.  If a prompt requests a username, password, or terminal type, just press {\em Enter}.  The location of the button on the CLAS12 menu and the JMenu screen that should appear are shown in Figure~\ref{fig:jmenu}.
 
-{\bf\em Note it is best to only have one instance of JMenu running.  Multiple instances have been known to result in frozen JMenus.}
+{\bf\em Note, since we use a single account for operations, it is best to only have one instance of JMenu running.  Multiple instances from the same account can popup windows on seemingly random computers and have occaisonally been known to result in freezing.}
 \begin{figure}[htbp]\centering
   \includegraphics[width=0.16\textwidth]{pics/clas12jmenu}
   \includegraphics[width=0.2\textwidth]{pics/jmenu}
@@ -252,16 +272,33 @@ which opens the screen in Figure~\ref{fig:viewer}.  From there, the Hall B viewe
 \end{figure}
 
 \clearpage
+\newpage
 \begin{appendices}
 
 \section{Burt Save/Restore}\label{sec:burt}
-High voltage settings are saved and restored using \texttt{burt}.
+High voltage settings are saved and restored using \texttt{BURT}.  The permanent location of the saved snapshots is: 
 \begin{center}\texttt{/usr/clas12/DATA/burt/}\end{center}
-    A graphical interface to save/restore is accessible from detector's own screens in CS-Studio, where an example for is shown in Figure~\ref{fig:burt}.  When saving a new file, this interface chooses filenames based on the current timestamp but allows for the user to modify the name before saving.  Detector experts can also generate files in the proper format (see Figure~\ref{fig:burt3}) and place them in their detector's subdirectory, and then use the same interface to restore from them.
+The permanent location of request files is:
+\begin{center}\texttt{\$EPICS/tools/burtreq/}\end{center}
+The preferred method for saving/restoring BURT snapshots is via the application:
+\begin{center}\texttt{burt-gui}\end{center}
+It has many conviences over older methods and is self-documenting.  See Figures ~\ref{fig:burt-gui-save} and~\ref{fig:burt-gui-restore} for examples.
+
+\begin{figure}[htbp]\centering
+  \includegraphics[width=0.88\textwidth]{pics/burt-gui-save}
+  \caption{Example usage of burt-gui in save mode.\label{fig:burt-gui-save}}
+\end{figure}
+
+\begin{figure}[htbp]\centering
+  \includegraphics[width=0.88\textwidth]{pics/burt-gui-restore}
+  \caption{Example usage of burt-gui in restore mode.\label{fig:burt-gui-restore}}
+\end{figure}
+
+The older graphical interface to save/restore is accessible from detector's own screens in CS-Studio, where an example for is shown in Figure~\ref{fig:burt}.  When saving a new file, this interface chooses filenames based on the current timestamp but allows for the user to modify the name before saving.  Detector experts can also generate files in the proper format (see Figure~\ref{fig:burt3}) and place them in their detector's subdirectory, and then use the same interface to restore from them.
 \begin{figure}[htbp]\centering
     \includegraphics[width=0.3\textwidth]{pics/burt1}
     \includegraphics[width=0.6\textwidth]{pics/burt2}
-    \caption{Access to graphical interface for burt save/restore (left); this example is from the CND screen.  Example of save/restore file list as presented for FTC (right).\label{fig:burt}}
+    \caption{Access to the old graphical interface for burt save/restore (left); this example is from the CND screen.  Example of save/restore file list as presented for FTC (right).\label{fig:burt}}
 \end{figure}
 
 \begin{figure}[htbp]\centering
