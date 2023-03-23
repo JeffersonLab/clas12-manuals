@@ -15,7 +15,7 @@
 \setlist[enumerate]{itemsep=0mm}
 
 \begin{document}
-\title{CLAS12 Slow Controls Operations Manual - v2.9}
+\title{CLAS12 Slow Controls Operations Manual - v2.10}
 \author{N. Baltzell}
 \date{\today}
 \begin{abstract}
@@ -81,7 +81,7 @@ EPICS input-output controllers (IOCs) are the backend responsible for the actual
   \caption{Dropdown menu (left) from the {\em IOCs} button in the main CLAS12 controls menu showing links to the IOC health and heartbeat screens (right).  The static pink ``Disconnected'' heartbeats here are IOCs that are intentionally offline at the time of this screenshot.\label{fig:iocmenu}}
 \end{figure}
 
-By clicking on the IOC in the heartbeat screen (or the IOC health screen in the main menu), controls to monitor and reboot the IOCs can be accessed, and an example is shown in Figure~\ref{fig:iochealth}.  Systems are in place to automatically start all necessary IOCs if for any reason they are not running (e.g. recovery from a power outage), however occaisonally a manual reboot is required.
+By clicking on the IOC in the heartbeat screen (or the IOC health screen in the main menu), controls to monitor (and reboot) the IOCs can be accessed, and an example is shown in Figure~\ref{fig:iochealth}.  Systems are in place to automatically start all necessary IOCs if for any reason they are not running (e.g. recovery from a power outage).  {\em Note, rebooting IOCs should never be necessary, so please contact the slow controls expert before doing so, and at a minimum make a logbook entry including the motivation for a reboot.}
 
 \begin{figure}[htbp]\centering
     \includegraphics[width=\textwidth,trim={0 5.2cm 0 0},clip]{pics/iochealth}
@@ -215,10 +215,10 @@ The individuals to be contacted for Hall B slow controls are shown in Table \ref
 
 \begin{table}[htbp]\centering
     \begin{tabular}{llcr}\toprule[1.5pt]
-        On-Call & & \ \ \ \ \ 757-748-6922 & \\ \cmidrule[0.5pt]{1-4}
-         & Nathan Baltzell & 757-259-5902 & \ \ \ \ \ \texttt{baltzell@jlab.org} \\
-                & Wesley Moore & 757-259-6033 &  \texttt{wmoore@jlab.org} \\
-                & Bryan McKinnon & & \texttt{mckinnon@jlab.org} \\
+        Person & Phone Number & Email Address \\ \cmidrule[0.5pt]{1-3}
+        On-Call & 757-748-6922 & N/A \\
+        Nathan Baltzell & 757-259-5902 & \texttt{baltzell@jlab.org} \\
+        Bryan McKinnon & N/A & \texttt{mckinnon@jlab.org} \\
         \bottomrule[1.5pt]
     \end{tabular}
     \caption{Hall B slow controls contacts.\label{tab:experts}}
