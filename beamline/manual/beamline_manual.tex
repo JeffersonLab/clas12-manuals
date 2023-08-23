@@ -7,8 +7,8 @@
 \usepackage{ragged2e}
 \usepackage{graphics}
 \usepackage{graphicx}
-\newcommand{\versionnumber}{3.2}
-\makeatletter
+\newcommand{\versionnumber}{3.3}
+%\maketitle
 
 
 \begin{document}
@@ -58,7 +58,7 @@ Engineering on call&General beamline&(757) 748-5048&\\
 \indent
 
 During data taking it is important to monitor electron beam
-to insure that there are no changes in the beam parameters which can effect quality of data. For
+to ensure that there are no changes in the beam parameters which can effect quality of data. For
 example, changes in the beam halo can dramatically increase background rates
 making the data worthless, or a change in the electron beam direction can cause
 unwanted beam losses leading detector damage or beam trip. There are
@@ -66,13 +66,13 @@ automatic controls and alarms for the beam conditions that will prevent beam dam
 and will terminate beam delivery in an event of beam excursions. Nevertheless,  the shift taker must
 continuously monitor the beam parameters and act accordingly.
 
-After the initial beam tune, reference numbers for the beam parameters (position of the beam on position monitors, i.e. BPMs) and the rates of halo counters will be posted in the log book and on the run wiki page, and must be used as reference. 
+After the initial beam tune, reference numbers for the beam parameters (position of the beam on position monitors, i.e. BPMs) and the rates of halo counters will be posted in the log book and on the run wiki page, and must be used as a reference. 
 
 \subsubsection{Beam Current}
 \indent
 
 A consistency in the beam current readings between the Faraday Cup (see Section \ref{sec:fcup}) and the "nA" BPMs is one way
-to check that the electron beam is cleanly transported to the beam dump (Faraday Cup). {\bf Note:} for most of CLAS12 experiments, requested beam current (at nominal luminosity) exceeds allowed power limit for the Faraday cup, $\sim 175$ W (Power in W = Current in nA x Energy in GeV). A beam blocker, see Section \ref{subsec:blocker}, will be inserted in front of the Faraday cup. Even with blocker in-beam, Faraday cup reading is meaningful, it will be a scaled value of the beam current. The coefficient of the proportionality is beam energy dependent \cite{blocker} and will be calibrated at each given energy setting \cite{2018-003}. With blocker in-beam, the ratio of the currents read by Faraday cup and other current monitors (e.g. BPMs, Section \ref{sec:bpm}, and SLM, Section \ref{sec:slm}) must be constant. In all cases one should observe the same current on all three nA BPMs (2C21, 2C24, and 2H01). In addition to the inconsistencies in the beam current readings, the halo counters (see Section \ref{sec:scaler_a}) should
+to check that the electron beam is cleanly transported to the beam dump (Faraday Cup). {\bf Note:} for some of CLAS112 experiments, requested beam current (at nominal luminosity) exceeds allowed power limit for the Faraday cup, 1 kW (Power in W = Current in nA x Energy in GeV). A beam blocker, see Section \ref{subsec:blocker}, will be inserted in front of the Faraday cup. Even with blocker in-beam, Faraday cup reading is meaningful, it will be a scaled value of the beam current. The coefficient of the proportionality is beam energy dependent \cite{blocker} and will be calibrated at each given energy setting \cite{2018-003}. With blocker in-beam, the ratio of the currents read by Faraday cup and other current monitors (e.g. BPMs, Section \ref{sec:bpm}, and SLM, Section \ref{sec:slm}) must be constant. In all cases one should observe the same current on all three nA BPMs (2C21, 2C24, and 2H01). In addition to the inconsistencies in the beam current readings, the halo counters (see Section \ref{sec:scaler_a}) should
 show an increased activity if beam scraps beam pipes. Also higher then normal rates in the detectors would be indicative
 of scraping immediately downstream of the target.
 
@@ -199,7 +199,7 @@ Active\\
 raster\_h1&
 Danfysik&
 B&
-first horizontal target raster&
+first horizontal target raster&4
 Not used\\
 \hline 
 raster\_v1&
@@ -227,7 +227,7 @@ vertical kick&
 Active\\
 \hline 
 Solenoid&
-$-$&
+Danfysik&
 B&
 Moller shield and momentum analysis in CD&
 Not used\\
@@ -394,7 +394,7 @@ you will observe large statistical fluctuations.
 \label{subsec:blocker}
 \indent
 
-The Hall-B Faraday cup is not cooled and cannot operate at high currents (deposited hit should not exceed $175$ W for more than 1/2 hour running). If run requires use of beam currents above the limit (for 11 GeV it is 15 nA), a $5$ kW beam blocker, cooled-copper absorber, must be position in front of the Faraday cup. The beam blocker can be controlled from {\it Motors} GUI shown in Figure \ref{fig:beamblocker}.  From {\it Motors} GUI select {\it Blocker} then push {\it Go beam} button  in order to put the blocker on the beam and {\it Go Home} to retract if from the beamline. 
+The Hall-B Faraday cup is not cooled and cannot operate at high currents (deposited hit should not exceed 1 kW for more than 1/2 hour running). If run requires use of beam currents above the limit (for 11 GeV it is 90 nA), a 17 kW beam blocker, cooled-copper absorber, must be position in front of the Faraday cup. The beam blocker can be controlled from {\it Motors} GUI shown in Figure \ref{fig:beamblocker}.  From {\it Motors} GUI select {\it Blocker} then push {\it Go beam} button  in order to put the blocker on the beam and {\it Go Home} to retract if from the beamline. 
 
 \begin{figure}[tbhp]
 {\centering \includegraphics[scale=0.65]{collimator.pdf} \par}
@@ -407,7 +407,7 @@ The Hall-B Faraday cup is not cooled and cannot operate at high currents (deposi
 \subsection{\bf Target}
 \indent
 
-The Hall-B cryo target from $6$ GeV era is used for the CLAS12. The main differences are larger diameter target cell and the longer supply pipes from condenser to the target. In anticipation of larger beam sizes at high energies ($> 3$ pass), target cell diameter is designed to be $20$ mm and the thin portion of the cell windows ($30~\mu$m thick aluminum) $10$ mm in diameter. Figure \ref{target} shows design rendering of the CLAS cryo target inside the foam scattering chamber. Control of the target, filling and emptying, will be done using {\it Target PC}. Operator should follow special instructions for the target operations. For monitoring, the target temperature, pressure, and the buffer dewar liquid level are displayed on the Main Control and Monitoring GUI, Figure \ref{fig:scaler}. 
+The Hall-B cryo target is used for the CLAS12. The target cell diameter is designed to be $20$ mm and the thin portion of the cell windows ($30~\mu$m thick aluminum) $10$ mm in diameter. Figure \ref{target} shows design rendering of the CLAS cryo target inside the foam scattering chamber. Control of the target, filling and emptying, will be done using {\it Target PC}. Operator should follow special instructions for the target operations. For monitoring, the target temperature, pressure, and the buffer dewar liquid level are displayed on the Main Control and Monitoring GUI, Figure \ref{fig:scaler}. 
 
 \begin{figure}[ht!]
 \centering
@@ -423,9 +423,12 @@ The Hall-B cryo target from $6$ GeV era is used for the CLAS12. The main differe
 \end{flushleft}
 
 \section {Establishing beam for physics}
+This section describes a generic beam tuning procedure. Each experiment may have special requirements wich are described in the experiment specific procedure.
+
 \input{establishing_beam}
 
 \section{EXPERT procedure for beam polarization measurement using the M{\"o}ller polarimeter}
+This section is for experts. For routine operation by shift operator follow the procedure described in ``Performing M{\"o}ller Runs'' document.
 \input{moller_procedures}
 
 \begin{figure}[htb]
