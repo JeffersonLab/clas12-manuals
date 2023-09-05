@@ -24,7 +24,7 @@ calorimeter enclosure are monitored with sensors interfaced to the CLAS12 Slow C
 Hazards to personnel associated with this device are high voltage, which is supplied to 
 the photosensors, and low voltage, which powers the calorimeter preamplifiers and Light 
 Monitoring System. Hazards to the detector include cooling fluid leaks or condensation in 
-the photosensors and preamplifier region, over-voltage to the photosensors, preamplifiers 
+the photosensors and preamplifier region, over-voltage to the photosensors, preamplifiers, 
 or Light Monitoring System that could damage the related subsystem, and absence of cooling or 
 cooling failure when low voltage is applied to the preamplifiers, which could lead to 
 overheating of the preamplifiers themselves. To account for the presence of fringe magnetic 
@@ -61,7 +61,7 @@ cannot be accessed during operation; during maintenance work, performed by train
 the HV cables are disconnected from the power supply and the power supply locked and tagged.
 
 Low Voltage: In order to power up the LAAPD preamplifier and Light Monitoring System, we use 
-low voltage at $\pm$5~V and 12~V, respectively with a maximum current of 4~A. Mitigation: 
+low voltage at $\pm$5~V and 12~V, respectively, with a maximum current of 4~A. Mitigation: 
 voltage is low enough not to be a danger to personnel. All mechanical structures are properly 
 grounded. All cables and connectors are certified for this rating. LV distribution boards on 
 the detector cannot be accessed during operation; during maintenance work, performed by trained 
@@ -120,9 +120,9 @@ Individuals responsible for the FT-Cal system are:
 \centering
 \begin{tabular}{|c|c|c|c|c|} \hline
 Name&Dept.&Phone&email&Comments \\ \hline
-Expert on call& &&& 1st contact \\ \hline
-M. Battaglieri& INFN&x7266&\href{mailto:battagli@jlab.org}{\nolinkurl{battagli@jlab.org}}&2nd contact \\ \hline
-R. De Vita & INFN&x7266&\href{mailto:devita@jlab.org}{\nolinkurl{devita@jlab.org}}& 3rd contact  \\ \hline
+Expert on call& & 757-344-1848 && 1st contact \\ \hline
+M. Battaglieri& INFN&757-269-7266&\href{mailto:battagli@jlab.org}{\nolinkurl{battagli@jlab.org}}&2nd contact \\ \hline
+R. De Vita & INFN&757-269-7266&\href{mailto:devita@jlab.org}{\nolinkurl{devita@jlab.org}}& 3rd contact  \\ \hline
 \end{tabular}
 \caption{Personnel responsible for the CLAS12 FT-Cal system.} 
 \label{tb:ecal}
@@ -199,13 +199,13 @@ Individuals responsible for the FT-Hodo system are:
 
 \subsection{Forward Tagger Tracker}
 
-The Forward Tagger Tracker is composed of two double-sided Micromegas  double-stage gaseous 
+The Forward Tagger Tracker is composed of two double-sided Micromegas double-stage gaseous 
 detectors. The system is located in the proximity of magnets, in an area where the fringe field 
 is of the order of a few hundred gauss. The detectors are based on the resistive Micromegas 
 technology that is also employed in the CLAS12 Central Micromegas tracker. Each detector 
-consists of two planes with strips oriented along the $X$ and $Y$ axes, respectively, separated 
+consists of two planes with strips oriented along the $x$ and $y$ axes, respectively, separated 
 by 10~mm. Each plane as 768 strips with 560~$\mu$m pitch. The FT tracker covers the polar angle 
-region from 2.5$^\circ$ to 4.5$^\circ$ from the target. The gas that will be used is a mixture 
+region from 2.5$^\circ$ to 4.5$^\circ$ from the target. The fill gas is a mixture 
 of 80\% argon, 10\% CF$_4$, and 10\% isobutane. Even though isobutane is a flammable gas, the 
 amount of gas in use at any given time is well within the range of a class-0 gaseous device.
 
@@ -214,7 +214,7 @@ extremely low ($< 1$~mA). The detectors are read out through 1.5-m-long, low-cap
 cables by Front-End Units (FEU). These electronic cards contain the customized DREAM ASICs in 
 order to sample the detector signal and a Flash-ADC to digitize it and send it to the network. 
 The FEUs are placed inside customized crates, installed on the outer case of the FT calorimeter. 
-They are powered through low voltage, and kept within the 40$^\circ$C to 60$^\circ$C temperature 
+They are powered through low voltage, and kept within a 40$^\circ$C to 60$^\circ$C temperature 
 range using a simple set of fans and tubing.
 
 All hazards and mitigation options for the FT tracker are the same as for the CLAS12 Central 
@@ -238,7 +238,7 @@ Mitigation of risks associated with then FT-Trk operations are achieved in the f
 
 \begin{itemize}
 \item{ the limited amount of flammable gas (10$\%$ isobutane over the whole gas in the detector)  
-makes this a class-0 gas system. Nevertheless, the supply and exhaust will be located outside 
+makes this a class-0 gas system. Nevertheless, the supply and exhaust are located outside 
 Hall~B, all flows monitored, and hardware interlocks are used to avoid leaks and over-pressure;}
 \item{ the low voltage/current range represents  a low level electrical  hazard for personnel. 
 Nevertheless, during maintenance the HV and LV will be powered-off, cables disconnected, and 
@@ -249,16 +249,16 @@ issues with wrong settings. FT-Trk temperature monitoring will provide a fast LV
 case of cooling failures or over-temperature conditions. }
 \end{itemize}
 
-\subsubsection{Fire Hazards Mitigation (Equipment \\and Personnel)}
+\subsubsection{Fire Hazards Mitigation (Equipment \\ and Personnel)}
 
-Use of flammable gas: the FT tracker detectors use 10\% isobutane, which is flammable. 
+Use of flammable gas: the FT-Trk detectors use 10\% isobutane, which is flammable. 
 However the amount of isobutane in the system is very limited. The gas supply and exhaust 
 are located outside Hall~B. The total combustion energy is equivalent to less than 4~g of 
 hydrogen, which makes it a class-0 gas system (class-1 starts at 600~g). 
 
 General fire hazards and procedures for dealing with these are covered by JLab emergency 
 management procedures. The JLab Fire Protection Manager (Tim Minga) can be contacted at 
-Office: 269-6638, Cell: (540)-729-0095.
+Office: 757-269-6638, Cell: 540-729-0095.
 
 \subsubsection{Electrical Hazards Mitigation (Personnel)}
 
@@ -272,7 +272,7 @@ structures are properly grounded. All cables and connectors are certified for th
 \subsubsection{Other Hazards Mitigation}
 
 Detectors: gas over-pressure, gas leaks, mechanical damage. Mitigation: gas control system with 
-over-pressure and leak limit detection by flowmeter (limit = 0.4~l/hr). The FT tracker detectors 
+over-pressure and leak limit detection by flow meter (limit = 0.4~l/hr). The FT tracker detectors 
 can be dismounted and repaired in case of accidental damage to the drift electrode. Since they are 
 tightly stacked, only one such electrode is exposed and at risk, the rest of the stack is protected 
 by the first detector.
@@ -301,7 +301,7 @@ Name&Dept.&Phone&email&Comments \\ \hline
 Expert on call& &&& 1st contact \\ \hline
 R. Paremuzyan&JLab&757-541-7539&\href{mailto:rafopar@jlab.org}{\nolinkurl{rafopar@jlab.org}}&2nd contact \\ \hline
 Y. Gotra&JLab&757-269-5571&\href{mailto:gotra@jlab.org}{\nolinkurl{gotra@jlab.org}}&3rd contact \\ \hline
-	R. De Vita&INFN&757-269-7266&\href{mailto:devita@jlab.org}{\nolinkurl{devita@jlab.org}}&4th contact \\ \hline
+R. De Vita&INFN&757-269-7266&\href{mailto:devita@jlab.org}{\nolinkurl{devita@jlab.org}}&4th contact \\ \hline
 \end{tabular}
 \caption{Personnel responsible for the CLAS12 FT-Trk system.} 
 \label{tb:trk}
