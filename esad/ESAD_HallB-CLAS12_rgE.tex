@@ -1,0 +1,257 @@
+\documentclass[12pt]{report}
+%\documentclass[12pt]{article}
+\usepackage{tabularx,graphicx,layout}
+\usepackage{hyperref}
+\usepackage{blindtext}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+\usepackage{pifont}
+\usepackage{xcolor}
+\usepackage{version}
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+
+\begin{document}
+\title{Experiment Safety Assessment Document (ESAD) \\ 
+for the Hall B CLAS12 Run Group E}
+\date{Updated on \today\ for Run Group E (RG-E)}
+%
+% LaTeX Version 12 GeV ESAD 
+%
+%
+\maketitle
+\tableofcontents
+
+\chapter{Introduction}
+
+This ESAD document describes the identified hazards of the experiment and the measures 
+taken to eliminate, control, or mitigate them. This document is part of the CEBAF 
+experiment review process as defined in
+\href{http://www.jlab.org/ehs/ehsmanual/manual/3120.html}{Chapter 3120} of the Jefferson 
+Lab EHS\&Q manual, and will start by describing general types of hazards that might be 
+present in any of the JLab experimental halls.  The document then addresses the hazards 
+associated with subsystems of the equipment in Experimental Hall~B and their mitigation.  
+Responsible personnel for each item are also noted. In case of life threatening emergencies 
+call 911 and then notify the guard house at x5822 so that the guards can help the 
+responders.  This document does not attempt to describe the function or operation of the 
+various subsystems. Such information can be found in the individual subsystem Operations 
+Manuals.
+
+\chapter{General Hazards}
+
+\section{Radiation}
+	
+CEBAF's high intensity and high energy electron beam is a potentially lethal direct 
+radiation source. It can also create radioactive materials that are hazardous even after 
+the beam has been turned off. There are many redundant measures aimed at preventing 
+accidental exposure to personnel by the beam or exposure to beam-associated radiation 
+sources that are in place at JLab. The training and mitigation procedures are handled 
+through the JLab Radiation Control Department (RadCon). RadCon can be contacted as follows: 
+For routine support and surveys, or for emergencies after-hours, call the RadCon cell phone 
+at 876-1743. For escalation of effort or for emergencies, the RadCon manager (Keith Welch) 
+can be reached as follows: Office: 757-269-7212.
+
+Radiation damage to materials and electronics is mainly determined by the neutron 
+dose (photon dose typically causes parity errors and is easier to shield against). 
+Commercial-off-the-shelf (COTS) electronics is typically robust up to neutron doses of 
+about $10^{13}$~n/cm$^2$. If the experimental equipment dose as calculated in the RSAD 
+is beyond this damage threshold, the experiment needs to add an appendix on ``Evaluation 
+of potential radiation damage" in the experiment-specific ESAD. There, the radiation 
+damage dose, potential impact to equipment located in areas above this damage threshold, 
+as well as the mitigating measures to be taken should be described.
+
+\section{Fire}
+
+Each of the experimental halls contains numerous combustible materials and flammable gases. 
+In addition, they contain potential ignition sources, such as electrical wiring and equipment. 
+General fire hazards and procedures for dealing with these are covered by JLab emergency 
+management procedures. The JLab fire protection manager (Tim Minga) can be contacted at 
+757-269-731, Cell: 757-371-16870.
+
+\section{Electrical Systems}
+
+Hazards associated with electrical systems are the most common risk in the experimental 
+halls. Almost every subsystem requires AC and/or DC power. Due to the high current and/or 
+high voltage requirements of many of these subsystems, they and their power supplies are 
+potentially lethal electrical sources. In the case of superconducting magnets the stored 
+energy is so large that an uncontrolled electrical discharge can be lethal for a period of 
+time even after the actual power source has been turned off. Anyone working on electrical 
+power in the experimental halls must comply with 
+\href{http://www.jlab.org/ehs/ehsmanual/manual/6200.html}{Chapter 6200} of the Jefferson Lab 
+EHS\&Q manual and must obtain approval of one of the responsible personnel. The JLab 
+electrical safety point-of-contact (Chad Bailey) can be reached at 757-269-7052.
+
+\section{Mechanical Systems}
+
+There exist a variety of mechanical hazards in all experimental halls at JLab. Numerous 
+electro-mechanical subsystems are massive enough to produce potential fall and/or crush 
+hazards.  In addition, heavy objects are routinely moved around within the experimental 
+halls during reconfigurations for specific experiments. 
+
+Use of ladders and scaffolding must comply with 
+\href{http://www.jlab.org/ehs/ehsmanual/manual/6132.html}{Chapter 6132} of the Jefferson 
+Lab EHS\&Q manual. Use of cranes, hoists, lifts, etc. must comply with
+\href{http://www.jlab.org/ehs/ehsmanual/manual/6141.html}{Chapter 6141} of the Jefferson
+Lab EHS\&Q manual. Use of personal protective equipment to mitigate mechanical hazards, 
+such as hard hats, safety harnesses, and safety shoes, are mandatory when deemed necessary.
+The JLab technical point-of-contact (Jennifer Williams) can be contacted at 757-269-7882.
+
+\section{Strong Magnetic Fields}
+
+Powerful magnets exist in all JLab experimental halls. Metal objects may be attracted 
+by the magnet fringe field and become airborne, possibly injuring body parts or striking 
+fragile components, resulting in a cascading hazard condition. Cardiac pacemakers or other 
+electronic medical devices may no longer function properly in the presence of magnetic 
+fields. Metallic medical implants (non-electronic) may be adversely affected by magnetic 
+fields. Loss of information from magnetic data storage devices such as tapes, disks, and 
+credit cards may also occur. Contact Jennifer Williams at 757-269-7882, in case of questions
+or concerns.
+
+\section{Cryogenic Fluids and Oxygen Deficiency \\Hazard}
+
+Cryogenic fluids and gases are commonly used in the experimental halls at JLab. When 
+released in an uncontrolled manner these can result in explosion, fire, cryogenic burns, 
+and the displacement of air, resulting in an oxygen deficiency hazard (ODH) condition. 
+The hazard level and associated mitigation are dependent on the subsystem and cryogenic 
+fluid. However, they are mostly associated with cryogenic superconducting magnets and 
+cryogenic target systems. Flammable cryogenic gases used in the experimental halls 
+include hydrogen and deuterium, which are colorless, odorless gases and, hence, not easily 
+detected by human senses. Hydrogen air mixtures are flammable over a large range of relative 
+concentrations from 4\% to 75\% H$_2$ by volume. Non-flammable cryogenic gases typically 
+used include He and nitrogen. Contact Jennifer Williams at 757-269-7882 in case of questions or concerns.
+
+\section{Vacuum and Pressure Vessels}
+
+Vacuum and/or pressure vessels are commonly used in the experimental halls. Many 
+of these have thin aluminum or Kevlar/Mylar windows that are close to the entrance 
+and/or exit of the vessels or beampipes. These windows burst if punctured accidentally 
+or can fail if significant over-pressure were to exist. Injury is possible if a failure 
+were to occur near an individual. All work on vacuum windows in the experimental halls 
+must occur under the supervision of appropriately trained JLab personnel. Specifically, 
+the scattering chamber and beamline exit windows must always be leak checked before 
+service. Contact Tim Michalski 757-269-6523 for vacuum and pressure vessel issues.
+
+\section{Hazardous Materials}
+
+Hazardous materials in the form of solids, liquids, and gases that may harm people or 
+property exist in the JLab experimental halls. The most common of these materials 
+include lead, beryllium compounds, and various toxic and corrosive chemicals. Material 
+Safety Data Sheets (MSDS) for hazardous materials in use in the experimental hall are 
+available from the hall Safety Wardens. These are being replaced by the new standard
+Safety Data Sheets (SDS) as they become available in compliance with the new OSHA 
+standards. Handling of these materials must follow the guidelines of the EHS\&Q manual. 
+Machining of lead or beryllium, which are highly toxic in powdered form, requires prior 
+approval of the EHS\&Q staff. Lead Worker training is required in order to handle lead in 
+the experiment halls. In case of questions or concerns, the JLab hazardous materials 
+specialist (Scott Conley) can be contacted at 757-269-7308.
+
+\section{Lasers}
+
+High power lasers are often used in the experimental areas for various purposes. Improperly 
+used lasers are potentially dangerous. Exposure to laser beams at sufficient power levels 
+may cause thermal and photochemical injury to the eye, resulting in retina burns and 
+blindness. Skin exposure to laser beams may induce pigmentation, accelerated aging, or 
+severe skin burns. Laser beams may also ignite combustible materials creating a fire hazard. 
+At JLab, lasers with power higher than 5~mW (Class IIIB) can only be operated in a controlled 
+environment with proper eye protection and engineering controls designed and approved for the 
+specific laser system. Each specific laser system shall be operated under the supervision of 
+a Laser System Supervisor (LSS) following the Laser Operating Safety Procedure (LOSP) for 
+that system approved by the Laboratory Laser Safety Officer (LSO). The LSO (Jennifer Williams) can 
+be reached at 757-269-7556.
+%
+% details for each of the Halls
+%
+\chapter{Hall~B-Specific Equipment}
+
+\section{Overview}
+
+The Hall~B subsystems included in this chapter are considered part of the End-station 
+Experimental Equipment for the Run-Group M run. Many of these subsystems impose 
+similar hazards, such as those induced by magnets and magnet power supplies, high voltage 
+systems, cryogenic systems, and vacuum systems. Note that a specific subsystem may have 
+many unique hazards associated with it. For each major system, the hazards, mitigations, 
+and responsible personnel are noted.
+
+The material in this chapter is a subset of the material in the Hall~B subsystem Operations 
+Manuals and is only intended to familiarize people with the hazards and responsible personnel 
+for these systems. In no way should it be taken as sufficient information to use or operate 
+this equipment.
+
+\section{Detector Checkout System}
+
+The Hall~B equipment readiness for the beam run will be done using the CEBAF Hot Checkout 
+system (HCO)~\cite{hco}. Each detector system has its own subsystems and items that have 
+to be checked and signed off by the appropriate groups. The systems that have been checked 
+and signed as ready for beam will be indicated by a green ``thumbs up". Subsystems that are 
+still waiting for readiness check-up and approval will be indicated with red crosses. 
+
+In order to make sure that hall equipment that should be tied into the machine Fast Shutdown 
+(FSD) system has been properly checked, the hall Work Coordinator must be notified by e-mail 
+prior to the end of each installation period by the system owner that the checks have been 
+performed in conjunction with accelerator operations (i.e. checking that the equipment's 
+signals will in fact cause an FSD). These notifications will be noted in the Work Coordinator's 
+final checklist as having been done. System owners are responsible for notifying the Work 
+Coordinator that their system has an FSD tie-in so it can be added to the checklist.
+
+The hall will get permission to run beam only after all systems tied to the delivery of the 
+beam to the designated destination are signed off. At that point the main Hall~B system will 
+indicate ``Ready" in the HCO tree.
+
+\input{beamline_vacuum_systems}
+
+\input{target_system_RGD}
+
+\input{gas}
+
+\input{daq}
+
+\input{htcc}
+
+\input{dc}
+
+\input{ltcc}
+
+\input{ftof}
+
+\input{electromagnetic_calorimeter}
+
+\input{ctof}
+
+\input{silicon_tracker}
+
+\input{cnd}
+
+\input{mm}
+
+\input{rich}
+
+\input{ft}
+
+\input{band}
+
+\input{solenoid}
+
+\input{torus}
+
+\begin{thebibliography}{99}
+\bibitem{hco} CEBAF Hot Check-Out db page (accessible from inside JLab only)
+URL:https://accweb.acc.jlab.org/hco/
+
+\bibitem{epics} 
+EPICS Documentation. URL: http://www.epics.org/. 
+See also http://www.aps.anl.gov/asd/controls/epics/EpicsDocumention\\/WWWPages/EpicsDoc.html
+
+\bibitem{ehs} 
+JLab EHS\&Q Manual. URL: http://www.jlab.org/ehs/ehsmanual/.
+
+\bibitem{pss} 
+JLab/CEBAF Personnel Safety System (PSS) Manual. URL: http://www.jlab.org/eng/ssg/user\_info.html
+
+\bibitem{ops} 
+Accelerator Operations Directive. \\
+URL: http://www.jlab.org/ops\_docs/online\_document\_files/ACC\_online\_files/\\accel\_ops\_directive.pdf (URL is available inside JLab site). 
+
+\end{thebibliography}
+
+\end{document}
+
