@@ -1,6 +1,8 @@
 # clas12-manuals
 
+
 Public Repository for CLAS12 Operations Documentation
+
 
 Note, this is really for version control on the source
 code (tex, docx, figs, etc) that results in a document.
