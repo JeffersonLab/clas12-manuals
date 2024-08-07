@@ -1,0 +1,84 @@
+\section{Target System}
+
+The ALERT experiment will use a variety of gas targets (hydrogen, deuterium, and helium) at
+room temperature at up to 4~atm pressure (4~atm = 58.78 psig). The target cell is a
+45-cm-long aluminum-coated Kapton straw of 0.6 cm diameter and 50 $\mu$m wall thickness. The
+straw has entrance and exit windows of 30-$\mu$m thick aluminum. The target will be mounted
+inside the center bore of the ALERT detector along the beamline. There will be a 1 cm air gap
+between the upstream beamline and the ALERT target. The upstream beam pipe includes a 30~$\mu$m
+thick aluminum window. ALERT will have a helium extension tube on the downstream end with a
+30 $\mu$m aluminum window. There will be a 4 cm air gap between this window and the 75 $\mu$m
+thick window on the downstream beam pipe. The details of all components, such as windows and cells,
+are shown on the beamline drawing, including thicknesses and locations. These drawings can be found
+at Ref.~\cite{engineering-page}.
+
+\subsection{Hazards} 
+
+The main hazard is a potential rupture of the target cell or the target entrance and exit windows.
+If the target is filled with $^4$He at the time, the only hazard would be a loud noise and potential
+damage to the ALERT detector surrounding the target due to a pressure shock. If the target is filled
+with $^1$H or $^2$H, an additional hazard will be the presence of these flammable gases within the
+ALERT environment. The total gas volumes involved are too small to create a ODH risk.
+
+\subsection{Mitigations}
+
+The design and construction of the gas target is in accordance to ASME B31.3 process piping code, except
+downstream of the isolation valve. This section includes the target cell and is qualified by equivalent
+measures. These include limiting the amount of flammable gas in this section and preventing excess flow
+into this section from the buffer volume in case of a sudden pressure loss due to a rapture of the target
+cell or its windows. A flame arrestor is preventing the ignition of flammable gas upstream of this section
+(upstream of the isolation valve).
+
+During operation the target tube and the thin entrance and exit windows are surrounded by the Hall~B CLAS12
+Central Detectors and are therefore difficult to access. The target will only be filled with gas in excess
+of 1~atm pressure when installed inside the CLAS12 Central Detector.
+
+Two H$_2$/D$_2$ gas detectors are installed near the target location, one above the right hand side of the
+electronics rack and another above the cryostat. In case of a detected leak, the control system will
+immediately shut off the supply of gas to the target.
+
+A pressure sensor is mounted downstream of the isolation valve to detect a sudden loss of pressure and
+immediately shut off the gas supply. The quantity of flammable gas (H$_2$ or D$_2$) downstream of the
+isolation valve is less than 1000~ft lbs in energy (1355~J). The ratio of energy per volume for hydrogen
+or deuterium is 14.5~J/cm. This includes chemical heat of combustion (13~J/cm$^3$) and mechanical explosion
+energy (1.5~J/cm$^3$, Brode equation). For the limit of 1355~J this corresponds to 13.3~cm$^3$ of deuterium
+(or hydrogen) gas at 7~atm (93.4~cm$^3$ at 1 atm).
+
+This volume limit in the section qualified by equivalent measures will be achieved by limiting the volume
+of the target cell plus the capillary supply tubing up to the isolation valve to 13.3~cm$^3$. To limit the
+amount of gas flow into the target cell, the supply tubing inner diameter will be capillary and an excess
+flow valve will limit the flow in case of sudden loss of pressure in the target cell due to bursting.
+
+\begin{itemize}
+\item The area shall be posted ``Danger Flammable Gases. No Ignition Sources'',
+\item Combustibles and ignition sources shall be minimized within 10~ft or 3~m of target’s gas handling
+  equipment and piping.
+\end{itemize}
+
+The target does not operate in a confined space, and the total quantity of hydrogen/helium in the system is
+under 1000 standard liters. This presents a negligible oxygen deficiency risk in Hall~B and therefore is a
+class-0 ODH installation.
+
+Hydrogen shall be loaded into the system by qualified personnel only, and those personnel shall follow
+approved operational gas handling procedures. Upon loss of target gas pressure, the control system shall
+automatically shut off the gas supply.
+
+The target control software includes numerous alarms (temperature, pressure, vacuum, etc.) to alert users
+to potential problems.
+
+\subsection{Responsible Personnel}
+
+The target system will be maintained by the Hall~B Engineering Group (see Table~\ref{tb:target}).  
+
+\begin{table}[!htb]
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+Name & Department & Phone & email & Comments \\ \hline
+Engineering on call & Hall B & 757-748-5048 & & 1st contact \\ \hline
+D. Insley & Hall~B  &757-897-9060&\href{mailto:dinsley@jlab.org}{\nolinkurl{dinsley@jlab.org}} & 2nd contact \\ \hline
+R. Miller & Hall~B  & x7867      &\href{mailto:rmiller@jlab.org}{\nolinkurl{rmiller@jlab.org}} & 3rd contact \\ \hline
+\end{tabular}
+\caption{Personnel responsible for the CLAS12 ALERT target system.} 
+\label{tb:target}
+\end{table}

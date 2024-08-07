@@ -1,0 +1,142 @@
+\section{ALERT Detector}
+
+The ALERT detector system consists of two subsystems: a drift chamber (AHDC) and a time-of-flight
+scintillator detector (ATOF). In the following, details are reported for these subcomponents.
+
+\subsection{ALERT Hyperbolic Drift Chamber}
+
+The Forward Tagger calorimeter (FT-Cal) consists of $332$ lead-tungstate (PbWO$_4$) crystals 
+with avalanche photodiode (APD) readout and amplifiers enclosed inside a temperature-controlled 
+enclosure. The crystals are arranged in a circular matrix positioned around the beamline. The 
+system is located in proximity of magnets, in an area where the fringe field is of the order of 
+a few hundred gauss. In order to operate the calorimeter, high voltage and low voltage are 
+supplied to each channel. The high voltage is $<420$~V and $<50$~$\mu$A. The required low voltage 
+is $\pm 5$~V for the preamplifier boards and 12~V for the Light Monitoring System. Constant 
+temperature inside the enclosure is kept by running a coolant through the copper pipes that 
+are integrated into the enclosure using a laboratory chiller. The cooling system should provide 
+temperature stability at the level of $1^\circ$C. To avoid moisture build-up in the calorimeter 
+enclosure, a steady flow of nitrogen gas is maintained and the temperature and humidity in the 
+calorimeter enclosure are monitored with sensors interfaced to the CLAS12 Slow Controls system.
+
+\subsection{Hazards} 
+
+Hazards to personnel include the high voltage supplied to the wires and the low voltage that 
+powers the on-chamber pre-amplifiers. Hazards to the drift chambers themselves include damage 
+to the gas windows should the pressure deviate more than a few psi from atmospheric. 
+
+\subsection{Mitigations}
+
+Electrical hazards:
+\begin{itemize}
+\item High Voltage: high voltages up to 2000~V are used routinely for all detectors. Mitigation: 
+very low current limits (40~$\mu$A) are set. All mechanical structures are properly grounded.  
+There are possible electrical hazards if a malfunctioning HV board is replaced. The associated
+ePAS concluded that the risk is low, but any work on this system must be covered by ePAS Permit
+to work(s) (PTW).
+
+\item Low Voltage: In order to power up the on-chamber electronics, we use low voltage at 7~V 
+with 50~A per supply (1 supply per chamber). Mitigation: voltage is low enough not to be a 
+danger to personnel. All mechanical structures are properly grounded. All cables and connectors 
+are certified for this rating and shielded. To protect against possible over-heating of the 
+on-chamber pre-amplifier boards, each individual conductor (positive and neutral return) is 
+fused; with the fuses located in a fuse panel with a red LED signaling a blown fuse. If a 
+fuse is removed and/or replaced there is no risk to personnel because of the low voltage.
+
+\end{itemize}
+
+Gas system hazards:
+\begin{itemize}
+\item Personnel: because most of the system operates very close to atmospheric pressure there 
+is no hazard to personnel in the hall due to pressure. The gas is non-toxic and non-flammable.  
+Because of the large volume of the hall and the location of the chambers in the main open area 
+of the hall, there is no ODH hazard to personnel.
+\item Detectors: there is a potential danger to the chamber gas windows if the pressure in the 
+chamber differs from atmospheric by one psi. This is mitigated during standard operation by our 
+pressure-difference control system with fail-safe over-pressure and under-pressure bubblers 
+providing an additional level of safety.
+\end{itemize}
+
+\subsection{Responsible Personnel}
+
+Individuals responsible for the DC system are (see Table~\ref{tb:dc}):
+
+\begin{table}[!htb]
+\centering
+\begin{tabular}{|c|c|c|c|c|} \hline
+Name            & Dept.  & Phone        & email&Comments \\ \hline
+Expert on call  &        & 757-748-5048 &       & 1st contact \\ \hline
+Gabriel Charles & Hall~B & 757-746-3395 & \href{mailto:hauenst@jlab.org}{\nolinkurl{hauenst@jlab.org}} &  2nd contact\\ Raphael Dupre   & Hall~B & 757-746-3395 & \href{mailto:hauenst@jlab.org}{\nolinkurl{hauenst@jlab.org}} &  2nd contact\\ \hline
+ \end{tabular}
+\caption{Personnel responsible for the ALERT AHDC system.} 
+\label{tb:ahdc}
+\end{table}
+
+\subsection{ALERT Time-of-Flight System}
+
+The Forward Tagger Hodoscope (FT-Hodo) consists of $232$ plastic scintillator tiles (Eljen 
+EJ 204) coupled to 6-m-long optical fibers with SiPM readout, preamplifier, and mezzanine 
+and control electronic PCBs enclosed in an electronics crate. The system is located in the 
+proximity of magnets, in an area where the fringe field is of the order of a few hundred gauss.
+
+The FT-Hodo Light Monitoring System consists of a 420~nm (violet) peaked LED (Thorlabs M420F2), 
+LED driver (LED D1B T-Cube), ten optical fibers, and eight cylindrical diffusers (Medilight). 
+The LED and driver are located in the electronics rack and the optical diffusers are located 
+in the plastic scintillator enclosure, four in each layer.
+
+\subsection{Hazards} 
+
+There are two hazards associated with the FTOF system related to i) the high voltage (HV)
+system used to energize the counter PMTs and ii) access to the counters during testing 
+operations.
+
+The HV power supplies for each FTOF sector are either CAEN 1527 or 4527 mainframes outfitted
+with negative polarity 24-channel A1535N modules. The typical settings
+for each channel are: $V=-2000$~V, $I=350$~$\mu$A. These supplies are located on the north 
+and south sides of each level of the Forward Carriage behind each sector of counters. There 
+are two hazards associated with the HV system when energized that must be mitigated. The 
+first is the electrical hazard and the second is the potential damage to PMTs if a light 
+leak is introduced in the counter wrapping material when the PMT is energized. All HV channel
+supply currents are monitored by the EPICS Slow Controls system.
+
+The panel-1b and panel-1a counters are positioned between the LTCC and PCAL detectors on 
+the Forward Carriage. Therefore they are not accessible for hands-on testing. However, 
+the panel-2 counters are accessible for hands-on testing when the Forward Carriage is 
+pulled back into its maintenance position. The panel-2 counters in the S1, S2, S3, and S4 
+positions can then be accessed by manlift and the panel-2 counters in the S5 and S6 
+positions can be accessed by either manlift or ladders. When testing the panel-2 counters 
+in such an operation there are fall hazards that must be mitigated.
+
+\subsection{Mitigations}
+
+The electrical hazard associated with the HV system would be to receive an electrical 
+shock. However, the design of the HV system for the FTOF is such that the chance to 
+receive an electrical shock is minimal. The electrical hazards are mitigated by the use 
+of properly rated RG-59 cables that are terminated at the voltage divider end and the HV 
+supply end. As well, the HV supplies are grounded to their electronics racks. The bigger 
+issue would be damage to a PMT if improper contact with the counter surface were to occur 
+that introduced a sizable light leak in the counter wrapping. However, the hazards in such 
+a situation are minimal in that the HV system is designed to shutdown any channels that 
+show an over-current condition, thereby protecting the system hardware. 
+
+Only authorized FTOF system personnel are allowed to work on the counters during hands-on
+testing when the Hall~B configuration allows such work. For these individuals using ladders 
+or manlifts, they are required to have all appropriate training including manlift and
+harness training, ladder training, and fall protection training as required by ePAS Permit
+to work(s) (PTW).  All work is carried out in conjunction with input from the FTOF Group
+Leader and the Hall~B Work Coordinator.
+
+\subsection{Responsible Personnel}
+
+Individuals responsible for the FTOF system are (see Table~\ref{tb:ftof}):
+
+\begin{table}[!htb]
+\centering
+\begin{tabular}{|c|c|c|c|c|} \hline
+Name              & Dept.  & Phone        & email & Comments \\ \hline
+FTOF/CTOF on call & Hall B & 757-344-7204 &       & 1st contact \\ \hline
+Whitney Armstrong & Hall B & 757-269-5586 & \href{mailto:carman@jlab.org}{\nolinkurl{carman@jlab.org}} & 2nd contact \\ \hline
+Raphael Dupre     & Hall B & 757-269-5586 & \href{mailto:carman@jlab.org}{\nolinkurl{carman@jlab.org}} & 2nd contact \\ \hline
+\end{tabular}
+\caption{Personnel responsible for the ALERT ATOF system.} 
+\label{tb:atof}
+\end{table}
