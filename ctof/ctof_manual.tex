@@ -33,14 +33,14 @@
 \vskip 0.5cm
 
 \author{D.S. Carman, Jefferson Laboratory\\[0.2ex]
-{\it ctof\_manual.tex -- v2.0}}
+{\it ctof\_manual.tex -- v2.1}}
 
 \date \today
 %
 \maketitle
 
 \begin{abstract}
-  This document provides an overview of the CLAS12 Central Time-of-Flight (CTOF) System and serves
+  This document provides an overview of the CLAS12 Central Time-of-Flight (CTOF) system and serves
   as an Operations Manual for the detector. Instructions are provided for shift workers related to the
   basic steps of operating and monitoring the HV system, monitoring the detector system and responding
   to alarms, and knowing when to contact the on-call personnel. More complete details are also provided
@@ -202,7 +202,7 @@ connections for a single counter.}
 \begin{figure}[htbp]
 \vspace{12.0cm}
 \begin{picture}(30,50) 
-\put(85,15)
+\put(65,0)
 {\hbox{\includegraphics[width=0.80\textwidth,natwidth=610,natheight=642]{CTOFCNDHTCC.pdf}}}
 \end{picture} 
 \caption{Layout of the electronics for the CTOF, CND, and HTCC NIM and VME electronics on the beam
@@ -255,7 +255,7 @@ directed on the shift checklist.
 
 As a general rule, shift workers should spend no more than 10 to 15 minutes attempting to solve any problem
 that arises with the CTOF system. At that point they should contact the assigned CTOF on-call expert either
-to provide advice on how to proceed or to address the problem. \textcolor{red}{The CTOF on-call phone 
+to provide advice on how to proceed or to address the problem. \textcolor{red}{The TOF on-call phone 
 number is (757)-344-7204.}
 
 This document is divided into sections for shift workers and for CTOF system experts. However, only CTOF
@@ -377,7 +377,7 @@ Clicking on the button in the ``Pw'' (power) column toggles the channel HV on an
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Note that hovering the mouse pointer on a circle representing a PMT brings up information on that channel
+Note that hovering the mouse pointer on a circle representing a PMT brings up EPICS information on that channel
 as shown in Fig.~\ref{channel-id}.
 
 If the ``Controls'' option shown in Fig.~\ref{ctof-screen3-5}(right) is selected, a ``novice'' window is
@@ -597,7 +597,7 @@ Each system Group Leader will organize a list of on-call experts who will take r
 cell phone to allow 24-hour access to experts who can address any problems that arise during a beam running
 period. The phone numbers of all subsystem experts are posted on the run page~\cite{run-page}. Any problems
 that cannot be quickly solved by the shift workers, where quickly amounts to 10 to 15~minutes, should result
-in a call to the relevant expert cell phone. \textcolor{red}{The CTOF on-call phone number is (757)-344-7204.} 
+in a call to the relevant expert cell phone. \textcolor{red}{The TOF on-call phone number is (757)-344-7204.} 
 
 The on-call experts can often diagnose problems over the telephone, but there are times when they will have
 to go to the Counting House to more fully address an issue. One of the important responsibilities of the
@@ -609,7 +609,7 @@ for that channel until access can be made for a more detailed investigation. Thi
 with the Run Coordinator. Access to PMTs for service must be done only when the solenoid is off.
 
 Note: It is the responsibility of the CTOF on-call expert to review all issues that they cannot resolve with
-the CTOF Group Leader as soon as is reasonable. Each call to the FTOF on-call phone should be logged to the
+the CTOF Group Leader as soon as is reasonable. Each call to the TOF on-call phone should be logged to the
 TOF on-call wikipage \cite{tof-oncall} with a description of the issue and a note on its resolution. This
 archive can be used as a resource for when problems arise.
 
@@ -890,18 +890,6 @@ directly into the parameter field. However, it is imperative that the script set
 fully up to date as they represent the system archive values. This ``expert'' screen should most properly be
 used only for viewing the channel parameter set values.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[htbp]
-\vspace{2.0cm}
-\begin{picture}(30,50) 
-\put(45,-195)
-{\hbox{\includegraphics[width=0.80\textwidth,natwidth=610,natheight=642]{ctof-backup.pdf}}}
-\end{picture} 
-\caption{Window that comes up after selecting ``Save HV Settings'' in Fig.~\ref{ctof-screen3-5}(right).}
-\label{backup}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \subsubsection{HV Save and Restore}
 \label{save-restore}
 
@@ -912,25 +900,44 @@ as ``BURT'' backup files, where BURT is an acronym for ``Backup and Restore Tool
 EPICS variables into an ASCII file readable by the EPICS Slow Controls system. The save files are stored on the
 DAQ machines in the Hall~B Counting House at: {\it /usr/clas12/DATA/burt/CTOF\_HV}.
 
-Clicking on ``Save Settings'' brings up a window ``CREATE HV BACKUP'' as shown in Fig.~\ref{backup} showing
-the save file path and the pre-selected file name that contains the system name along with the date and time. If
-the ``Restore Settings'' option is chosen, the window shown in Fig.~\ref{restore} comes up showing the saved
-CTOF HV restore files available from which to select. Selecting a file and clicking on ``OK'' at the bottom of
-the window loads all channel parameters for the full HV system. Note that a new backup file should be created 
-whenever any HV settings have changed, including HV values, channel parameter settings, or channel on/off
-settings.
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
-\vspace{3.7cm}
+\vspace{6.0cm}
 \begin{picture}(30,50) 
-\put(50,220)
-{\hbox{\includegraphics[width=0.60\textwidth,natwidth=610,natheight=642,angle=-90]{ctof-restore.pdf}}}
+\put(85,0)
+{\hbox{\includegraphics[width=0.47\textwidth,natwidth=610,natheight=642]{ctof-restore.pdf}}}
 \end{picture} 
-\caption{Window that comes up after selecting ``Restore HV Settings'' in Fig.~\ref{ctof-screen3-5}(right).}
-\label{restore}
+\caption{Window that comes up after selecting ``Save/ Settings'' during a ``Save/Restore'' 
+operation (see in Fig.~\ref{ctof-screen3-5}(right)).}
+\label{backup-restore1}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+After clicking on the ``Save/Restore'' button, a sub-menu appears as shown in Fig.~\ref{backup-restore1}. Click 
+on that button to bring up the window for the EPICS BURT Save \& Restore interface. 
+In the upper right corner of this interface screen click on the ``Select a Group'' button and select ``CTOF\_HV'' 
+from the drop-down menu of subsystems. Then select ``Save'' or ``Restore'' to save the current HV settings or to 
+restore the settings from an existing BURT file. After clicking on the ``Save'' button the listing of the parameters 
+to be saved is displayed (see Fig.~\ref{backup-restore2}(left)). To create a BURT save file, click on ``Save Snapshot 
+for Selected Group'' at the bottom of the screen and then select ``OK''. After clicking on the ``Restore'' button a 
+directory list of the available CTOF BURT files is provided (see Fig.~\ref{backup-restore2}(right)). Select the BURT 
+file of interest and select ``Restore from Selected Snapshot''. Note that a new backup file should be created whenever 
+any HV settings have changed, including HV values, channel parameter settings, or channel on/off settings.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\vspace{4.7cm}
+\begin{picture}(30,50) 
+\put(10,0)
+{\hbox{\includegraphics[width=0.38\textwidth,natwidth=610,natheight=642]{backup-restore2a.pdf}}}
+\put(240,0)
+{\hbox{\includegraphics[width=0.38\textwidth,natwidth=610,natheight=642]{backup-restore2b.pdf}}}
+\end{picture} 
+\caption{(Left) Window that comes up after selecting ``Save'' or (Right) window that 
+comes up after selecting ``Restore'' during a ``Save/Restore'' operation.}
+\label{backup-restore2}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Cabling Details}
 
