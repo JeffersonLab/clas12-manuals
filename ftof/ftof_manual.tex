@@ -33,14 +33,14 @@
 \vskip 0.5cm
 
 \author{D.S. Carman, Jefferson Laboratory\\[0.2ex]
-{\it ftof\_manual.tex -- v1.9}}
+{\it ftof\_manual.tex -- v2.0}}
 
 \date \today
 %
 \maketitle
 
 \begin{abstract}
-This document provides an overview of the CLAS12 Forward Time-of-Flight (FTOF) System 
+This document provides an overview of the CLAS12 Forward Time-of-Flight (FTOF) system 
 and serves as an Operations Manual for the detector. Instructions are provided for 
 shift workers related to the basic steps of operating and monitoring the HV controls, 
 monitoring the detector system and responding to alarms, and knowing when to contact 
@@ -86,8 +86,8 @@ $1 \times 10^{35}$~cm$^{-2}$s$^{-1}$, the average rate per scintillation counter
 {\hbox{\includegraphics[width=0.40\textwidth,natwidth=610,natheight=642]{fwd_car.pdf}}}
 \end{picture} 
 \caption{View of the FTOF for CLAS12 highlighting the location of the counters. The panel-1b
-arrays are shown in orange and the panel-2 arrays, mounted around the perimeter of the Forward
-Carriage, are shown in red. The panel-1a arrays are mounted immediately downstream of the
+arrays are shown in blue and the panel-2 arrays, mounted around the perimeter of the Forward
+Carriage, are shown in orange. The panel-1a arrays are mounted immediately downstream of the
 panel-1b arrays, and are not visible in this picture. The Forward Carriage is roughly 10~m in
 diameter.} 
 \label{fwd_car}
@@ -100,11 +100,11 @@ regions called sectors. In each of the six sectors of the CLAS12 Forward Detecto
 system is comprised of three arrays of counters, referred to as panels, named panel-1a,
 panel-1b, and panel-2.  Each panel consists of a set of rectangular scintillators with a PMT on
 each end.  Panel-1 includes the sets of counters located at forward angles (roughly 5$^\circ$ to 
-35$^\circ$) (where two panels are used to meet the 80~ps average time resolution requirement)
-and panel-2 includes the sets of counters at larger angles (roughly $35^\circ$ to 45$^\circ$). The
-positioning and attachment of the FTOF detector arrays on the Forward Carriage of CLAS12 are
-shown in Fig.~\ref{fwd_car}. Each of the six panel-1a arrays contains 23 counters, each of the six
-panel-1b arrays contains 62 counters, and each of the six panel-2 arrays contains 5 counters.
+35$^\circ$) and panel-2 includes the sets of counters at larger angles (roughly $35^\circ$ to 
+45$^\circ$). The positioning and attachment of the FTOF detector arrays on the Forward Carriage 
+of CLAS12 are shown in Fig.~\ref{fwd_car}. Each of the six panel-1a arrays contains 23 counters, 
+each of the six panel-1b arrays contains 62 counters, and each of the six panel-2 arrays contains 
+5 counters.
 
 Figure~\ref{ftof-naming} shows the sector naming and identifier conventions for the FTOF 
 system, as well as the definitions of the left and right sides of each sector. A summary 
@@ -214,8 +214,8 @@ mainframes or CAEN 4527 mainframes outfitted with negative polarity 24-channel A
 modules. The HV mainframes that power the FTOF system are actually shared between the 
 FTOF and the PCAL. The FTOF boards occupy slots \#0 to \#7 of each mainframe and the 
 PCAL boards occupy slots \#8 to \#15 of each mainframe. The supplies are named HVFTOFn, 
-n=1$\to$6 (i.e. HVFTOF1 $\to$ HVFTOF6). Figure~\ref{fc-layout} shows the locations of the 
-HV mainframes for each of the FTOF sectors on the Forward Carriage.
+n=1$\to$6 ({\it i.e.} HVFTOF1 $\to$ HVFTOF6). Figure~\ref{fc-layout} shows the locations 
+of the HV mainframes for each of the FTOF sectors on the Forward Carriage.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
@@ -278,9 +278,9 @@ and accurate record of any problems or issues concerning the FTOF system. For an
 questions regarding the logbook, its usage, or on what is considered to be a ``logbook 
 worthy'' entry, consult the assigned shift leader.
 
-Note the shift worker should follow all posted or communicated instructions about 
-entering FTOF monitoring histograms or scaler information into the e-log. This is
-typically done (at least) once per 8-hour shift as directed on the shift checklist.
+Note the shift worker should follow all posted or communicated instructions about entering 
+FTOF monitoring histograms into the e-log. This is typically done (at least) once per 8-hour 
+shift as directed on the shift checklist.
 
 \subsubsection{Contacting FTOF System Personnel}
 \label{contact}
@@ -288,7 +288,7 @@ typically done (at least) once per 8-hour shift as directed on the shift checkli
 As a general rule, shift workers should spend no more than 10 to 15 minutes attempting to 
 solve any problem that arises with the FTOF system. At that point they should contact the 
 assigned FTOF on-call expert either to provide advice on how to proceed or to address the 
-problem. \textcolor{red}{The FTOF on-call phone number is (757)-344-7204.}
+problem. \textcolor{red}{The TOF on-call phone number is (757)-344-7204.}
 
 This document is divided into sections for shift workers and for FTOF system experts. 
 However, only FTOF system experts (as listed in Section~\ref{personnel}) are authorized 
@@ -547,62 +547,69 @@ Controls system expert.
 \subsection{Detector Monitoring}
 \label{monitoring}
 
-A number of monitoring tools to study the performance of the FTOF detector system have 
-been prepared. One of the most basic and powerful tools, however, is a simple display 
-of the system scalers. 
-
-The primary system for viewing the FTOF scalers in the Hall~B Counting House is the 
-{\it mon12} utility. Typing ``mon12'' on any terminal in the Counting House will bring 
-up the screen shown in Fig.~\ref{mon12}(left).
+The primary system for viewing the FTOF status in the Hall~B Counting House is the {\it mon12} 
+utility. Typing ``mon12'' on any terminal in the Counting House will bring up the screen shown 
+in Fig.~\ref{mon12-1}(left). The {\it mon12} utility requires the data acquisition system to be 
+operating to fill any of the histograms. If a run is in progress, data accumulation will begin 
+by selecting the event source from the Event Transfer (ET) ring. This is done by clicking on 
+``ET'' in the lower right corner of the {\it mon12} screen. This will pop-up the window shown 
+in Fig.~\ref{mon12-1}(right). To proceed, select the appropriate computer (clondaq6) from the 
+drop-down menu and then click ``Connect''. Finally, click on the ``play'' button (the rightward 
+triangle in the lower left of the {\it mon12} screen). The FTOF data is displayed in the form of 
+the scalers for panel-1a, panel-1b, and panel-2 for each sector on the summary tab or in the form 
+of the ADC and TDC information on the different FTOF tabs ({\it e.g.} see Fig.~\ref{mon12-2}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
-\vspace{5.9cm}
+\vspace{4.5cm}
 \begin{picture}(30,50) 
-\put(7,320)
-{\hbox{\includegraphics[width=0.75\textwidth,natwidth=610,natheight=642,angle=-90]
-{mon12.pdf}}}
-\put(115,-125)
+\put(-25,0)
 {\hbox{\includegraphics[width=0.50\textwidth,natwidth=610,natheight=642]
+{mon12-1.pdf}}}
+\put(290,-30)
+{\hbox{\includegraphics[width=0.42\textwidth,natwidth=610,natheight=642]
 {et-screen.pdf}}}
 \end{picture} 
-\caption{(Left) The main {\it mon12} display screen showing counts across the different 
-CLAS12 subsystems and sectors. (Right) The FTOF scaler screen within {\it mon12}.}
-\label{mon12}
+\caption{(Left) The {\it mon12} summary display screen showing counts across the 
+different CLAS12 Forward Detector subsystems and sectors. (Right) The connection
+pop-up screen when selecting the ET event source within {\it mon12}.}
+\label{mon12-1}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The {\it mon12} utility requires the data acquisition system to be operating to display the scaler
-counts. If a run is in progress, scaler accumulation will begin by selecting the event source from
-the Event Transfer (ET) ring. This is done by clicking on ``ET'' in the lower right corner of the
-mon12 screen. This will pop-up the window shown in Fig.~\ref{mon12}(bottom). To proceed select
-the appropriate computer (clondaq6) from the drop-down menu and then click ``Connect''. Finally,
-click on the ``play'' button (the rightward triangle in the lower left of the mon12 screen). The FTOF
-scalers for panel-1a, panel-1b, and panel-2 for each sector can be viewed for either the FADCs or the
-discriminators on the FTOF tab by selecting the appropriate source. This brings up the FTOF {\it mon12}
-display shown in Fig.~\ref{mon12}(right).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\vspace{10.0cm}
+\begin{picture}(30,50) 
+\put(-10,-10)
+{\hbox{\includegraphics[width=0.80\textwidth,natwidth=610,natheight=642]
+{mon12-2.pdf}}}
+\end{picture} 
+\caption{Representative {\it mon12} histograms showing various FTOF ADC and TDC information.}
+\label{mon12-2}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The FTOF channel scalers can be viewed through the CLAS12 Slow Controls system. Shown in the options
+for the FTOF system in Fig.~\ref{ftof-screen1-2}(right) is an option to view the FTOF scalers from 
+the TDCs or FADCs. Selecting the option ``FTOF Scalers - Expert'' brings up a screen such as that shown 
+in Fig.~\ref{sc-scalers}. This screen shows the different scaler sources separately for each sector. The 
+sector to display is selected by clicking on the ``Sectors'' button in the upper left corner. A different 
+display of the same information can be selected by clicking on the ``Hardware View'' button. The scalers 
+shown in this display count independently of the data acquisition system.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{4.7cm}
 \begin{picture}(30,50) 
-\put(80,200)
-{\hbox{\includegraphics[width=0.50\textwidth,natwidth=610,natheight=642,angle=-90]
+\put(55,240)
+{\hbox{\includegraphics[width=0.60\textwidth,natwidth=610,natheight=642,angle=-90]
 {scaler-screen-ftof.pdf}}}
 \end{picture} 
 \caption{Scaler display for the FTOF counters from the Slow Controls system.}
 \label{sc-scalers}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-The second manner in which to view the FTOF system scalers is through the CLAS12 Slow 
-Controls system. Shown in the options for the FTOF system in Fig.~\ref{ftof-screen1-2}(right)
-is an option to view the FTOF scalers from the TDCs or FADCs. Selecting the option ``FTOF Scalers
-- Expert'' brings up a screen such as that shown in Fig.~\ref{sc-scalers}. This screen shows the
-different scaler sources separately for each sector. The sector to display is selected by clicking
-on the ``Sectors'' button in the upper left corner. A different display of the same information
-can be selected by clicking on the ``Hardware View'' button. The scalers shown in this display
-count independently of the data acquisition system.
 
 The final manner in which to monitor the performance of the FTOF hardware is through the expert
 monitoring suite {\it ftofmon}. Details on this suite are provided in Section~\ref{ftofmon},
@@ -672,7 +679,7 @@ address any problems that arise during a beam running period. The phone numbers 
 all subsystem experts are posted on the run page~\cite{run-page}. Any problems that 
 cannot be quickly solved by the shift workers, where quickly amounts to 10 -- 15
 minutes, should result in a call to the relevant expert cell phone. \textcolor{red}{The 
-FTOF on-call phone number is (757)-344-7204.} 
+TOF on-call phone number is (757)-344-7204.} 
 
 The on-call experts can often diagnose problems over the telephone, but there are times 
 when they will have to go to the Counting House to more fully address an issue. One of 
@@ -687,7 +694,7 @@ Coordinator.
 
 Note: It is the responsibility of the FTOF on-call expert to review all issues that 
 they cannot resolve with the FTOF subsystem Group Leader as soon as is reasonable.
-Each call to the FTOF on-call phone should be logged to the TOF on-call wikipage
+Calls to the TOF on-call phone should be logged to the TOF on-call wikipage
 \cite{tof-oncall} with a description of the issue and a note on its resolution. This
 archive can be used as a resource for when problems arise.
 
@@ -695,8 +702,8 @@ archive can be used as a resource for when problems arise.
 \label{ftofmon}
 
 The expert monitoring suite for the FTOF system is called {\it ftofmon}. This code 
-suite is brought up on any Counting House computer by typing ``ftofmon''. The suite
-allows monitoring of the following system quantities:
+suite is brought up on any Counting House computer by typing ``ftofmon'' on any clon
+machine. The suite allows monitoring of the following system quantities:
 
 \begin{itemize}
 \item FADC Mode 1 time slices
@@ -748,13 +755,14 @@ system expert should be familiar. These include the following:
 \label{board-swap}
 
 The evidence for a bad HV board (A1535N) is either that the 24 channels associated 
-with a single board won't ramp up to full voltage before tripping off or bad voltage 
-regulation. For the case of bad voltage regulation, the channels ramp up to full 
-voltage but then fluctuate about the demand voltage setting by up to several hundred 
-volts. Before deciding whether a HV board is bad, some investigation should be 
-completed to ensure that a single HV channel is not causing the problems with the 
-board, which could point to a problem with the PMT or voltage divider. If a board is 
-deemed bad and needs to be replaced, the following steps are necessary:
+with a single board won't ramp up to full voltage before tripping off, bad voltage 
+regulation, or communication issues that won't resolve with an IOC reboot. For the 
+case of bad voltage regulation, the channels ramp up to full voltage but then fluctuate 
+about the demand voltage setting by up to several hundred volts. Before deciding whether 
+a HV board is bad, some investigation should be completed to ensure that a single HV 
+channel is not causing the problems with the board, which could point to a problem with 
+the PMT or voltage divider. If a board is deemed bad and needs to be replaced, the 
+following steps are necessary:
 
 \begin{enumerate}
 \item Using the HV control interface, ensure that all HV channels controlled by the
@@ -937,7 +945,7 @@ further investigation will be necessary.
 
 \begin{itemize}
 \item If both anode and dynode signals are missing, this could be due either to a problem 
-with the HV, the VME crate (which would affect and entire board or entire sector), or the 
+with the HV, the VME crate (which would affect an entire board or entire sector), or the 
 PMT itself. If the problem is with the HV board, it should be replaced as detailed in 
 Section~\ref{board-swap}. PMT problems are typically apparent as the nominal PMT signal 
 (see Fig.~\ref{pmt-pulses}) is absent, severely distorted, or replaced by high frequency 
@@ -1044,9 +1052,9 @@ be used only for viewing the channel parameter set values.
 \begin{figure}[htbp]
 \vspace{1.5cm}
 \begin{picture}(30,50) 
-\put(25,210)
-{\hbox{\includegraphics[width=0.70\textwidth,natwidth=610,natheight=642,angle=-90]
-{backup-restore1.pdf}}}
+\put(-35,-7)
+{\hbox{\includegraphics[width=0.60\textwidth,natwidth=610,natheight=642]
+{backup-restore1a.pdf}}}
 \end{picture} 
 \caption{Sub-menu of the FTOF HV control screen for ``Save/Restore''.}
 \label{backup-restore1}
@@ -1058,34 +1066,34 @@ be used only for viewing the channel parameter set values.
 
 The FTOF HV interface allows all system channel settings (except for the maximum channel
 HV settings) to be saved into a file or loaded from an archived file by clicking on the
-``Save/Restore'' button in the upper left corner of the main HV screen (see
-Fig.~\ref{ftof-screen3}). The files created are referred to as ``BURT'' backup files, where
-BURT is an acronym for ``Backup and Restore Tool''. BURT is a utility for saving the HV system
-settings into an ASCII file readable by the EPICS Slow Controls system. The save files are
-stored on the DAQ machines in the Hall~B Counting House at:
-{\it /usr/clas12/DATA/burt/FTOF\_HV}.
+``Save/Restore'' button in the upper left corner of the main HV screen. The files created 
+are referred to as ``BURT'' backup files, where BURT is an acronym for ``Backup and Restore 
+Tool''. BURT is a utility for saving the HV system settings into an ASCII file readable by 
+the EPICS Slow Controls system. The save files are stored on the DAQ machines in the Hall~B 
+Counting House at: {\it /usr/clas12/DATA/burt/FTOF\_HV}.
 
 After clicking on the ``Save/Restore'' button, a sub-menu appears as shown in 
-Fig.~\ref{backup-restore1} to select ``Save Settings'' or ``Restore Settings''. Clicking 
-on ``Save Settings'' brings up a window ``CREATE HV BACKUP'' as shown in 
-Fig.~\ref{backup-restore2} showing the save file path and the selected file name that 
-contains the system name along with the date and time. If the ``Restore Settings'' 
-option is chosen, the window shown in Fig.~\ref{backup-restore3} comes up showing the 
-saved FTOF HV restore files available from which to select. Selecting a file and 
-clicking on ``OK'' at the bottom of the window loads all channel parameters for the 
-full HV system. Note that a new backup file should be created whenever any HV settings 
-have changed, including HV values, channel parameter settings, and channel on/off 
-settings.
+Fig.~\ref{backup-restore1}. Click on that button to bring up the window for the EPICS BURT 
+Save \& Restore interface (see Fig.~\ref{backup-restore2}). In the upper right corner of this
+interface screen click on the ``Select a Group'' button and select ``FTOF\_HV'' from the drop-down 
+menu of subsystems. Then select ``Save'' or ``Restore'' to save the current HV settings or to 
+restore the settings from an existing BURT file. After clicking on the ``Save'' button the listing 
+of the parameters to be saved is displayed (see Fig.~\ref{backup-restore3}(left)). To create a 
+BURT save file, click on ``Save Snapshot for Selected Group'' at the bottom of the screen and then 
+select ``OK''. After clicking on the ``Restore'' button a directory list of the available FTOF
+BURT files is provided (see Fig.~\ref{backup-restore3}(right)). Select the BURT file of interest and 
+select ``Restore from Selected Snapshot''. Note that a new backup file should be created whenever any 
+HV settings have changed, including HV values, channel parameter settings, and channel on/off settings.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
-\vspace{3.0cm}
+\vspace{6.0cm}
 \begin{picture}(30,50) 
-\put(90,-120)
-{\hbox{\includegraphics[width=0.60\textwidth,natwidth=610,natheight=642]
-{backup-restore2.pdf}}}
+\put(95,-10)
+{\hbox{\includegraphics[width=0.50\textwidth,natwidth=610,natheight=642]
+{backup-restore2a.pdf}}}
 \end{picture} 
-\caption{Window that comes up after selecting ``Save Settings'' during a ``Save/Restore'' 
+\caption{Window that comes up after selecting ``Save/ Settings'' during a ``Save/Restore'' 
 operation (see in Fig.~\ref{ftof-screen1-2}(right)).}
 \label{backup-restore2}
 \end{figure}
@@ -1093,14 +1101,17 @@ operation (see in Fig.~\ref{ftof-screen1-2}(right)).}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
-\vspace{6.0cm}
+\vspace{4.7cm}
 \begin{picture}(30,50) 
-\put(80,235)
-{\hbox{\includegraphics[width=0.50\textwidth,natwidth=610,natheight=642,angle=-90]
-{backup-restore3.pdf}}}
+\put(10,-5)
+{\hbox{\includegraphics[width=0.38\textwidth,natwidth=610,natheight=642]
+{backup-restore3a.pdf}}}
+\put(240,-5)
+{\hbox{\includegraphics[width=0.38\textwidth,natwidth=610,natheight=642]
+{backup-restore3b.pdf}}}
 \end{picture} 
-\caption{Window that comes up after selecting ``Restore Settings'' during a 
-``Save/Restore'' operation (see in Fig.~\ref{ftof-screen1-2}(right)).}
+\caption{(Left) Window that comes up after selecting ``Save'' or (Right) window that 
+comes up after selecting ``Restore'' during a ``Save/Restore'' operation.}
 \label{backup-restore3}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1161,7 +1172,7 @@ natheight=642,angle=90]{ftof-tdc-map.pdf}}}
 The anode and dynode signal cables for each PMT run from the voltage divider to a local 
 disconnect patch panel located behind the panel-2 arrays in each sector. A schematic 
 diagram of this patch panel is shown in Fig.~\ref{patch-panel2}. These cables vary in 
-length from 12~ft to 23.25~ft. Note that there are two local disconnect patch panels for 
+length from 12~ft to 24~ft. Note that there are two local disconnect patch panels for 
 each FTOF sector, one for the left anode and dynode cables and one for the right anode 
 and dynode cables. The signal cables for each sector are then strung to the Forward 
 Carriage electronics to a second set of patch panels via 35~ft-long cables. A schematic 
@@ -1172,10 +1183,9 @@ in Section~\ref{missing}, the dynode signals for panel-1b emerge with positive
 polarity from the voltage dividers. To invert the signal polarity to be compatible with 
 the readout electronics, an in-line inverting transformer (Phillips Scientific Model 
 \#460) is connected to the electronics patch panel for each channel. 
-Figures~\ref{cable-types1} and \ref{cable-types2} in Section~\ref{cable-connections} give 
-schematics for the cable and connector types for each segment of the connections from 
-the voltage divider to the readout electronics for the counters in FTOF panel-1a, 
-panel-1b, and panel-2.
+Section~\ref{cable-connections} details  the cable and connector types for each segment 
+of the connections from the voltage divider to the readout electronics for the counters 
+in FTOF panel-1a, panel-1b, and panel-2.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
@@ -1220,11 +1230,10 @@ Figure~\ref{ftof-hv-map} shows the layout of the two HV distribution boxes for t
 and right PMT HV connections (with left and right defined as in Fig.~\ref{ftof-naming}). 
 The output of each HV distribution box is a pair of 35-ft-long multi-conductor cables, 
 each containing 24-channels, with a Radiall connector to mate with the HV A1535N board 
-input connector. See Figs.~\ref{cable-types1} and \ref{cable-types2} in 
-Section~\ref{cable-connections} for schematics of the cable and connector types for each 
-segment of the HV connections from the voltage divider to the HV power supplies for the 
-counters in FTOF panel-1a, panel-1b, and panel-2. The HV power supply channel assignments 
-for each sector are nominally given as shown in Fig.~\ref{ftof-hvmap}.
+input connector. Section~\ref{cable-connections} details the cable and connector types 
+for each segment of the HV connections from the voltage divider to the HV power supplies 
+for the counters in FTOF panel-1a, panel-1b, and panel-2. The HV power supply channel 
+assignments for each sector are nominally given as shown in Fig.~\ref{ftof-hvmap}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
@@ -1265,10 +1274,10 @@ that is normally done and should not be attempted by shift workers or FTOF exper
 it could lead to problems decoding the data.
 
 Problems with channels within the HV system including the HV distribution box or a A1535N
-card are reasonably common. The standard procedure when there is a problem with a CAEN
-HV board is to swap out the problematic board with a spare (see Section~\ref{board-swap}).
-If there is a problem on the HV distribution box on either the left or right side of a sector,
-there are six spare HV channels that are available. These are detailed in Section~\ref{hv-layout}.
+card are possible. The standard procedure when there is a problem with a CAEN HV board is 
+to swap out the problematic board with a spare (see Section~\ref{board-swap}). If there is 
+a problem on the HV distribution box on either the left or right side of a sector, there 
+are six spare HV channels that are available. These are detailed in Section~\ref{hv-layout}.
 If one of these spare channels is to be used, the first step before disconnecting any system HV
 cables is to be sure that the channel HV is turned off for the channel to be moved. The SHV cable 
 can then be moved to one of the open connectors on the HV distribution box shown in
