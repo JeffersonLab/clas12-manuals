@@ -12,8 +12,9 @@
 \usepackage[small,compact]{titlesec}
 \setlist[enumerate]{itemsep=0mm}
 \newcommand{\ibeam}{20 nA}
+\newcommand{\easy}{1.5\%}
 \begin{document}
-\title{CLAS12 M{\o}ller Operations Manual - v1.8}
+\title{CLAS12 M{\o}ller Operations Manual - v1.9}
 \date{\today}
 \author{N. Baltzell, S. Stepanyan}
 \begin{abstract}
@@ -33,7 +34,7 @@ M{\o}ller runs must be performed with acceptable beam delivered to the {\bf tagg
         Orbit Locks & OFF \\
         \bottomrule[1.5pt]
     \end{tabular}
-    \caption{Standard beam parameters for M{\o}ller runs.}
+    \caption{Standard beamline configuration parameters for M{\o}ller runs.}
 \end{table}
 
 \begin{figure}[htbp]\centering
@@ -67,7 +68,7 @@ The requirements to be maintained during a M{\o}ller run, and the resulting desi
         2C21 BPM Current & $\sim$\ibeam\\
         Beam Charge Asymmetry & $<0.2\%$ (typical $\sim 0.1\%$)\\
         Accidental/Coincidence Ratio & $<0.1$ (typical $\sim 0.05$)\\
-        Final Beam Polarization Error & $<1.5\%$ (absolute)\\
+        Final Beam Polarization Error & $<$\easy (absolute)\\
         \bottomrule[1.5pt]
     \end{tabular}
     \caption{Standard quality conditions required for a M{\o}ller run.  Live values are shown in the {\em Monitoring} and {\em Data Acquisition} sections in Figure~\ref{fig:unconfig}.  Note, beam polarization error depends on statistics and should gradually decrease during the run.\label{tab:reqs}}
@@ -107,7 +108,7 @@ The procedure for the operator with the interface in Figure~\ref{fig:unconfig} c
 \item {\bf Monitor:} monitor the critical quality parameters
     \subitem This is left to the operator, described in Table~\ref{tab:reqs}, with possible actions in Section~\ref{sec:knobs}.  Of particular importance are beam charge asymmetry below 0.2\% and accidental ratio of less than 0.1, although ideally about half that.  {\em If you cannot achieve the quality requirements, contact the Run Coordinator.}
 \item {\bf End:} click {\em End Run} in the DAQ section
-    \subitem At this point you should have achieved the desired polarization error of $1.5\%$ (see Table~\ref{tab:reqs}), or just need to stop the current run and start a new one (in which case, go to Step \#\ref{step:start}).
+    \subitem At this point you should have achieved the desired polarization error of \easy (see Table~\ref{tab:reqs}), or just need to stop the current run and start a new one (in which case, go to Step \#\ref{step:start}).
 \item {\bf Log Entry}: click {\em Submit} in the Logbook Entry section if the run was successful. 
     \subitem This will submit a standardized, searchable log entry to HBLOG with a table summarizing the results and an attached data file, and requires filling the Entry Makers and Comments fields.  {\em Note, if you want to log any screenshots associated with this M{\o}ller run, then you should navigate to this log entry and upload them as comments}.
     \subitem Note, at this point you can start another run with the same configuration by going to Step \#\ref{step:start}.
@@ -123,7 +124,7 @@ The procedure for the operator with the interface in Figure~\ref{fig:unconfig} c
 If quality requirements are not satisfied (accidental rate and beam charge asymmetry), first check whether our hardware settings are as expected by comparing to the parameters earlier in this document and also to recent satisfactory M{\o}ller runs in the logbook.  The following subsections contain information on the quality measurements and the main parameters that can affect them.  Consult with the Run Coordinator and/or beamline expert for advice on tuning these parameters, and compare their values with previous M{\o}ller runs.
 
 \subsection{Run Duration}
-At 10 GeV, with our 2018 hardware configuration, the normal run duration to achieve 1.5\% absolute error on the polarization is about 30 minutes of continuous beam.  Interruptions to beam delivery, e.g. trips, will of course increase the necessary run time.  Much longer than normal run duration to achieve 1.5\% can be indicative of excessive accidentals or beam charge asymmetry.
+At 10 GeV, with our 2018 hardware configuration, the normal run duration to achieve \easy absolute error on the polarization is about 30 minutes of continuous beam.  Interruptions to beam delivery, e.g. trips, will of course increase the necessary run time.  Much longer than normal run duration to achieve \easy can be indicative of excessive accidentals or beam charge asymmetry.
 
 \subsection{Beam Charge Asymmetry}
 Beam charge asymmetry is measured by a Synchrotron Light Monitor fed to a Struck scaler latching on the heliticy signals.  The SLM is located a few meters upstream of, and {\em completely independent of}, the rest or our M{\o}ller system.  Beam Charge asymmetry is affected primarily by beam characteristics from the injector and accelerator.  There can be some effect from quality of the SLM performance, e.g. if voltage is far too high and the SLM is saturated, but this should generally never be the case for the normal operator.
