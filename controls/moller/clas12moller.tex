@@ -11,8 +11,9 @@
 \usepackage{hypcap}
 \usepackage[small,compact]{titlesec}
 \setlist[enumerate]{itemsep=0mm}
+\newcommand{\ibeam}{20 nA}
 \begin{document}
-\title{CLAS12 M{\o}ller Operations Manual - v1.7}
+\title{CLAS12 M{\o}ller Operations Manual - v1.8}
 \date{\today}
 \author{N. Baltzell, S. Stepanyan}
 \begin{abstract}
@@ -23,11 +24,21 @@
 \section{Introduction}
 The CLAS12 M{\o}ller system measures the polarization of the electron beam delivered to Hall B, and this document details its operating procedures.  The user interface for shift workers is shown in Fig.~\ref{fig:unconfig} and provides direct access to all controls and feedback that the normal operator should need, and its operating procedures are described in Section~\ref{sec:user}.
 
-{\em \large Note, M{\o}ller runs must be performed with acceptable beam delivered to the {\bf tagger dump/yoke};  consult the beamline manual for general procedures on establishing beam if necessary.}
+M{\o}ller runs must be performed with acceptable beam delivered to the {\bf tagger dump/yoke};  consult the beamline manual for general procedures on establishing beam if necessary.  
+
+\begin{table}[htbp]\centering
+    \begin{tabular}{ll}\toprule[1.5pt]
+        Beam Destination & Tagger Dump / Yoke \\
+        Beam Current & \ibeam \\
+        Orbit Locks & OFF \\
+        \bottomrule[1.5pt]
+    \end{tabular}
+    \caption{Standard beam parameters for M{\o}ller runs.}
+\end{table}
 
 \begin{figure}[htbp]\centering
-    \includegraphics[width=11cm]{pics/unconfig}
-    \caption{The user interface for shift workers for operating a M{\o}ller run is divided into {\em Status}, {\em Configuration}, {\em Data Acquisition}, {\em Monitoring}, and {\em Logbook} sections.  In this screenshot, the M{\o}ller system is not configured, according to the {\em Status} section, i.e. the setup is for non-M{\o}ller beam delivery.\label{fig:unconfig}}
+    \includegraphics[width=8cm]{pics/unconfig}
+    \caption{The user interface for shift workers for operating a M{\o}ller run is divided into {\em Status}, {\em Configuration}, {\em Data Acquisition}, {\em Monitoring}, and {\em Logbook} sections.\label{fig:unconfig}}
 \end{figure}
 
 \newpage
@@ -46,14 +57,14 @@ The standard hardware settings, as of 2022, for a M{\o}ller run are shown in Tab
         6.4 GeV & $\sim$1350 A (*)\\
         \bottomrule[1.5pt]
     \end{tabular}
-    \caption{Standard hardware parameter values for the M{\o}ller setup as of 2022.  Live, measured values are shown in the {\em Monitoring} section in Figure~\ref{fig:unconfig}. {\em (*) Note, if ``Auto'' is selected for the quadrupoles in the ``Configuration'' section of Figure \ref{fig:unconfig}, the quadrupole currents will be set automatically based on the beam energy dependence in Figure \ref{fig:quadenergy}}.\label{tab:pars}}
+    \caption{Standard parameter values for the M{\o}ller setup as of 2022.  Live, measured values are shown in the {\em Monitoring} section in Figure~\ref{fig:unconfig}. {\em (*) Note, if ``Auto'' is selected for the quadrupoles in the ``Configuration'' section of Figure \ref{fig:unconfig}, the quadrupole currents will be set automatically based on the beam energy dependence in Figure \ref{fig:quadenergy}}.\label{tab:pars}}
 \end{table}
 
 \section{Quality Requirements}\label{sec:quality}
 The requirements to be maintained during a M{\o}ller run, and the resulting desired error on the polarization measurement are shown in Table~\ref{tab:reqs}.  It is the responsibility of the operator to monitor these quantities to ensure a successful polarization measurement.
 \begin{table}[htbp]\centering
     \begin{tabular}{ll}\toprule[1.5pt]
-        2C21 BPM Current & $\sim$15 nA\\
+        2C21 BPM Current & $\sim$\ibeam\\
         Beam Charge Asymmetry & $<0.2\%$ (typical $\sim 0.1\%$)\\
         Accidental/Coincidence Ratio & $<0.1$ (typical $\sim 0.05$)\\
         Final Beam Polarization Error & $<1.5\%$ (absolute)\\
@@ -72,7 +83,7 @@ The procedure for the operator with the interface in Figure~\ref{fig:unconfig} c
 \vspace{-4mm}\item {\bf Request No Beam:}  ask MCC to take beam away for a configuration change
 \vspace{-4mm}\item {\bf Configure:}  ensure the Configuration section is set as desired
 \vspace{-4mm}\item {\bf Enter:} click {\em Enter} in the Configuration section and wait for success status
-\vspace{-4mm}\item {\bf Request 15 nA:} ask MCC to resume beam delivery at 15 nA for M{\o}ller runs
+\vspace{-4mm}\item {\bf Request \ibeam:} ask MCC to resume beam delivery at \ibeam for M{\o}ller runs
 \vspace{-4mm}\item {\bf Start Run:} click {\em Start Run} in the DAQ section
 \vspace{-4mm}\item {\bf Monitor:} monitor the critical parameters
 \vspace{-4mm}\item {\bf End Run:} click {\em End Run} in the DAQ section
@@ -90,7 +101,7 @@ The procedure for the operator with the interface in Figure~\ref{fig:unconfig} c
         See Table~\ref{tab:pars} for standard values.  Contact the Run Coordinator if uncertain.
 \item {\bf Enter:} click {\em Enter} in the Configuration section and wait for success status
     \subitem This will configure the system for a M{\o}ller run by initiating a sequence of actions and provide corresponding feedback in the status portion of the screen.  This includes turning off all appropriate detectors' high voltage, inserting the blank collimator, energizing the quadrupoles and Helmholtz magnets, and inserting the M{\o}ller target.  Success will result in ``Moller Configuration Ready'' in the status message.
-\item {\bf Request 15 nA:} \label{step:beam} ask MCC to resume beam delivery at 15 nA for M{\o}ller runs
+\item {\bf Request \ibeam nA:} \label{step:beam} ask MCC to resume beam delivery at \ibeam for M{\o}ller runs
 \item {\bf Start:} \label{step:start} once beam is stable, click {\em Start Run} in the DAQ section
     \subitem This will initiate a new M{\o}ller run, including zeroing any accumulated data, opening a new data file, incrementing the run number, and starting data acquisition.
 \item {\bf Monitor:} monitor the critical quality parameters
