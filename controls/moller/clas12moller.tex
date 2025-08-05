@@ -11,10 +11,10 @@
 \usepackage{hypcap}
 \usepackage[small,compact]{titlesec}
 \setlist[enumerate]{itemsep=0mm}
-\newcommand{\ibeam}{20 nA}
+\newcommand{\ibeam}{20 nA\ }
 \newcommand{\easy}{1.5\%}
 \begin{document}
-\title{CLAS12 M{\o}ller Operations Manual - v1.9}
+\title{Hall B M{\o}ller Operations Manual - v1.10}
 \date{\today}
 \author{N. Baltzell, S. Stepanyan}
 \begin{abstract}
@@ -23,26 +23,25 @@
 \maketitle
 
 \section{Introduction}
-The CLAS12 M{\o}ller system measures the polarization of the electron beam delivered to Hall B, and this document details its operating procedures.  The user interface for shift workers is shown in Fig.~\ref{fig:unconfig} and provides direct access to all controls and feedback that the normal operator should need, and its operating procedures are described in Section~\ref{sec:user}.
+The Hall B M{\o}ller system measures the polarization of the electron beam delivered to Hall B, and this document details its operating procedures.  The user interface for shift workers is shown in Fig.~\ref{fig:unconfig} and provides direct access to all controls and feedback that the normal operator should need, and its operating procedures are described in Section~\ref{sec:user}.
 
-M{\o}ller runs must be performed with acceptable beam delivered to the {\bf tagger dump/yoke};  consult the beamline manual for general procedures on establishing beam if necessary.  
+Configuring for M{\o}ller runs requires acceptable, stable beam already delivered to the {\bf tagger dump/yoke} as in Table~\ref{fig:beamline}.  Consult the run wiki's documentation and beamline manual for general procedures on establishing beam.
 
 \begin{table}[htbp]\centering
     \begin{tabular}{ll}\toprule[1.5pt]
         Beam Destination & Tagger Dump / Yoke \\
+        2C21/2C24 Harps Scans & Ok \\ 
         Beam Current & \ibeam \\
-        Orbit Locks & OFF \\
+        Orbit Locks & OFF (only for M{\o}ller)\\
         \bottomrule[1.5pt]
     \end{tabular}
-    \caption{Standard beamline configuration parameters for M{\o}ller runs.}
+    \caption{General beamline setup required for M{\o}ller runs.}
 \end{table}
 
 \begin{figure}[htbp]\centering
-    \includegraphics[width=8cm]{pics/unconfig}
-    \caption{The user interface for shift workers for operating a M{\o}ller run is divided into {\em Status}, {\em Configuration}, {\em Data Acquisition}, {\em Monitoring}, and {\em Logbook} sections.\label{fig:unconfig}}
+    \includegraphics[width=10cm]{pics/unconfig}
+    \caption{\label{fig:beamline}The user interface for shift workers for operating a M{\o}ller run is divided into {\em Status}, {\em Configuration}, {\em Data Acquisition}, {\em Monitoring}, and {\em Logbook} sections.\label{fig:unconfig}}
 \end{figure}
-
-\newpage
 
 \section{Hardware Settings}
 The standard hardware settings, as of 2022, for a M{\o}ller run are shown in Table~\ref{tab:pars}.  These are displayed in the {\em Configuration} section of Figure~\ref{fig:unconfig} and will be used to automatically configure all hardware during the procedure in Section \ref{sec:user}.  It is the responsibility of the operator to ensure that the settings in the {\em Configuration} section are the desired ones before entering the M{\o}ller setup.  In case of any uncertainty, or inconsistency with parameters in this table, check with the beamline and/or slow controls expert.
@@ -78,6 +77,7 @@ The requirements to be maintained during a M{\o}ller run, and the resulting desi
 
 \section{Standard Procedures}\label{sec:user}
 Before starting the M{\o}ller procedure, confirm that Hall B orbit locks are off and our Halo and BOM FSD are masked.
+
 \subsection{Procedure Summary}
 The procedure for the operator with the interface in Figure~\ref{fig:unconfig} can be summarized in the following steps, and more details are shown on the next section.
 \begin{enumerate}
@@ -93,6 +93,8 @@ The procedure for the operator with the interface in Figure~\ref{fig:unconfig} c
 \vspace{-4mm}\item {\bf Reconfigure:} (Optional)
 \vspace{-4mm}\item {\bf Exit:} click {\em Exit} in the Configuration section and wait for success status
 \end{enumerate}
+
+
 
 \subsection{Procedure Details}
 \begin{enumerate}
