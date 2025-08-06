@@ -17,13 +17,16 @@
 \newcommand{\ibeam}{20 nA\ }
 \newcommand{\easy}{1.5\%}
 \begin{document}
-\title{Hall B M{\o}ller Operations Manual - v1.10}
+\title{Hall B M{\o}ller Operations Manual - v1.12}
 \date{\today}
-\author{N. Baltzell, S. Stepanyan}
+\author{N. Baltzell}
 \begin{abstract}
 \end{abstract}
 \maketitle
-%\tableofcontents
+
+\tableofcontents
+
+\newpage 
 
 \section{Introduction}
 
@@ -33,7 +36,7 @@ The Hall B M{\o}ller system measures CEBAF beam polarization in the upstream tun
 
 \subsection{General}
 
-M{\o}ller runs first require continuous-wave (CW) beam already delivered to the tagger dump/yoke.  Standard Hall B beamline documentation and requirements should be followed to establish that beam.  {\em (How to reference?  Both documents on the run wiki?)}
+M{\o}ller runs first require continuous-wave (CW) beam already delivered to the Hall B tagger dump/yoke.  Standard Hall B beamline documentation and requirements should be followed to establish that beam;  see the run wiki.
 
 \begin{table}[htbp]\centering
     \begin{tabular}{c|c}\toprule[1.5pt]
@@ -62,8 +65,9 @@ After establishing beam, M{\o}ller measurements require the Hall B orbit locks b
 
 \section{Procedure Overview}\label{sec:procedure}
 
+{\em Note, if the system presents error status messages, pause beam delivery and do not resume without guidance from the Hall B beamline and/or slow controls experts!!}
 \begin{enumerate}
-\vspace{-2mm}\item {\bf Prerequisites:}  Ensure Section~\ref{sec:prereq} is satisfied
+\vspace{-2mm}\item {\bf Prerequisites:}  Ensure the prerequisites of Section~\ref{sec:prereq} are satisfied
 \vspace{-4mm}\item {\bf Request No Beam:}  Ask MCC to take beam away for a configuration change
 \vspace{-4mm}\item {\bf Configure:}  Ensure the Configuration section is set as desired
 \vspace{-4mm}\item {\bf Enter:} Click \textcolor{blue}{\em Enter} and wait for success status
@@ -74,7 +78,7 @@ After establishing beam, M{\o}ller measurements require the Hall B orbit locks b
 \vspace{-4mm}\item {\bf Logbook Entry:} Input user name(s) and click \textcolor{blue}{\em Submit}
 \vspace{-4mm}\item {\bf Request No Beam:} ask MCC to take beam away for a configuration change
 \vspace{-4mm}\item {\bf Reconfigure:} (Optional) Go to step 3
-\vspace{-4mm}\item {\bf Exit:} Click \textcolor{blue}{\em Exit} and wait for success status ({\em do not resume beam delivery otherwise!})
+\vspace{-4mm}\item {\bf Exit:} Click \textcolor{blue}{\em Exit} and wait for success status
 \end{enumerate}
 
 \begin{figure}[htbp]\centering
