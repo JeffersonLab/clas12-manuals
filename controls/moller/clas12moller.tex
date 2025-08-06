@@ -23,62 +23,39 @@
 \maketitle
 
 \section{Introduction}
-The Hall B M{\o}ller system measures the polarization of the electron beam delivered to Hall B, and this document details its operating procedures.  The user interface for shift workers is shown in Fig.~\ref{fig:unconfig} and provides direct access to all controls and feedback that the normal operator should need, and its operating procedures are described in Section~\ref{sec:user}.
+The Hall B M{\o}ller system measures the polarization of the electron beam in the upstream tunnel of Hall B, and this document details its operating procedures.  The user interface for shift workers is shown in Fig.~\ref{fig:unconfig} and provides direct access to all controls and feedback that the normal operator should need, and its operating procedures are described in Section~\ref{sec:user}.
 
-Configuring for M{\o}ller runs requires acceptable, stable beam already delivered to the {\bf tagger dump/yoke} as in Table~\ref{fig:beamline}.  Consult the run wiki's documentation and beamline manual for general procedures on establishing beam.
+\section{Prerequisites}
+M{\o}ller runs first require standard, acceptable CW beam already delivered to the {\bf tagger dump/yoke}.  General beamline documentation should be followed to establish that beam.  {\em (How to reference?  It's now 2 documents on the run wiki.)}
 
 \begin{table}[htbp]\centering
     \begin{tabular}{ll}\toprule[1.5pt]
         Beam Destination & Tagger Dump / Yoke \\
-        2C21/2C24 Harps Scans & Ok \\ 
-        Beam Current & \ibeam \\
-        Orbit Locks & OFF (only for M{\o}ller)\\
+        Harps Scans & Ok (2C21 and 2C24)\\ 
         \bottomrule[1.5pt]
     \end{tabular}
-    \caption{General beamline setup required for M{\o}ller runs.}
+    \caption{General beamline prerequisites for M{\o}ller runs.}
 \end{table}
 
 \begin{figure}[htbp]\centering
-    \includegraphics[width=10cm]{pics/unconfig}
-    \caption{\label{fig:beamline}The user interface for shift workers for operating a M{\o}ller run is divided into {\em Status}, {\em Configuration}, {\em Data Acquisition}, {\em Monitoring}, and {\em Logbook} sections.\label{fig:unconfig}}
+    \includegraphics[width=17cm]{pics/unconfig}
+    \caption{\label{fig:beamline}The user interface in the normal, non-M{\o}ller configuration.  It is divided into {\em Status}, {\em Configuration}, {\em Data Acquisition}, {\em Monitoring}, and {\em Logbook} sections.\label{fig:unconfig}}
 \end{figure}
 
-\section{Hardware Settings}
-The standard hardware settings, as of 2022, for a M{\o}ller run are shown in Table~\ref{tab:pars}.  These are displayed in the {\em Configuration} section of Figure~\ref{fig:unconfig} and will be used to automatically configure all hardware during the procedure in Section \ref{sec:user}.  It is the responsibility of the operator to ensure that the settings in the {\em Configuration} section are the desired ones before entering the M{\o}ller setup.  In case of any uncertainty, or inconsistency with parameters in this table, check with the beamline and/or slow controls expert.
-\begin{table}[htbp]\centering
-    \begin{tabular}{ll}\toprule[1.5pt]
-        SLM Voltage & 1850 V \\
-        Collimator Position & Blank \\
-        Target Position & Left or Right \\
-        Helmholtz Current & $\pm$3.5 A \\
-        \cmidrule[0.5pt]{1-2}
-        \multicolumn{2}{c}{Quadrupole Current} \\
-        10.7 GeV & $\sim$3145 A (*)\\
-        6.4 GeV & $\sim$1350 A (*)\\
-        \bottomrule[1.5pt]
-    \end{tabular}
-    \caption{Standard parameter values for the M{\o}ller setup as of 2022.  Live, measured values are shown in the {\em Monitoring} section in Figure~\ref{fig:unconfig}. {\em (*) Note, if ``Auto'' is selected for the quadrupoles in the ``Configuration'' section of Figure \ref{fig:unconfig}, the quadrupole currents will be set automatically based on the beam energy dependence in Figure \ref{fig:quadenergy}}.\label{tab:pars}}
-\end{table}
-
-\section{Quality Requirements}\label{sec:quality}
-The requirements to be maintained during a M{\o}ller run, and the resulting desired error on the polarization measurement are shown in Table~\ref{tab:reqs}.  It is the responsibility of the operator to monitor these quantities to ensure a successful polarization measurement.
-\begin{table}[htbp]\centering
-    \begin{tabular}{ll}\toprule[1.5pt]
-        2C21 BPM Current & $\sim$\ibeam\\
-        Beam Charge Asymmetry & $<0.2\%$ (typical $\sim 0.1\%$)\\
-        Accidental/Coincidence Ratio & $<0.1$ (typical $\sim 0.05$)\\
-        Final Beam Polarization Error & $<$\easy (absolute)\\
-        \bottomrule[1.5pt]
-    \end{tabular}
-    \caption{Standard quality conditions required for a M{\o}ller run.  Live values are shown in the {\em Monitoring} and {\em Data Acquisition} sections in Figure~\ref{fig:unconfig}.  Note, beam polarization error depends on statistics and should gradually decrease during the run.\label{tab:reqs}}
-\end{table}
-
-\newpage
-
-\section{Standard Procedures}\label{sec:user}
+\section{Procedures}\label{sec:user}
 Before starting the M{\o}ller procedure, confirm that Hall B orbit locks are off and our Halo and BOM FSD are masked.
 
-\subsection{Procedure Summary}
+\begin{table}[htbp]\centering
+    \begin{tabular}{ll}\toprule[1.5pt]
+        Beam Current & \ibeam \\
+        Orbit Locks & OFF (M{\o}ller only)\\
+        Halo \& BOM FSD & OFF (M{\o}ller only)\\
+        \bottomrule[1.5pt]
+    \end{tabular}
+    \caption{M{\o}ller-specific beamline prerequisistes..}
+\end{table}
+
+\subsection{Summary}
 The procedure for the operator with the interface in Figure~\ref{fig:unconfig} can be summarized in the following steps, and more details are shown on the next section.
 \begin{enumerate}
 \vspace{-4mm}\item {\bf Request No Beam:}  ask MCC to take beam away for a configuration change
@@ -94,9 +71,7 @@ The procedure for the operator with the interface in Figure~\ref{fig:unconfig} c
 \vspace{-4mm}\item {\bf Exit:} click {\em Exit} in the Configuration section and wait for success status
 \end{enumerate}
 
-
-
-\subsection{Procedure Details}
+\subsection{Details}
 \begin{enumerate}
     \item {\bf Request No Beam:}  ask MCC to take beam away while you configure the M{\o}ller system
     \item {\bf Configure:}  ensure the Configuration section of Fig.~\ref{fig:unconfig} is set as desired
@@ -120,8 +95,20 @@ The procedure for the operator with the interface in Figure~\ref{fig:unconfig} c
     \subitem  This will restore the non-M{\o}ller configuration by turning off the quadrupoles and Helmholtz and retracting the M{\o}ller target.  {\em Note, this will not restore any detector high voltage (except the SLM) nor move the collimator}. 
 \end{enumerate}
 
-\newpage
-\section{Quality Requirements}\label{sec:knobs}
+\section{Quality Requirements}\label{sec:quality}
+The requirements to be maintained during a M{\o}ller run, and the resulting desired error on the polarization measurement are shown in Table~\ref{tab:reqs}.  It is the responsibility of the operator to monitor these quantities to ensure a successful polarization measurement.
+\begin{table}[htbp]\centering
+    \begin{tabular}{ll}\toprule[1.5pt]
+        2C21 BPM Current & $\sim$\ibeam\\
+        Beam Charge Asymmetry & $<0.2\%$ (typical $\sim 0.1\%$)\\
+        Accidental/Coincidence Ratio & $<0.1$ (typical $\sim 0.05$)\\
+        Final Beam Polarization Error & $<$\easy (absolute)\\
+        \bottomrule[1.5pt]
+    \end{tabular}
+    \caption{Standard quality conditions required for a M{\o}ller run.  Live values are shown in the {\em Monitoring} and {\em Data Acquisition} sections in Figure~\ref{fig:unconfig}.  Note, beam polarization error depends on statistics and should gradually decrease during the run.\label{tab:reqs}}
+\end{table}
+
+\subsection{Mitigations}\label{sec:knobs}
 
 If quality requirements are not satisfied (accidental rate and beam charge asymmetry), first check whether our hardware settings are as expected by comparing to the parameters earlier in this document and also to recent satisfactory M{\o}ller runs in the logbook.  The following subsections contain information on the quality measurements and the main parameters that can affect them.  Consult with the Run Coordinator and/or beamline expert for advice on tuning these parameters, and compare their values with previous M{\o}ller runs.
 
@@ -143,6 +130,24 @@ If the beam charge asymmetry is too high, the parameters that can be considered 
 
 \subsection{Accidentals}
 The accidental-coincidence ratio is measured by M{\o}ller Left/Right PMTs, downstream of the target and quadrupoles, and is independent of the helicity signals.  Excessive accidentals can be caused by beam quality issues, e.g. bleedthrough from other halls, or non-optimal settings of our M{\o}ller system.  Parameters that can be considered for adjustment include the same beam quality parameters in the previous section, and with the addition of our M{\o}ller configuration, e.g. Left/Right PMT voltages, malfunctioning quadrupoles, or very miscalibrated target position.
+
+\section{Hardware Settings}
+The standard hardware settings for a M{\o}ller run are shown in Table~\ref{tab:pars}.  These are displayed in the {\em Configuration} section of Figure~\ref{fig:unconfig} and will be used to automatically configure all hardware during the procedure in Section \ref{sec:user}.  It is the responsibility of the operator to ensure that the settings in the {\em Configuration} section are the desired ones before entering the M{\o}ller setup.  In case of any uncertainty, or inconsistency with parameters in this table, check with the beamline and/or slow controls expert.
+
+\begin{table}[htbp]\centering
+    \begin{tabular}{ll}\toprule[1.5pt]
+        SLM Voltage & 1850 V \\
+        Collimator Position & Blank \\
+        Target Position & Left or Right \\
+        Helmholtz Current & $\pm$3.5 A \\
+        \cmidrule[0.5pt]{1-2}
+        \multicolumn{2}{c}{Quadrupole Current} \\
+        10.7 GeV & $\sim$3145 A (*)\\
+        6.4 GeV & $\sim$1350 A (*)\\
+        \bottomrule[1.5pt]
+    \end{tabular}
+    \caption{Standard parameter values for the M{\o}ller setup as of 2022.  Live, measured values are shown in the {\em Monitoring} section in Figure~\ref{fig:unconfig}. {\em (*) Note, if ``Auto'' is selected for the quadrupoles in the ``Configuration'' section of Figure \ref{fig:unconfig}, the quadrupole currents will be set automatically based on the beam energy dependence in Figure \ref{fig:quadenergy}}.\label{tab:pars}}
+\end{table}
 
 \begin{figure}[htbp]\centering
     \includegraphics[width=14cm]{pics/moller_quad_current}
