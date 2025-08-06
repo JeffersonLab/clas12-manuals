@@ -5,7 +5,9 @@
 \usepackage{multirow}
 \usepackage{booktabs}
 \usepackage{verbatim}
+\usepackage{xcolor}
 \usepackage{hyperref}
+\usepackage{setspace}
 \usepackage{enumitem}
 \hypersetup{pdftex,colorlinks=true,allcolors=blue}
 \usepackage{hypcap}
@@ -19,80 +21,82 @@
 \author{N. Baltzell, S. Stepanyan}
 \begin{abstract}
 \end{abstract}
-
 \maketitle
+%\tableofcontents
 
 \section{Introduction}
-The Hall B M{\o}ller system measures the polarization of the electron beam in the upstream tunnel of Hall B, and this document details its operating procedures.  The user interface for shift workers is shown in Fig.~\ref{fig:unconfig} and provides direct access to all controls and feedback that the normal operator should need, and its operating procedures are described in Section~\ref{sec:user}.
+The Hall B M{\o}ller system measures CEBAF beam polarization in the upstream tunnel of Hall B, and this document details its operating procedures.  The user interface is shown in Fig.~\ref{fig:unconfig} and provides direct access to all necessary controls and feedback for the M{\o}ller system, and its operating procedures are described in Section~\ref{sec:procedure}.
 
-\section{Prerequisites}
-M{\o}ller runs first require acceptable CW beam already delivered to the {\bf tagger dump/yoke}.  General beamline documentation should be followed to establish that beam.  {\em (How to reference?  It's now 2 documents on the run wiki.)}
+\section{Prerequisites}\label{sec:prereq}
+\subsection{General}
+M{\o}ller runs first require continuous-wave (CW) beam already delivered to the tagger dump/yoke.  Standard Hall B beamline documentation and requirements should be followed to establish that beam.  {\em (How to reference?  Both documents on the run wiki?)}
 
 \begin{table}[htbp]\centering
     \begin{tabular}{c|c}\toprule[1.5pt]
         Beam Destination & Tagger Dump / Yoke \\
-        Harps Scans & Ok (2C21 and 2C24)\\ 
+        Harps Scans & Ok: 2C21 and 2C24\\ 
         \bottomrule[1.5pt]
     \end{tabular}
     \caption{General beamline prerequisites for M{\o}ller runs.}
 \end{table}
 
-\begin{figure}[htbp]\centering
-    \includegraphics[width=17cm]{pics/unconfig}
-    \caption{\label{fig:beamline}The user interface in the normal, non-M{\o}ller configuration.  It is divided into {\em Status}, {\em Configuration}, {\em Data Acquisition}, {\em Monitoring}, and {\em Logbook} sections.\label{fig:unconfig}}
-\end{figure}
-
-\section{Procedures}\label{sec:user}
-Before starting the M{\o}ller procedure, confirm that Hall B orbit locks are off and our Halo and BOM FSD are masked.
+\subsection{Specific}
+After establishing beam, M{\o}ller measurements require the Hall B orbit locks be disabled and the Fast ShutDown (FSD) for our Halo counters and Beam Offset Monitor (BOM) masked.  {\bf\em Note, orbit locks and FSD must be manually restored to standard settings after a M{\o}ller run.}
 
 \begin{table}[htbp]\centering
     \begin{tabular}{c|c}\toprule[1.5pt]
+        Orbit Locks & OFF\\
+        FSD & Halo \& BOM Masked\\
         Beam Current & \ibeam \\
-        Orbit Locks & OFF (M{\o}ller only)\\
-        Fast Shut Down (FSD) & Halo \& BOM Masked (M{\o}ller only)\\
         \bottomrule[1.5pt]
     \end{tabular}
     \caption{M{\o}ller-specific beamline prerequisistes.}
 \end{table}
 
-\subsection{Summary}
-The procedure for the operator with the interface in Figure~\ref{fig:unconfig} can be summarized in the following steps, and more details are shown on the next section.
+\newpage
+\section{Procedure - Summary}\label{sec:procedure}
 \begin{enumerate}
-\vspace{-4mm}\item {\bf Request No Beam:}  ask MCC to take beam away for a configuration change
-\vspace{-4mm}\item {\bf Configure:}  ensure the Configuration section is set as desired
-\vspace{-4mm}\item {\bf Enter:} click {\em Enter} in the Configuration section and wait for success status
-\vspace{-4mm}\item {\bf Request \ibeam:} ask MCC to resume beam delivery at \ibeam for M{\o}ller runs
-\vspace{-4mm}\item {\bf Start Run:} click {\em Start Run} in the DAQ section
-\vspace{-4mm}\item {\bf Monitor:} monitor the critical parameters, reach \easy\ polarization error
-\vspace{-4mm}\item {\bf End Run:} click {\em End Run} in the DAQ section
-\vspace{-4mm}\item {\bf Log Entry:} click {\em Submit} in the Logbook Entry section 
+\vspace{-2mm}\item {\bf Prerequisites:}  Ensure Section~\ref{sec:prereq} is satisfied
+\vspace{-4mm}\item {\bf Request No Beam:}  Ask MCC to take beam away for a configuration change
+\vspace{-4mm}\item {\bf Configure:}  Ensure the Configuration section is set as desired
+\vspace{-4mm}\item {\bf Enter:} Click \textcolor{blue}{\em Enter} and wait for success status
+\vspace{-4mm}\item {\bf Request Beam:} Ask MCC to resume beam delivery at \ibeam for M{\o}ller runs
+\vspace{-4mm}\item {\bf Start Run:} With stable beam, click \textcolor{blue}{\em Start Run}
+\vspace{-4mm}\item {\bf Monitor:} Monitor the quality requirements and reach \easy\ polarization error
+\vspace{-4mm}\item {\bf End Run:} Click \textcolor{blue}{\em End Run}
+\vspace{-4mm}\item {\bf Log Entry:} Input user name(s) and click \textcolor{blue}{\em Submit}
 \vspace{-4mm}\item {\bf Request No Beam:} ask MCC to take beam away for a configuration change
-\vspace{-4mm}\item {\bf Reconfigure:} (Optional)
-\vspace{-4mm}\item {\bf Exit:} click {\em Exit} in the Configuration section and wait for success status
+\vspace{-4mm}\item {\bf Reconfigure:} (Optional) Go to step 3
+\vspace{-4mm}\item {\bf Exit:} Click \textcolor{blue}{\em Exit} and wait for success status ({\em do not resume beam delivery otherwise!})
 \end{enumerate}
 
-\subsection{Details}
-\begin{enumerate}
-    \item {\bf Request No Beam:}  ask MCC to take beam away while you configure the M{\o}ller system
-    \item {\bf Configure:}  ensure the Configuration section of Fig.~\ref{fig:unconfig} is set as desired
-        \subitem
-        See Table~\ref{tab:pars} for standard values.  Contact the Run Coordinator if uncertain.
-\item {\bf Enter:} click {\em Enter} in the Configuration section and wait for success status
-    \subitem This will configure the system for a M{\o}ller run by initiating a sequence of actions and provide corresponding feedback in the status portion of the screen.  This includes turning off all appropriate detectors' high voltage, inserting the blank collimator, energizing the quadrupoles and Helmholtz magnets, and inserting the M{\o}ller target.  Success will result in ``Moller Configuration Ready'' in the status message.
-\item {\bf Request \ibeam nA:} \label{step:beam} ask MCC to resume beam delivery at \ibeam for M{\o}ller runs
-\item {\bf Start:} \label{step:start} once beam is stable, click {\em Start Run} in the DAQ section
+\begin{figure}[htbp]\centering
+    \includegraphics[width=14cm]{pics/unconfig}
+    \caption{\label{fig:beamline}The user interface in the normal, non-M{\o}ller, beamline configuration.  It is divided into {\em Status}, {\em Configuration}, {\em Data Acquisition}, {\em Monitoring}, and {\em Logbook} sections.\label{fig:unconfig}}
+\end{figure}
+
+\section{Procedure - Details}
+\begin{enumerate}\singlespacing
+\item {\bf Prerequisites:}  Ensure Section~\ref{sec:prereq} is satisfied
+\item {\bf Request No Beam:}  Ask MCC to take beam away for a configuration change
+\item {\bf Configure:}  Ensure the Configuration section is set as desired
+\subitem See Table~\ref{tab:pars} for standard values, and check the short-term plan on the run wiki.  Contact the Run Coordinator if uncertain.
+\item {\bf Enter:} Click \textcolor{blue}{\em Enter} and wait for success status
+\subitem This will initiate a sequence of actions and provide corresponding feedback in the status portion of the screen.  This includes turning off all appropriate detectors' high voltage, inserting the blank collimator, energizing the quadrupoles and Helmholtz magnets, and inserting the M{\o}ller target.  Success will result in ``Moller Configuration Ready'' in the status message.
+\item {\bf Request Beam:} Ask MCC to resume beam delivery at \ibeam for M{\o}ller runs
+\item {\bf Start Run:} With stable beam, click \textcolor{blue}{\em Start Run}
     \subitem This will initiate a new M{\o}ller run, including zeroing any accumulated data, opening a new data file, incrementing the run number, and starting data acquisition.
-\item {\bf Monitor:} monitor the critical quality parameters
+\item {\bf Monitor:} Monitor the quality requirements and reach \easy\ polarization error
     \subitem This is left to the operator, described in Table~\ref{tab:reqs}, with possible actions in Section~\ref{sec:knobs}.  Of particular importance are beam charge asymmetry below 0.2\% and accidental ratio of less than 0.1, although ideally about half that.  {\em If you cannot achieve the quality requirements, contact the Run Coordinator.}
-\item {\bf End:} click {\em End Run} in the DAQ section
+\item {\bf End Run:} Click \textcolor{blue}{\em End Run}
     \subitem At this point you should have achieved the desired polarization error of \easy (see Table~\ref{tab:reqs}), or just need to stop the current run and start a new one (in which case, go to Step \#\ref{step:start}).
-\item {\bf Log Entry}: click {\em Submit} in the Logbook Entry section if the run was successful. 
+\item {\bf Log Entry:} Input your name(s) and click \textcolor{blue}{\em Submit}
     \subitem This will submit a standardized, searchable log entry to HBLOG with a table summarizing the results and an attached data file, and requires filling the Entry Makers and Comments fields.  {\em Note, if you want to log any screenshots associated with this M{\o}ller run, then you should navigate to this log entry and upload them as comments}.
     \subitem Note, at this point you can start another run with the same configuration by going to Step \#\ref{step:start}.
-\item {\bf Request No Beam:} ask MCC to take beam away before changing the M{\o}ller configuration
-\item {\bf Reconfigure:}  (Optional)  At this point you may reconfigure the system (e.g. change the Helmholtz polarity or switch to a different target, and then click {\em Reconfigure}, or just ask MCC for a change in the Half-Wave Plate) and then start another run (go to Step \#\ref{step:beam}).
-\item {\bf Exit}: click {\em Exit} in the Configuration section and wait for success status
-    \subitem  This will restore the non-M{\o}ller configuration by turning off the quadrupoles and Helmholtz and retracting the M{\o}ller target.  {\em Note, this will not restore any detector high voltage (except the SLM) nor move the collimator}. 
+\item {\bf Request No Beam:} ask MCC to take beam away for a configuration change
+\item {\bf Reconfigure:} (Optional) Go to step 3
+\item {\bf Exit:} Click \textcolor{blue}{\em Exit} and wait for success status ({\em do not resume beam delivery otherwise!})
+    \subitem  This will restore the non-M{\o}ller configuration by turning off the quadrupoles and Helmholtz and retracting the M{\o}ller target.  {\em Note, this will not restore any CLAS12 detector high voltages nor move the collimator from the blank position}. 
 \end{enumerate}
 
 \section{Quality Requirements}\label{sec:quality}
@@ -132,26 +136,22 @@ If the beam charge asymmetry is too high, the parameters that can be considered 
 The accidental-coincidence ratio is measured by M{\o}ller Left/Right PMTs, downstream of the target and quadrupoles, and is independent of the helicity signals.  Excessive accidentals can be caused by beam quality issues, e.g. bleedthrough from other halls, or non-optimal settings of our M{\o}ller system.  Parameters that can be considered for adjustment include the same beam quality parameters in the previous section, and with the addition of our M{\o}ller configuration, e.g. Left/Right PMT voltages, malfunctioning quadrupoles, or very miscalibrated target position.
 
 \section{Hardware Settings}
-The standard hardware settings for a M{\o}ller run are shown in Table~\ref{tab:pars}.  These are displayed in the {\em Configuration} section of Figure~\ref{fig:unconfig} and will be used to automatically configure all hardware during the procedure in Section \ref{sec:user}.  It is the responsibility of the operator to ensure that the settings in the {\em Configuration} section are the desired ones before entering the M{\o}ller setup.  In case of any uncertainty, or inconsistency with parameters in this table, check with the beamline and/or slow controls expert.
+The standard hardware settings for a M{\o}ller run are shown in Table~\ref{tab:pars}.  These are displayed in the {\em Configuration} section of Figure~\ref{fig:unconfig} and will be used to automatically configure all hardware during the procedure in Section \ref{sec:user}.  In case of any inconsistency with parameters in this table, check with the beamline and/or slow controls expert.
 
 \begin{table}[htbp]\centering
     \begin{tabular}{ll}\toprule[1.5pt]
-        SLM Voltage & 1850 V \\
-        Collimator Position & Blank \\
+        SLM Voltage & 1400 V \\
         Target Position & Left or Right \\
         Helmholtz Current & $\pm$3.5 A \\
-        \cmidrule[0.5pt]{1-2}
-        \multicolumn{2}{c}{Quadrupole Current} \\
-        10.7 GeV & $\sim$3145 A (*)\\
-        6.4 GeV & $\sim$1350 A (*)\\
+        Quadrupole Current & Auto \\
         \bottomrule[1.5pt]
     \end{tabular}
-    \caption{Standard parameter values for the M{\o}ller setup as of 2022.  Live, measured values are shown in the {\em Monitoring} section in Figure~\ref{fig:unconfig}. {\em (*) Note, if ``Auto'' is selected for the quadrupoles in the ``Configuration'' section of Figure \ref{fig:unconfig}, the quadrupole currents will be set automatically based on the beam energy dependence in Figure \ref{fig:quadenergy}}.\label{tab:pars}}
+    \caption{Standard parameter values for configuring the M{\o}ller setup. {\em  Note, the ``Auto'' setting for the quadrupoles uses the beam energy dependence in Figure~\ref{fig:quadenergy}}.\label{tab:pars}}
 \end{table}
 
 \begin{figure}[htbp]\centering
     \includegraphics[width=14cm]{pics/moller_quad_current}
-    \caption{The calculated optimal quadrupole current as a function of beam energy.  This is the function used if the {\em Auto} checkbox is selected in the {\em Configuration} section of Figure \ref{fig:unconfig} when entering or reconfiguring the Moller setup.\label{fig:quadenergy}}
+    \caption{The calculated optimal quadrupole current as a function of beam energy.  This is the function used if the {\em Auto} checkbox is selected in the {\em Configuration} section of Figure \ref{fig:unconfig} when entering or reconfiguring the M{\o}ller setup.\label{fig:quadenergy}}
 \end{figure}
 
 \end{document}
