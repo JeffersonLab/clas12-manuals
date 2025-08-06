@@ -1,0 +1,48 @@
+\section{HYCAL Transporter}
+
+The HYCAL transporter system is composed of two stepper motors that
+move the detector on the X and Y axes. Each axis has hardware switches that
+limit its path of motion. In addition to end limit switches at the edges of axis
+travel, there are home switches in mid travel that will facilitate easy positioning
+during the experiment. To determine the exact location of the transporter,
+digital and analog encoders are used to transmit its position. The transporter
+is controlled by our standard EPICS software interface, and there are hardware
+interlocks installed to prevent unwanted movement.
+
+The transporter operates in two modes: normal mode and storage mode.
+The normal mode is used during the experiment when the transporter is positioned within 
+its normal operation limits. The storage mode is used when the
+transporter must traverse higher in the Y axis than normal. This is used to
+clear the area for other experiments or work that may need to be done in the hall.
+
+During normal operation, the system must stay within set boundaries in the
+beam-line area. This area will be kept clear during an experiment, minimizing the damage 
+risk to personnel and equipment. During transporter storage,
+operator alertness is essential. The transporter will traverse the height of the
+space-frame and an operator must ensure that the path is clear at all times.
+
+Under any operational condition the transporter must be checked for mechanical problems that 
+may arise. Drive-train problems, movement of the transporter outside of preset limits, and 
+unbalanced loading are all examples of events
+that may cause damage to personnel and equipment. Interlocks have been designed into the system 
+to stop all transporter movement in the event of a problem. With these precautions and operator 
+alertness, the transport will operator efficiently and safely.
+
+\subsection{Hazards and Mitigations}
+
+There are two risks associated with the motion system.
+\begin{itemize}
+\item In case of unbalanced load between two vertical driving screws there is a small chance of the shaft break down. To mitigate this risk the tilt sensors are included in the interlock system. They will prevent any motion in case any tilt is detected. There is also central home switch which ensures balanced load on driving screws This will prevent vertical motion between operational and storage positions.
+\item During transition between storage and running configuration there is a risk of someone got caught under the HYCAL moving down. 
+To mitigate this the interlock system inculdes Dead-man switch. It must be depressed while HYCAL moves below the human height. It ensures that someone is continuously watching while HYCAL is moving down and motion will stop immediately when the switch is released.
+\end{itemize}
+In addition to hardware interlocks administrative measures will be taken to mitigate the risk of injury involving the transporter.
+A rope barrier will be maintained around the HYCAL. The barrier will
+remain in place whenever the detector is in motion, or has the potential of
+being moved. A camera, viewable from the Hall B Counting Room, will be
+focused on the HYCAL to enable the observation of the detector while it is in
+motion. Persons will not be permitted in the vicinity of HYCAL while \mbox{it is in motion.} Transition between storage and operational positions must be performed by authorized personnel only.
+
+\subsection{Responsible Personnel}
+
+to be added
