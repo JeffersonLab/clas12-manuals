@@ -17,7 +17,7 @@
 \newcommand{\ibeam}{20 nA\ }
 \newcommand{\easy}{1.5\%}
 \begin{document}
-\title{Hall B M{\o}ller Operations Manual - v1.13}
+\title{Hall B M{\o}ller Operations Manual - v1.14}
 \date{\today}
 \author{N. Baltzell, S. Stepanyan}
 \begin{abstract}
@@ -30,9 +30,12 @@
 
 \section{General}
 
-The Hall B M{\o}ller system measures CEBAF beam polarization in the upstream tunnel of Hall B, and this document details its operating procedures.  The user interface is shown in Fig.~\ref{fig:unconfig} and provides direct access to all necessary controls and feedback for the M{\o}ller system, and its operating procedures are described in Section~\ref{sec:procedure}.
+The Hall B M{\o}ller system measures CEBAF beam polarization in the upstream tunnel of Hall B, and this document details its operating procedures.  The user interface is shown in Fig.~\ref{fig:unconfig} and provides direct access to all necessary controls and feedback for the M{\o}ller system, and its operating procedures are detailed in Section~\ref{sec:proc}.
 
-{\em Insert schematic here (quads, helmholtz, target, counters.}
+\begin{figure}[htbp]\centering
+    \includegraphics[width=9cm]{pics/layout}
+    \caption{\label{fig:layout}Layout of the Hall B M{\o}ller system.}
+\end{figure}
 
 \section{Prerequisites}\label{sec:prereq}
 
@@ -100,7 +103,7 @@ After establishing beam, M{\o}ller measurements require the Hall B orbit locks b
     \item {\bf Enter:} Click \textcolor{blue}{\em Enter} and wait for success status.
         This will initiate a sequence including turning off CLAS12 high voltage, inserting the blank collimator, energizing the M{\o}ller quadrupoles and Helmholtz magnets, and inserting the M{\o}ller target.
         \begin{adjustwidth}{1cm}{1cm}
-            {\em Success will result in \textcolor{green}{\em Moller Configuration Ready} in the status message, otherwise ask MCC to pause beam and contact the Hall B slow controls or beamline expert for guidance before proceeding!}
+            {\em Success will result in \textcolor{green}{\em Moller Configuration Ready} in the status message, otherwise first ask MCC to pause beam, and then contact the Hall B slow controls or beamline expert for guidance before proceeding!}
         \end{adjustwidth}
     \item {\bf Request Beam:} Ask MCC to resume beam delivery at \ibeam for M{\o}ller runs.
     \item {\bf Start Run:} With stable beam, click \textcolor{blue}{\em Start Run}\label{step:start}.
@@ -147,7 +150,7 @@ If quality requirements are not satisfied (accidental rate and beam charge asymm
 
 \subsection{Run Duration}
 
-With 20 nA, 11 GeV electron beam, the normal run duration to achieve \easy absolute error on the polarization is about 15 minutes of continuous beam.  Interruptions to beam delivery, e.g. trips, will of course increase the necessary run time.  Much longer than normal run duration to achieve \easy can be indicative of excessive accidentals or beam charge asymmetry.
+With 20 nA, 11 GeV electron beam, the normal run duration to achieve \easy\ absolute error on the polarization is about 15 minutes of continuous beam.  Interruptions to beam delivery, e.g. trips, will of course increase the necessary run time.  Much longer than normal run duration can be indicative of excessive accidentals or beam charge asymmetry.
 
 \subsection{Beam Charge Asymmetry}
 
@@ -185,7 +188,7 @@ The standard hardware settings for a M{\o}ller run are shown in Table~\ref{tab:p
 
 \begin{figure}[htbp]\centering
     \includegraphics[width=14cm]{pics/moller_quad_current}
-    \caption{The calculated optimal quadrupole current as a function of beam energy.  This is the function used if the {\em Auto} checkbox is selected in the {\em Configuration} section of Figure \ref{fig:unconfig} when entering or reconfiguring the M{\o}ller setup.\label{fig:quadenergy}}
+    \caption{\label{fig:quadenergy}The calculated optimal quadrupole current as a function of beam energy.  This function is used if the {\em Auto} checkbox is selected in the {\em Configuration} section of Figure \ref{fig:unconfig} when entering or reconfiguring the M{\o}ller setup.  The equation can be found at \url{https://github.com/JeffersonLab/clas12-epics/blob/main/apps/mollerSetupApp/src/quadCurrent.c}.}
 \end{figure}
 
 \end{document}
