@@ -13,7 +13,7 @@
 
 \begin{document}
 \title{Experiment Safety Assessment Document (ESAD) \\ 
-  for the Hall B X17/PRAD II Experiments}
+  for the Hall B PRAD II/X17 Experiments (RG-O)}
 \date{\today}
 %
 % LaTeX Version 12 GeV ESAD 
@@ -76,7 +76,7 @@ energy is so large that an uncontrolled electrical discharge can be lethal for a
 time even after the actual power source has been turned off. Anyone working on electrical 
 power in the experimental halls must comply with the Jefferson Lab 
 ES\&H manual and must obtain approval of one of the responsible personnel. The JLab 
-electrical safety point-of-contact (Bill Rainey) can be reached at (757)-269-7898.
+electrical safety point-of-contact (John Riesbeck) can be reached at (757)-329-7515.
 
 \section{Mechanical Systems}
 
@@ -89,7 +89,7 @@ Use of ladders and scaffolding must comply with the Jefferson Lab ES\&H manual. 
 use of cranes, hoists, lifts, etc. must comply with the Jefferson Lab ES\&H manual. Use
 of personal protective equipment to mitigate mechanical hazards, 
 such as hard hats, safety harnesses, and safety shoes, are mandatory when deemed necessary.
-The JLab technical point-of-contact (Bill Rainey) can be contacted at (757)-269-7898.
+The JLab technical point-of-contact (Jennifer Williams) can be contacted at (757)-240-0031.
 
 \section{Strong Magnetic Fields}
 
@@ -99,7 +99,7 @@ fragile components, resulting in a cascading hazard condition. Cardiac pacemaker
 electronic medical devices may no longer function properly in the presence of magnetic 
 fields. Metallic medical implants (non-electronic) may be adversely affected by magnetic 
 fields. Loss of information from magnetic data storage devices such as tapes, disks, and 
-credit cards may also occur. Contact Jennifer Williams at (757)-269-7882, in case of questions
+credit cards may also occur. Contact Jennifer Williams at (757)-240-0031, in case of questions
 or concerns.
 
 \section{Cryogenic Fluids and Oxygen Deficiency \\Hazard}
@@ -113,7 +113,7 @@ cryogenic target systems. Flammable cryogenic gases used in the experimental hal
 include hydrogen and deuterium, which are colorless, odorless gases and, hence, not easily 
 detected by human senses. Hydrogen air mixtures are flammable over a large range of relative 
 concentrations from 4\% to 75\% H$_2$ by volume. Non-flammable cryogenic gases typically 
-used include He and nitrogen. Contact Jennifer Williams at (757)-269-7882 in case of questions
+used include He and nitrogen. Contact Jennifer Williams at (757)-240-0031 in case of questions
 or concerns.
 
 \section{Vacuum and Pressure Vessels}
@@ -125,7 +125,7 @@ or can fail if significant over-pressure were to exist. Injury is possible if a 
 were to occur near an individual. All work on vacuum windows in the experimental halls 
 must occur under the supervision of appropriately trained JLab personnel. Specifically, 
 the scattering chamber and beamline exit windows must always be leak checked before 
-service. Contact Tim Michalski (757)-269-6523 for vacuum and pressure vessel issues.
+service. Contact Ken Baggett (757)-269-6088 for vacuum and pressure vessel issues.
 
 \section{Hazardous Materials}
 
@@ -139,7 +139,7 @@ standards. Handling of these materials must follow the guidelines of the ES\&H m
 Machining of lead or beryllium, which are highly toxic in powdered form, requires prior 
 approval of the ES\&H staff. Lead Worker training is required in order to handle lead in 
 the experiment halls. In case of questions or concerns, the JLab hazardous materials 
-specialist (Scott Conley) can be contacted at (757)-269-7308.
+specialist (Scott Conley) can be contacted at (757)-814-6472.
 
 \section{Lasers}
 
@@ -153,7 +153,7 @@ environment with proper eye protection and engineering controls designed and app
 specific laser system. Each specific laser system shall be operated under the supervision of 
 a Laser System Supervisor (LSS) following the Laser Operating Safety Procedure (LOSP) for 
 that system approved by the Laboratory Laser Safety Officer (LSO). The LSO (Jennifer Williams)
-can be reached at (757)-269-7556.
+can be reached at (757)-240-0031.
 %
 % details for each of the Halls
 %
@@ -162,7 +162,7 @@ can be reached at (757)-269-7556.
 \section{Overview}
 
 The Hall~B subsystems included in this chapter are considered part of the End-station 
-Experimental Equipment for the RG-L (ALERT) experiment. Many of these subsystems impose
+Experimental Equipment for the RG-O (PRad II/X17) experiment. Many of these subsystems impose
 similar hazards, such as those associated with magnetic fields and power supplies, high
 voltage systems, cryogenic systems, and vacuum systems. Note that a specific subsystem may
 have many unique hazards associated with it. For each major system, the hazards, mitigations, 
@@ -193,12 +193,8 @@ The hall will get permission to run beam only after all systems tied to the deli
 beam to the designated destination are signed off. At that point the main Hall~B system will 
 indicate ``Ready" in the HCO tree.
 
-%\input{beamline_vacuum_systems_ALERT}
+
 \input{beamline_vacuum_systems_prad}
-
-%\input{target_system_ALERT}
-
-%\input{gas_ALERT}
 
 \input{hycal}
 
@@ -210,12 +206,11 @@ indicate ``Ready" in the HCO tree.
 
 
 
-
 \input{daq}
 
 %\input{htcc}
 
-\input{dc}
+%\input{dc}
 
 %\input{alert}
 
@@ -239,9 +234,9 @@ indicate ``Ready" in the HCO tree.
 
 %\input{band}
 
-\input{solenoid}
+\input{solenoid_prad}
 
-\input{torus}
+\input{torus_prad}
 
 \begin{thebibliography}{99}
 \bibitem{hco} CEBAF Hot Check-Out db page (accessible from inside JLab only)
@@ -253,6 +248,13 @@ See also https://epics.anl.gov/docs/index.php
 
 \bibitem{esh} 
 JLab ES\&H Manual. URL: http://www.jlab.org/ehs/ehsmanual/.
+
+\bibitem{pss} 
+JLab/CEBAF Personnel Safety System (PSS) Manual. URL: http://www.jlab.org/eng/ssg/user\_info.html
+
+\bibitem{ops} 
+Accelerator Operations Directive \\
+URL: http://www.jlab.org/ops\_docs/online\_document\_files/ACC\_online\_files/\\accel\_ops\_directive.pdf (URL is available inside JLab site).
 
 \bibitem{engineering-page}
 Engineering page: URL https://wiki.jlab.org/Hall-B/engineering/\\hallb\_eng\_wiki/index.php/Main\_Page.
